@@ -1,0 +1,63 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.9 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\datalist[entry]{nyt/global//global/global}
+  \entry{renz2016lak}{inproceedings}{}
+    \name{author}{4}{}{%
+      {{hash=RJ}{%
+         family={Renz},
+         familyi={R\bibinitperiod},
+         given={Jan},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=HD}{%
+         family={Hoffmann},
+         familyi={H\bibinitperiod},
+         given={Daniel},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=ST}{%
+         family={Staubitz},
+         familyi={S\bibinitperiod},
+         given={Thomas},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=MC}{%
+         family={Meinel},
+         familyi={M\bibinitperiod},
+         given={Christoph},
+         giveni={C\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {SOLAR}%
+    }
+    \strng{namehash}{RJ+1}
+    \strng{fullhash}{RJHDSTMC1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{R}
+    \field{sortinithash}{R}
+    \field{booktitle}{Proceedings of the 6th International Conference on
+  Learning Analytics and Knowledge (LAK2016)}
+    \field{title}{Using A/B Testing in MOOC Environments}
+    \field{year}{2016}
+    \warn{\item Invalid format of field 'month'}
+  \endentry
+\enddatalist
+\endinput

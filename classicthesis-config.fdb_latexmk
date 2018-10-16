@@ -1,0 +1,11 @@
+# Fdb version 3
+["pdflatex"] 1539599224 "classicthesis-config.tex" "classicthesis-config.pdf" "classicthesis-config" 1539599224
+  "/usr/local/texlive/2018/texmf-dist/tex/latex/base/omscmr.fd" 1523050425 2472 aa08940f0a4dc6c24ae9f943b04ae0b9 ""
+  "/usr/local/texlive/2018/texmf-dist/web2c/texmf.cnf" 1522066949 33362 cf75436e19743e94a92a6b1b9183c434 ""
+  "/usr/local/texlive/2018/texmf-var/web2c/pdftex/pdflatex.fmt" 1523934516 4220280 10cab8fbd7c5a7c52aba9917e190d018 ""
+  "/usr/local/texlive/2018/texmf.cnf" 1523934483 577 0b39adfd7c93507ff20c9c14c2f1a33f ""
+  "classicthesis-config.aux" 1539597352 8 a94a2480d3289e625eea47cd1b285758 ""
+  "classicthesis-config.tex" 1539599223 10303 54662bfae80f3468378d3f8827e8585a ""
+  (generated)
+  "classicthesis-config.log"
+  "classicthesis-config.pdf"
