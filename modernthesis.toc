@@ -58,41 +58,43 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {4}\spacedlowsmallcaps {Implementation}}{5}{chapter.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.1}Koncept}{5}{section.4.1}
+\contentsline {section}{\numberline {4.1}Architectur}{6}{section.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.2}Architectur}{5}{section.4.2}
+\contentsline {subsection}{\numberline {4.1.1}Service worker}{6}{subsection.4.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.3}Message protocol}{5}{section.4.3}
+\contentsline {subsection}{\numberline {4.1.2}Signaling Server}{6}{subsection.4.1.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.4}Data serialization}{5}{section.4.4}
+\contentsline {section}{\numberline {4.2}Message protocol}{7}{section.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.5}Reusability}{5}{section.4.5}
+\contentsline {section}{\numberline {4.3}Data serialization}{8}{section.4.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {5}\spacedlowsmallcaps {Evaluation}}{6}{chapter.5}
+\contentsline {section}{\numberline {4.4}Reusability}{8}{section.4.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.1}Prequisites}{6}{section.5.1}
+\contentsline {chapter}{\numberline {5}\spacedlowsmallcaps {Evaluation}}{9}{chapter.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.2}Techincal evaluation}{6}{section.5.2}
+\contentsline {section}{\numberline {5.1}Prequisites}{9}{section.5.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2.1}Bandwidth}{6}{subsection.5.2.1}
+\contentsline {section}{\numberline {5.2}Techincal evaluation}{9}{section.5.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {5.2.1.1}Educational context}{6}{subsubsection.5.2.1.1}
+\contentsline {subsection}{\numberline {5.2.1}Bandwidth}{9}{subsection.5.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {5.2.1.2}Live streaming in the coporate context}{6}{subsubsection.5.2.1.2}
+\contentsline {subsubsection}{\numberline {5.2.1.1}Educational context}{9}{subsubsection.5.2.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.3}Browser compatbility}{6}{section.5.3}
+\contentsline {subsubsection}{\numberline {5.2.1.2}Live streaming in the coporate context}{9}{subsubsection.5.2.1.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.3.1}Browser Usage in coropate networks}{6}{subsection.5.3.1}
+\contentsline {section}{\numberline {5.3}Browser compatbility}{9}{section.5.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.3.2}Browser usage in eduational networks}{6}{subsection.5.3.2}
+\contentsline {subsection}{\numberline {5.3.1}Browser Usage in coropate networks}{9}{subsection.5.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.4}Security considerations}{6}{section.5.4}
+\contentsline {subsection}{\numberline {5.3.2}Browser usage in eduational networks}{9}{subsection.5.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.5}DRM licencing}{6}{section.5.5}
+\contentsline {section}{\numberline {5.4}Security considerations}{9}{section.5.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {6}\spacedlowsmallcaps {Conclusion}}{7}{chapter.6}
+\contentsline {section}{\numberline {5.5}DRM licencing}{9}{section.5.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {A}\spacedlowsmallcaps {An Appendix}}{8}{appendix.A}
+\contentsline {chapter}{\numberline {6}\spacedlowsmallcaps {Conclusion}}{10}{chapter.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {A}\spacedlowsmallcaps {An Appendix}}{11}{appendix.A}
 \defcounter {refsection}{0}\relax 
 \vspace {\beforebibskip }
 \defcounter {refsection}{0}\relax 

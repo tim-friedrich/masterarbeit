@@ -47,12 +47,22 @@
 \newcommand{\myName}{Tim Friedrich\xspace}
 \newcommand{\myEmail}{tim.friedrich@student.hpi.de\xspace}
 \newcommand{\myProf}{Prof. Dr. Christoph Meinel\xspace}
-\newcommand{\mySupervisor}{Jan Renz, M.Sc.\xspace}
+\newcommand{\mySupervisor}{Dipl.-Inf. (FH). Jan Renz\xspace}
 \newcommand{\myFaculty}{Hasso Plattner Institute\xspace}
 \newcommand{\myDepartment}{Internet Technologies and Systems\xspace}
 \newcommand{\myUni}{University of Potsdam\xspace}
 \newcommand{\myLocation}{Potsdam\xspace}
 \newcommand{\myTime}{October 5\textsuperscript{th}, 2016\xspace}
+\newcommand{\cdn}{CDN\xspace}
+\newcommand{\cdns}{CDNs\xspace}
+\newcommand{\pTp}{Peer To Peer\xspace}
+\newcommand{\webrtc}{Webrtc\xspace}
+\newcommand{\schulCloud}{Schul-Cloud\xspace}
+\newcommand{\hpi}{Hasso-Plattner-Instituts\xspace}
+\newcommand{\study}{\textsc{\emph{\color{red} Studie }}\xspace}
+\newcommand{\note}[1]{\emph{\color{red} #1 }}
+
+
 
 % ********************************************************************
 % Setup, finetuning, and useful commands
@@ -70,7 +80,7 @@
 % Packages with options that might require adjustments
 % ********************************************************************
 
-%\PassOptionsToPackage{ngerman,american}{babel}   % change this to your language(s)
+\PassOptionsToPackage{ngerman}{babel}   % change this to your language(s)
 % Spanish languages need extra options in order to work with this template
 %\PassOptionsToPackage{spanish,es-lcroman}{babel}
 	\usepackage{babel}
@@ -141,7 +151,7 @@
 \pdfcompresslevel=9
 \pdfadjustspacing=1
 \PassOptionsToPackage{pdftex}{graphicx}
-    \usepackage{graphicx}
+\usepackage{graphicx}
 
 
 % ********************************************************************
@@ -210,7 +220,7 @@
 % Setup code listings
 % ********************************************************************
 
-\usepackage[outputdir=.texpadtmp,cachedir=.minted]{minted}
+\usepackage{minted}
 \PassOptionsToPackage{newfloat}{minted}
 
 \usepackage{scrhack}

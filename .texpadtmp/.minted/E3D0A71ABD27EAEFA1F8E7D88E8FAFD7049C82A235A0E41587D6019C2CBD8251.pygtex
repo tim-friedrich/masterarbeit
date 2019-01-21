@@ -1,0 +1,21 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{class} \PYG{n+nc}{ContextData} \PYG{o}{\PYGZlt{}} \PYG{n+no}{TransformStep}
+
+  \PYG{k}{def} \PYG{n+nf}{transform}\PYG{p}{(}\PYG{n}{original\PYGZus{}event}\PYG{p}{,} \PYG{n}{processing\PYGZus{}units}\PYG{p}{,} \PYG{n}{load\PYGZus{}commands}\PYG{p}{,} \PYG{n}{pipeline\PYGZus{}ctx}\PYG{p}{)}
+    \PYG{n}{processing\PYGZus{}units}\PYG{o}{.}\PYG{n}{each} \PYG{k}{do} \PYG{o}{|}\PYG{n}{processing\PYGZus{}unit}\PYG{o}{|}
+      \PYG{k}{next} \PYG{k}{if} \PYG{n}{processing\PYGZus{}unit}\PYG{o}{[}\PYG{l+s+ss}{:in\PYGZus{}context}\PYG{o}{].}\PYG{n}{nil?} \PYG{o}{||} \PYG{n}{processing\PYGZus{}unit}\PYG{o}{[}\PYG{l+s+ss}{:in\PYGZus{}context}\PYG{o}{][}\PYG{l+s+ss}{:user\PYGZus{}agent}\PYG{o}{].}\PYG{n}{nil?}
+
+      \PYG{n}{user\PYGZus{}agent} \PYG{o}{=} \PYG{n}{processing\PYGZus{}unit}\PYG{o}{[}\PYG{l+s+ss}{:in\PYGZus{}context}\PYG{o}{][}\PYG{l+s+ss}{:user\PYGZus{}agent}\PYG{o}{]}
+
+      \PYG{n}{browser} \PYG{o}{=} \PYG{n+no}{Browser}\PYG{o}{.}\PYG{n}{new}\PYG{p}{(}\PYG{n}{user\PYGZus{}agent}\PYG{p}{)}
+
+      \PYG{n}{processing\PYGZus{}unit}\PYG{o}{[}\PYG{l+s+ss}{:in\PYGZus{}context}\PYG{o}{][}\PYG{l+s+ss}{:platform}\PYG{o}{]}                    \PYG{o}{=} \PYG{n}{browser}\PYG{o}{.}\PYG{n}{platform}\PYG{o}{.}\PYG{n}{name}
+      \PYG{n}{processing\PYGZus{}unit}\PYG{o}{[}\PYG{l+s+ss}{:in\PYGZus{}context}\PYG{o}{][}\PYG{l+s+ss}{:platform\PYGZus{}version}\PYG{o}{]}            \PYG{o}{=} \PYG{n}{browser}\PYG{o}{.}\PYG{n}{platform}\PYG{o}{.}\PYG{n}{version}
+      \PYG{n}{processing\PYGZus{}unit}\PYG{o}{[}\PYG{l+s+ss}{:in\PYGZus{}context}\PYG{o}{][}\PYG{l+s+ss}{:runtime}\PYG{o}{]}                     \PYG{o}{=} \PYG{n}{browser}\PYG{o}{.}\PYG{n}{name}
+      \PYG{n}{processing\PYGZus{}unit}\PYG{o}{[}\PYG{l+s+ss}{:in\PYGZus{}context}\PYG{o}{][}\PYG{l+s+ss}{:runtime\PYGZus{}version}\PYG{o}{]}             \PYG{o}{=} \PYG{n}{browser}\PYG{o}{.}\PYG{n}{version}
+      \PYG{n}{processing\PYGZus{}unit}\PYG{o}{[}\PYG{l+s+ss}{:in\PYGZus{}context}\PYG{o}{][}\PYG{l+s+ss}{:device}\PYG{o}{]}                      \PYG{o}{=} \PYG{n}{browser}\PYG{o}{.}\PYG{n}{device}\PYG{o}{.}\PYG{n}{name}
+    \PYG{k}{end}
+  \PYG{k}{end}
+
+\PYG{k}{end}
+\end{Verbatim}

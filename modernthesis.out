@@ -28,24 +28,25 @@
 \BOOKMARK [1][-]{section.3.2}{3.2 Service Worker}{chapter.3}% 28
 \BOOKMARK [1][-]{section.3.3}{3.3 Resource loading}{chapter.3}% 29
 \BOOKMARK [0][]{chapter.4}{4 Implementation}{}% 30
-\BOOKMARK [1][-]{section.4.1}{4.1 Koncept}{chapter.4}% 31
-\BOOKMARK [1][-]{section.4.2}{4.2 Architectur}{chapter.4}% 32
-\BOOKMARK [1][-]{section.4.3}{4.3 Message protocol}{chapter.4}% 33
-\BOOKMARK [1][-]{section.4.4}{4.4 Data serialization}{chapter.4}% 34
-\BOOKMARK [1][-]{section.4.5}{4.5 Reusability}{chapter.4}% 35
-\BOOKMARK [0][]{chapter.5}{5 Evaluation}{}% 36
-\BOOKMARK [1][-]{section.5.1}{5.1 Prequisites}{chapter.5}% 37
-\BOOKMARK [1][-]{section.5.2}{5.2 Techincal evaluation}{chapter.5}% 38
-\BOOKMARK [2][-]{subsection.5.2.1}{5.2.1 Bandwidth}{section.5.2}% 39
-\BOOKMARK [1][-]{section.5.3}{5.3 Browser compatbility}{chapter.5}% 40
-\BOOKMARK [2][-]{subsection.5.3.1}{5.3.1 Browser Usage in coropate networks}{section.5.3}% 41
-\BOOKMARK [2][-]{subsection.5.3.2}{5.3.2 Browser usage in eduational networks}{section.5.3}% 42
-\BOOKMARK [1][-]{section.5.4}{5.4 Security considerations}{chapter.5}% 43
-\BOOKMARK [1][-]{section.5.5}{5.5 DRM licencing}{chapter.5}% 44
-\BOOKMARK [0][]{chapter.6}{6 Conclusion}{}% 45
-\BOOKMARK [0][]{appendix.A}{A An Appendix}{}% 46
-\BOOKMARK [0][]{dummy.3}{Bibliography}{}% 47
-\BOOKMARK [0][]{dummy.4}{List of Figures}{}% 48
-\BOOKMARK [0][]{dummy.5}{List of Tables}{}% 49
-\BOOKMARK [0][]{dummy.6}{List of Listings}{}% 50
-\BOOKMARK [0][]{declaration.0}{Declaration of Originality}{}% 51
+\BOOKMARK [1][-]{section.4.1}{4.1 Architectur}{chapter.4}% 31
+\BOOKMARK [2][-]{subsection.4.1.1}{4.1.1 Service worker}{section.4.1}% 32
+\BOOKMARK [2][-]{subsection.4.1.2}{4.1.2 Signaling Server}{section.4.1}% 33
+\BOOKMARK [1][-]{section.4.2}{4.2 Message protocol}{chapter.4}% 34
+\BOOKMARK [1][-]{section.4.3}{4.3 Data serialization}{chapter.4}% 35
+\BOOKMARK [1][-]{section.4.4}{4.4 Reusability}{chapter.4}% 36
+\BOOKMARK [0][]{chapter.5}{5 Evaluation}{}% 37
+\BOOKMARK [1][-]{section.5.1}{5.1 Prequisites}{chapter.5}% 38
+\BOOKMARK [1][-]{section.5.2}{5.2 Techincal evaluation}{chapter.5}% 39
+\BOOKMARK [2][-]{subsection.5.2.1}{5.2.1 Bandwidth}{section.5.2}% 40
+\BOOKMARK [1][-]{section.5.3}{5.3 Browser compatbility}{chapter.5}% 41
+\BOOKMARK [2][-]{subsection.5.3.1}{5.3.1 Browser Usage in coropate networks}{section.5.3}% 42
+\BOOKMARK [2][-]{subsection.5.3.2}{5.3.2 Browser usage in eduational networks}{section.5.3}% 43
+\BOOKMARK [1][-]{section.5.4}{5.4 Security considerations}{chapter.5}% 44
+\BOOKMARK [1][-]{section.5.5}{5.5 DRM licencing}{chapter.5}% 45
+\BOOKMARK [0][]{chapter.6}{6 Conclusion}{}% 46
+\BOOKMARK [0][]{appendix.A}{A An Appendix}{}% 47
+\BOOKMARK [0][]{dummy.3}{Bibliography}{}% 48
+\BOOKMARK [0][]{dummy.4}{List of Figures}{}% 49
+\BOOKMARK [0][]{dummy.5}{List of Tables}{}% 50
+\BOOKMARK [0][]{dummy.6}{List of Listings}{}% 51
+\BOOKMARK [0][]{declaration.0}{Declaration of Originality}{}% 52

@@ -1,0 +1,390 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.9 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\datalist[entry]{nyt/global//global/global}
+  \entry{w3IndexedDB}{inproceedings}{}
+    \name{author}{2}{}{%
+      {{hash=AA}{%
+         family={Alabbas},
+         familyi={A\bibinitperiod},
+         given={Ali},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=BJ}{%
+         family={Bell},
+         familyi={B\bibinitperiod},
+         given={Joshua},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {W3C}%
+    }
+    \strng{namehash}{AABJ1}
+    \strng{fullhash}{AABJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{A}
+    \field{sortinithash}{A}
+    \field{booktitle}{W3C Recommendation}
+    \field{title}{Indexed Database API 2.0}
+    \verb{url}
+    \verb https://www.w3.org/TR/2018/REC-IndexedDB-2-20180130/
+    \endverb
+    \field{month}{01}
+    \field{year}{2018}
+  \endentry
+
+  \entry{w3Webrtc}{inproceedings}{}
+    \name{author}{7}{}{%
+      {{hash=BA}{%
+         family={Bergkvist},
+         familyi={B\bibinitperiod},
+         given={Adam},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=BDC}{%
+         family={Burnett},
+         familyi={B\bibinitperiod},
+         given={Daniel\bibnamedelima C.},
+         giveni={D\bibinitperiod\bibinitdelim C\bibinitperiod},
+      }}%
+      {{hash=JC}{%
+         family={Jennings},
+         familyi={J\bibinitperiod},
+         given={Cullen},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=NA}{%
+         family={Narayanan},
+         familyi={N\bibinitperiod},
+         given={Anant},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=AB}{%
+         family={Aboba},
+         familyi={A\bibinitperiod},
+         given={Bernard},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=BT}{%
+         family={Brandstetter},
+         familyi={B\bibinitperiod},
+         given={Taylor},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=BJI}{%
+         family={Bruaroey},
+         familyi={B\bibinitperiod},
+         given={Jan-Ivar},
+         giveni={J\bibinitperiod-I\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {W3C}%
+    }
+    \strng{namehash}{BA+1}
+    \strng{fullhash}{BABDCJCNAABBTBJI1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \field{booktitle}{W3C Candidate Recommendation 27 September 2018}
+    \field{title}{WebRTC 1.0: Real-time Communication Between Browsers}
+    \verb{url}
+    \verb https://www.w3.org/TR/webrtc/
+    \endverb
+    \field{month}{09}
+    \field{year}{2018}
+  \endentry
+
+  \entry{w3MediaStream}{inproceedings}{}
+    \name{author}{5}{}{%
+      {{hash=BDC}{%
+         family={Burnett},
+         familyi={B\bibinitperiod},
+         given={Daniel\bibnamedelima C.},
+         giveni={D\bibinitperiod\bibinitdelim C\bibinitperiod},
+      }}%
+      {{hash=BA}{%
+         family={Bergkvist},
+         familyi={B\bibinitperiod},
+         given={Adam},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=JC}{%
+         family={Jennings},
+         familyi={J\bibinitperiod},
+         given={Cullen},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=NA}{%
+         family={Narayanan},
+         familyi={N\bibinitperiod},
+         given={Anant},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=AB}{%
+         family={Aboba},
+         familyi={A\bibinitperiod},
+         given={Bernard},
+         giveni={B\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {W3C}%
+    }
+    \strng{namehash}{BDC+1}
+    \strng{fullhash}{BDCBAJCNAAB1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \field{booktitle}{W3C Candidate Recommendation}
+    \field{title}{Media Capture and Streams}
+    \verb{url}
+    \verb https://www.w3.org/TR/2017/CR-mediacapture-streams-20171003/
+    \endverb
+    \field{month}{10}
+    \field{year}{2017}
+  \endentry
+
+  \entry{rfcWebsockets}{inproceedings}{}
+    \name{author}{2}{}{%
+      {{hash=FI}{%
+         family={Fette},
+         familyi={F\bibinitperiod},
+         given={I.},
+         giveni={I\bibinitperiod},
+      }}%
+      {{hash=MA}{%
+         family={Melnikov},
+         familyi={M\bibinitperiod},
+         given={A.},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Internet Engineering Task Force (IETF)}%
+    }
+    \strng{namehash}{FIMA1}
+    \strng{fullhash}{FIMA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{F}
+    \field{sortinithash}{F}
+    \field{booktitle}{Request for Comments: 6455}
+    \field{title}{The WebSocket Protocol}
+    \verb{url}
+    \verb https://tools.ietf.org/html/rfc6455
+    \endverb
+    \field{month}{12}
+    \field{year}{2011}
+  \endentry
+
+  \entry{rfcStun}{inproceedings}{}
+    \name{author}{4}{}{%
+      {{hash=RJ}{%
+         family={Rosenberg},
+         familyi={R\bibinitperiod},
+         given={J.},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=WJ}{%
+         family={Weinberger},
+         familyi={W\bibinitperiod},
+         given={J.},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=HC}{%
+         family={Huitema},
+         familyi={H\bibinitperiod},
+         given={C.},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=MR}{%
+         family={Mahy},
+         familyi={M\bibinitperiod},
+         given={R.},
+         giveni={R\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {The Internet Society}%
+    }
+    \strng{namehash}{RJ+1}
+    \strng{fullhash}{RJWJHCMR1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{R}
+    \field{sortinithash}{R}
+    \field{booktitle}{Network Working Group}
+    \field{title}{STUN - Simple Traversal of User Datagram Protocol (UDP)
+  Through Network Address Translators (NATs)}
+    \verb{url}
+    \verb http://www.ietf.org/rfc/rfc3489.txt
+    \endverb
+    \field{month}{03}
+    \field{year}{2003}
+  \endentry
+
+  \entry{w3ServiceWorker}{inproceedings}{}
+    \name{author}{4}{}{%
+      {{hash=RA}{%
+         family={Russell},
+         familyi={R\bibinitperiod},
+         given={Alex},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=SJ}{%
+         family={Song},
+         familyi={S\bibinitperiod},
+         given={Jungkee},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=AJ}{%
+         family={Archibald},
+         familyi={A\bibinitperiod},
+         given={Jake},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=KM}{%
+         family={Kruisselbrink},
+         familyi={K\bibinitperiod},
+         given={Marijn},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {W3C}%
+    }
+    \strng{namehash}{RA+1}
+    \strng{fullhash}{RASJAJKM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{R}
+    \field{sortinithash}{R}
+    \field{booktitle}{W3C Working Draft, 2 November 2017}
+    \field{title}{Service Workers 1}
+    \verb{url}
+    \verb https://www.w3.org/TR/service-workers-1/
+    \endverb
+    \field{month}{11}
+    \field{year}{2017}
+  \endentry
+
+  \entry{p2pBook2005}{inproceedings}{}
+    \name{author}{2}{}{%
+      {{hash=TK}{%
+         family={Tutschku},
+         familyi={T\bibinitperiod},
+         given={Kurt},
+         giveni={K\bibinitperiod},
+      }}%
+      {{hash=TGP}{%
+         family={Tran-Gia},
+         familyi={T\bibinitperiod-G\bibinitperiod},
+         given={Phuoc},
+         giveni={P\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{TKTGP1}
+    \strng{fullhash}{TKTGP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{T}
+    \field{sortinithash}{T}
+    \field{title}{Peer-to-Peer-Systems and Applications}
+    \field{month}{01}
+    \field{year}{2005}
+  \endentry
+
+  \entry{akamaiPeer}{inproceedings}{}
+    \name{author}{9}{}{%
+      {{hash=ZM}{%
+         family={Zhao},
+         familyi={Z\bibinitperiod},
+         given={Mingchen},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=AP}{%
+         family={Aditya},
+         familyi={A\bibinitperiod},
+         given={Paarijaat},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=CA}{%
+         family={Chen},
+         familyi={C\bibinitperiod},
+         given={Ang},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=LY}{%
+         family={Lin},
+         familyi={L\bibinitperiod},
+         given={Yin},
+         giveni={Y\bibinitperiod},
+      }}%
+      {{hash=HA}{%
+         family={Haeberlen},
+         familyi={H\bibinitperiod},
+         given={Andreas},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=DP}{%
+         family={Druschel},
+         familyi={D\bibinitperiod},
+         given={Peter},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=MB}{%
+         family={Maggs},
+         familyi={M\bibinitperiod},
+         given={Bruce},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=WB}{%
+         family={Wishon},
+         familyi={W\bibinitperiod},
+         given={Bill},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=PM}{%
+         family={Ponec},
+         familyi={P\bibinitperiod},
+         given={Miroslav},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {ACM New York, NY, USA}%
+    }
+    \strng{namehash}{ZM+1}
+    \strng{fullhash}{ZMAPCALYHADPMBWBPM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{Z}
+    \field{sortinithash}{Z}
+    \field{booktitle}{Proceedings of the 2013 conference on Internet
+  measurement conference Pages 31-42}
+    \field{title}{Peer-Assisted Content Distribution in Akamai NetSession}
+    \field{month}{10}
+    \field{year}{2013}
+  \endentry
+\enddatalist
+\endinput
