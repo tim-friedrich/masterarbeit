@@ -39,39 +39,43 @@
 \BOOKMARK [1][-]{section.3.8}{3.8 Distributed caches}{chapter.3}% 39
 \BOOKMARK [0][]{chapter.4}{4 Konzept}{}% 40
 \BOOKMARK [1][-]{section.4.1}{4.1 Mesh Zuordnung - Verbinden von Peers}{chapter.4}% 41
-\BOOKMARK [1][-]{section.4.2}{4.2 Objekt Zuordnung - finden von Ressourcen}{chapter.4}% 42
-\BOOKMARK [2][-]{subsection.4.2.1}{4.2.1 Subnetzerkennung}{section.4.2}% 43
-\BOOKMARK [2][-]{subsection.4.2.2}{4.2.2 \040Struktur von IP Adressen}{section.4.2}% 44
-\BOOKMARK [1][-]{section.4.3}{4.3 Wiederverwendbarkeit}{chapter.4}% 45
-\BOOKMARK [1][-]{section.4.4}{4.4 Open Source}{chapter.4}% 46
-\BOOKMARK [0][]{chapter.5}{5 Implementierung}{}% 47
-\BOOKMARK [1][-]{section.5.1}{5.1 Architectur}{chapter.5}% 48
-\BOOKMARK [2][-]{subsection.5.1.1}{5.1.1 Service worker}{section.5.1}% 49
-\BOOKMARK [2][-]{subsection.5.1.2}{5.1.2 Tests}{section.5.1}% 50
-\BOOKMARK [1][-]{section.5.2}{5.2 ressourcen aus dem cache l\366schen}{chapter.5}% 51
-\BOOKMARK [2][-]{subsection.5.2.1}{5.2.1 Signaling Server}{section.5.2}% 52
-\BOOKMARK [1][-]{section.5.3}{5.3 Message protocol}{chapter.5}% 53
-\BOOKMARK [2][-]{subsection.5.3.1}{5.3.1 hash updates}{section.5.3}% 54
-\BOOKMARK [1][-]{section.5.4}{5.4 Data serialization}{chapter.5}% 55
-\BOOKMARK [1][-]{section.5.5}{5.5 Mesh Zuordnung}{chapter.5}% 56
-\BOOKMARK [1][-]{section.5.6}{5.6 Reusability}{chapter.5}% 57
-\BOOKMARK [1][-]{section.5.7}{5.7 System Test}{chapter.5}% 58
-\BOOKMARK [1][-]{section.5.8}{5.8 Storage quotas}{chapter.5}% 59
-\BOOKMARK [1][-]{section.5.9}{5.9 Resource loading}{chapter.5}% 60
-\BOOKMARK [0][]{chapter.6}{6 Evaluation}{}% 61
-\BOOKMARK [1][-]{section.6.1}{6.1 Prequisites}{chapter.6}% 62
-\BOOKMARK [1][-]{section.6.2}{6.2 Techincal evaluation}{chapter.6}% 63
-\BOOKMARK [2][-]{subsection.6.2.1}{6.2.1 Bandwidth}{section.6.2}% 64
-\BOOKMARK [2][-]{subsection.6.2.2}{6.2.2 Nutzerzufriedenheit}{section.6.2}% 65
-\BOOKMARK [1][-]{section.6.3}{6.3 Browser compatbility}{chapter.6}% 66
-\BOOKMARK [2][-]{subsection.6.3.1}{6.3.1 Browser Usage in coropate networks}{section.6.3}% 67
-\BOOKMARK [2][-]{subsection.6.3.2}{6.3.2 Browser usage in eduational networks}{section.6.3}% 68
-\BOOKMARK [1][-]{section.6.4}{6.4 Security considerations}{chapter.6}% 69
-\BOOKMARK [1][-]{section.6.5}{6.5 DRM licencing}{chapter.6}% 70
-\BOOKMARK [0][]{chapter.7}{7 Conclusion}{}% 71
-\BOOKMARK [0][]{appendix.A}{A An Appendix}{}% 72
-\BOOKMARK [0][]{dummy.3}{Bibliography}{}% 73
-\BOOKMARK [0][]{dummy.4}{List of Figures}{}% 74
-\BOOKMARK [0][]{dummy.5}{List of Tables}{}% 75
-\BOOKMARK [0][]{dummy.6}{List of Listings}{}% 76
-\BOOKMARK [0][]{declaration.0}{Declaration of Originality}{}% 77
+\BOOKMARK [2][-]{subsection.4.1.1}{4.1.1 Schul-Cloud}{section.4.1}% 42
+\BOOKMARK [2][-]{subsection.4.1.2}{4.1.2 Slidesync}{section.4.1}% 43
+\BOOKMARK [1][-]{section.4.2}{4.2 Objekt Zuordnung - finden von Ressourcen}{chapter.4}% 44
+\BOOKMARK [2][-]{subsection.4.2.1}{4.2.1 Subnetzerkennung}{section.4.2}% 45
+\BOOKMARK [2][-]{subsection.4.2.2}{4.2.2 \040Struktur von IP Adressen}{section.4.2}% 46
+\BOOKMARK [1][-]{section.4.3}{4.3 Wiederverwendbarkeit}{chapter.4}% 47
+\BOOKMARK [1][-]{section.4.4}{4.4 Open Source}{chapter.4}% 48
+\BOOKMARK [0][]{chapter.5}{5 Implementierung}{}% 49
+\BOOKMARK [1][-]{section.5.1}{5.1 Architectur}{chapter.5}% 50
+\BOOKMARK [2][-]{subsection.5.1.1}{5.1.1 Service worker}{section.5.1}% 51
+\BOOKMARK [2][-]{subsection.5.1.2}{5.1.2 Tests}{section.5.1}% 52
+\BOOKMARK [1][-]{section.5.2}{5.2 Ressourcen Management}{chapter.5}% 53
+\BOOKMARK [2][-]{subsection.5.2.1}{5.2.1 Update Protokoll}{section.5.2}% 54
+\BOOKMARK [2][-]{subsection.5.2.2}{5.2.2 Quota limits}{section.5.2}% 55
+\BOOKMARK [1][-]{section.5.3}{5.3 Signaling Server}{chapter.5}% 56
+\BOOKMARK [1][-]{section.5.4}{5.4 Message protocol}{chapter.5}% 57
+\BOOKMARK [2][-]{subsection.5.4.1}{5.4.1 hash updates}{section.5.4}% 58
+\BOOKMARK [1][-]{section.5.5}{5.5 Data serialization}{chapter.5}% 59
+\BOOKMARK [1][-]{section.5.6}{5.6 Mesh Zuordnung}{chapter.5}% 60
+\BOOKMARK [1][-]{section.5.7}{5.7 Reusability}{chapter.5}% 61
+\BOOKMARK [1][-]{section.5.8}{5.8 System Test}{chapter.5}% 62
+\BOOKMARK [1][-]{section.5.9}{5.9 Storage quotas}{chapter.5}% 63
+\BOOKMARK [1][-]{section.5.10}{5.10 Resource loading}{chapter.5}% 64
+\BOOKMARK [0][]{chapter.6}{6 Evaluation}{}% 65
+\BOOKMARK [1][-]{section.6.1}{6.1 Prequisites}{chapter.6}% 66
+\BOOKMARK [1][-]{section.6.2}{6.2 Techincal evaluation}{chapter.6}% 67
+\BOOKMARK [2][-]{subsection.6.2.1}{6.2.1 Bandwidth}{section.6.2}% 68
+\BOOKMARK [2][-]{subsection.6.2.2}{6.2.2 Nutzerzufriedenheit}{section.6.2}% 69
+\BOOKMARK [1][-]{section.6.3}{6.3 Browser compatbility}{chapter.6}% 70
+\BOOKMARK [2][-]{subsection.6.3.1}{6.3.1 Browser Usage in coropate networks}{section.6.3}% 71
+\BOOKMARK [2][-]{subsection.6.3.2}{6.3.2 Browser usage in eduational networks}{section.6.3}% 72
+\BOOKMARK [1][-]{section.6.4}{6.4 Security considerations}{chapter.6}% 73
+\BOOKMARK [1][-]{section.6.5}{6.5 DRM licencing}{chapter.6}% 74
+\BOOKMARK [0][]{chapter.7}{7 Conclusion}{}% 75
+\BOOKMARK [0][]{appendix.A}{A An Appendix}{}% 76
+\BOOKMARK [0][]{dummy.3}{Bibliography}{}% 77
+\BOOKMARK [0][]{dummy.4}{List of Figures}{}% 78
+\BOOKMARK [0][]{dummy.5}{List of Tables}{}% 79
+\BOOKMARK [0][]{dummy.6}{List of Listings}{}% 80
+\BOOKMARK [0][]{declaration.0}{Declaration of Originality}{}% 81
