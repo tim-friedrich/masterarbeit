@@ -42,7 +42,6 @@
   \item clients.claim + skip waiting für den ersten aufruf (12)
 \end{itemize}
 
-
 \subsection{Tests}
 
 \begin{itemize}
@@ -62,16 +61,38 @@
 \section{Ressourcen Management}
 
 
+
+\section{Configuration}
+
+\begin{itemize}
+	\item id
+	\item id length
+	\item beispiel
+	\item verbose
+	\item ...
+\end{itemize}
+
 \subsection{Update Protokoll}
+\begin{itemize}
+	\item Diagram zeigen
+	\item alle Clients müssen benachrichtigt werden
+	\item Über Webrtc data channel
+	\item Message format zeigen
+\end{itemize}
 
-\subsection{Quota limits}
-
-
+\subsection{Quota limits - Löschen von Requests aus dem Cache}
 
 \begin{itemize}
   \item benötigte speichermenge wird geschätzt
   \item headersize plus 'Content-Length' header wert
   \item solange löschen bis genug speicher frei ist
+  \item Quotas flexibel
+	\item Quota kann abgefragt werden
+	\item Quota für browser nicht für page
+	\item berechnung der größe schwer
+	\item löschen des ersten Elements im Cache
+	\item evtl verschiedene verfahren diskutieren
+	\item Fehlerfall muss abgefangen werden
 \end{itemize}
 
 \section{Signaling Server}
@@ -79,8 +100,10 @@ The signaling server itself uses socket.io and can be found here. The client ID 
 
 
 \begin{itemize}
-  \item websockets socket io
+  \item websockets faye
   \item gleicher data channel zur Bildung von meshs
+  \item ID pro client
+  \item max id length muss festgelegt werden für chunking
 \end{itemize}
 
 

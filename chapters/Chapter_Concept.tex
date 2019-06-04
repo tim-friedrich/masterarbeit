@@ -51,10 +51,87 @@ Da sowohl im Kontext der Schule als auch bei Unternehmen kein Wissen im Bereich 
 
 % "hybrid p2p cdn"
 %konfiguration von subnetzen?
+\section{Netzwerk Strukturen}
+\todo{Anwendungsfall analyse? -- evt in einleitung schieben.}
+
+Im Folgenden wird betrachtet wie die Netzwerkstruktur der Clients im Falle von Slidesync und \schulCloud zusammensetzen.
+\subsection{\schulCloud}
+Bei der \schulCloud lassen sich im wesentlichen zwei Hauptanwendungsszenarien unterscheiden. Zum einen die Anwendung im Unterricht. Der Lehrer stellt z.B. eine Aufgabe die mit Hilfe der \schulCloud durchgeführt werden soll. Daraufhin besuchen die Schüler die entsprechende Seite und bearbeiten die Aufgabe. In einem kurzen Zeitfenster laden also mehrer Schüler während sie sich im gleichen lokalen Netzwerk befinden, dem der Schule, die selben Inhalte herunter. Bei dem anderen Szenario wird die \schulCloud außerhalb des Unterrichts genutzt. Z.B. bereitet der Lehrer den Unterricht vor oder die Schüler bearbeiten gestellte Hausaufgaben. Die Nutzer befinden sich nicht zwangsläufig im selben Netzwerk. Auch Laden die Nutzer die selben Daten nicht notwendigerweise in einem kurz Zeitfenster sondern verteilt über einen längeren Zeitraum. Es findet jedoch auch keine so starke Auslastung des Netzwerks statt. Deshalb wird im Rahmen dieser Arbeit vor allem das erste Szenario betrachtet.
+
+\subsection{Slidesync}
+Die Verteilung der Clients auf Netzwerke kann sich bei Slidesync von Event zu Event stark unterscheiden. Da sich Slidesync jedoch hauptsaächlich für Streams von mittleren bis großen Unternehmen wendet, lässt sich beobachten das viele der Nutzer sich gemeinsam in einem lokalen Netzwerk, einem Standort, befinden. Um die Last der Unternehmensnetzwerke zu reduzieren, werden bei einigen Unternehmen caching Server eingesetzt. Betrachtet man 10 Events mit caching Infrastruktur im Internen netz stellt man fest das 64\% der Teilnehmer aus dem internen Netz auf das Event zugegriffen haben. In dieser Arbeit wird betrachtet wie die Last auf das interne Netz reduziert werden kann ohne das zusätzliche caching Server eingesetzt werden müssen.
+
+\subsection{Gemeinsamkeiten}
+
+\section{Architektur}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.8\textwidth]{figures/service_worker_app}
+	\caption[A Figure Short-Title]{Service Worker - Webrtc}
+	\label{fig:mesh}
+\end{figure}
+
+\begin{itemize}
+	\item Browser based without plugin
+	\item Service Worker -- > WEBRTC
+	\item Script für execution
+	\item Webrtc - Datachannel
+	\item Service worker cached request
+	\item warum service worker
+	\item 	vergleich anderer Ansätze
+	\item 	Literatur anschauen
+\end{itemize}
+%Für unsere Implementation wird für das Zwischenspeichern von Daten ein Serviceworker eingesetzt. Serviceworker können wie ein Proxy zwischen dem Webbrowser und dem Webserver agieren, welcher die Webseite bereitstellt. Stellt ein Browser eine Anfrage, so wird diese vom Serviceworker abgefangen. Der Serviceworker schaut zunächst in seinem Cache, der sog. IndexDB, ob er die gestellte Anfrage beantworten kann. Ist dies nicht der Fall, so wird die Anfrage an den Webserver weitergeleitet. Wird die gleiche Anfrage nochmals gestellt, kann diese aus dem Cache beantwortet werden, da gestellte Anfragen eine gewisse Zeit lang zwischengespeichert werden.
+%\begin{figure}[!h]
+%	\centering
+%	\includegraphics[width=0.8\textwidth]{figures/ServiceWorker}
+%	\caption[A Figure Short-Title]{A Figure Title}
+%	\label{fig:sequenceDiagram}
+%\end{figure}
+%
+%
+%Die von uns eingesetzte Technologie zur Übertragung von Daten zwischen Browsern ist WebRTC. WebRTC ist ein offener Standard und ermöglicht es Browser paarweise zwecks Datenaustausch zu verbinden. Der große Vorteil dieser Technologie ist, dass sie direkt von modernen Browsern unterstützt wird, wodurch keine zusätzliche Software installiert werden muss. Konkret wird von uns ein sog. DataChannel genutzt.
+%
+%Für den Datenaustausch müssen wechselseitig DataChannel zueinander aufgebaut werden. Die Ausgangslage ist, dass die Schüler wissen, dass es den anderen gibt, aber nicht wie der jeweils andere zu erreichen ist. Um diese Problematik zu lösen, existiert ein Vermittlungsserver (Signaling server).
+%
+%Als erstes werden Informationen, über die Verbindung die aufgebaut werden soll, an den Signaling server gesendet. Technisch wird ein SDP-offer gesendet, wobei SDP für Session Description Protocol steht. Dieses SDP-offer leitet der Signaling server an die Schüler in der Klasse/Schule weiter. Geantwortet wird mit einer SDP-answere, welche Informationen über die abgestimmte Verbindung enthält und über den Signaling server zurück geleitet wird.
+%
+%Damit eine direkte Verbindung aufgebaut werden kann, müssen über den Signaling server noch weitere Informationen wie ICE-Kandidaten ausgetauscht werden. ICE steht hierbei für Interactive Conectivity Establishment und ist fester Bestandteil von WebRTC. Es ist für den Aufbau der Browser-zu-Browser-Verbindung verantwortlich. ICE-Kandidaten enthalten hauptsächlich Informationen darüber wie ein bestimmter Nutzer erreichbar ist (also z.B. private oder öffentliche IP-Adresse). Ermittelt werden diese ICE-Kandidaten mithilfe eines STUN-Servers und dem dazugehörigen Session Traversal Utilities for NAT (STUN) Protokoll. Wie der Name des Protokolls schon verrät, wird es vor allem benötigt um auch Nutzer erreichen zu können die keine eigene öffentliche IP-Adresse besitzen, bei denen also Network address translation (NAT) eingesetzt wird. Dies ist aufgrund der mangelnden Anzahl an IPv4-Adressen bei fast jedem Internetnutzer der Fall.
+%
+%In dem Signaling server selbst wird die Logik abgebildet, wie die Klassen und Schüler miteinander in Verbindung stehen. Implementiert wurde dieser mit socket.io, da die native Klassenorganisation und Websocket-Technologie sich nahezu perfekt für unser Szenario anbot.
 
 \section{Mesh Zuordnung - Verbinden von Peers}
 Im Folgenden werden verschiedene Zuordnungsstragien zur Bildung von Peer Meshes diskutiert. Dazu wird der typische Workload beider Anwendungen analysiert um eine jeweils geeignete Strategie zu wählen. 
 
+- Vergleich von Meshing verfahren/peer routing aus literatur
+\subsection{Routing}
+-Datenstruktur
+- Dezentralisierte Datenspeicherung
+- Daten werden über SPeicherknoten verteilt
+- Jeder Knoten eintrag in Hashtabelle
+- direct storage: Daten in Hashtabelle
+	- nur für kleine Daten
+- indirect storage: Verweis auf daten in Hashtabelle
+
+Eigenschaften:
+Fehlertoleranz
+Lastenverteilung
+Robustheit
+Selbstorganisation
+Skalierbarkeit
+
+
+consistent hashing
+- Server zum routen
+https://www.coralcdn.org/pubs/
+\subsubsection{Chord}
+
+How to save files in advance???
+save file references
+\subsubsection{Kademlia}
+\subsubsection{IPFS}
+\subsubsection{Kelips}
+\subsubsection{Pastry}
 \subsection{\schulCloud}
 Analyse workload mit grafik
 
@@ -124,7 +201,7 @@ Abbildung \ref{fig:mesh-slidesync} zeigt eine beispielhafte Aufteilung von Peer 
 % ip subnetz plus gleicher Kurs/stream
 
 
-\section{Objekt Zuordnung - finden von Ressourcen}
+\section{Routing - finden von Ressourcen}
 
 Um das \pTp Netzwerk als \cdn Nutzbar zu machen ist es wichtig das ein Peer in der Lage ist herauszufinden wer welche resource bereitstellt. Dazu lassen sich verschiedene Ansätze verfolgen.
 
@@ -155,7 +232,7 @@ Da das Routing von Ressourcen bei den Betrachteten Anwendungsfällen in einem Ze
 %	 peer weiß immer bei wer welche resource hat
 % am Anfang wird die zuordnung von einem peer an den neuen geschickt
 
-
+\subsection{ Updates }
 \subsection{Subnetzerkennung}
 \subsection{ Struktur von IP Adressen}
 eher Konzept

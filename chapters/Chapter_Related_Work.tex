@@ -1,8 +1,14 @@
 \chapter{Grundlagen}\label{ch:related_work}
 %alles was man braucht um den rest zu verstehen
 
-\section{Statische Ressourcen}
+\section{Ressourcen}
+\subsection{Statische Ressourcen}
 Statische Ressourcen sind Inhalte einer Website die für alle Nutzer gleich sind. Sie sind im Gegensatz zu dynamischen Inhalten nicht nutzerspezifisch und können daher gut über ein CDN verteilt werden. Insbesondere die so genannten Assets einer Internetseite sind meist statisch. Dies sind meist Javascript, CSS aber auch Bild Dateien. Auch Videos fallen häufig in diese Kategorie.
+
+\subsection{Dynamisch generierte Ressourcen}
+\begin{itemize}
+	\item 
+\end{itemize}
 
 \section{\cdn}
 Unter einem \cdn, auch Content Delivery Network versteht man ein Netzwerk in dem sich Clients Inhalte von einer Reihe von Knoten laden. Ein \cdn stellt dem Nutzer Auslieferungs und Speicherkapazitäten zur Verfügung. Dadurch kann die Last auf dem Ursprungsserver und die Latenz auf Seiten der Nutzer reduziert werden. Die reduzierten Ladezeiten werden unter anderem durch eine bessere geographische Nähe und damit geringerer Netzlaufzeiten erreicht. %TODO: gute definition finden
@@ -25,26 +31,6 @@ Infrastruktur basierte \cdns bestehen aus einem Ursprungsservern, der von dem Be
 %https://de.wikipedia.org/wiki/Content_Delivery_Network
 \subsection{\pTp basierte \cdns }
 
-Bei einem \pTp Netzwerk handelt es sich um eine Netzwerk Struktur bei der alle Teilnehmer gleichberechtigt sind. Sie bildet damit das gegen Konzept zur klassischen Client-Server Struktur, bei der einer oder mehrere Server einen Dienst anbieten der von Clients genutzt werden kann. In einem \pTp Netzwerk können die Teilnehmer sowohl Dienste anbieten als auch nutzen. Man unterscheidet zwischen unstrukturierten und strukturierten \pTp Netzwerken. 
-
-Unstrukturierte Netzwerke haben keine Zuordnung von Objekten und Teilnehmern. Es ist nicht möglich gezielt nach einem Objekt zu suchen. Sie lassen sich einteilen in zentralisierte, reine und hybride \pTp Netzwerke. Zentralisierte Netze haben zur Verwaltung einen Server der unter anderem die Verbindung der Teilnehmer übernimmt. Dadurch ist es möglich eine Verbindung aufzubauen ohne das die IP Adresse im Vorfeld bekannt ist. Reine \pTp Netzwerke haben keinen zentralen Verwaltungsserver. Die Verwaltung des Netzwerkes wird von den Teilnehmern selber übernommen. Das hat zur Folge das eine Verbindung nur möglich ist, wenn die IP Adresse des anderen Teilnehmers bekannt ist. 
-
-Strukturierte \pTp Netzwerke haben eine Zuordnung von Objekt und Teilnehmer. Es ist also möglich gezielt nach einem Objekt zu suchen. Dies wird häufig über verteilte Hash Tabellen, über die mit einem verteilten Index gesucht werden kann, realisiert.
-
-
-Typische wenn auch nicht notwendige Charakteristika sind laut Steinmetz\cite{p2pBook2005}:
-
-\begin{itemize}
-  \item Heteorogenität der Internetbandbreite der Teilnehmer
-  \item Verfügbarkeit und Qualität der Verbindung zwischen Teilnehmern kann nicht vorausgesetzt werden
-  \item Dienste werden von den Teilnehmern angeboten und genutzt
-  \item Die Teilnehmer bilden ein Netz das auf ein bestehendes Netz aufgesetzt wird(Overlay Netzwerk) und stellen Suchfunktionen bereit
-  \item Es besteht eine Autonomie der Teilnehmer bei der Bereitstellung von Ressourcen
-  \item Das System ist selbstorganisiert
-  \item Die restlichen Systeme müssen nicht skaliert werden und bleiben intakt
-\end{itemize}
-
-Reine \pTp \cdn Systeme sind im Kontext von Internet Anwendungen eher selten zu finden. Ein klassischer Anwendungsfall für diese Systeme ist das Filesharing.
 
 
 %
@@ -75,10 +61,36 @@ Reine \pTp \cdn Systeme sind im Kontext von Internet Anwendungen eher selten zu 
 %Alle übrigen Systeme bleiben konstant intakt und nicht skaliert.
 \subsection{Hyrid \cdns}
 Hybrid \cdns kombinieren \pTp \cdns und Infrastuktur basierte \cdns. Bei hybriden \cdns wird zuerst versucht die Resource über das Peer Netzwerk zu laden. Ist dies nicht möglich wird auf ein Infrastruktur basiertes \cdn zurück gegriffen. Dadurch kann die Last auf dem \cdn verringert und durch die Kombination verschiedener \cdns eine bessere Ausfallsicherheit erreicht werden. Häufig kommt diese Art der \cdns zum Einsatz wenn Ressourcen für Websites mit einem \pTp Ansatz verteilt werden sollen. Da in diesem Kontext nicht alle Teilnehmer die technischen Vorraussetzungen mitbringen um an dem \pTp Netzwerk teilzunehmen ist eine entsprechende alternative Lösung nötig. Da die viele Websites bereits mit einem Infrastruktur basierten \cdn arbeiten ist es naheliegend dieses weiter zu verwenden.
+\section{Verteilte Hashtabellen}
+
+\section{\pTp Netzwerke}
+Bei einem \pTp Netzwerk handelt es sich um eine Netzwerk Struktur bei der alle Teilnehmer gleichberechtigt sind. Sie bildet damit das gegen Konzept zur klassischen Client-Server Struktur, bei der einer oder mehrere Server einen Dienst anbieten der von Clients genutzt werden kann. In einem \pTp Netzwerk können die Teilnehmer sowohl Dienste anbieten als auch nutzen. Typische wenn auch nicht notwendige Charakteristika sind laut Steinmetz\cite{p2pBook2005}:
+
+\begin{itemize}
+  \item Heteorogenität der Internetbandbreite der Teilnehmer
+  \item Verfügbarkeit und Qualität der Verbindung zwischen Teilnehmern kann nicht vorausgesetzt werden
+  \item Dienste werden von den Teilnehmern angeboten und genutzt
+  \item Die Teilnehmer bilden ein Netz das auf ein bestehendes Netz aufgesetzt wird(Overlay Netzwerk) und stellen Suchfunktionen bereit
+  \item Es besteht eine Autonomie der Teilnehmer bei der Bereitstellung von Ressourcen
+  \item Das System ist selbstorganisiert
+  \item Die restlichen Systeme müssen nicht skaliert werden und bleiben intakt
+\end{itemize}
+Sie lassen sich einteilen in zentralisierte, reine und hybride \pTp Netzwerke. Zentralisierte Netze haben zur Verwaltung einen Server der unter anderem die Verbindung der Teilnehmer übernimmt. Dadurch ist es möglich eine Verbindung aufzubauen ohne das die IP Adresse im Vorfeld bekannt ist. Reine \pTp Netzwerke haben keinen zentralen Verwaltungsserver. Die Verwaltung des Netzwerkes wird von den Teilnehmern selber übernommen. Das hat zur Folge das eine Verbindung nur möglich ist, wenn die IP Adresse des anderen Teilnehmers bekannt ist. 
+
+Man unterscheidet zwischen unstrukturierten und strukturierten \pTp Netzwerken. 
+
+\subsection{Unstrukturierte \pTp Netzwerke}
+In unstrukturierten \pTp Netzwerken wird keine Zuordnung von Objekten zu Teilnehmern gespeichert. Um ein Objekt zu finden müssen alle Teilnehmer des Netzwerks gefragt werden.(Flooding) Dadurch steigt die Belastung des Netzwerks mit zunehmender Peer Anzahl.
+
+\subsection{Strukturierte \pTp Netzwerke}
+Strukturierte \pTp Netzwerke haben eine Zuordnung von Objekt und Teilnehmer. Es ist also möglich gezielt nach einem Objekt zu suchen. Dies wird häufig über verteilte Hash Tabellen, über die mit einem verteilten Index gesucht werden kann, realisiert.
 
 \section{\webrtc - Web Real-Time Communication}
 
-\webrtc ist ein Framework mit dem Echtzeit Kommunikation zwischen Browser und mobilen Anwendungen ermöglicht wird. Mit Hilfe von \webrtc ist es möglich eine \pTp Verbindung aufzubauen und Daten direkt zwischen den Clients auszutauschen ohne das externe Plugins erforderlich sind. Insbesondere der Austausch von Multimedia Inhalten soll ermöglicht werden. Neben der Unterstützung für video und audio Inhalten gibt es jedoch auch die Möglichkeit Daten auszutauschen. \webrtc ist ein vom W3C\cite{w3Webrtc} standarisierter offener Standart an dem seit Frühjahr 2011 gearbeitet wird. Aktuell wird \webrtc von Chrome, Firefox, Android und iOS unterstützt.\footnote{https://caniuse.com/\#feat=rtcpeerconnection} \webrtc implementiert drei APIs: MediaStream, RTCPeerConnection und RTCDataChannel die im folgenden genauer beschrieben werden.
+\webrtc ist ein offener Standard mit dem Echtzeit Kommunikation zwischen Browser und mobilen Anwendungen ermöglicht wird. Mit Hilfe von \webrtc ist es möglich eine \pTp Verbindung aufzubauen und Daten direkt zwischen den Clients auszutauschen ohne das externe Plugins erforderlich sind. Insbesondere der Austausch von Multimedia Inhalten soll ermöglicht werden. Neben der Unterstützung für video und audio Inhalten gibt es jedoch auch die Möglichkeit Daten auszutauschen. \webrtc wird vom W3C\cite{w3Webrtc} standarisiert und definiert eine Sammlung von APIs und Protokollen. 
+
+
+Aktuell wird \webrtc von Chrome, Firefox, Android und iOS unterstützt.\footnote{https://caniuse.com/\#feat=rtcpeerconnection} \webrtc implementiert drei APIs: MediaStream, RTCPeerConnection und RTCDataChannel die im folgenden genauer beschrieben werden.
 
 % SSl erwähnen
 % Server wird durch pTp gespart 
@@ -110,7 +122,14 @@ Hybrid \cdns kombinieren \pTp \cdns und Infrastuktur basierte \cdns. Bei hybride
 Die Mediastream api, auch getUserMedia, ermöglicht es Echtzeit Daten wie audio oder Video aufzunehmen, anzuzeigen und an andere Clients weiter zu leiten und repräsentiert Medien Streams wie z.b. Audio oder Video Streams. Sie ermöglicht unter anderem den Zugriff auf Video Kameras und Mikrofone. Durch Sie ist es möglich auf die Hardwareunterstützung für Videos mittels open GL zuzugreifen. MediaStreams lassen sich mithilfe des src Attributes von HTML 5 video Elementen in das DOM einbinden. MediaStreams wurden von vom W3C in einem eigenen Standart definiert.\cite{w3MediaStream} 
 
 \subsection{Singaling}
-
+- koordiniert kommunikation
+- Verbindungsaufbau
+	- Session Kontroll aufbau/schließen von Verbindungen
+	- Error Messages
+	- key data for secure kommunikation
+	- Network data (IP adresse etc)
+	- bidirektional kanal nötig
+	- nicht teil des Standards um kompatibel mit existierender Technologie zu sein
 %https://www.html5rocks.com/en/tutorials/webrtc/infrastructure/#what-is-signaling
 
 % For signaling: to enable the exchange of media and network metadata to bootstrap a peer connection.
@@ -207,4 +226,7 @@ RFC6455\cite{rfcWebsockets}
 
 
 \section{Distributed caches}
+\section{IP 34Ranges}
+
+
 
