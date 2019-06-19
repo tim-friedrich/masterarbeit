@@ -7,10 +7,13 @@ Statische Ressourcen sind Inhalte einer Website die für alle Nutzer gleich sind
 
 \subsection{Dynamisch generierte Ressourcen}
 \begin{itemize}
+	\item Nutzer generierter content
+	\item Nutzer spezifischer inhalt
 	\item 
 \end{itemize}
 
 \section{\cdn}
+\todo{Detailierter komponenten Beschreiben plus grafik. Siehe CDN Paper}
 Unter einem \cdn, auch Content Delivery Network versteht man ein Netzwerk in dem sich Clients Inhalte von einer Reihe von Knoten laden. Ein \cdn stellt dem Nutzer Auslieferungs und Speicherkapazitäten zur Verfügung. Dadurch kann die Last auf dem Ursprungsserver und die Latenz auf Seiten der Nutzer reduziert werden. Die reduzierten Ladezeiten werden unter anderem durch eine bessere geographische Nähe und damit geringerer Netzlaufzeiten erreicht. %TODO: gute definition finden
 
 Es lassen sich drei Klassen von \cdns unterscheiden. Infrastuktur basierte CDN die auf einer geografisch verteilten Server Infrastruktur basieren, \pTp basierte \cdns bei denen die Inhalte direkt zwischen den Teilnehmern verteilt werden und Hybride \cdns die aus einer Kombination aus Server Infrastruktur und \pTp Verteilung beruhen.
@@ -87,10 +90,17 @@ Strukturierte \pTp Netzwerke haben eine Zuordnung von Objekt und Teilnehmer. Es 
 
 \section{\webrtc - Web Real-Time Communication}
 
-\webrtc ist ein offener Standard mit dem Echtzeit Kommunikation zwischen Browser und mobilen Anwendungen ermöglicht wird. Mit Hilfe von \webrtc ist es möglich eine \pTp Verbindung aufzubauen und Daten direkt zwischen den Clients auszutauschen ohne das externe Plugins erforderlich sind. Insbesondere der Austausch von Multimedia Inhalten soll ermöglicht werden. Neben der Unterstützung für video und audio Inhalten gibt es jedoch auch die Möglichkeit Daten auszutauschen. \webrtc wird vom W3C\cite{w3Webrtc} standarisiert und definiert eine Sammlung von APIs und Protokollen. 
+\webrtc ist ein offener Standard mit dem Echtzeit Kommunikation zwischen Browser und mobilen Anwendungen ermöglicht wird. Mit Hilfe von \webrtc ist es möglich eine \pTp Verbindung aufzubauen und Daten direkt zwischen den Clients auszutauschen ohne das externe Plugins erforderlich sind. Insbesondere der Austausch von Multimedia Inhalten soll ermöglicht werden. Neben der Unterstützung für Video und Audio Inhalten gibt es jedoch auch die Möglichkeit Daten auszutauschen. \webrtc wird vom W3C\cite{w3Webrtc} standarisiert und definiert eine Sammlung von APIs und Protokollen. 
 
 
 Aktuell wird \webrtc von Chrome, Firefox, Android und iOS unterstützt.\footnote{https://caniuse.com/\#feat=rtcpeerconnection} \webrtc implementiert drei APIs: MediaStream, RTCPeerConnection und RTCDataChannel die im folgenden genauer beschrieben werden.
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.8\textwidth]{figures/Webrtc_overview}
+	\caption[A Figure Short-Title]{Überblick Server/Client Struktur Webrtc}
+	\label{fig:swLifecycle}
+\end{figure}
 
 % SSl erwähnen
 % Server wird durch pTp gespart 
@@ -104,10 +114,30 @@ Aktuell wird \webrtc von Chrome, Firefox, Android und iOS unterstützt.\footnote
 
 \subsection{RTCPeerConnection}
 
+\begin{itemize}
+	\item Representiert verbindung zum peer
+	\item Code beispiel
+\end{itemize}
 % RTCPeerConnection is used to connect peers across the internet.
 
 \subsection{RTCDataChannel}
 
+\begin{itemize}
+	\item Übertragung von raw data (Bitstreams)
+	\item string, blob, arraybuffer, ArrayBufferView
+	\item Übertragung mit Stream Control Transmission Protocol (SCTP)
+	\item kurze erklärung SCTP
+	\item 	Verbindungsorientiertes Netzwerkprotololl
+	\item 	 RFC 4960
+	\item 	Das zuständige Gremium bei der IETF ist die Arbeitsgruppe Signaling Transport, kurz SIGTRAN.xX
+	\item 	Selbe stufe als Transportprokoll im stack wie TCP/UDP
+	\item 	Konzept der Association: 
+	\item 		mehrere Nachrichten-Datenströme in sich reihenfolgenerhaltend
+	\item 		zwischen den Datenströmen muss die Reihenfolge nicht erhalten bleiben
+	\item 	Multistreaming - Ein host mehere Ips
+	\item 	Vier wege Handschake
+	\item 		Hierbei speichert der Server bei einer Verbindungsanfrage (INIT-Paket) keine Zustandsinformationen, sondern schickt diese in Form eines Cookies (INIT-ACK-Paket) an den Client. Der Client muss dieses Cookie in seine Antwort (COOKIE-ECHO-Paket) einfügen und wird damit vom Server als zum Verbindungsaufbau berechtigt erkannt, was dieser ihm bestätigt (COOKIE-ACK-Paket)x
+\end{itemize}
 % Übertragung von allem was nicht audio oder video ist. zb. text von chats
 % support für string, blob, arraybuffer, ArrayBufferView
 
@@ -122,22 +152,57 @@ Aktuell wird \webrtc von Chrome, Firefox, Android und iOS unterstützt.\footnote
 Die Mediastream api, auch getUserMedia, ermöglicht es Echtzeit Daten wie audio oder Video aufzunehmen, anzuzeigen und an andere Clients weiter zu leiten und repräsentiert Medien Streams wie z.b. Audio oder Video Streams. Sie ermöglicht unter anderem den Zugriff auf Video Kameras und Mikrofone. Durch Sie ist es möglich auf die Hardwareunterstützung für Videos mittels open GL zuzugreifen. MediaStreams lassen sich mithilfe des src Attributes von HTML 5 video Elementen in das DOM einbinden. MediaStreams wurden von vom W3C in einem eigenen Standart definiert.\cite{w3MediaStream} 
 
 \subsection{Singaling}
-- koordiniert kommunikation
-- Verbindungsaufbau
-	- Session Kontroll aufbau/schließen von Verbindungen
-	- Error Messages
-	- key data for secure kommunikation
-	- Network data (IP adresse etc)
-	- bidirektional kanal nötig
-	- nicht teil des Standards um kompatibel mit existierender Technologie zu sein
+Das Signaling koordiniert die Kommunikation der Verbindungen zwischen Peers. Mit Hilfe des Signalings werden unter anderem die Metadaten ausgetauscht, die benötigt werden, um eine erfolgreiche WebRtc Verbindung aufzubauen. Unter anderem sind das:
+\begin{itemize}
+	\item Session Metadaten zum öffnen/schließen von Verbindungen
+	\item Fehler Nachrichten
+	\item Metadaten über die zu übertragenden Medien (z.b. Codecs)
+	\item Schlüsseldaten für verschlüsselte Verbindungen
+	\item Netzwerk Daten wie öffentliche IP Adressen und Ports
+\end{itemize} 
+
+Der Webrtc Standart legt keine für das Signaling zu verwendende Technologie und Protokolle fest um die integration mit bestehenden Technologien zu verbessern und es dem Entwicklern zu ermöglichen das für den Anwendungsfall beste Protokoll zu verwenden. Um Signaling zu ermöglichen ist ein bidirektionaler Kommunikationskanal zwischen client und server notwendig, was Websockets zu einem beliebten Kandidaten macht um das Signaling zu implementieren
+
+%\begin{itemize}
+%	\item koordiniert kommunikation
+%	\item Verbindungsaufbau
+%	\item Session Kontroll aufbau/schließen von Verbindungen
+%	\item Error Messages
+%	\item key data for secure kommunikation
+%	\item Network data (IP adresse etc)
+%	\item bidirektional kanal nötig
+%	\item nicht teil des Standards um kompatibel mit existierender Technologie zu sein
+%\end{itemize}
+
 %https://www.html5rocks.com/en/tutorials/webrtc/infrastructure/#what-is-signaling
 
 % For signaling: to enable the exchange of media and network metadata to bootstrap a peer connection.
 
 \subsection{SDP}
 
+\begin{itemize}
+	\item Session Description Protocol (SDP, RFC 4566) 
+	\item beschreibt eigenschaften von Eigenschaften von Multimediadatenströmen
+	\item verwaltet kommunikationssitzungen z.b. SIP(IP-telefonie)
+	\item keine aushandlungsmechaniken sondern nur beschreibungen der Datenströme
+	\item v=0
+o=Alice 1234 1234 IN IP4 host.provider1.com
+s=Video von 987654
+c=IN IP4 host.provider2.com
+t=0 0
+m=audio 20000 RTP/AVP 97
+a=rtpmap:97 iLBC/8000
+a=fmtp:97 mode=30
+m=video 20001 RTP/AVP 31
+a=rtpmap:31 H261/90000
+	\item daten aus eigener anwendung einfügen
+	\item Felder beschreiben? zumindest die wichtigesten/verwendeten
+\end{itemize}
 \subsection{TURN Server}
-% TURN servers (if direct connection fails and data relaying is required).
+
+Verwaltete Netzwerke, wie die von Unternehmen, haben häufig Firewalls und Port blocking Systeme installiert um die Sicherheit des Netzwerks zu gewährleisten. Das kann dazu führen das \webrtc Verbindungen nicht aufgebaut oder daten nicht über Webrtc Verbindungen übertragen werden können.
+
+TURN Server bieten eine Fallback Lösung für diesen Fall. Sie haben eine öffentliche IP und sind über das Internet erreichbar. Im Fehlerfall kann der Datenverkehr über einen TURN Server geleitet werden, so das die Kommunikation nicht unterbrochen wird.
 
 \subsection{STUN Server - Simple Traversal of User Datagram Protocol [UDP] Through Network Address Translators}
 
@@ -155,6 +220,12 @@ Da die Anzahl von IPv4 Adressen begrenzt ist, verwenden die meisten Subnetze NAT
 
 \subsection{ICE}
 
+\begin{itemize}
+	\item Methode zur überwindung von NAT
+	\item Interactive Connectivity Establishment
+	\item https://tools.ietf.org/html/rfc5245
+	\item 
+\end{itemize}
 %setting: 2 peers, signaling server, STUN server
 %each peer has a variety of candidate transport addresses (IP:port) 
 %addresses from directly attached network (host candidate)
@@ -162,7 +233,13 @@ Da die Anzahl von IPv4 Adressen begrenzt ist, verwenden die meisten Subnetze NAT
 %ICE determine  which pairs of addresses work and which connection should be used
 %try all possible pairs in smart order
 
-\section{DataCache}
+\section{DataCache API}
+
+Die Datacache API ermöglicht es Netzwerk Requests zu cachen. Ursprünglich wurde die Api entwickelt um Serivce Workern die Möglichkeit zu geben einen Cache anzulegen und selbst zu verwalten. Dadurch ist es möglich mithilfe von Service Workern und der DataCache Api Websiten auch verfügbar zu machen wenn kein internet verfügbar ist. 
+
+\begin{itemize}
+	\item https://developers.google.com/web/fundamentals/instant-and-offline/web-storage/cache-api
+\end{itemize}
 
 % https://www.w3.org/TR/DataCache/
 
@@ -226,10 +303,30 @@ RFC6455\cite{rfcWebsockets}
 
 
 \section{Distributed caches}
-\section{IP Ranges}
+\section{IP Adressen}
+\subsection{Aufbau von IP Adressen}
+\subsection{Network Adress Translation(NAT)}
 \begin{itemize}
 	\item 
 \end{itemize}
 
+\section{Ruby on Rails}
+\begin{itemize}
+	\item Framework
+	\item Wie detailiert???
+	\item dogams etc
+	\item Backround Jobs
+\end{itemize}
+
+\section{Redis}
+\begin{itemize}
+	\item In memory Datenbank
+	\item Key Value Store mit Datentypen
+	\item Verwendete Datentypen vorstellen
+	\item set
+	\item counter
+	\item key value
+	\item list
+\end{itemize}
 
 

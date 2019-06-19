@@ -30,11 +30,15 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {3}\spacedlowsmallcaps {Grundlagen}}{5}{chapter.3}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.1}Statische Ressourcen}{5}{section.3.1}% 
+\contentsline {section}{\numberline {3.1}Ressourcen}{5}{section.3.1}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.1.1}Statische Ressourcen}{5}{subsection.3.1.1}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.1.2}Dynamisch generierte Ressourcen}{5}{subsection.3.1.2}% 
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {3.2}CDN\xspace }{5}{section.3.2}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.1}Infrastruktur basierte CDNs\xspace }{5}{subsection.3.2.1}% 
+\contentsline {subsection}{\numberline {3.2.1}Infrastruktur basierte CDNs\xspace }{6}{subsection.3.2.1}% 
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.2.2}Peer To Peer\xspace basierte CDNs\xspace }{6}{subsection.3.2.2}% 
 \defcounter {refsection}{0}\relax 
@@ -48,143 +52,163 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.4.2}Strukturierte Peer To Peer\xspace Netzwerke}{7}{subsection.3.4.2}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.5}Webrtc\xspace - Web Real-Time Communication}{7}{section.3.5}% 
+\contentsline {section}{\numberline {3.5}Webrtc\xspace - Web Real-Time Communication}{8}{section.3.5}% 
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.5.1}RTCPeerConnection}{8}{subsection.3.5.1}% 
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.5.2}RTCDataChannel}{8}{subsection.3.5.2}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.5.3}MediaStream}{8}{subsection.3.5.3}% 
+\contentsline {subsection}{\numberline {3.5.3}MediaStream}{9}{subsection.3.5.3}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.5.4}Singaling}{8}{subsection.3.5.4}% 
+\contentsline {subsection}{\numberline {3.5.4}Singaling}{9}{subsection.3.5.4}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.5.5}SDP}{8}{subsection.3.5.5}% 
+\contentsline {subsection}{\numberline {3.5.5}SDP}{10}{subsection.3.5.5}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.5.6}TURN Server}{8}{subsection.3.5.6}% 
+\contentsline {subsection}{\numberline {3.5.6}TURN Server}{10}{subsection.3.5.6}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.5.7}STUN Server - Simple Traversal of User Datagram Protocol [UDP] Through Network Address Translators}{8}{subsection.3.5.7}% 
+\contentsline {subsection}{\numberline {3.5.7}STUN Server - Simple Traversal of User Datagram Protocol [UDP] Through Network Address Translators}{11}{subsection.3.5.7}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.5.8}ICE}{9}{subsection.3.5.8}% 
+\contentsline {subsection}{\numberline {3.5.8}ICE}{11}{subsection.3.5.8}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.6}DataCache}{9}{section.3.6}% 
+\contentsline {section}{\numberline {3.6}DataCache API}{11}{section.3.6}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.7}IndexedDB}{9}{section.3.7}% 
+\contentsline {section}{\numberline {3.7}IndexedDB}{11}{section.3.7}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.8}Service Worker}{9}{section.3.8}% 
+\contentsline {section}{\numberline {3.8}Service Worker}{12}{section.3.8}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.8.1}Lebenszyklus}{9}{subsection.3.8.1}% 
+\contentsline {subsection}{\numberline {3.8.1}Lebenszyklus}{12}{subsection.3.8.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.9}Websockets}{10}{section.3.9}% 
+\contentsline {section}{\numberline {3.9}Websockets}{13}{section.3.9}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.10}Distributed caches}{11}{section.3.10}% 
+\contentsline {section}{\numberline {3.10}Distributed caches}{13}{section.3.10}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.11}IP 34Ranges}{11}{section.3.11}% 
+\contentsline {section}{\numberline {3.11}IP Adressen}{13}{section.3.11}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {4}\spacedlowsmallcaps {Konzept}}{12}{chapter.4}% 
+\contentsline {subsection}{\numberline {3.11.1}Aufbau von IP Adressen}{13}{subsection.3.11.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.1}Netzwerk Strukturen}{13}{section.4.1}% 
+\contentsline {subsection}{\numberline {3.11.2}Network Adress Translation(NAT)}{13}{subsection.3.11.2}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.1.1}Schul-Cloud\xspace }{13}{subsection.4.1.1}% 
+\contentsline {section}{\numberline {3.12}Ruby on Rails}{13}{section.3.12}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.1.2}Slidesync}{14}{subsection.4.1.2}% 
+\contentsline {section}{\numberline {3.13}Redis}{13}{section.3.13}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.1.3}Gemeinsamkeiten}{14}{subsection.4.1.3}% 
+\contentsline {chapter}{\numberline {4}\spacedlowsmallcaps {Konzept}}{15}{chapter.4}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.2}Architektur}{14}{section.4.2}% 
+\contentsline {section}{\numberline {4.1}Netzwerk Strukturen}{16}{section.4.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.3}Mesh Zuordnung - Verbinden von Peers}{15}{section.4.3}% 
+\contentsline {subsection}{\numberline {4.1.1}Schul-Cloud\xspace }{16}{subsection.4.1.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.3.1}Routing}{15}{subsection.4.3.1}% 
+\contentsline {subsection}{\numberline {4.1.2}Slidesync}{17}{subsection.4.1.2}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {4.3.1.1}Chord}{15}{subsubsection.4.3.1.1}% 
+\contentsline {subsection}{\numberline {4.1.3}Gemeinsamkeiten}{17}{subsection.4.1.3}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {4.3.1.2}Kademlia}{15}{subsubsection.4.3.1.2}% 
+\contentsline {section}{\numberline {4.2}Architektur}{17}{section.4.2}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {4.3.1.3}IPFS}{15}{subsubsection.4.3.1.3}% 
+\contentsline {section}{\numberline {4.3}Mesh Zuordnung - Verbinden von Peers}{18}{section.4.3}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {4.3.1.4}Kelips}{15}{subsubsection.4.3.1.4}% 
+\contentsline {subsection}{\numberline {4.3.1}Routing}{18}{subsection.4.3.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {4.3.1.5}Pastry}{15}{subsubsection.4.3.1.5}% 
+\contentsline {subsubsection}{\numberline {4.3.1.1}Chord}{19}{subsubsection.4.3.1.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.3.2}Schul-Cloud\xspace }{15}{subsection.4.3.2}% 
+\contentsline {subsubsection}{\numberline {4.3.1.2}Kademlia}{19}{subsubsection.4.3.1.2}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.3.3}Slidesync}{16}{subsection.4.3.3}% 
+\contentsline {subsubsection}{\numberline {4.3.1.3}IPFS}{19}{subsubsection.4.3.1.3}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.4}Routing - finden von Ressourcen}{16}{section.4.4}% 
+\contentsline {subsubsection}{\numberline {4.3.1.4}Kelips}{19}{subsubsection.4.3.1.4}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.4.1} Updates }{17}{subsection.4.4.1}% 
+\contentsline {subsubsection}{\numberline {4.3.1.5}Pastry}{19}{subsubsection.4.3.1.5}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.4.2}Subnetzerkennung}{17}{subsection.4.4.2}% 
+\contentsline {subsection}{\numberline {4.3.2}Schul-Cloud\xspace }{19}{subsection.4.3.2}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.4.3} Struktur von IP Adressen}{17}{subsection.4.4.3}% 
+\contentsline {subsection}{\numberline {4.3.3}Slidesync}{19}{subsection.4.3.3}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.5}Wiederverwendbarkeit}{17}{section.4.5}% 
+\contentsline {section}{\numberline {4.4}Routing - finden von Ressourcen}{20}{section.4.4}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.6}Open Source}{17}{section.4.6}% 
+\contentsline {subsection}{\numberline {4.4.1} Updates }{21}{subsection.4.4.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {5}\spacedlowsmallcaps {Implementierung}}{18}{chapter.5}% 
+\contentsline {subsection}{\numberline {4.4.2}Subnetzerkennung}{21}{subsection.4.4.2}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.1}Architectur}{18}{section.5.1}% 
+\contentsline {subsection}{\numberline {4.4.3} Struktur von IP Adressen}{21}{subsection.4.4.3}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.1.1}Service worker}{18}{subsection.5.1.1}% 
+\contentsline {section}{\numberline {4.5}Wiederverwendbarkeit}{21}{section.4.5}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.1.2}Tests}{18}{subsection.5.1.2}% 
+\contentsline {section}{\numberline {4.6}Open Source}{21}{section.4.6}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.2}Ressourcen Management}{19}{section.5.2}% 
+\contentsline {section}{\numberline {4.7}Offline Support}{21}{section.4.7}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.3}Configuration}{19}{section.5.3}% 
+\contentsline {section}{\numberline {4.8}Security}{22}{section.4.8}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.3.1}Update Protokoll}{19}{subsection.5.3.1}% 
+\contentsline {chapter}{\numberline {5}\spacedlowsmallcaps {Implementierung}}{24}{chapter.5}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.3.2}Quota limits - L\IeC {\"o}schen von Requests aus dem Cache}{19}{subsection.5.3.2}% 
+\contentsline {section}{\numberline {5.1}Architectur}{24}{section.5.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.4}Signaling Server}{19}{section.5.4}% 
+\contentsline {subsection}{\numberline {5.1.1}Service worker}{25}{subsection.5.1.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.5}Message protocol}{20}{section.5.5}% 
+\contentsline {subsection}{\numberline {5.1.2}Tests}{26}{subsection.5.1.2}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.5.1}hash updates}{20}{subsection.5.5.1}% 
+\contentsline {section}{\numberline {5.2}Ressourcen Management}{26}{section.5.2}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.6}Data serialization}{20}{section.5.6}% 
+\contentsline {section}{\numberline {5.3}Configuration}{26}{section.5.3}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.7}Mesh Zuordnung}{21}{section.5.7}% 
+\contentsline {subsection}{\numberline {5.3.1}Quota limits - L\IeC {\"o}schen von Requests aus dem Cache}{27}{subsection.5.3.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.8}Reusability}{21}{section.5.8}% 
+\contentsline {section}{\numberline {5.4}Client UI Events}{27}{section.5.4}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.9}System Test}{21}{section.5.9}% 
+\contentsline {section}{\numberline {5.5}Signaling Server}{27}{section.5.5}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.10}Storage quotas}{21}{section.5.10}% 
+\contentsline {subsection}{\numberline {5.5.1}Slidesync}{28}{subsection.5.5.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.11}Resource loading}{22}{section.5.11}% 
+\contentsline {subsection}{\numberline {5.5.2}Schul-Cloud\xspace }{28}{subsection.5.5.2}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {6}\spacedlowsmallcaps {Evaluation}}{23}{chapter.6}% 
+\contentsline {section}{\numberline {5.6}Message protocol}{28}{section.5.6}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.1}Prequisites}{23}{section.6.1}% 
+\contentsline {subsection}{\numberline {5.6.1}Updates}{28}{subsection.5.6.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.2}Techincal evaluation}{23}{section.6.2}% 
+\contentsline {subsection}{\numberline {5.6.2}Client fragt Ressource an}{29}{subsection.5.6.2}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.2.1}Bandwidth}{23}{subsection.6.2.1}% 
+\contentsline {section}{\numberline {5.7}Mesh Zuordnung}{29}{section.5.7}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {6.2.1.1}Simulierter Workload}{23}{subsubsection.6.2.1.1}% 
+\contentsline {section}{\numberline {5.8}Reusability}{29}{section.5.8}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {6.2.1.2}Educational context}{23}{subsubsection.6.2.1.2}% 
+\contentsline {section}{\numberline {5.9}Serialisierung der Daten}{29}{section.5.9}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {6.2.1.3}Live streaming in the coporate context}{23}{subsubsection.6.2.1.3}% 
+\contentsline {section}{\numberline {5.10}System Test}{30}{section.5.10}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.2.2}Nutzerzufriedenheit}{23}{subsection.6.2.2}% 
+\contentsline {section}{\numberline {5.11}Erfassen von Statistiken}{30}{section.5.11}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.3}Browser compatbility}{23}{section.6.3}% 
+\contentsline {section}{\numberline {5.12}Storage quotas}{30}{section.5.12}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.3.1}Browser Usage in coropate networks}{23}{subsection.6.3.1}% 
+\contentsline {section}{\numberline {5.13}Resource loading}{32}{section.5.13}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.3.2}Browser usage in eduational networks}{23}{subsection.6.3.2}% 
+\contentsline {chapter}{\numberline {6}\spacedlowsmallcaps {Evaluation}}{33}{chapter.6}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.4}Security considerations}{23}{section.6.4}% 
+\contentsline {section}{\numberline {6.1}Prequisites}{33}{section.6.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.5}DRM licencing}{23}{section.6.5}% 
+\contentsline {section}{\numberline {6.2}Techincal evaluation}{33}{section.6.2}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {7}\spacedlowsmallcaps {Conclusion}}{24}{chapter.7}% 
+\contentsline {subsection}{\numberline {6.2.1}Bandwidth}{33}{subsection.6.2.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {A}\spacedlowsmallcaps {An Appendix}}{25}{appendix.A}% 
+\contentsline {subsubsection}{\numberline {6.2.1.1}Simulierter Workload}{33}{subsubsection.6.2.1.1}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {6.2.1.2}Educational context}{33}{subsubsection.6.2.1.2}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {6.2.1.3}Live streaming in the coporate context}{33}{subsubsection.6.2.1.3}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.2.2}Nutzerzufriedenheit}{33}{subsection.6.2.2}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6.3}Browser compatbility}{33}{section.6.3}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.3.1}Browser Usage in coropate networks}{34}{subsection.6.3.1}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.3.2}Browser usage in eduational networks}{34}{subsection.6.3.2}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6.4}Security considerations}{34}{section.6.4}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6.5}DRM licencing}{34}{section.6.5}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {7}\spacedlowsmallcaps {Conclusion}}{35}{chapter.7}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {A}\spacedlowsmallcaps {An Appendix}}{36}{appendix.A}% 
 \defcounter {refsection}{0}\relax 
 \vspace {\beforebibskip }
 \defcounter {refsection}{0}\relax 

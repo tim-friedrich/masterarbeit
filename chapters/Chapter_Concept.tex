@@ -73,6 +73,17 @@ Die Verteilung der Clients auf Netzwerke kann sich bei Slidesync von Event zu Ev
 
 \begin{itemize}
 	\item Browser based without plugin
+	\item einfache einbindung
+	\item Server architektur diagram --> Server, Stun, CDN, P2P CDN
+	\item Discussion verschiedener Request interception techniken
+	\item Special Tags
+	\item http interceptor
+	\item 	only ajax calls
+	\item 	erst wenn seite komplett geladen
+	\item Browser Plugins
+	\item 	https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Intercept_HTTP_requests
+	\item evtl coporate cdn erwähnen
+	\item extra software auf client
 	\item Service Worker -- > WEBRTC
 	\item Script für execution
 	\item Webrtc - Datachannel
@@ -105,25 +116,32 @@ Im Folgenden werden verschiedene Zuordnungsstragien zur Bildung von Peer Meshes 
 
 - Vergleich von Meshing verfahren/peer routing aus literatur
 \subsection{Routing}
--Datenstruktur
-- Dezentralisierte Datenspeicherung
-- Daten werden über SPeicherknoten verteilt
-- Jeder Knoten eintrag in Hashtabelle
-- direct storage: Daten in Hashtabelle
-	- nur für kleine Daten
-- indirect storage: Verweis auf daten in Hashtabelle
+Im Folgenden werden verschiedene Routing \pTp Routing Algorithmen aus der Literatur vorgestellt und diskutiert welcher Ansatz für die betrachteten Anwendungsfälle am geeignetsten ist.
 
-Eigenschaften:
+\begin{itemize}
+	\item Datenstruktur
+	\item  Dezentralisierte Datenspeicherung
+	\item Daten werden über SPeicherknoten verteilt
+	\item Jeder Knoten eintrag in Hashtabelle
+	\item direct storage: Daten in Hashtabelle
+	\item nur für kleine Daten
+	\item indirect storage: Verweis auf daten in Hashtabelle
+	\item Eigenschaften:
 Fehlertoleranz
 Lastenverteilung
 Robustheit
 Selbstorganisation
 Skalierbarkeit
-
-
-consistent hashing
-- Server zum routen
+	\item consistent hashing
+	\item Server zum routen
 https://www.coralcdn.org/pubs/
+\end{itemize}
+
+
+
+
+
+
 \subsubsection{Chord}
 
 How to save files in advance???
@@ -135,6 +153,10 @@ save file references
 \subsection{\schulCloud}
 Analyse workload mit grafik
 
+\begin{itemize}
+	\item Schulcloud
+	\item 	
+\end{itemize}
 Schulcloud
 - Global
 einfache umsetzung
@@ -186,7 +208,9 @@ Abbildung \ref{fig:mesh-slidesync} zeigt eine beispielhafte Aufteilung von Peer 
 	\label{fig:mesh-slidesync}
 \end{figure}
 
-
+\begin{itemize}
+	\item Ip Subnetzerkennung
+\end{itemize}
 %Analyse workload
 %
 %Live Streaming
@@ -211,7 +235,7 @@ Structured vs untructured
 
 Da das Routing von Ressourcen bei den Betrachteten Anwendungsfällen in einem Zeitkritischen Moment erfolgen muss wurde sich für einen anderen Ansatz entschieden. Jeder Peer hält eine Hashtabelle mit den Ressourcen seiner Peers vor. Fügt ein Peer eine neue Ressource zu seinem Cache hinzu oder entfernt sie muss er alle verbundenen Peers über diese Änderung informieren. Dadurch muss im Falle einer Anfrage nicht erst die Ressource im Netzwerk gesucht werden. Dies ist möglich durch die Struktur des Netzwerkes. Da nicht alle Peers miteinander verbunden sind sondern voll vermaschte sub-meshes gebildet werden ist es möglich alle relevanten Peers über Änderungen zu informieren. Dadurch ist es möglich die Rechenleistung für das auffinden von Ressourcen in einen weniger Zeitkritischen Moment zu verlagern. Jedoch hat dies zur Folge das die Meshes so gebildet werden müssen das die Peers möglichst viele Ressourcen gemeinsam benötigen. Ist eine Ressource nicht im Mesh vorhanden kann sie vom Server geladen werden. 
 
-
+\todo{Duplicate}
 %Structured vs unstructured networks
 %
 %Kollaborative File Sharing Protokolle wie z.B. Bitorrent verwenden häufig verteilte Hashtabellen zum auffinden von Ressourcen im Netzwerk. 
@@ -233,6 +257,15 @@ Da das Routing von Ressourcen bei den Betrachteten Anwendungsfällen in einem Ze
 % am Anfang wird die zuordnung von einem peer an den neuen geschickt
 
 \subsection{ Updates }
+
+\begin{itemize}
+	\item Diagramm
+	\item Client lädt ressource 
+	\item Client cached Resource
+	\item Sendet nachricht an peers das Resource gecached wurde und verfügbar ist
+	\item Clients speicher Client Resource hash in Hashmap
+
+\end{itemize}
 \subsection{Subnetzerkennung}
 \subsection{ Struktur von IP Adressen}
 eher Konzept
@@ -246,6 +279,69 @@ eher Konzept
 %support von eigenen oder öffentlichen stun servern
 %%Plug and play
 \section{Open Source}
+\begin{itemize}
+	\item evtl. Open source erklären
+	\item bereitstellung für die öffentlichkeit
+	\item Welche Lizenz?
+\end{itemize}
 %was ist open source
 %bereitstellung für die öffentlichkeit
 %
+
+\section{Offline Support}
+\begin{itemize}
+	\item Motivation: Internet in Schulen ist nicht immer verfügbar
+	\item Live Streams: Ausfallsicherheit wird erhöht.
+	\item quasi bei design
+	\item Resourcen werden gecached und sind offline verfügbar
+	\item Tobias arbeit Refernzieren
+	\item Übertragung im lokalen Netzwerk möglich wenn verbindung aufgebaut ist
+	\item Signaling müsste in lokalem netzwerk sein z.b. Rechner vom Lehrer
+	\item 	evt. browser plugin
+	\item 	Wie das routing machen?
+	\item Offline scenario:
+	\item 	Lehrer Lädt ressourcen vor und macht sie für schüler verfügbar
+	\item 	Kein Internet vorhanden
+	\item 	Schüler laden Ressourcen von Lehrer
+\end{itemize}
+
+\section{Security}
+
+\begin{itemize}
+	\item IP Leak möglich
+	\item Stun Server kann nach IP Adresse fragen
+	\item Über js auslesbar
+	\item Pluckins können das blocken
+	\item media.peerconnection.enabled ausschalten
+	\item --> kein webrtc mehr möglich
+	\item 
+	\item Datenintegrität integrity
+	\item Integrität des kommunikationspartners confidentiality
+	\item 	--vertrauensumgebung??
+	\item availability
+	\item durch hybrid cdn 
+	\item fallback lösung
+	\item authenticity
+	\item kann durch authority gelöst werden
+	\item non repudiation
+	\item accountability
+	\item kann mit Statistiken getrackt werden
+	\item 
+	\item Datachannel ist verschlüsselt
+	\item https notwendig
+	\item websocket ist verschlüsselt
+
+\end{itemize}
+
+% Wikipedia: (https://de.wikipedia.org/wiki/WebRTC)
+%P-Leak
+%In Verbindung mit WebRTC können private IP-Adressen trotz VPN-Verbindung über JavaScript ausgelesen werden.[19] Das Beispiel Firefox Hello schließt Rechner hinter einer Firewall und mit privaten IP-Adressen aus. Deshalb kann eine Website mit JavaScript einen STUN-Server nach der tatsächlichen IP-Adresse fragen lassen. Dies hat zur Folge, dass Anonymisierungsdienste ihren Zweck nicht mehr erfüllen und keinen Schutz mehr vor einem IP-Leak bieten können.
+%
+%Gegenmaßnahmen
+%Zum Schutz vor einem IP-Leak bieten sich zwei Vorgehensweisen an. Eine Option bietet die Installation von Add-Ons/Plugins zur Verhinderung der Weitergabe der öffentlichen IP-Adresse, beispielsweise "WebRTC Leak Prevent"[20] oder "Easy WebRTC Block".[21][22]
+%
+%Die andere Möglichkeit ist eine Änderung der Einstellungen im Browser. Im Firefox kann über about:config der Wert media.peerconnection.enabled auf false gesetzt werden, wodurch ein IP-Leak verhindert wird.[23]
+%
+%Die gemeinhin als Werbeblocker bekannte plattformübergreifende Browser-Erweiterung uBlock Origin zum Filtern von Webinhalten bietet in ihren Einstellungen im Abschnitt "Privatsphäre" die zuschaltbare Möglichkeit, die Freigabe der lokalen IP-Adresse via WebRTC zu verhindern.
+
+
