@@ -6,11 +6,10 @@
 Statische Ressourcen sind Inhalte einer Website die für alle Nutzer gleich sind. Sie sind im Gegensatz zu dynamischen Inhalten nicht nutzerspezifisch und können daher gut über ein CDN verteilt werden. Insbesondere die so genannten Assets einer Internetseite sind meist statisch. Dies sind meist Javascript, CSS aber auch Bild Dateien. Auch Videos fallen häufig in diese Kategorie.
 
 \subsection{Dynamisch generierte Ressourcen}
-\begin{itemize}
-	\item Nutzer generierter content
-	\item Nutzer spezifischer inhalt
-	\item 
-\end{itemize}
+
+Dynamisch generierte Ressourcen werden zur läufzeit der Website erzeugt und werden nicht im Vorfeld festgelegt. Dabei lässt sich zwischen Nutzergenerierten Inhalten und automatisch generierten Inhalten, z.b. Statistiken, unterscheiden.
+
+Dynamische Inhalte sowohl Nutzer spezifisch sein, in diesem Fall werden jedem Nutzer bei selber abfrage andere Inhalte angezeigt.
 
 \section{\cdn}
 \todo{Detailierter komponenten Beschreiben plus grafik. Siehe CDN Paper}
@@ -291,7 +290,7 @@ Neben dem unverschlüsseltem URI-Schema ws definiert RFC6455\cite{rfcWebsockets}
 %
 % zwei neue URI-Schemata, ws: für unverschlüsselte, und wss: für verschlüsselte Verbindungen.
 % 
-%handshake zur initierung der verbindung
+% handshake zur initierung der verbindung
 %  wie http über port 80
 %  ähnlicher header --> abwärtskompatibel
 %  server antwortet mit http status 101
@@ -301,32 +300,74 @@ Neben dem unverschlüsseltem URI-Schema ws definiert RFC6455\cite{rfcWebsockets}
 
 RFC6455\cite{rfcWebsockets}
 
-
 \section{Distributed caches}
-\section{IP Adressen}
-\subsection{Aufbau von IP Adressen}
-\subsection{Network Adress Translation(NAT)}
 \begin{itemize}
-	\item 
+	\item Hier algorithmen erklären?
+	\item auf hashes eingehen
+	\item wie ein hash nur verteilt
 \end{itemize}
+\section{IP Adressen}
+Eine IP Adresse ist ein eindeutiger Identifier für Computer in einem Netzwerk. Jedem Computer in einem Netzwerk wird eine eindeutige IP Adresse zugewiesen über die der Computer adressierbar ist. Dadurch ist der Computer für andere erreichbar. Sie wird benötigt um ein routing vom Sender zum Empfänger zu ermöglichen. \cite{www}
+\subsection{Aufbau von IP Adressen}
+IPv4 wurde im Jahr 1981 durch das RFC 791\cite{rfc791} definiert und besteht aus einer 32 stelligen Binärzahl wodurch maximal 4.294.967.296 Adressen dargestellt werden können. Zur besseren Lesbarkeit werden IPv4 Adressen meist als vierer Blöcke in Dezimal geschrieben. IP Adressen bestehen aus einem Netz- und einem Hostanteil. Mit dem Netzanteil wird das Teilnetz indem sich das Gerät befindet beschrieben, während der Hostanteil das Gerät identifiziert. Durch eine Subnetzmaske wird festgelegt welcher Teil der IP-Adresse Host- und welcher Netzanteil ist. Alle Bits die in der Subnetzmaske 1 sind legen den Netzanteil fest - alle bits die 0 sind den Hostanteil.
+
+\begin{table}
+\begin{center}
+\caption{Beispiel einer IP Adresse mit Subntzmaske}
+\begin{tabular}{|r|l|l|}
+	\hline
+	IP-Adresse & 145.574.322. & 5 \\ \hline
+	Subnetzmaske & 255.255.255. & 0 \\ \hline
+	& Netzanteil & Hostanteil \\
+	\hline
+\end{tabular}
+\end{center}
+\end{table}
+
+
+Aufgrund der stark ansteigenden Zahl an Geräten die mit dem Internet verbunden sind ist der Adressbereich der IPv4 Adressen nicht mehr ausreichend. Entwickelte der ITFE 1998 einen neuen standard. IPv6 verwendet 128 anstatt der 32 Bits zur Darstellung von IP Adressen. Dadurch ist es möglich 2$^3^2$ Geräte abzubilden. IPv6 wird meist als vier Oktette in hexadezimal dargestellt. Zur Unterscheidung von Host- und Netzanteil werden Präfixlängen angegeben.  
+
+\subsection{Network Adress Translation(NAT)}
+Mit Hilfe von NAT können mehrere Geräte über die selbe öffentliche IP-Adresse über das Internet verbunden werden. Dadurch ist es möglich trotz des begrenzten Adressraums von IPv4 mehr Geräte mit dem Internet zu verbinden. Dazu werden werden vom die IP-Adress header Felder der Datenpackete verändert. 
 
 \section{Ruby on Rails}
+Ruby on Rails ist ein in Ruby geschriebenes Opensource Webframework. Zentraler Ansatz der Entwicklung des Frameworks ist es, es Software Entwicklern einfacher zu machen Webanwendungen zu schreiben. Die Philosopie des Frameworks beinhaltet zwei Prinzipien:\footnote{https://guides.rubyonrails.org/}
+
+\textbf{Don't Repeat Yourself(DRY):}
+Jede Information und funktionalität soll einen representation im System haben. Dardurch soll erreicht werden das die Software einfacher wartbar, übersichtichtlicher und fehlerfreier sein.
+ 
+\textbf{Convention over Configuration:}
+Um die Entwicklung für den Programmierer zu erleichtern werden annahmen getroffen und standard Einstellungen festgelegt. Diese lassen sich zwar durch die Entwickler ändern sind zu beginn jedes Projektes erst einmal gleich. So werden z.b. auch Vereinbarungen über die Benennung von Methoden und Klassen getroffen(Naming Conventions).
+
+Ruby on Rails ist ein Model View Controller basiertes Framework. \todo{MVC Beschreiben?}
+
+\section{Turbolinks}
+
 \begin{itemize}
-	\item Framework
-	\item Wie detailiert???
-	\item dogams etc
-	\item Backround Jobs
+	\item Javascript library
+	\item beschleunigt navigation auf seite
+	\item Seite wird nicht komplett geladen
+	\item Requests werden über ajax vor dem rendern abgefangen
+	\item nur der teil der sich geändert hat wird neu gerändert
+	\item caching
+	\item javascript scripte müssen nicht neu geladen werden
+	\item https://github.com/turbolinks/turbolinks
 \end{itemize}
+
+\section{Single Page Applications}
+
+Unter Single Page Applications(SPA) versteht man Webanwendungen bei denen der Client aus einem einzigen HTML Dokument besteht. Inhalte werden meist dynamisch mit AJAX oder Websocket nachgeladen. Dadurch entsteht ein Nutzererlebnis das flüssiger erscheint da Seiten nicht bei Navigation komplett neu geladen werden müssen. Sie bieten sich für Anwendungen mit hoher Nutzerzahl an da der Aufwand der HTML renderings com Server auf den Client verlagert wird. Da das Backend zumeist nur Daten ausliefert wird die Entwicklung nativer Clients für Mobilgeräte vereinfacht da zumeist das Backend wiederverwendet werden kann.
+\todo{Woher quellen nehmen??? online??}
 
 \section{Redis}
-\begin{itemize}
-	\item In memory Datenbank
-	\item Key Value Store mit Datentypen
-	\item Verwendete Datentypen vorstellen
-	\item set
-	\item counter
-	\item key value
-	\item list
-\end{itemize}
+Bei Redis handelt es sich um einen In-memory Datenstruktur Speicher der als LRU cache, Datenbank oder message broker verwendet werden kann.\footnote{https://redis.io/} Redis ist ein Opensource Projekt und  wird von Redis Labs gesponsort. Jede gespeicherte Datenstruktur ist über einen Key abrufbar.
 
+Unter anderem unterstützt Redis folgende Datentypen:
+Set:
+Bei Sets handelt es sich um Mengen die Strings beinhalten können. Wobei jeder String nur einmal pro Set vorkommt. Hinzufügen von Element, Löschen von Elementen und das prüfen ob ein Element in einem Set vorhanden ist passieren in konstanter Zeit. (O(1))
 
+Strings:
+Redis Strings sind binary safe, das heist sie können jegliche Daten, z.B. auch Bilddaten, enthalten. Strings können auch als atomare counter verwendet werden. Dazu stellt Redis commandos bereit zum erhöhen oder subtrahieren von Strings.
+
+List:
+Listen enthalten eine geordnete Liste von Strings, in der Reihenfolge in der sie hinzugefügt wurden. Elemente können sowohl vorne als auch hinten in die Liste eingefügt werden

@@ -85,14 +85,7 @@
 \end{itemize}
 
 \subsection{Tests}
-
-\begin{itemize}
-  \item mocha
-  \item chai
-  \item karma
-  \item event handler testen
-  \item registrieren/abmelden --> test helper
-\end{itemize}
+Um das Plugin zu testen wird als test runner karma verwendet.\footnote{https://karma-runner.github.io/latest/index.html} Als test framework wird mocha\footnote{https://mochajs.org/} und als assertion Library wird Chai\footnote{https://www.chaijs.com/} eingesetzt 
 
 %- mocha
 %- chai
@@ -105,38 +98,51 @@
 
 
 \section{Configuration}
+\begin{listing}[h]
+	\inputminted{javascript}{listings/configuration.js}
+	\caption{Beispielhafte Konfiguration}
+	\label{lst:configuration}
+\end{listing}
 
-\begin{itemize}
-	\item id
-	\item id length
-	\item beispiel
-	\item verbose
-	\item ...
-	\item Config Übergabe zu Service worker über IndexedDB
-	\item Script lädt Config in indexedDB
-	\item Service worker lädt config falls noch keine vorhanden ist und im activate event	
-\end{itemize}
+Um eine gute Anpassung an verschiedene Anwendungsfälle zu ermöglichen bietet das \pTp CDN eine Reihe von Konfigurationsmöglichkeiten. Nachdem das Client Script die Konfiguration geladen hat wird sie im der Indexed DB gespeichert und von dort durch den Service Worker geladen.\ref{lst:configuration} zeigt eine Beispielhaft Konfiguration des CDNs im Folgenden werden die verschiedenen Konfigurationsmöglichkeiten aufgelistet und beschrieben.
 
-\subsection{Quota limits - Löschen von Requests aus dem Cache}
+\begin{description}
+\item[channel]\hfill \\
+Bezeichnet den für das Peer Meshing zu verwendenden Websocket channel. Alle Clients mit dem selben Channel befinden sich im selben Peer Mesh.
+\item[clientId]\hfill \\
+Eindeutiger Identifier mit dem der Peer identifiziert werden kann. Ähnlich einer Session ID wird er verwendet um Clients wieder zuerkennen und anzusprechen.
+\item[idLength]\hfill \\
+Bezeichnet die maximale Länge der ClientIds. Kürzere ClientIds werden bis zu dieser Länge aufgefüllt. Wird benötigt um intern bei dem verschicken von Packeten über das CDN ClientIds fester länge verwenden zu können.(siehe \todo{referenzieren}) 
+\item[stunServer]\hfill \\
+Gibt den zu verwendenden STUN Server an. Dies kann ein öffentlicher oder privat betriebener Server sein. Kann freigelassen werden falls kein STUN Server verwendet werden soll
+\item[verbose]\hfill \\
+Aktiviert/deaktiviert Debug Ausgaben.
+\item[serviceWorker]\hfill \\
+Beinhaltet alle Konfigurationen die den Service Worker betreffen.
+\item[urlsToShare]\hfill \\
+Liste aller URL die mit Hilfe des CDN bearbeitet werden sollen.
+\item[excludedUrls]\hfill \\
+Liste von URLs die explizit von dem CDN ausgeschlossen werden sollen
+\item[path]\hfill \\ und Text dahinter
+Pfad von dem das Service Worker Script geladen werden soll.
+\item[scope]\hfill \\
+Gibt den Scope an unter dem der Service Worker arbeiten soll.
+\item[basePath]\hfill \\
+Gibt den Service Worker Base Path an.
+\item[storageQuota]\hfill \\
+Maximal für das CDN zu verwendender Cache Speicher. Überschreitet der Cache den Wert, werden so lange Ressourcen aus dem Cache gelöscht bis der Wert unterschritten ist. (siehe \todo{ref}) 
+\item[cachingEnabled]\hfill \\
+Aktiviert/Deaktiviert das Caching innerhalb des Service Workers. Nützlich zum Debuggen.
+\item[verbose]\hfill \\
+Gibt an ob der Service Worker debugging Ausgaben auf die Konsole schreiben soll.
+\item[statisticPath]\hfill \\
+URL an die die erhobenen Statistiken gesendet werden sollen. siehe \ref{ch:implementation:stats}
 
-\begin{itemize}
-  \item benötigte speichermenge wird geschätzt
-  \item headersize plus 'Content-Length' header wert
-  \item solange löschen bis genug speicher frei ist
-  \item Quotas flexibel
-	\item Quota kann abgefragt werden
-	\item Quota für browser nicht für page
-	\item berechnung der größe schwer
-	\item löschen des ersten Elements im Cache
-	\item evtl verschiedene verfahren diskutieren
-	\item Fehlerfall muss abgefangen werden
-\end{itemize}
+\end{description}
 
-\section{Client UI Events}
-\begin{itemize}
-	\item Events um die einbindende Anwendung über neue/gelöschte Peer Verbindungen zu informieren
-	\item ui:onUpdate
-\end{itemize}
+\section{Client UI Event}
+Um es der einbindenden Anwendung zu ermöglichen auf Änderungen bezüglich der verbundenen Peers sowie deren Ressourcen zu Reagieren stellt das Plugin das Event ui:onUpdate bereit das bei Änderungen ausgelöst wird. Das Event übergibt das Peer Object des Clients wodurch der Event empfänger zugriff auf die Anzahl der verbundenen Peers so wie deren Ressourcen hat. 
+
 \section{Signaling Server}
 The signaling server itself uses socket.io and can be found here. The client ID is created there and is essential for the lifecycle of a peer in the whole network. It is not clear if the client IDs given by socket.io always have the same length. Therefore, client IDs will be padded to a maximal length of 24. This is necessary because the client IDs need to be sent via the binary datachannel and consequently, this requires a fixed length.
 
@@ -203,9 +209,23 @@ The signaling server itself uses socket.io and can be found here. The client ID 
 \section{Reusability}
 
 \section{Serialisierung der Daten}
-Für den Austausch von Daten werden die von WebRTC angebotene DataChannel genutzt, welche das Stream Control Transmission Protocol kurz SCTP verwendet. Problem hierbei ist, dass dieses Protokoll ursprünglich für die Übertragung von Kontrollinformationen designt wurde und deshalb für die Kompatibilität verschiedener Browser eine Paketgröße von 16kiB nicht überschritten werden sollte. In unserem Kontext ist es aber notwendig auch größere Dateien zu übertragen, weshalb aktuell viele kleine Datenpakete verwendet werden müssen. Hierdurch entsteht ein nicht zu vernachlässigender Overhead.
+Für den Austausch von Daten werden die von WebRTC angebotene DataChannel genutzt, welche das Stream Control Transmission Protocol kurz SCTP verwendet. Problem hierbei ist, dass dieses Protokoll ursprünglich für die Übertragung von Kontrollinformationen designt wurde und deshalb für die Kompatibilität verschiedener Browser eine Paketgröße von 16kiB nicht überschritten werden sollte. Es ist jedoch notwendig auch größere Dateien zu übertragen, weshalb aktuell viele kleine Datenpakete verwendet werden müssen. Hierdurch entsteht ein nicht zu vernachlässigender Overhead.
+
+\begin{listing}[h]
+	\inputminted{javascript}{listings/buffersize.js}
+	\caption{Buffersize berücksichtigung}
+	\label{lst:code-buffersize}
+\end{listing}
+\begin{listing}[h]
+	\inputminted{javascript}{listings/handle_chunk.js}
+	\caption{Buffersize berücksichtigung}
+	\label{lst:code-handle-chunk}
+\end{listing}
+
 \begin{itemize}
   \item SCTP(DataChannel) message size limit 16kiB
+  \item Fixe id länge notwendig
+  \item datachannel buffersize muss berücksichtigt werden
   \item chunking reassembling nötig
   \item Performance einbussen
   \item abToMessage und sendToPeer
@@ -222,51 +242,90 @@ Für den Austausch von Daten werden die von WebRTC angebotene DataChannel genutz
 	\item Details zum Algorithmus
 \end{itemize}
 \section{System Test}
-\begin{itemize}
-	\item Browser Support
-	\item 	modernizer
-	\item 	testet auf Browserversion
-	\item Test von Verbindungsaufbau
-	\item 	mit anderen Clients verbunden?
-	\item Code Beispiel verwendung des Interfaces
-\end{itemize}
+Das Plugin stellt ein Modul bereit um zu testen ob es einem Client möglich ist am \pTp CDN teilzunehmen.
 
-\section{Erfassen von Statistiken}
+Dazu werden drei tests bereitgestellt.
+\begin{lstlisting}
+	p2pCDN.systemTest.testBrowser()
+\end{lstlisting}
+ Mit Hilfe von modernizr\footnote{https://modernizr.com/} testet die Funktion ob die verwendete Browserversion alle benötigeten Funktionen unterstützt. Modernizr ist eine Javascript Bibliothek mit der gestetet werden kann ob ein Browser bestimmte funktionen unterstützt.
+\begin{lstlisting}
+	p2pCDN.systemTest.webrtcInitialized()
+\end{lstlisting}
+Gibt ein Promise zurück welches überprüft ob die webrtc Verbindung erfolgreich aufgebaut wurde. Da die Initialisierung einen moment in Anspruch nehmen kann wird wiederholt geprüft ob die Verbindung aufgebaut wurde.
+\begin{lstlisting}
+	p2pCDN.systemTest.clientConnected()
+\end{lstlisting}
+Gibt ebenfalls ein Promise zurück und überprüft ob erfolgreich eine Verbindung zu einem anderen Client aufgebaut werden konnte. Um diesen Test erfolgreich auszuführen muss sich ein andere Client im aktuellen Peer mesh befinden.
+
+\section{Erfassen von Statistiken}\label{ch:implementation:stats}
+\begin{listing}[h]
+	\inputminted{javascript}{listings/sendStatistic.js}
+	\caption{Erfassen der Statistiken}
+	\label{lst:code-stats}
+\end{listing}
+\begin{listing}[h]
+	\inputminted{javascript}{listings/logStatistic.js}
+	\caption{Erfassen der Statistiken}
+	\label{lst:code-stats}
+\end{listing}
+\begin{listing}[h]
+	\inputminted{javascript}{listings/handle_request.js}
+	\caption{Abarbeitung eines Request im Service Worker}
+	\label{lst:handle_request}
+\end{listing}
+
+Um die Nutzungsstatistiken des CDNs zu erfassen sendet jeder client periodisch POST requests an den Server. Dazu sammelt der Service Worker alle Anfragen die in einem Zeitraum von 10 Sekunden angefallen sind und sendet sie gebündelt als JSON an den Server.
+Erfasst werden:
+
+\begin{description}
+\item[peerId]\hfill \\
+Die PeerId bezeichnet die Id des peers der die Statistik sendet.
+\item[method]\hfill \\
+Method gibt an wie die Anfrage behandelt wurde und kann die Werte 'cacheResponse', 'peerResponse' oder 'serverResponse' beinhalten. Ein cacheResponse konnte aus dem eigenen Cache beantwortet werden. ServerResponse bedeutet das die Anfrage über den externen Server geladen werden musste. Der Wert peerResponse gibt an das die Anfrage über das \pTp CDN bearbeitet werden konnte.
+\item[from]\hfill \\
+ 'From' gibt an woher die Anfrage geladen wurde. Im Falle eines serverResponses beinhaltet sie den Wert 'server' und bei einem cacheResponse den Wert cache. Wurde die Anfrage über das \pTp Netzwerk beantwortet beinhaltet sie die peerId des Peers der die Anfrage beantwortet hat. Dazu sendet das Script neben der eigentlichen Anfrage auch die eigene PeerId und die PeerId des peers der die Anfrage beantwortet hat an die Service Worker. (siehe \ref{lst:handle_chunk}) 
+\item[URL]\hfill \\
+Die URL enthält die URL der angefragten Ressource. 
+\item[timing]\hfill \\
+Timing beinhaltet die Zeitspanne die benötigt wurde um die Anfrage zu beantworten, beginnend vor der Entscheidung wie der Request abgearbeitet werden soll(siehe \ref{lst:handle_request}) und endend nach dem die Anfrage empfangen wurde. Nicht enthalten in der Zeitspanne ist die Entscheidung ob der Service worker den Request bearbeitet und die Renderzeiten des Browsers. Diese Zeiten sind nicht abhänig von der Art der Request Beantwortung.(siehe evaluation)
+\end{description}
+Mit Hilfe der Configuration kann festgelegt werden an welchen Endpunkt die Statistik gesendet werden soll. Die Anwendung ist für das speichern und verarbeiten der Daten zuständig, dies ist nicht Teil des Plugins. Slidesync speichert die Daten als JSON in Redis und stellt einen JSON Endpunkt zur Verfügung mit dem die Statistiken abgerufen werden können. Für die Labortests werden die Daten in JSON Dateien zur späteren Verarbeitung abgelegt.
+\begin{listing}[h]
+	\inputminted{javascript}{listings/_handle_chunk.js}
+	\caption{}
+	\label{lst:handle_chunk}
+\end{listing}
+
 \begin{itemize}
-	\item Client Script sendet an Service Worker von wem etwas geladen wurde
-	\item Service Worker trackt wie Request abgearbeitet wurde
-	\item Service Worker sendet periodisch alle Metadaten an Server
-	\item Server trackt statistiken
-	\item Fall Slidesync:
-	\item 	Live statistik tracking
 	\item 	evtl. Mongo db
 	\item 	anzeigetool
+	\item schoolcloud
 \end{itemize}
 
-\section{Storage quotas}
-\begin{itemize}
-	\item Wichtig um fehlervorzubeugen
-	\item Browser besitzt dynamische Quotas, abhänig von 
-	\item Quoata für CDN kann über einstellungen festgelegt werden.
-	\item navigator.storage.estimate()
-	\item Quota Management API
-	\item 	LRU falls quota erreicht
-	\item 	Löscht kompletten Cache für eine Seite
-	\item https://developers.google.com/web/updates/2017/08/estimating-available-storage-space
-	\item https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API/Browser_storage_limits_and_eviction_criteria
-	\item Eigene Implemtierung
-	\item 	Round Robin
-	\item 	Größe des Requests wird geschätzt
-	\item 	Exakte größe schwer berechnen bar da cache komprimiert
-	\item 	Größe des Kontents plus größe des Headers plus offset
-	\item 	Cache wird geleert bis genug platz frei ist.
-\end{itemize}
+\section{Quota limits - Löschen von Requests aus dem Cache}
+\begin{table}[!htb]
+	\caption{Browser Storage Quotas \footnote{https://developers.google.com/web/fundamentals/instant-and-offline/web-storage/offline-for-pwa}}
+\begin{center}
 
+	\begin{tabular}{|r|l|l|}
+		\hline
+		Browser	 & Limit \\ \hline
+		Chrome & < 6\% des freien Fesplattenspeichers \\ \hline
+		Firefox & < 10\% des freien Fesplattenspeichers \\ \hline
+		Safari & < 50MB \\ \hline
+		IE10 & < 250MB \\ \hline
+		Edge & Abhännig von der Festplattengröße \\ 
+		\hline
+	\end{tabular}
+\end{center}
+\end{table}
 
-\begin{listing}[h]
-	\inputminted{ruby}{listings/context-data-transform.rb}
-	\caption{Some Code Snipped}
-	\label{lst:code-snipped}
-\end{listing}
+Browser stellen den Clients unterschiedlich viel Speicherplatz für offline Caches zur Verfügung. Ist das Quota limit erreicht versuchen Firefox und Chrome Speicher frei zu machen indem Elemente aus dem Cache gelöscht werden. Dabei werden jedoch keine einzelnen Elemente aus dem Cache gelöscht sondern mittels Last-recently-used(LRU) werden ganze Caches gelöscht. Safari und Edge haben keinen Mechanismus zum automatischen Löschen von Elementen sondern werfen lediglich einen Fehler.\footnote{https://developers.google.com/web/fundamentals/instant-and-offline/web-storage/offline-for-pwa} Deshalb ist es notwendig das der Service Worker in dem Fall das das Limit erreicht wird Elemente löscht.
+
+Mit Hilfe der Quota Management API\footnote{https://developers.google.com/web/updates/2011/11/Quota-Management-API-Fast-Facts} ist es möglich die momentane Speichernutzung auszulesen ebenso wie den maximal Verfügbaren Speicherplatz. Ist diese Limit oder das Quota Limit welches über die Konfiguration angegeben wurde erreicht, löscht der Service Worker so lange die ältesten Einträge im Cache, bis genügend Speicher für den nächsten Request vorhanden ist. Dazu berechnet der Service Worker die Größe des zu speichernden Request. 
+
+%	\item https://developers.google.com/web/updates/2017/08/estimating-available-storage-space
+%	\item https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API/Browser_storage_limits_and_eviction_criteria
 
 \section{Resource loading}

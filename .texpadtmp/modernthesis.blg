@@ -35,50 +35,56 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: ../modernthesis-blx.bib
 Database file #2: ../bibliography.bib
+I was expecting a `,' or a `}'---line 85 of file ../bibliography.bib
+ : 
+ : @inproceedings{rfcWebsockets,
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Warning--I didn't find a database entry for "www"
 Biblatex version: 3.11
 Warning--bbl version mismatch: biblatex.bst has 3.0, but biblatex.sty has 2.9
          The bbl version need not be the same as the biblatex version.
 Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
-You've used 9 entries,
+You've used 10 entries,
             6304 wiz_defined-function locations,
-            1257 strings with 11068 characters,
-and the built_in function-call counts, 69641 in all, are:
-= -- 5150
-> -- 1499
-< -- 364
-+ -- 2126
-- -- 656
-* -- 5207
-:= -- 8180
+            1264 strings with 11235 characters,
+and the built_in function-call counts, 78511 in all, are:
+= -- 5939
+> -- 1619
+< -- 426
++ -- 2255
+- -- 680
+* -- 5846
+:= -- 8994
 add.period$ -- 0
-call.type$ -- 9
-change.case$ -- 150
-chr.to.int$ -- 39
-cite$ -- 16
-duplicate$ -- 7414
-empty$ -- 5628
-format.name$ -- 872
-if$ -- 13837
+call.type$ -- 10
+change.case$ -- 199
+chr.to.int$ -- 42
+cite$ -- 18
+duplicate$ -- 8020
+empty$ -- 6501
+format.name$ -- 918
+if$ -- 15800
 int.to.chr$ -- 0
-int.to.str$ -- 23
+int.to.str$ -- 26
 missing$ -- 0
-newline$ -- 372
-num.names$ -- 412
-pop$ -- 3224
+newline$ -- 398
+num.names$ -- 494
+pop$ -- 3607
 preamble$ -- 1
-purify$ -- 255
+purify$ -- 307
 quote$ -- 0
-skip$ -- 1709
+skip$ -- 1922
 stack$ -- 0
-substring$ -- 8915
-swap$ -- 1481
-text.length$ -- 298
+substring$ -- 10607
+swap$ -- 1638
+text.length$ -- 319
 text.prefix$ -- 0
 top$ -- 2
-type$ -- 294
+type$ -- 328
 warning$ -- 1
-while$ -- 1143
+while$ -- 1205
 width$ -- 0
-write$ -- 364
-(There was 1 warning)
+write$ -- 389
+(There was 1 error message)

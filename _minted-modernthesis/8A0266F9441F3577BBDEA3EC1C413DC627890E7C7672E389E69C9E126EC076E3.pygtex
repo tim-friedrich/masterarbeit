@@ -1,0 +1,22 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kd}{function} \PYG{n+nx}{sendStatisticToServer}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+  \PYG{k}{if}\PYG{p}{(}\PYG{o}{!}\PYG{n+nx}{serverSendTimeout} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{n+nx}{config}\PYG{p}{.}\PYG{n+nx}{statisticPath}\PYG{p}{)\PYGZob{}}
+    \PYG{n+nx}{serverSendTimeout} \PYG{o}{=} \PYG{n+nx}{setTimeout}\PYG{p}{(}\PYG{k+kd}{function}\PYG{p}{()\PYGZob{}}
+      \PYG{k}{try} \PYG{p}{\PYGZob{}}
+        \PYG{n+nx}{fetch}\PYG{p}{(}\PYG{n+nx}{config}\PYG{p}{.}\PYG{n+nx}{statisticPath}\PYG{p}{,} \PYG{p}{\PYGZob{}}
+          \PYG{n+nx}{method}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}POST\PYGZsq{}}\PYG{p}{,}
+          \PYG{n+nx}{body}\PYG{o}{:} \PYG{n+nx}{JSON}\PYG{p}{.}\PYG{n+nx}{stringify}\PYG{p}{(}\PYG{n+nx}{requests}\PYG{p}{),}
+          \PYG{n+nx}{headers}\PYG{o}{:}\PYG{p}{\PYGZob{}}
+            \PYG{l+s+s1}{\PYGZsq{}Content\PYGZhy{}Type\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}application/json\PYGZsq{}}
+          \PYG{p}{\PYGZcb{}}
+        \PYG{p}{\PYGZcb{});}
+      \PYG{p}{\PYGZcb{}} \PYG{k}{catch}\PYG{p}{(}\PYG{n+nx}{e}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+
+      \PYG{p}{\PYGZcb{}} \PYG{k}{finally} \PYG{p}{\PYGZob{}}
+        \PYG{n+nx}{serverSendTimeout} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+        \PYG{n+nx}{requests} \PYG{o}{=} \PYG{p}{[];}
+      \PYG{p}{\PYGZcb{}}
+    \PYG{p}{\PYGZcb{},} \PYG{n+nx}{sendStatisticDelay}\PYG{p}{)}
+  \PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

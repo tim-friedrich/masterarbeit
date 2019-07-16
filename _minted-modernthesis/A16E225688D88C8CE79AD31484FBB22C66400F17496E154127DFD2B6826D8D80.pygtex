@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n+nx}{\PYGZus{}handleChunk}\PYG{p}{(}\PYG{n+nx}{message}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+  \PYG{k+kr}{const} \PYG{n+nx}{req} \PYG{o}{=} \PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{\PYGZus{}getRequest}\PYG{p}{(}\PYG{n+nx}{message}\PYG{p}{.}\PYG{n+nx}{from}\PYG{p}{,} \PYG{n+nx}{message}\PYG{p}{.}\PYG{n+nx}{hash}\PYG{p}{);}
+  \PYG{k+kd}{var} \PYG{n+nx}{response} \PYG{o}{=} \PYG{p}{\PYGZob{}\PYGZcb{}}
+  \PYG{n+nx}{req}\PYG{p}{.}\PYG{n+nx}{chunks}\PYG{p}{.}\PYG{n+nx}{push}\PYG{p}{(\PYGZob{}}\PYG{n+nx}{id}\PYG{o}{:} \PYG{n+nx}{message}\PYG{p}{.}\PYG{n+nx}{chunkId}\PYG{p}{,} \PYG{n+nx}{data}\PYG{o}{:} \PYG{n+nx}{message}\PYG{p}{.}\PYG{n+nx}{data}\PYG{p}{\PYGZcb{});}
+
+  \PYG{k}{if}\PYG{p}{(}\PYG{n+nx}{req}\PYG{p}{.}\PYG{n+nx}{chunks}\PYG{p}{.}\PYG{n+nx}{length} \PYG{o}{===} \PYG{n+nx}{message}\PYG{p}{.}\PYG{n+nx}{chunkCount}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+    \PYG{n+nx}{response}\PYG{p}{.}\PYG{n+nx}{data} \PYG{o}{=} \PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{\PYGZus{}concatMessage}\PYG{p}{(}\PYG{n+nx}{req}\PYG{p}{.}\PYG{n+nx}{chunks}\PYG{p}{)}
+    \PYG{n+nx}{response}\PYG{p}{.}\PYG{n+nx}{from} \PYG{o}{=} \PYG{n+nx}{message}\PYG{p}{.}\PYG{n+nx}{from}\PYG{p}{;}
+    \PYG{n+nx}{response}\PYG{p}{.}\PYG{n+nx}{peerId} \PYG{o}{=} \PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{peerId}\PYG{p}{;}
+    \PYG{k}{this}\PYG{p}{.}\PYG{n+nx}{\PYGZus{}removeRequest}\PYG{p}{(}\PYG{n+nx}{message}\PYG{p}{.}\PYG{n+nx}{from}\PYG{p}{,} \PYG{n+nx}{message}\PYG{p}{.}\PYG{n+nx}{hash}\PYG{p}{);}
+    \PYG{n+nx}{req}\PYG{p}{.}\PYG{n+nx}{respond}\PYG{p}{(}\PYG{n+nx}{response}\PYG{p}{);}
+  \PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

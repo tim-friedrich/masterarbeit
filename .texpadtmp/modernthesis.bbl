@@ -370,5 +370,32 @@
     \field{month}{12}
     \field{year}{2011}
   \endentry
+
+  \entry{rfc791}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=oSCISIU}{%
+         prefix={of},
+         prefixi={o\bibinitperiod},
+         family={Southern\bibnamedelima California},
+         familyi={S\bibinitperiod\bibinitdelim C\bibinitperiod},
+         given={Information Sciences Institute\bibnamedelima University},
+         giveni={I\bibinitperiod\bibinitdelim S\bibinitperiod\bibinitdelim
+  I\bibinitperiod\bibinitdelim U\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Defense Advanced Research Projects Agency}%
+    }
+    \strng{namehash}{SCISIUo1}
+    \strng{fullhash}{SCISIUo1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{INTERNET PROTOCOL}
+    \verb{url}
+    \verb https://tools.ietf.org/html/rfc791
+    \endverb
+    \field{month}{08}
+    \field{year}{1981}
+  \endentry
 \enddatalist
 \endinput
