@@ -1,5 +1,5 @@
 \chapter{Grundlagen}\label{ch:related_work}
-%alles was man braucht um den rest zu verstehen
+%alles was man braucht um den Rest zu verstehen
 
 \section{Ressourcen}
 \subsection{Statische Ressourcen}
@@ -7,22 +7,22 @@ Statische Ressourcen sind Inhalte einer Website die für alle Nutzer gleich sind
 
 \subsection{Dynamisch generierte Ressourcen}
 
-Dynamisch generierte Ressourcen werden zur läufzeit der Website erzeugt und werden nicht im Vorfeld festgelegt. Dabei lässt sich zwischen Nutzergenerierten Inhalten und automatisch generierten Inhalten, z.b. Statistiken, unterscheiden.
+Dynamisch generierte Ressourcen werden zur Laufzeit der Website erzeugt und werden nicht im Vorfeld festgelegt. Dabei lässt sich zwischen Nutzergenerierten Inhalten und automatisch generierten Inhalten, z.b. Statistiken, unterscheiden.
 
 Dynamische Inhalte sowohl Nutzer spezifisch sein, in diesem Fall werden jedem Nutzer bei selber abfrage andere Inhalte angezeigt.
 
 \section{\cdn}
-\todo{Detailierter komponenten Beschreiben plus grafik. Siehe CDN Paper}
-Unter einem \cdn, auch Content Delivery Network versteht man ein Netzwerk in dem sich Clients Inhalte von einer Reihe von Knoten laden. Ein \cdn stellt dem Nutzer Auslieferungs und Speicherkapazitäten zur Verfügung. Dadurch kann die Last auf dem Ursprungsserver und die Latenz auf Seiten der Nutzer reduziert werden. Die reduzierten Ladezeiten werden unter anderem durch eine bessere geographische Nähe und damit geringerer Netzlaufzeiten erreicht. %TODO: gute definition finden
+\todo{Detaillierter Komponenten Beschreiben plus Grafik. Siehe CDN Paper}
+Unter einem \cdn, auch Content Delivery Network versteht man ein Netzwerk in dem sich Clients Inhalte von einer Reihe von Knoten laden. Ein \cdn stellt dem Nutzer Auslieferungs- und Speicherkapazitäten zur Verfügung. Dadurch kann die Last auf dem Ursprungsserver und die Latenz auf Seiten der Nutzer reduziert werden. Die reduzierten Ladezeiten werden unter anderem durch eine bessere geographische Nähe und damit geringerer Netzlaufzeiten erreicht. %TODO: gute definition finden
 
-Es lassen sich drei Klassen von \cdns unterscheiden. Infrastuktur basierte CDN die auf einer geografisch verteilten Server Infrastruktur basieren, \pTp basierte \cdns bei denen die Inhalte direkt zwischen den Teilnehmern verteilt werden und Hybride \cdns die aus einer Kombination aus Server Infrastruktur und \pTp Verteilung beruhen.
+Es lassen sich drei Klassen von \cdns unterscheiden. Infrastruktur basierte CDN die auf einer geografisch verteilten Server Infrastruktur basieren, \pTp basierte \cdns bei denen die Inhalte direkt zwischen den Teilnehmern verteilt werden und Hybride \cdns die aus einer Kombination aus Server Infrastruktur und \pTp Verteilung beruhen.
 
 %- Content Distribution Network
 %- Servernetzwerk das inhalte lokal verteilt
 %- reduzierung der physischen Entfernung
 %- bereitstellung von auslieferkapazitäten
 \subsection{Infrastruktur basierte \cdns}
-Infrastruktur basierte \cdns bestehen aus einem Ursprungsservern, der von dem Bereitsteller der Inhalte kontrolliert wird, und einem Netzwerk aus replica Servern. Die replica Server übernehmen die Verteilung der Inhalte an die Clients. Sie fungieren als ein möglichst regionaler cache in dem Inhalte des Ursprungsservers gespiegelt werden. Ein Distributionssystem ist dafür verantwortlich die Inhalte auf den replicas zu aktuallisieren und übernimmt das Routing bei einer Anfrage eines Clients. Unter Zuhilfenahme verschiedener Metriken versucht das Distributionssystem einen möglichst optimalen replica Server für den Client zu finden. Diese Metriken unterscheiden sich zwischen den Anbietern. Häufig werden jedoch geographische Entfernung, Latenzzeiten und die Übertragungsrate berücksichtigt. Um eine möglichst geringe Latenz zu erreichen sind infrastruktur basierte \cdns häufig geografisch sehr verteilt und bestehen aus meherern tausend replica Servern. So hat Akamai, einer der größten \cdn Anbietern, über 137000 Server in 87 Ländern. \cite{akamaiPeer} 
+Infrastruktur basierte \cdns bestehen aus einem Ursprungsservern, der von dem Bereitsteller der Inhalte kontrolliert wird, und einem Netzwerk aus replica Servern. Die replica Server übernehmen die Verteilung der Inhalte an die Clients. Sie fungieren als ein möglichst regionaler cache in dem Inhalte des Ursprungsservers gespiegelt werden. Ein Distributionssystem ist dafür verantwortlich die Inhalte auf den replicas zu aktualisieren und übernimmt das Routing bei einer Anfrage eines Clients. Unter Zuhilfenahme verschiedener Metriken versucht das Distributionssystem einen möglichst optimalen replica Server für den Client zu finden. Diese Metriken unterscheiden sich zwischen den Anbietern. Häufig werden jedoch geographische Entfernung, Latenzzeiten und die Übertragungsrate berücksichtigt. Um eine möglichst geringe Latenz zu erreichen sind Infrastruktur basierte \cdns häufig geografisch sehr verteilt und bestehen aus mehreren tausend replica Servern. So hat Akamai, einer der größten \cdn Anbietern, über 137000 Server in 87 Ländern. \cite{akamaiPeer} 
 
 %-ein ursprungsserver
 %- viele replicaserver
@@ -61,15 +61,15 @@ Infrastruktur basierte \cdns bestehen aus einem Ursprungsservern, der von dem Be
 %Peers haben eine signifikante Autonomie (über die Ressourcenbereitstellung).
 %Das P2P-System ist selbstorganisierend.
 %Alle übrigen Systeme bleiben konstant intakt und nicht skaliert.
-\subsection{Hyrid \cdns}
-Hybrid \cdns kombinieren \pTp \cdns und Infrastuktur basierte \cdns. Bei hybriden \cdns wird zuerst versucht die Resource über das Peer Netzwerk zu laden. Ist dies nicht möglich wird auf ein Infrastruktur basiertes \cdn zurück gegriffen. Dadurch kann die Last auf dem \cdn verringert und durch die Kombination verschiedener \cdns eine bessere Ausfallsicherheit erreicht werden. Häufig kommt diese Art der \cdns zum Einsatz wenn Ressourcen für Websites mit einem \pTp Ansatz verteilt werden sollen. Da in diesem Kontext nicht alle Teilnehmer die technischen Vorraussetzungen mitbringen um an dem \pTp Netzwerk teilzunehmen ist eine entsprechende alternative Lösung nötig. Da die viele Websites bereits mit einem Infrastruktur basierten \cdn arbeiten ist es naheliegend dieses weiter zu verwenden.
+\subsection{Hybrid \cdns}
+Hybrid \cdns kombinieren \pTp \cdns und Infrastruktur basierte \cdns. Bei hybriden \cdns wird zuerst versucht die Resource über das Peer Netzwerk zu laden. Ist dies nicht möglich wird auf ein Infrastruktur basiertes \cdn zurück gegriffen. Dadurch kann die Last auf dem \cdn verringert und durch die Kombination verschiedener \cdns eine bessere Ausfallsicherheit erreicht werden. Häufig kommt diese Art der \cdns zum Einsatz wenn Ressourcen für Websites mit einem \pTp Ansatz verteilt werden sollen. Da in diesem Kontext nicht alle Teilnehmer die technischen Vorraussetzungen mitbringen um an dem \pTp Netzwerk teilzunehmen ist eine entsprechende alternative Lösung nötig. Da die viele Websites bereits mit einem Infrastruktur basierten \cdn arbeiten ist es naheliegend dieses weiter zu verwenden.
 \section{Verteilte Hashtabellen}
 
 \section{\pTp Netzwerke}
 Bei einem \pTp Netzwerk handelt es sich um eine Netzwerk Struktur bei der alle Teilnehmer gleichberechtigt sind. Sie bildet damit das gegen Konzept zur klassischen Client-Server Struktur, bei der einer oder mehrere Server einen Dienst anbieten der von Clients genutzt werden kann. In einem \pTp Netzwerk können die Teilnehmer sowohl Dienste anbieten als auch nutzen. Typische wenn auch nicht notwendige Charakteristika sind laut Steinmetz\cite{p2pBook2005}:
 
 \begin{itemize}
-  \item Heteorogenität der Internetbandbreite der Teilnehmer
+  \item Heterogenität der Internetbandbreite der Teilnehmer
   \item Verfügbarkeit und Qualität der Verbindung zwischen Teilnehmern kann nicht vorausgesetzt werden
   \item Dienste werden von den Teilnehmern angeboten und genutzt
   \item Die Teilnehmer bilden ein Netz das auf ein bestehendes Netz aufgesetzt wird(Overlay Netzwerk) und stellen Suchfunktionen bereit
@@ -98,7 +98,7 @@ Aktuell wird \webrtc von Chrome, Firefox, Android und iOS unterstützt.\footnote
 	\centering
 	\includegraphics[width=0.8\textwidth]{figures/Webrtc_overview}
 	\caption[A Figure Short-Title]{Überblick Server/Client Struktur Webrtc}
-	\label{fig:swLifecycle}
+	\label{fig:webrtc_overview}
 \end{figure}
 
 % SSl erwähnen
@@ -114,8 +114,8 @@ Aktuell wird \webrtc von Chrome, Firefox, Android und iOS unterstützt.\footnote
 \subsection{RTCPeerConnection}
 
 \begin{itemize}
-	\item Representiert verbindung zum peer
-	\item Code beispiel
+	\item Repräsentiert verbindung zum peer
+	\item Code Beispiel
 \end{itemize}
 % RTCPeerConnection is used to connect peers across the internet.
 
@@ -148,9 +148,9 @@ Aktuell wird \webrtc von Chrome, Firefox, Android und iOS unterstützt.\footnote
 
 % https://bloggeek.me/sctp-data-channel/
 \subsection{MediaStream}
-Die Mediastream api, auch getUserMedia, ermöglicht es Echtzeit Daten wie audio oder Video aufzunehmen, anzuzeigen und an andere Clients weiter zu leiten und repräsentiert Medien Streams wie z.b. Audio oder Video Streams. Sie ermöglicht unter anderem den Zugriff auf Video Kameras und Mikrofone. Durch Sie ist es möglich auf die Hardwareunterstützung für Videos mittels open GL zuzugreifen. MediaStreams lassen sich mithilfe des src Attributes von HTML 5 video Elementen in das DOM einbinden. MediaStreams wurden von vom W3C in einem eigenen Standart definiert.\cite{w3MediaStream} 
+Die Mediastream Api, auch getUserMedia, ermöglicht es Echtzeit Daten wie audio oder Video aufzunehmen, anzuzeigen und an andere Clients weiter zu leiten und repräsentiert Medien Streams wie z.b. Audio oder Video Streams. Sie ermöglicht unter anderem den Zugriff auf Video Kameras und Mikrofone. Durch Sie ist es möglich auf die Hardwareunterstützung für Videos mittels open GL zuzugreifen. MediaStreams lassen sich mithilfe des src Attributes von HTML 5 video Elementen in das DOM einbinden. MediaStreams wurden von vom W3C in einem eigenen Standart definiert.\cite{w3MediaStream} 
 
-\subsection{Singaling}
+\subsection{Signaling}
 Das Signaling koordiniert die Kommunikation der Verbindungen zwischen Peers. Mit Hilfe des Signalings werden unter anderem die Metadaten ausgetauscht, die benötigt werden, um eine erfolgreiche WebRtc Verbindung aufzubauen. Unter anderem sind das:
 \begin{itemize}
 	\item Session Metadaten zum öffnen/schließen von Verbindungen
@@ -160,7 +160,7 @@ Das Signaling koordiniert die Kommunikation der Verbindungen zwischen Peers. Mit
 	\item Netzwerk Daten wie öffentliche IP Adressen und Ports
 \end{itemize} 
 
-Der Webrtc Standart legt keine für das Signaling zu verwendende Technologie und Protokolle fest um die integration mit bestehenden Technologien zu verbessern und es dem Entwicklern zu ermöglichen das für den Anwendungsfall beste Protokoll zu verwenden. Um Signaling zu ermöglichen ist ein bidirektionaler Kommunikationskanal zwischen client und server notwendig, was Websockets zu einem beliebten Kandidaten macht um das Signaling zu implementieren
+Der Webrtc Standart legt keine für das Signaling zu verwendende Technologie und Protokolle fest um die Integration mit bestehenden Technologien zu verbessern und es dem Entwicklern zu ermöglichen das für den Anwendungsfall beste Protokoll zu verwenden. Um Signaling zu ermöglichen ist ein bidirektionaler Kommunikationskanal zwischen client und server notwendig, was Websockets zu einem beliebten Kandidaten macht um das Signaling zu implementieren
 
 %\begin{itemize}
 %	\item koordiniert kommunikation
@@ -181,7 +181,7 @@ Der Webrtc Standart legt keine für das Signaling zu verwendende Technologie und
 
 \begin{itemize}
 	\item Session Description Protocol (SDP, RFC 4566) 
-	\item beschreibt eigenschaften von Eigenschaften von Multimediadatenströmen
+	\item beschreibt Eigenschaften von Eigenschaften von Multimediadatenströmen
 	\item verwaltet kommunikationssitzungen z.b. SIP(IP-telefonie)
 	\item keine aushandlungsmechaniken sondern nur beschreibungen der Datenströme
 	\item v=0
@@ -199,7 +199,7 @@ a=rtpmap:31 H261/90000
 \end{itemize}
 \subsection{TURN Server}
 
-Verwaltete Netzwerke, wie die von Unternehmen, haben häufig Firewalls und Port blocking Systeme installiert um die Sicherheit des Netzwerks zu gewährleisten. Das kann dazu führen das \webrtc Verbindungen nicht aufgebaut oder daten nicht über Webrtc Verbindungen übertragen werden können.
+Verwaltete Netzwerke, wie die von Unternehmen, haben häufig Firewalls und Port blocking Systeme installiert um die Sicherheit des Netzwerks zu gewährleisten. Das kann dazu führen das \webrtc Verbindungen nicht aufgebaut oder Daten nicht über Webrtc Verbindungen übertragen werden können.
 
 TURN Server bieten eine Fallback Lösung für diesen Fall. Sie haben eine öffentliche IP und sind über das Internet erreichbar. Im Fehlerfall kann der Datenverkehr über einen TURN Server geleitet werden, so das die Kommunikation nicht unterbrochen wird.
 
@@ -220,7 +220,7 @@ Da die Anzahl von IPv4 Adressen begrenzt ist, verwenden die meisten Subnetze NAT
 \subsection{ICE}
 
 \begin{itemize}
-	\item Methode zur überwindung von NAT
+	\item Methode zur Überwindung von NAT
 	\item Interactive Connectivity Establishment
 	\item https://tools.ietf.org/html/rfc5245
 	\item 
@@ -234,7 +234,7 @@ Da die Anzahl von IPv4 Adressen begrenzt ist, verwenden die meisten Subnetze NAT
 
 \section{DataCache API}
 
-Die Datacache API ermöglicht es Netzwerk Requests zu cachen. Ursprünglich wurde die Api entwickelt um Serivce Workern die Möglichkeit zu geben einen Cache anzulegen und selbst zu verwalten. Dadurch ist es möglich mithilfe von Service Workern und der DataCache Api Websiten auch verfügbar zu machen wenn kein internet verfügbar ist. 
+Die DataCache Api ermöglicht es Netzwerk Requests zu cachen. Ursprünglich wurde die Api entwickelt um Service Workern die Möglichkeit zu geben einen Cache anzulegen und selbst zu verwalten. Dadurch ist es möglich mithilfe von Service Workern und der DataCache Api Websiten auch verfügbar zu machen wenn kein internet verfügbar ist. 
 
 \begin{itemize}
 	\item https://developers.google.com/web/fundamentals/instant-and-offline/web-storage/cache-api
@@ -244,10 +244,10 @@ Die Datacache API ermöglicht es Netzwerk Requests zu cachen. Ursprünglich wurd
 
 \section{IndexedDB}
 
-IndexedDB ist ein HTML 5 Feature um Daten im Browser zu speichern. Es wurde vom W3C standarisiert\cite{w3IndexedDB} und soll den veralteten websql standard ablösen. Im gegensatz zu websql hat die IndexedDB keine strukturierte Query Language und ihr liegt kein relationelles Modell zu grunde. Sie stellt einen Key-Value Store bereit der in der Lage ist auch große Datenmengen effektiv bereit zu stellen. Dabei ist der Datenzugriff auf die selbe Domain beschränkt. Die API ist überwiegend asyncron und basiert auf Promises.
+IndexedDB ist ein HTML 5 Feature um Daten im Browser zu speichern. Es wurde vom W3C standarisiert\cite{w3IndexedDB} und soll den veralteten Web Sql Standard ablösen. Im Gegensatz zu Web Sql hat die IndexedDB keine strukturierte Query Language und ihr liegt kein relationales Modell zu Grunde. Sie stellt einen Key-Value Store bereit der in der Lage ist auch große Datenmengen effektiv bereit zu stellen. Dabei ist der Datenzugriff auf die selbe Domain beschränkt. Die API ist überwiegend asynchron und basiert auf Promises.
 
 \section{Service Worker}
-Service Worker sind Skripte die im Browser als separate Prozesse im Hintergrund laufen, so genannte Web Worker. Sie stellen die Funktionalitäten eines programmierbaren Netwerk Proxies bereit. Durch Service Worker ist es möglich die Anfragen einer Seite zu kontrollieren auf sie zu reagieren und in den Prozess einzugreifen.\cite{w3ServiceWorker} Service Worker haben keinen Zugriff auf das DOM. Sie könne mehrere Browser-Tabs und mit Hilfe des PostMessage Protokolls können Nachrichten zwischen Service Worker und Browser-Tab ausgetauscht werden. Da Service Worker Zugriff auf den DataCache und die IndexDB haben werden sie häufig verwendet um Internetseiten offline verfügbar zu machen. Bei der Registrierung eines Service Workers wird ein URL-Scope fest gelegt für den der Service Worker zuständig ist. Nur Anfragen die sich innerhalb des URL-Scopes des Service Workers befinden können von diesem bearbeitet werden.
+Service Worker sind Skripte die im Browser als separate Prozesse im Hintergrund laufen, so genannte Web Worker. Sie stellen die Funktionalitäten eines programmierbaren Netzwerk Proxies bereit. Durch Service Worker ist es möglich die Anfragen einer Seite zu kontrollieren auf sie zu reagieren und in den Prozess einzugreifen.\cite{w3ServiceWorker} Service Worker haben keinen Zugriff auf das DOM. Sie könne mehrere Browser-Tabs und mit Hilfe des PostMessage Protokolls können Nachrichten zwischen Service Worker und Browser-Tab ausgetauscht werden. Da Service Worker Zugriff auf den DataCache und die IndexDB haben werden sie häufig verwendet um Internetseiten offline verfügbar zu machen. Bei der Registrierung eines Service Workers wird ein URL-Scope fest gelegt für den der Service Worker zuständig ist. Nur Anfragen die sich innerhalb des URL-Scopes des Service Workers befinden können von diesem bearbeitet werden.
 
 %nur zugriff auf inhalte unterhalb der domain(nur gleiche domain)
 %fetch event
@@ -261,7 +261,7 @@ Service Worker sind Skripte die im Browser als separate Prozesse im Hintergrund 
 	\caption[A Figure Short-Title]{Lebenszyklus eines Service Workers\footnote{https://developers.google.com/web/fundamentals/primers/service-workers/}}
 	\label{fig:swLifecycle}
 \end{figure}
-Nach dem ein Service Worker registriert wurde befindet er sich im Zustand der Installierung. Während der Installation werden häufig Inhalte in den Cache geladen. Wurde der Service Worker erfolgreich installiert wird er aktiviert. Ab diesem Punkt kann er Requests über das fetch event abfangen. Um Arbeitsspeicher zu sparen wird der Service Worker terminiert falls er keine fetch oder message events empfängt. Dies hat zu folge das ein Service Worker sich nicht auf den globalen Zustand verlassen kann, sondern benögten Zustand statt dessen auf die IndexedDb ausgelagert werden muss.  
+Nach dem ein Service Worker registriert wurde befindet er sich im Zustand der Installierung. Während der Installation werden häufig Inhalte in den Cache geladen. Wurde der Service Worker erfolgreich installiert wird er aktiviert. Ab diesem Punkt kann er Requests über das fetch event abfangen. Um Arbeitsspeicher zu sparen wird der Service Worker terminiert falls er keine Fetch oder Message events empfängt. Dies hat zu folge das ein Service Worker sich nicht auf den globalen Zustand verlassen kann, sondern statt dessen seinen Zustand auf die IndexedDb ausgelagert werden muss.
 
 
 
@@ -276,9 +276,9 @@ Nach dem ein Service Worker registriert wurde befindet er sich im Zustand der In
 \section{Websockets}
 
 
-Websockets ist ein, auf TCP basierendes, Protokoll das bidirektionale Verbindungen zwischen Server und Webanwendung ermöglicht. Nachdem der Client eine Websocket Verbindung zum Server Aufgebaut hat ist es dem Server im Gegensatz zu HTTP möglich ohne vorherige Anfrage des Clients Daten an ihn zu senden. Zum initieren einer Verbindung wird ein Handshake durchgeführt der vom Client angestoßen werden muss. Dazu wird wie bei HTTP der Port 80 verwendet. Der Server antwortet bei erfolgreichem Handshake mit dem HTTP status code 101. Um eine Abwärtskompatibilität zu gewährleisten werden ähnliche Header wie bei HTTP verwendet.
+Websockets ist ein, auf TCP basierendes, Protokoll das bidirektionale Verbindungen zwischen Server und Webanwendung ermöglicht. Nachdem der Client eine Websocket Verbindung zum Server Aufgebaut hat ist es dem Server im Gegensatz zu HTTP möglich ohne vorherige Anfrage des Clients Daten an ihn zu senden. Zum initiieren einer Verbindung wird ein Handshake durchgeführt der vom Client angestoßen werden muss. Dazu wird wie bei HTTP der Port 80 verwendet. Der Server antwortet bei erfolgreichem Handshake mit dem HTTP Status code 101. Um eine Abwärtskompatibilität zu gewährleisten werden ähnliche Header wie bei HTTP verwendet.
 
-Neben dem unverschlüsseltem URI-Schema ws definiert RFC6455\cite{rfcWebsockets} auch das verschlüsselte Schema wss. Da  sehr wenig daten overhead bei der Kommunikation besteht eigenen sich Websockets insbesondere für Anwendungen die eine geringe Latenz benötigen. Websockets werden von allen modernen Browsern unterstützt.
+Neben dem unverschlüsseltem URI-Schema ws definiert RFC6455\cite{rfcWebsockets} auch das verschlüsselte Schema wss. Da  sehr wenig Daten overhead bei der Kommunikation besteht eigenen sich Websockets insbesondere für Anwendungen die eine geringe Latenz benötigen. Websockets werden von allen modernen Browsern unterstützt.
 
 %bidirektionale verbindung zwischen server und Webanwendung
 %auf tcp basierendes protokoll
@@ -302,18 +302,18 @@ RFC6455\cite{rfcWebsockets}
 
 \section{Distributed caches}
 \begin{itemize}
-	\item Hier algorithmen erklären?
+	\item Hier Algorithmen erklären?
 	\item auf hashes eingehen
 	\item wie ein hash nur verteilt
 \end{itemize}
 \section{IP Adressen}
-Eine IP Adresse ist ein eindeutiger Identifier für Computer in einem Netzwerk. Jedem Computer in einem Netzwerk wird eine eindeutige IP Adresse zugewiesen über die der Computer adressierbar ist. Dadurch ist der Computer für andere erreichbar. Sie wird benötigt um ein routing vom Sender zum Empfänger zu ermöglichen. \cite{www}
+Eine IP Adresse ist ein eindeutiger Identifizier für Computer in einem Netzwerk. Jedem Computer in einem Netzwerk wird eine eindeutige IP Adresse zugewiesen über die der Computer adressierbar ist. Dadurch ist der Computer für andere erreichbar. Sie wird benötigt um ein routing vom Sender zum Empfänger zu ermöglichen. \cite{www}
 \subsection{Aufbau von IP Adressen}
 IPv4 wurde im Jahr 1981 durch das RFC 791\cite{rfc791} definiert und besteht aus einer 32 stelligen Binärzahl wodurch maximal 4.294.967.296 Adressen dargestellt werden können. Zur besseren Lesbarkeit werden IPv4 Adressen meist als vierer Blöcke in Dezimal geschrieben. IP Adressen bestehen aus einem Netz- und einem Hostanteil. Mit dem Netzanteil wird das Teilnetz indem sich das Gerät befindet beschrieben, während der Hostanteil das Gerät identifiziert. Durch eine Subnetzmaske wird festgelegt welcher Teil der IP-Adresse Host- und welcher Netzanteil ist. Alle Bits die in der Subnetzmaske 1 sind legen den Netzanteil fest - alle bits die 0 sind den Hostanteil.
 
 \begin{table}
 \begin{center}
-\caption{Beispiel einer IP Adresse mit Subntzmaske}
+\caption{Beispiel einer IP Adresse mit Subnetzmaske}
 \begin{tabular}{|r|l|l|}
 	\hline
 	IP-Adresse & 145.574.322. & 5 \\ \hline
@@ -325,34 +325,24 @@ IPv4 wurde im Jahr 1981 durch das RFC 791\cite{rfc791} definiert und besteht aus
 \end{table}
 
 
-Aufgrund der stark ansteigenden Zahl an Geräten die mit dem Internet verbunden sind ist der Adressbereich der IPv4 Adressen nicht mehr ausreichend. Entwickelte der ITFE 1998 einen neuen standard. IPv6 verwendet 128 anstatt der 32 Bits zur Darstellung von IP Adressen. Dadurch ist es möglich 2$^3^2$ Geräte abzubilden. IPv6 wird meist als vier Oktette in hexadezimal dargestellt. Zur Unterscheidung von Host- und Netzanteil werden Präfixlängen angegeben.  
+Aufgrund der stark ansteigenden Zahl an Geräten die mit dem Internet verbunden sind ist der Adressbereich der IPv4 Adressen nicht mehr ausreichend. Entwickelte der ITFE 1998 einen neuen Standard. IPv6 verwendet 128 anstatt der 32 Bits zur Darstellung von IP Adressen. Dadurch ist es möglich 2$^3^2$ Geräte abzubilden. IPv6 wird meist als vier Oktette in hexadezimal dargestellt. Zur Unterscheidung von Host- und Netzanteil werden Präfixlängen angegeben.  
 
 \subsection{Network Adress Translation(NAT)}
 Mit Hilfe von NAT können mehrere Geräte über die selbe öffentliche IP-Adresse über das Internet verbunden werden. Dadurch ist es möglich trotz des begrenzten Adressraums von IPv4 mehr Geräte mit dem Internet zu verbinden. Dazu werden werden vom die IP-Adress header Felder der Datenpackete verändert. 
 
 \section{Ruby on Rails}
-Ruby on Rails ist ein in Ruby geschriebenes Opensource Webframework. Zentraler Ansatz der Entwicklung des Frameworks ist es, es Software Entwicklern einfacher zu machen Webanwendungen zu schreiben. Die Philosopie des Frameworks beinhaltet zwei Prinzipien:\footnote{https://guides.rubyonrails.org/}
+Ruby on Rails ist ein in Ruby geschriebenes Opensource Webframework. Zentraler Ansatz der Entwicklung des Frameworks ist es, es Software Entwicklern einfacher zu machen Webanwendungen zu schreiben. Die Philosophie des Frameworks beinhaltet zwei Prinzipien:\footnote{https://guides.rubyonrails.org/}
 
 \textbf{Don't Repeat Yourself(DRY):}
-Jede Information und funktionalität soll einen representation im System haben. Dardurch soll erreicht werden das die Software einfacher wartbar, übersichtichtlicher und fehlerfreier sein.
+Jede Information und Funktionalität soll einen Repräsentation im System haben. Dadurch soll erreicht werden das die Software einfacher wartbar, über­sicht­licher und fehlerfreier sein.
  
 \textbf{Convention over Configuration:}
-Um die Entwicklung für den Programmierer zu erleichtern werden annahmen getroffen und standard Einstellungen festgelegt. Diese lassen sich zwar durch die Entwickler ändern sind zu beginn jedes Projektes erst einmal gleich. So werden z.b. auch Vereinbarungen über die Benennung von Methoden und Klassen getroffen(Naming Conventions).
+Um die Entwicklung für den Programmierer zu erleichtern werden annahmen getroffen und Standard Einstellungen festgelegt. Diese lassen sich zwar durch die Entwickler ändern sind zu beginn jedes Projektes erst einmal gleich. So werden z.b. auch Vereinbarungen über die Benennung von Methoden und Klassen getroffen(Naming Conventions).
 
 Ruby on Rails ist ein Model View Controller basiertes Framework. \todo{MVC Beschreiben?}
 
 \section{Turbolinks}
-
-\begin{itemize}
-	\item Javascript library
-	\item beschleunigt navigation auf seite
-	\item Seite wird nicht komplett geladen
-	\item Requests werden über ajax vor dem rendern abgefangen
-	\item nur der teil der sich geändert hat wird neu gerändert
-	\item caching
-	\item javascript scripte müssen nicht neu geladen werden
-	\item https://github.com/turbolinks/turbolinks
-\end{itemize}
+Turbolinks\footnote{https://github.com/turbolinks/turbolinks} ist eine Javascript Bibliothek zur Beschleunigung der Navigation auf Internetseiten. Klick ein Nutzer auf einen Link wird der Seitenabruf unterbrochen und stattdessen mit Ajax geladen. Anschließend überprüft Turbolinks welche Teile der Seite sich verändert haben und rendert nur diese Elemente. Dadurch entsteht ein flüssigeres Nutzererlebnis da Teile der Seite bestehen bleiben und nicht ersetzt werden. Da nachgeladene Ressourcen die sich bei der Navigation nicht ändern nicht erneut geladen werden müssen beschleunigt sich die Ladezeit. Javascript scripts müssen nicht neu geladen werden sondern bleiben in ihrem vorigen Zustand bestehen da kein kompletter Pageload vorgenommen werden muss.
 
 \section{Single Page Applications}
 
@@ -360,14 +350,14 @@ Unter Single Page Applications(SPA) versteht man Webanwendungen bei denen der Cl
 \todo{Woher quellen nehmen??? online??}
 
 \section{Redis}
-Bei Redis handelt es sich um einen In-memory Datenstruktur Speicher der als LRU cache, Datenbank oder message broker verwendet werden kann.\footnote{https://redis.io/} Redis ist ein Opensource Projekt und  wird von Redis Labs gesponsort. Jede gespeicherte Datenstruktur ist über einen Key abrufbar.
+Bei Redis handelt es sich um einen In-Memory Datenstruktur Speicher der als LRU cache, Datenbank oder Message Broker verwendet werden kann.\footnote{https://redis.io/} Redis ist ein Opensource Projekt und  wird von Redis Labs gesponsert. Jede gespeicherte Datenstruktur ist über einen Key abrufbar.
 
 Unter anderem unterstützt Redis folgende Datentypen:
 Set:
 Bei Sets handelt es sich um Mengen die Strings beinhalten können. Wobei jeder String nur einmal pro Set vorkommt. Hinzufügen von Element, Löschen von Elementen und das prüfen ob ein Element in einem Set vorhanden ist passieren in konstanter Zeit. (O(1))
 
 Strings:
-Redis Strings sind binary safe, das heist sie können jegliche Daten, z.B. auch Bilddaten, enthalten. Strings können auch als atomare counter verwendet werden. Dazu stellt Redis commandos bereit zum erhöhen oder subtrahieren von Strings.
+Redis Strings sind binary safe, das heißt sie können jegliche Daten, z.B. auch Bilddaten, enthalten. Strings können auch als atomare Counter verwendet werden. Dazu stellt Redis Kommandos bereit zum erhöhen oder subtrahieren von Strings.
 
 List:
 Listen enthalten eine geordnete Liste von Strings, in der Reihenfolge in der sie hinzugefügt wurden. Elemente können sowohl vorne als auch hinten in die Liste eingefügt werden

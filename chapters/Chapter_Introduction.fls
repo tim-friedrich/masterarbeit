@@ -1,8 +1,0 @@
-PWD /Users/Tim/Projekte/masterarbeit/chapters
-INPUT /usr/local/texlive/2018/texmf.cnf
-INPUT /usr/local/texlive/2018/texmf-dist/web2c/texmf.cnf
-INPUT /usr/local/texlive/2018/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT Chapter_Introduction.tex
-OUTPUT Chapter_Introduction.log
-INPUT /usr/local/texlive/2018/texmf-dist/fonts/map/fontname/texfonts.map
-INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm

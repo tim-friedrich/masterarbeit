@@ -21,7 +21,7 @@
 %
 %In dem Signaling server selbst wird die Logik abgebildet, wie die Klassen und Schüler miteinander in Verbindung stehen. Implementiert wurde dieser mit socket.io, da die native Klassenorganisation und Websocket-Technologie sich nahezu perfekt für unser Szenario anbot.
 
-\section{Architectur}
+\section{Architektur}
 
 \begin{itemize}
   \item Technologiewahl
@@ -62,7 +62,7 @@
 	\label{fig:sequenceDiagram}
 \end{figure}
 \begin{itemize}
-  \item warten bis sw active ist/alle verbindungen ready sind vs request normal durchgehen lassen bis alles fertig ist.
+  \item warten bis sw Aktiv ist/alle verbindungen ready sind vs request normal durchgehen lassen bis alles fertig ist.
   \item 	Austausch erst möglich wenn script geladen ist
   \item 	blockent: 
   \item 		Ressourcen werden so lange aufgehalten bis verbindung initialisiert
@@ -85,7 +85,7 @@
 \end{itemize}
 
 \subsection{Tests}
-Um das Plugin zu testen wird als test runner karma verwendet.\footnote{https://karma-runner.github.io/latest/index.html} Als test framework wird mocha\footnote{https://mochajs.org/} und als assertion Library wird Chai\footnote{https://www.chaijs.com/} eingesetzt 
+Um das Plugin zu testen wird als test Runner Karma verwendet.\footnote{https://karma-runner.github.io/latest/index.html} Als test framework wird mochajs\footnote{https://mochajs.org/} und als assertion Library wird Chai\footnote{https://www.chaijs.com/} eingesetzt 
 
 %- mocha
 %- chai
@@ -110,9 +110,9 @@ Um eine gute Anpassung an verschiedene Anwendungsfälle zu ermöglichen bietet d
 \item[channel]\hfill \\
 Bezeichnet den für das Peer Meshing zu verwendenden Websocket channel. Alle Clients mit dem selben Channel befinden sich im selben Peer Mesh.
 \item[clientId]\hfill \\
-Eindeutiger Identifier mit dem der Peer identifiziert werden kann. Ähnlich einer Session ID wird er verwendet um Clients wieder zuerkennen und anzusprechen.
+Eindeutiger Identifizier mit dem der Peer identifiziert werden kann. Ähnlich einer Session ID wird er verwendet um Clients wieder zuerkennen und anzusprechen.
 \item[idLength]\hfill \\
-Bezeichnet die maximale Länge der ClientIds. Kürzere ClientIds werden bis zu dieser Länge aufgefüllt. Wird benötigt um intern bei dem verschicken von Packeten über das CDN ClientIds fester länge verwenden zu können.(siehe \todo{referenzieren}) 
+Bezeichnet die maximale Länge der ClientIds. Kürzere ClientIds werden bis zu dieser Länge aufgefüllt. Wird benötigt um intern bei dem verschicken von Paketen über das CDN ClientIds fester länge verwenden zu können.(siehe \todo{referenzieren}) 
 \item[stunServer]\hfill \\
 Gibt den zu verwendenden STUN Server an. Dies kann ein öffentlicher oder privat betriebener Server sein. Kann freigelassen werden falls kein STUN Server verwendet werden soll
 \item[verbose]\hfill \\
@@ -141,7 +141,7 @@ URL an die die erhobenen Statistiken gesendet werden sollen. siehe \ref{ch:imple
 \end{description}
 
 \section{Client UI Event}
-Um es der einbindenden Anwendung zu ermöglichen auf Änderungen bezüglich der verbundenen Peers sowie deren Ressourcen zu Reagieren stellt das Plugin das Event ui:onUpdate bereit das bei Änderungen ausgelöst wird. Das Event übergibt das Peer Object des Clients wodurch der Event empfänger zugriff auf die Anzahl der verbundenen Peers so wie deren Ressourcen hat. 
+Um es der einbindenden Anwendung zu ermöglichen auf Änderungen bezüglich der verbundenen Peers sowie deren Ressourcen zu Reagieren stellt das Plugin das Event ui:onUpdate bereit das bei Änderungen ausgelöst wird. Das Event übergibt das Peer Object des Clients wodurch der Event Empfänger zugriff auf die Anzahl der verbundenen Peers so wie deren Ressourcen hat. 
 
 \section{Signaling Server}
 The signaling server itself uses socket.io and can be found here. The client ID is created there and is essential for the lifecycle of a peer in the whole network. It is not clear if the client IDs given by socket.io always have the same length. Therefore, client IDs will be padded to a maximal length of 24. This is necessary because the client IDs need to be sent via the binary datachannel and consequently, this requires a fixed length.
@@ -183,7 +183,7 @@ The signaling server itself uses socket.io and can be found here. The client ID 
 \end{figure}
 \todo{Diagramm aktualisieren}
 
-%Client 1 (C1) ist der erste der die Webseite aufruft. Er registriert sich beim Signaling server und fragt im Anschluss img.png an (rot). Da noch niemand anders auf der Seite ist von dem er die Ressource bekommen könnte und er zudem die Ressource nicht in seinem Cache hat, wird img.png über das Internet vom Webserver geladen. Client 2 (C2) ruft nun ebenfalls die Webseite auf und registriert sich beim Signaling server. Dieser benachrichtigt C1, dass ein neuer Teilnehmer registriert wurde, woraufhin C1 einen Verbindungsaufbau zu C2 einleitet. Steht die direkte Verbindung zwischen C1 und C2 (grün), teilt C1 C2 den Inhalt seines aktuellen Caches mit. Fragt C2 img.png an (rot), weiß er so, dass er diese von C1 anfragen kann. Hat er img.png erhalten, teilt er allen anderen Teilnehmern (in diesem Fall nur C1) mit, dass auch er jetzt img.png als Ressource in seinem Cache hat
+Client 1 (C1) ist der erste der die Webseite aufruft. Er registriert sich beim Signaling server und fragt im Anschluss img.png an (rot). Da noch niemand anders auf der Seite ist von dem er die Ressource bekommen könnte und er zudem die Ressource nicht in seinem Cache hat, wird img.png über das Internet vom Webserver geladen. Client 2 (C2) ruft nun ebenfalls die Webseite auf und registriert sich beim Signaling server. Dieser benachrichtigt C1, dass ein neuer Teilnehmer registriert wurde, woraufhin C1 einen Verbindungsaufbau zu C2 einleitet. Steht die direkte Verbindung zwischen C1 und C2 (grün), teilt C1 C2 den Inhalt seines aktuellen Caches mit. Fragt C2 img.png an (rot), weiß er so, dass er diese von C1 anfragen kann. Hat er img.png erhalten, teilt er allen anderen Teilnehmern (in diesem Fall nur C1) mit, dass auch er jetzt img.png als Ressource in seinem Cache hat
 
 \subsection{Updates}
 \begin{itemize}
@@ -213,17 +213,17 @@ Für den Austausch von Daten werden die von WebRTC angebotene DataChannel genutz
 
 \begin{listing}[h]
 	\inputminted{javascript}{listings/buffersize.js}
-	\caption{Buffersize berücksichtigung}
+	\caption{Buffersize Berücksichtigung}
 	\label{lst:code-buffersize}
 \end{listing}
 \begin{listing}[h]
 	\inputminted{javascript}{listings/handle_chunk.js}
-	\caption{Buffersize berücksichtigung}
+	\caption{Buffersize Berücksichtigung}
 	\label{lst:code-handle-chunk}
 \end{listing}
 
 \begin{itemize}
-  \item SCTP(DataChannel) message size limit 16kiB
+  \item SCTP(DataChannel) Message size limit 16kiB
   \item Fixe id länge notwendig
   \item datachannel buffersize muss berücksichtigt werden
   \item chunking reassembling nötig
@@ -244,15 +244,15 @@ Für den Austausch von Daten werden die von WebRTC angebotene DataChannel genutz
 \section{System Test}
 Das Plugin stellt ein Modul bereit um zu testen ob es einem Client möglich ist am \pTp CDN teilzunehmen.
 
-Dazu werden drei tests bereitgestellt.
+Dazu werden drei Tests bereitgestellt.
 \begin{lstlisting}
 	p2pCDN.systemTest.testBrowser()
 \end{lstlisting}
- Mit Hilfe von modernizr\footnote{https://modernizr.com/} testet die Funktion ob die verwendete Browserversion alle benötigeten Funktionen unterstützt. Modernizr ist eine Javascript Bibliothek mit der gestetet werden kann ob ein Browser bestimmte funktionen unterstützt.
+ Mit Hilfe von modernizr\footnote{https://modernizr.com/} testet die Funktion ob die verwendete Browserversion alle benötigten Funktionen unterstützt. Modernizr ist eine Javascript Bibliothek mit der getestet werden kann ob ein Browser bestimmte Funktionen unterstützt.
 \begin{lstlisting}
 	p2pCDN.systemTest.webrtcInitialized()
 \end{lstlisting}
-Gibt ein Promise zurück welches überprüft ob die webrtc Verbindung erfolgreich aufgebaut wurde. Da die Initialisierung einen moment in Anspruch nehmen kann wird wiederholt geprüft ob die Verbindung aufgebaut wurde.
+Gibt ein Promise zurück welches überprüft ob die webrtc Verbindung erfolgreich aufgebaut wurde. Da die Initialisierung einen Moment in Anspruch nehmen kann wird wiederholt geprüft ob die Verbindung aufgebaut wurde.
 \begin{lstlisting}
 	p2pCDN.systemTest.clientConnected()
 \end{lstlisting}
@@ -288,7 +288,7 @@ Method gibt an wie die Anfrage behandelt wurde und kann die Werte 'cacheResponse
 \item[URL]\hfill \\
 Die URL enthält die URL der angefragten Ressource. 
 \item[timing]\hfill \\
-Timing beinhaltet die Zeitspanne die benötigt wurde um die Anfrage zu beantworten, beginnend vor der Entscheidung wie der Request abgearbeitet werden soll(siehe \ref{lst:handle_request}) und endend nach dem die Anfrage empfangen wurde. Nicht enthalten in der Zeitspanne ist die Entscheidung ob der Service worker den Request bearbeitet und die Renderzeiten des Browsers. Diese Zeiten sind nicht abhänig von der Art der Request Beantwortung.(siehe evaluation)
+Timing beinhaltet die Zeitspanne die benötigt wurde um die Anfrage zu beantworten, beginnend vor der Entscheidung wie der Request abgearbeitet werden soll(siehe \ref{lst:handle_request}) und endend nach dem die Anfrage empfangen wurde. Nicht enthalten in der Zeitspanne ist die Entscheidung ob der Service worker den Request bearbeitet und die Renderzeiten des Browsers. Diese Zeiten sind nicht abhängig von der Art der Request Beantwortung.(siehe Evaluation)
 \end{description}
 Mit Hilfe der Configuration kann festgelegt werden an welchen Endpunkt die Statistik gesendet werden soll. Die Anwendung ist für das speichern und verarbeiten der Daten zuständig, dies ist nicht Teil des Plugins. Slidesync speichert die Daten als JSON in Redis und stellt einen JSON Endpunkt zur Verfügung mit dem die Statistiken abgerufen werden können. Für die Labortests werden die Daten in JSON Dateien zur späteren Verarbeitung abgelegt.
 \begin{listing}[h]
@@ -304,8 +304,9 @@ Mit Hilfe der Configuration kann festgelegt werden an welchen Endpunkt die Stati
 \end{itemize}
 
 \section{Quota limits - Löschen von Requests aus dem Cache}
+\footnote{https://developers.google.com/web/fundamentals/instant-and-offline/web-storage/offline-for-pwa}
 \begin{table}[!htb]
-	\caption{Browser Storage Quotas \footnote{https://developers.google.com/web/fundamentals/instant-and-offline/web-storage/offline-for-pwa}}
+	\caption{Browser Storage Quotas }
 \begin{center}
 
 	\begin{tabular}{|r|l|l|}
@@ -329,3 +330,10 @@ Mit Hilfe der Quota Management API\footnote{https://developers.google.com/web/up
 %	\item https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API/Browser_storage_limits_and_eviction_criteria
 
 \section{Resource loading}
+
+\section{ Configuration von Unternehmensnetzwerken }
+
+\begin{itemize}
+	\item Port range
+	\item firewalls?w
+\end{itemize}
