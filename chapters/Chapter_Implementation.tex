@@ -1,4 +1,4 @@
-\chapter{Implementierung}\label{ch:implementation}
+\chapter{Implementierung}\label{yy}
 
 
 
@@ -21,29 +21,12 @@
 %
 %In dem Signaling server selbst wird die Logik abgebildet, wie die Klassen und Schüler miteinander in Verbindung stehen. Implementiert wurde dieser mit socket.io, da die native Klassenorganisation und Websocket-Technologie sich nahezu perfekt für unser Szenario anbot.
 
-\section{Architektur}
+\section{Technologiewahl}
+Das \pTp \cdn ist eine Javascript Bibliothek, die nach erfolgreicher Einbindung und Konfiguration im Hintergrund eigenständig läuft. Es werden zwei Javascript Dateien zur Verfügung gestellt. Das Service Worker Script, und das \pTp \cdn Client Script. Beide Scripte müssen von der Anwendung eingebunden werden. Der Server muss einen Faye Websocket Server bereit stellen. Da das Peer Meshing über die Konfiguration des Faye Channels geschieht muss der Server gegebenefalls eine Peer Meshing Strategie implementieren. Zur einfacheren Einbindung in bestehende Projekte wird ein NodeJS Modul so wie ein Ruby Gem bereit gestellt. Das Ruby Gem bindet das ServiceWorker Script im Public Ordner der Ruby-on-Rails Anwendung ein und das \pTp CDN Script im vendor/assets Ordner.
 
-\begin{itemize}
-  \item Technologiewahl
-  \item ES6 compilation
-  \item Beschreibung der Komponenten:
-  \item Service Worker
-  \item 	Cached Ressourcen
-  \item 	Proxy
-  \item P2PCDN
-  \item 	Schnittstelle für externe Anwendungen
-  \item 	Nimmt Konfiguration entgegen
-  \item 	Initialisiert CDN
-  \item Middleware
-  \item 	Vermittler zwischen Service Worker und Script
-  \item 	Arbeitet mit Events
-  \item 	Welche Events gibt es wer registriert sich drauf?
-  \item Peer
-  \item 	Representiert eigenen Peer
-  \item 	Hält verbindungen zu anderen Peers
-  \item Signaling
-  \item FayeConnection	
-\end{itemize}
+Der Javascript Code ist in ES6 geschrieben und wird mittels Babel\footnote{https://babeljs.io/} in Browser kompatiblen Javascript Code übersetzt und anschließend mit Node-minify komprimiert. \footnote{https://www.npmjs.com/package/node-minify}
+
+\section{Architektur}
 
 \begin{figure}[!h]
 	\centering
@@ -52,6 +35,26 @@
 	\label{fig:Klassendiagramm}
 \end{figure}
 
+\subsection{Client Script}
+
+Das Javascript Plugin besteht aus sieben Komponenten. Die Klasse P2pCDN bildet die Schnittstelle nach außen und stellt Funktionalitäten zum initialisieren und konfigurieren des \cdns bereit. Außerdem macht es den SystemTest nach außen verfügbar. P2pCDN nimmt die Konfiguration entgegen und initialisiert ein Peer Objekt. Das Peer Objekt repräsentiert den eigenen \client in dem \pTp Netzwerk. Es hält den eigenen Zustand und verwaltet die Verbindungen anderen \clients und verwaltet deren Ressourcen Hashes. Das Peer Objekt nutzt Funktionalitäten des Signaling Moduls um Verbindungen zu anderen \clients aufzunehmen. Das Signaling Modul implementiert das Webrtc Signaling Protokoll. FayeConnection abstrahiert die beim Signaling verwendete Websocket Bibliothek, in diesem Fall Faye um es zu ermöglichen auch andere Websocket Bibliotheken zu verwenden.
+Die ServiceWorker Middleware fungiert als Vermittler zwischen Service Worker und Client Script und ist für die Initialisierung des Service Workers zuständig. Die Komponente arbeitet Event basiert und stellt folgende Events bereit:
+\begin{description}
+	\item[peer:onRequestResource]\hfill \\
+	Wird von der Serviceworker Middleware ausgelöst wenn der Service Worker eine Ressource über das \pTp CDN anfragt. Der Peer registriert auf dem Event und bearbeitet die Anfrage.
+	\item[peer:onAddedResource / peer:onRemovedResource]\hfill \\
+	Speichert der Service Worker eine Ressource so teilt er dies der ServiceWorker Middleware über einen Message Channel mit. Diese löst anschließend das peer:onAddedResource Event aus um dem Peer über die Änderung zu informieren, der die das Update an die verbundenen \clients weiter leitet.
+	\item[sw:clientReady]\hfill \\
+	Noch eintscheiden ob darüber geschrieben werden soll
+	\item[sw:onRequestCache]\hfill \\
+	Stellt der Peer eine neue Verbindung zu einem anderen \client her so sendet er eine Liste seiner gespeicherten Ressourcen an den Client. Diese Liste wird vom Service Worker verwaltet. Um an den Inhalt seines Caches zu kommen sendet der Peer das sw:onRequestCache Event mit einem Callback der bei erfolg ausgeführt wird. Die ServiceWorker Middleware leitet die anfrage über den Message Channel an den Service Worker weiter.
+	\item[message]\hfill \\
+	TODO
+\end{description}
+
+\begin{itemize}
+	\item heartbeats
+\end{itemize}
 
 \subsection{Service worker}
 

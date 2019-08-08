@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.1)  31 JUL 2019 11:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.1)  7 AUG 2019 18:50
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -162,7 +162,7 @@ Package babel Warning: Last declared language option is `ngerman',
 )
 
 Package Babel Warning: The package option `english' should not be used
-(Babel)                with a more specific one (like `american') on input line 90.
+(Babel)                with a more specific one (like `american') on input line 93.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/csquotes/csquotes.sty
 Package: csquotes 2018/04/13 v5.2d context-sensitive quotations (JAW)
@@ -814,14 +814,14 @@ File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
 \Gin@req@height=\dimen132
 \Gin@req@width=\dimen133
 )
-Package hyperref Info: Option `colorlinks' set `false' on input line 179.
-Package hyperref Info: Option `linktocpage' set `false' on input line 179.
-Package hyperref Info: Option `breaklinks' set `true' on input line 179.
-Package hyperref Info: Option `pageanchor' set `true' on input line 179.
-Package hyperref Info: Option `plainpages' set `false' on input line 179.
-Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 179.
-Package hyperref Info: Option `bookmarksopen' set `true' on input line 179.
-Package hyperref Info: Option `hypertexnames' set `true' on input line 179.
+Package hyperref Info: Option `colorlinks' set `false' on input line 182.
+Package hyperref Info: Option `linktocpage' set `false' on input line 182.
+Package hyperref Info: Option `breaklinks' set `true' on input line 182.
+Package hyperref Info: Option `pageanchor' set `true' on input line 182.
+Package hyperref Info: Option `plainpages' set `false' on input line 182.
+Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 182.
+Package hyperref Info: Option `bookmarksopen' set `true' on input line 182.
+Package hyperref Info: Option `hypertexnames' set `true' on input line 182.
  (/usr/local/texlive/2019/texmf-dist/tex/latex/classicthesis/classicthesis.sty
 Package: classicthesis 2018/06/03 v4.6 Typographic style for a classic-looking thesis
  (/usr/local/texlive/2019/texmf-dist/tex/latex/listings/listings.sty
@@ -1410,7 +1410,7 @@ Package: longtable 2014/10/28 v4.11 Multi-page Table package (DPC)+ FMi change
 \c@LT@chunks=\count463
 \LT@p@ftn=\toks33
 )
-Class scrreprt Info: longtable captions redefined on input line 283.
+Class scrreprt Info: longtable captions redefined on input line 286.
  (/usr/local/texlive/2019/texmf-dist/tex/latex/multirow/multirow.sty
 Package: multirow 2019/01/01 v2.4 Span multiple rows of a table
 \multirow@colwidth=\skip161
@@ -1835,13 +1835,37 @@ Overfull \hbox (5.8788pt too wide) in paragraph at lines 74--75
  []
 
 [7]
+Overfull \hbox (8.54854pt too wide) in paragraph at lines 96--97
+\T1/pplj/m/n/10.95 (-20) Con-nec-tion und RTC-Dat-aChan-nel die im fol-gen-den genauer beschrieben
+ []
+
 <figures/Webrtc_overview.pdf, id=310, 591.20876pt x 425.59pt>
 File: figures/Webrtc_overview.pdf Graphic file (type pdf)
 <use figures/Webrtc_overview.pdf>
 Package pdftex.def Info: figures/Webrtc_overview.pdf  used on input line 100.
 (pdftex.def)             Requested size: 268.80103pt x 193.50087pt.
- [8 <./figures/Webrtc_overview.pdf>] [9] [10]
-Overfull \hbox (1.05675pt too wide) in paragraph at lines 241--242
+
+Overfull \hbox (33.14467pt too wide) in paragraph at lines 116--117
+\T1/pplj/m/n/10.95 (-20) voneinan-der wis-sen und In-for-ma-tio-nen über Meta-daten zum Verbindungsauf-
+ []
+
+[8 <./figures/Webrtc_overview.pdf>] [9]
+Overfull \hbox (0.22809pt too wide) in paragraph at lines 192--194
+\T1/pplj/m/n/10.95 (-20) Das RTCPeer-Con-n-tec-tion In-ter-face repräsen-tiert eine Verbindung
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 202--204
+
+ []
+
+[10]
+Overfull \hbox (0.28749pt too wide) in paragraph at lines 231--233
+\T1/pplj/m/n/10.95 (-20) Die Me-di-as-tream Api, auch ge-tUser-Me-dia, er-möglicht es Echtzeit
+ []
+
+
+Overfull \hbox (1.05675pt too wide) in paragraph at lines 243--244
 []\T1/pplj/m/n/10.95 (-20) https://developers.google.com/web/fundamentals/instant-and-
  []
 
@@ -1851,24 +1875,24 @@ pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./figures/sw-lifecycle.pdf): 
 <figures/sw-lifecycle.pdf, id=357, 528.47438pt x 515.67656pt>
 File: figures/sw-lifecycle.pdf Graphic file (type pdf)
 <use figures/sw-lifecycle.pdf>
-Package pdftex.def Info: figures/sw-lifecycle.pdf  used on input line 261.
+Package pdftex.def Info: figures/sw-lifecycle.pdf  used on input line 263.
 (pdftex.def)             Requested size: 268.80103pt x 262.29126pt.
 [12 <./figures/sw-lifecycle.pdf>]
-Overfull \hbox (13.91356pt too wide) in paragraph at lines 280--281
+Overfull \hbox (13.91356pt too wide) in paragraph at lines 282--283
 \T1/pplj/m/n/10.95 (-20) Verbindung wird ein Hand-shake durchge-führt der vom Client angestoÿen
  []
 
 
-LaTeX Warning: Citation 'www' on page 13 undefined on input line 311.
+LaTeX Warning: Citation 'www' on page 13 undefined on input line 313.
 
 
-Overfull \hbox (10.32066pt too wide) in paragraph at lines 313--314
+Overfull \hbox (10.32066pt too wide) in paragraph at lines 315--316
 \T1/pplj/m/n/10.95 (-20) aus einer 32 stel-li-gen Binärzahl wodurch max-i-mal 4.294.967.296 Adressen
  []
 
 [13]
-./chapters/Chapter_Related_Work.tex:329: Double superscript.
-l.329 ...P Adressen. Dadurch ist es mÃ¶glich 2$^3^
+./chapters/Chapter_Related_Work.tex:331: Double superscript.
+l.331 ...P Adressen. Dadurch ist es mÃ¶glich 2$^3^
                                                   2$ GerÃ¤te abzubilden. IPv...
 I treat `x^1^2' essentially like `x^1{}^2'.
 
@@ -1979,19 +2003,11 @@ pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./figures/Ressourcen_update.p
 
  (./chapters/Chapter_Implementation.tex
 Chapter 5.
-<figures/Klassendiagramm.pdf, id=572, 333.245pt x 409.53pt>
+<figures/Klassendiagramm.pdf, id=574, 333.245pt x 409.53pt>
 File: figures/Klassendiagramm.pdf Graphic file (type pdf)
 <use figures/Klassendiagramm.pdf>
-Package pdftex.def Info: figures/Klassendiagramm.pdf  used on input line 50.
+Package pdftex.def Info: figures/Klassendiagramm.pdf  used on input line 33.
 (pdftex.def)             Requested size: 268.80103pt x 330.35521pt.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<figures/ServiceWorker.pdf, id=573, 327.47343pt x 135.50626pt>
-File: figures/ServiceWorker.pdf Graphic file (type pdf)
-<use figures/ServiceWorker.pdf>
-Package pdftex.def Info: figures/ServiceWorker.pdf  used on input line 60.
-(pdftex.def)             Requested size: 268.80103pt x 111.22748pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
@@ -2002,7 +2018,17 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 
-] [31 <./figures/Klassendiagramm.pdf> <./figures/ServiceWorker.pdf>] (./_minted-modernthesis/default-pyg-prefix.pygstyle) (./_minted-modernthesis/lovelace.pygstyle) (./_minted-modernthesis/9BD6C3801944E119FE2BFF38922D9C4C5570EE3AC29EC573AAC8B33A6DFF36AE.pygtex
+] [31 <./figures/Klassendiagramm.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 51--52
+
+ []
+
+<figures/ServiceWorker.pdf, id=604, 327.47343pt x 135.50626pt>
+File: figures/ServiceWorker.pdf Graphic file (type pdf)
+<use figures/ServiceWorker.pdf>
+Package pdftex.def Info: figures/ServiceWorker.pdf  used on input line 58.
+(pdftex.def)             Requested size: 268.80103pt x 111.22748pt.
+[32 <./figures/ServiceWorker.pdf>] (./_minted-modernthesis/default-pyg-prefix.pygstyle) (./_minted-modernthesis/lovelace.pygstyle) (./_minted-modernthesis/9BD6C3801944E119FE2BFF38922D9C4C5570EE3AC29EC573AAC8B33A6DFF36AE.pygtex
 LaTeX Font Info:    Try loading font information for T1+fvm on input line 1.
  (/usr/local/texlive/2019/texmf-dist/tex/latex/bera/t1fvm.fd
 File: t1fvm.fd 2004/09/07 scalable font definitions for T1/fvm.
@@ -2032,85 +2058,81 @@ LaTeX Font Info:    Font shape `TS1/fvm/m/it' in size <10.95> not available
 LaTeX Font Info:    Font shape `TS1/fvm/m/sl' will be
 (Font)              scaled to size 9.30756pt on input line 9.
 )
-Package hyperref Info: bookmark level for unknown listing defaults to 0 on input line 103.
+Package hyperref Info: bookmark level for unknown listing defaults to 0 on input line 101.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[32] [33] [34]
-<figures/SequenceDiagram.pdf, id=633, 693.34032pt x 723.45282pt>
+[33] [34] [35]
+<figures/SequenceDiagram.pdf, id=642, 693.34032pt x 723.45282pt>
 File: figures/SequenceDiagram.pdf Graphic file (type pdf)
 <use figures/SequenceDiagram.pdf>
-Package pdftex.def Info: figures/SequenceDiagram.pdf  used on input line 180.
+Package pdftex.def Info: figures/SequenceDiagram.pdf  used on input line 178.
 (pdftex.def)             Requested size: 268.80103pt x 280.47858pt.
- [35] [36 <./figures/SequenceDiagram.pdf>] (./_minted-modernthesis/67850B9FCE182FE751A7516CBBDAA92A32BBB603009BB7D568923B5ED11C9CC0.pygtex)
 
-LaTeX Warning: `h' float specifier changed to `ht'.
 
-(./_minted-modernthesis/A16E225688D88C8CE79AD31484FBB22C66400F17496E154127DFD2B6826D8D80.pygtex
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[36] [37 <./figures/SequenceDiagram.pdf>] (./_minted-modernthesis/67850B9FCE182FE751A7516CBBDAA92A32BBB603009BB7D568923B5ED11C9CC0.pygtex) (./_minted-modernthesis/A16E225688D88C8CE79AD31484FBB22C66400F17496E154127DFD2B6826D8D80.pygtex
 LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
 (Font)              scaled to size 5.10004pt on input line 5.
 )
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[37] (./_minted-modernthesis/8A0266F9441F3577BBDEA3EC1C413DC627890E7C7672E389E69C9E126EC076E3.pygtex)
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-(./_minted-modernthesis/FE426B8BE38804421A204BBFE75FF6F87B42A93BF469CB3496EDFAFDD820D918.pygtex)
+[38] (./_minted-modernthesis/8A0266F9441F3577BBDEA3EC1C413DC627890E7C7672E389E69C9E126EC076E3.pygtex) [39] (./_minted-modernthesis/FE426B8BE38804421A204BBFE75FF6F87B42A93BF469CB3496EDFAFDD820D918.pygtex)
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 (./_minted-modernthesis/F38D8C0FE4AAE8148B703DC4BE506E545A6F761FC50AFA80B2BE8C2412B6CE19.pygtex)
 
-LaTeX Warning: Float too large for page by 134.71674pt on input line 276.
+LaTeX Warning: Float too large for page by 134.71674pt on input line 274.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[38] [39] (./_minted-modernthesis/ABF10A6A59F086FFCCDF3ED66FF56DB96E5AC5DC96393702801424D32E9D8D79.pygtex)
+[40] (./_minted-modernthesis/ABF10A6A59F086FFCCDF3ED66FF56DB96E5AC5DC96393702801424D32E9D8D79.pygtex)
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 307--307
-[][][]\T1/pplj/m/n/9 (+20) https://developers.google.com/web/fundamentals/instant-and-offline/web-
- []
-
-[40]
-Underfull \hbox (badness 10000) in paragraph at lines 325--325
+[41]
+Underfull \hbox (badness 10000) in paragraph at lines 305--305
 [][][]\T1/pplj/m/n/9 (+20) https://developers.google.com/web/fundamentals/instant-and-offline/web-
  []
 
 
-Overfull \hbox (3.71918pt too wide) in paragraph at lines 325--326
+Underfull \hbox (badness 10000) in paragraph at lines 323--323
+[][][]\T1/pplj/m/n/9 (+20) https://developers.google.com/web/fundamentals/instant-and-offline/web-
+ []
+
+
+Overfull \hbox (3.71918pt too wide) in paragraph at lines 323--324
 \T1/pplj/m/n/10.95 (-20) mente aus dem Cache gelöscht son-dern mit-tels Last-recently-used(LRU)
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 327--327
+Underfull \hbox (badness 10000) in paragraph at lines 325--325
 [][][]\T1/pplj/m/n/9 (+20) https://developers.google.com/web/updates/2011/11/Quota-Management-API-
  []
 
-[41]) [42] [43] [44]
+[42]) [43] [44] [45]
 \openout2 = `chapters/Chapter_Evaluation.aux'.
 
  (./chapters/Chapter_Evaluation.tex
 Chapter 6.
-[45
+[46
 
 
 
 
 
 
-] [46]) [47]
+] [47]) [48]
 \openout2 = `chapters/Chapter_Conclusion.aux'.
 
  (./chapters/Chapter_Conclusion.tex
 Chapter 7.
-) [48
+) [49
 
 
 
@@ -2122,7 +2144,7 @@ Chapter 7.
 
  (./chapters/Chapter_Appendix_A.tex
 Appendix A.
-) [49
+) [50
 
 
 
@@ -2235,20 +2257,20 @@ Package logreq Info: Writing requests to 'modernthesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 40687 strings out of 492616
- 770583 string characters out of 6129482
- 1301760 words of memory out of 5000000
- 43213 multiletter control sequences out of 15000+600000
+ 40692 strings out of 492616
+ 770591 string characters out of 6129482
+ 1295782 words of memory out of 5000000
+ 43215 multiletter control sequences out of 15000+600000
  645595 words of font info for 450 fonts, out of 8000000 for 9000
  1147 hyphenation exceptions out of 8191
  81i,23n,101p,9091b,4205s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{Hfootnote.3} has been referenced but does not exist, replaced by a fixed one
 
 {/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/euler/eurb10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/euler/eurm7.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/fpl/fplrc8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/fpl/fplrij8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/bera/fvmr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/bera/fvmro8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on /Users/t.friedrich/Projects/masterarbeit/.texpadtmp/modernthesis.pdf (62 pages, 803968 bytes).
+Output written on /Users/t.friedrich/Projects/masterarbeit/.texpadtmp/modernthesis.pdf (63 pages, 808425 bytes).
 PDF statistics:
- 1213 PDF objects out of 1440 (max. 8388607)
- 1073 compressed objects within 11 object streams
- 236 named destinations out of 1000 (max. 500000)
+ 1221 PDF objects out of 1440 (max. 8388607)
+ 1080 compressed objects within 11 object streams
+ 239 named destinations out of 1000 (max. 500000)
  94132 words of extra memory for PDF output out of 106986 (max. 10000000)
 
