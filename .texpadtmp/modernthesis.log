@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.1)  7 AUG 2019 18:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.1)  12 AUG 2019 18:16
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1839,7 +1839,7 @@ Overfull \hbox (8.54854pt too wide) in paragraph at lines 96--97
 \T1/pplj/m/n/10.95 (-20) Con-nec-tion und RTC-Dat-aChan-nel die im fol-gen-den genauer beschrieben
  []
 
-<figures/Webrtc_overview.pdf, id=310, 591.20876pt x 425.59pt>
+<figures/Webrtc_overview.pdf, id=312, 591.20876pt x 425.59pt>
 File: figures/Webrtc_overview.pdf Graphic file (type pdf)
 <use figures/Webrtc_overview.pdf>
 Package pdftex.def Info: figures/Webrtc_overview.pdf  used on input line 100.
@@ -1872,7 +1872,7 @@ Overfull \hbox (1.05675pt too wide) in paragraph at lines 243--244
 [11]
 
 pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./figures/sw-lifecycle.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<figures/sw-lifecycle.pdf, id=357, 528.47438pt x 515.67656pt>
+<figures/sw-lifecycle.pdf, id=359, 528.47438pt x 515.67656pt>
 File: figures/sw-lifecycle.pdf Graphic file (type pdf)
 <use figures/sw-lifecycle.pdf>
 Package pdftex.def Info: figures/sw-lifecycle.pdf  used on input line 263.
@@ -1914,13 +1914,13 @@ Overfull \hbox (14.6164pt too wide) in paragraph at lines 11--12
 
 
 ]
-<figures/network_current.pdf, id=409, 512.8761pt x 305.22029pt>
+<figures/network_current.pdf, id=411, 512.8761pt x 305.22029pt>
 File: figures/network_current.pdf Graphic file (type pdf)
 <use figures/network_current.pdf>
 Package pdftex.def Info: figures/network_current.pdf  used on input line 28.
 (pdftex.def)             Requested size: 268.80103pt x 159.97293pt.
  [18 <./figures/network_current.pdf>]
-<figures/network_p2p.png, id=424, 713.66624pt x 423.5825pt>
+<figures/network_p2p.png, id=426, 713.66624pt x 423.5825pt>
 File: figures/network_p2p.png Graphic file (type png)
 <use figures/network_p2p.png>
 Package pdftex.def Info: figures/network_p2p.png  used on input line 39.
@@ -1935,13 +1935,13 @@ Overfull \hbox (17.93979pt too wide) in paragraph at lines 54--55
 \T1/pplj/m/n/10.95 (-20) über den Sig-nal-ing server noch weit-ere In-for-ma-tio-nen wie ICE-Kandidaten
  []
 
-<figures/service_worker_app.pdf, id=433, 845.04686pt x 597.50786pt>
+<figures/service_worker_app.pdf, id=435, 845.04686pt x 597.50786pt>
 File: figures/service_worker_app.pdf Graphic file (type pdf)
 <use figures/service_worker_app.pdf>
 Package pdftex.def Info: figures/service_worker_app.pdf  used on input line 93.
 (pdftex.def)             Requested size: 268.80103pt x 190.05765pt.
 [20 <./figures/service_worker_app.pdf, page is rotated 90 degrees>]
-<figures/browser_abfrage.pdf, id=453, 319.1925pt x 126.4725pt>
+<figures/browser_abfrage.pdf, id=455, 319.1925pt x 126.4725pt>
 File: figures/browser_abfrage.pdf Graphic file (type pdf)
 <use figures/browser_abfrage.pdf>
 Package pdftex.def Info: figures/browser_abfrage.pdf  used on input line 135.
@@ -1955,12 +1955,12 @@ Overfull \hbox (7.13776pt too wide) in paragraph at lines 143--144
 
 pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./figures/browser_abfrage.pdf): PDF inclusion: invalid other resource which is no dict (key 'ProcSets', type <array>); ignored.
 >]
-<figures/Signaling.pdf, id=469, 312.20638pt x 181.6386pt>
+<figures/Signaling.pdf, id=471, 312.20638pt x 181.6386pt>
 File: figures/Signaling.pdf Graphic file (type pdf)
 <use figures/Signaling.pdf>
 Package pdftex.def Info: figures/Signaling.pdf  used on input line 170.
 (pdftex.def)             Requested size: 268.80103pt x 156.39459pt.
-<figures/Signaling-Webrtc.pdf, id=470, 328.3467pt x 283.0575pt>
+<figures/Signaling-Webrtc.pdf, id=472, 328.3467pt x 283.0575pt>
 File: figures/Signaling-Webrtc.pdf Graphic file (type pdf)
 <use figures/Signaling-Webrtc.pdf>
 Package pdftex.def Info: figures/Signaling-Webrtc.pdf  used on input line 179.
@@ -1980,30 +1980,30 @@ Overfull \hbox (41.43915pt too wide) in paragraph at lines 186--186
 [23 <./figures/Signaling-Webrtc.pdf
 
 pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./figures/Signaling-Webrtc.pdf): PDF inclusion: invalid other resource which is no dict (key 'ProcSets', type <array>); ignored.
->] [24]
-<figures/slidesync_peer_meshes.pdf, id=523, 575.2692pt x 181.6386pt>
+>] [24] [25]
+<figures/slidesync_peer_meshes.pdf, id=529, 575.2692pt x 181.6386pt>
 File: figures/slidesync_peer_meshes.pdf Graphic file (type pdf)
 <use figures/slidesync_peer_meshes.pdf>
-Package pdftex.def Info: figures/slidesync_peer_meshes.pdf  used on input line 295.
+Package pdftex.def Info: figures/slidesync_peer_meshes.pdf  used on input line 298.
 (pdftex.def)             Requested size: 268.80103pt x 84.87402pt.
- [25] [26 <./figures/slidesync_peer_meshes.pdf
+ [26 <./figures/slidesync_peer_meshes.pdf
 
 pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./figures/slidesync_peer_meshes.pdf): PDF inclusion: invalid other resource which is no dict (key 'ProcSets', type <array>); ignored.
 >]
-<figures/Ressourcen_update.pdf, id=542, 276.07141pt x 124.54529pt>
+<figures/Ressourcen_update.pdf, id=544, 276.07141pt x 124.54529pt>
 File: figures/Ressourcen_update.pdf Graphic file (type pdf)
 <use figures/Ressourcen_update.pdf>
-Package pdftex.def Info: figures/Ressourcen_update.pdf  used on input line 364.
+Package pdftex.def Info: figures/Ressourcen_update.pdf  used on input line 367.
 (pdftex.def)             Requested size: 268.80103pt x 121.26866pt.
  [27 <./figures/Ressourcen_update.pdf
 
 pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./figures/Ressourcen_update.pdf): PDF inclusion: invalid other resource which is no dict (key 'ProcSets', type <array>); ignored.
->] [28]) [29]
+>] [28] [29]) [30]
 \openout2 = `chapters/Chapter_Implementation.aux'.
 
  (./chapters/Chapter_Implementation.tex
 Chapter 5.
-<figures/Klassendiagramm.pdf, id=574, 333.245pt x 409.53pt>
+<figures/Klassendiagramm.pdf, id=580, 333.245pt x 409.53pt>
 File: figures/Klassendiagramm.pdf Graphic file (type pdf)
 <use figures/Klassendiagramm.pdf>
 Package pdftex.def Info: figures/Klassendiagramm.pdf  used on input line 33.
@@ -2011,24 +2011,20 @@ Package pdftex.def Info: figures/Klassendiagramm.pdf  used on input line 33.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[30
+[31
 
 
 
 
 
 
-] [31 <./figures/Klassendiagramm.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 51--52
-
- []
-
-<figures/ServiceWorker.pdf, id=604, 327.47343pt x 135.50626pt>
+] [32 <./figures/Klassendiagramm.pdf>]
+<figures/ServiceWorker.pdf, id=610, 327.47343pt x 135.50626pt>
 File: figures/ServiceWorker.pdf Graphic file (type pdf)
 <use figures/ServiceWorker.pdf>
-Package pdftex.def Info: figures/ServiceWorker.pdf  used on input line 58.
+Package pdftex.def Info: figures/ServiceWorker.pdf  used on input line 63.
 (pdftex.def)             Requested size: 268.80103pt x 111.22748pt.
-[32 <./figures/ServiceWorker.pdf>] (./_minted-modernthesis/default-pyg-prefix.pygstyle) (./_minted-modernthesis/lovelace.pygstyle) (./_minted-modernthesis/9BD6C3801944E119FE2BFF38922D9C4C5570EE3AC29EC573AAC8B33A6DFF36AE.pygtex
+ [33 <./figures/ServiceWorker.pdf>] (./_minted-modernthesis/default-pyg-prefix.pygstyle) (./_minted-modernthesis/lovelace.pygstyle) (./_minted-modernthesis/9BD6C3801944E119FE2BFF38922D9C4C5570EE3AC29EC573AAC8B33A6DFF36AE.pygtex
 LaTeX Font Info:    Try loading font information for T1+fvm on input line 1.
  (/usr/local/texlive/2019/texmf-dist/tex/latex/bera/t1fvm.fd
 File: t1fvm.fd 2004/09/07 scalable font definitions for T1/fvm.
@@ -2058,81 +2054,162 @@ LaTeX Font Info:    Font shape `TS1/fvm/m/it' in size <10.95> not available
 LaTeX Font Info:    Font shape `TS1/fvm/m/sl' will be
 (Font)              scaled to size 9.30756pt on input line 9.
 )
-Package hyperref Info: bookmark level for unknown listing defaults to 0 on input line 101.
+Package hyperref Info: bookmark level for unknown listing defaults to 0 on input line 106.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[33] [34] [35]
-<figures/SequenceDiagram.pdf, id=642, 693.34032pt x 723.45282pt>
+[34] [35] [36]
+<figures/SequenceDiagram.pdf, id=648, 693.34032pt x 723.45282pt>
 File: figures/SequenceDiagram.pdf Graphic file (type pdf)
 <use figures/SequenceDiagram.pdf>
-Package pdftex.def Info: figures/SequenceDiagram.pdf  used on input line 178.
+Package pdftex.def Info: figures/SequenceDiagram.pdf  used on input line 183.
 (pdftex.def)             Requested size: 268.80103pt x 280.47858pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[36] [37 <./figures/SequenceDiagram.pdf>] (./_minted-modernthesis/67850B9FCE182FE751A7516CBBDAA92A32BBB603009BB7D568923B5ED11C9CC0.pygtex) (./_minted-modernthesis/A16E225688D88C8CE79AD31484FBB22C66400F17496E154127DFD2B6826D8D80.pygtex
+[37] [38 <./figures/SequenceDiagram.pdf>] (./_minted-modernthesis/67850B9FCE182FE751A7516CBBDAA92A32BBB603009BB7D568923B5ED11C9CC0.pygtex) (./_minted-modernthesis/A16E225688D88C8CE79AD31484FBB22C66400F17496E154127DFD2B6826D8D80.pygtex
 LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
 (Font)              scaled to size 5.10004pt on input line 5.
 )
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[38] (./_minted-modernthesis/8A0266F9441F3577BBDEA3EC1C413DC627890E7C7672E389E69C9E126EC076E3.pygtex) [39] (./_minted-modernthesis/FE426B8BE38804421A204BBFE75FF6F87B42A93BF469CB3496EDFAFDD820D918.pygtex)
+[39] (./_minted-modernthesis/8A0266F9441F3577BBDEA3EC1C413DC627890E7C7672E389E69C9E126EC076E3.pygtex) [40] (./_minted-modernthesis/FE426B8BE38804421A204BBFE75FF6F87B42A93BF469CB3496EDFAFDD820D918.pygtex)
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 (./_minted-modernthesis/F38D8C0FE4AAE8148B703DC4BE506E545A6F761FC50AFA80B2BE8C2412B6CE19.pygtex)
 
-LaTeX Warning: Float too large for page by 134.71674pt on input line 274.
+LaTeX Warning: Float too large for page by 134.71674pt on input line 279.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[40] (./_minted-modernthesis/ABF10A6A59F086FFCCDF3ED66FF56DB96E5AC5DC96393702801424D32E9D8D79.pygtex)
+[41] (./_minted-modernthesis/ABF10A6A59F086FFCCDF3ED66FF56DB96E5AC5DC96393702801424D32E9D8D79.pygtex)
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[41]
-Underfull \hbox (badness 10000) in paragraph at lines 305--305
+[42]
+Underfull \hbox (badness 10000) in paragraph at lines 310--310
 [][][]\T1/pplj/m/n/9 (+20) https://developers.google.com/web/fundamentals/instant-and-offline/web-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 323--323
+Underfull \hbox (badness 10000) in paragraph at lines 328--328
 [][][]\T1/pplj/m/n/9 (+20) https://developers.google.com/web/fundamentals/instant-and-offline/web-
  []
 
 
-Overfull \hbox (3.71918pt too wide) in paragraph at lines 323--324
+Overfull \hbox (3.71918pt too wide) in paragraph at lines 328--329
 \T1/pplj/m/n/10.95 (-20) mente aus dem Cache gelöscht son-dern mit-tels Last-recently-used(LRU)
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 325--325
+Underfull \hbox (badness 10000) in paragraph at lines 330--330
 [][][]\T1/pplj/m/n/9 (+20) https://developers.google.com/web/updates/2011/11/Quota-Management-API-
  []
 
-[42]) [43] [44] [45]
+[43]) [44] [45] [46]
 \openout2 = `chapters/Chapter_Evaluation.aux'.
 
  (./chapters/Chapter_Evaluation.tex
 Chapter 6.
-[46
+[47
 
 
 
 
 
 
-] [47]) [48]
+]
+<figures/clients_line_chart.pdf, id=725, 462.52798pt x 346.89601pt>
+File: figures/clients_line_chart.pdf Graphic file (type pdf)
+<use figures/clients_line_chart.pdf>
+Package pdftex.def Info: figures/clients_line_chart.pdf  used on input line 73.
+(pdftex.def)             Requested size: 268.80103pt x 201.60739pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[48]
+<figures/timeouts.pdf, id=732, 433.62pt x 289.08pt>
+File: figures/timeouts.pdf Graphic file (type pdf)
+<use figures/timeouts.pdf>
+Package pdftex.def Info: figures/timeouts.pdf  used on input line 83.
+(pdftex.def)             Requested size: 268.80103pt x 179.2101pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[49 <./figures/clients_line_chart.pdf>]
+<figures/pie_2_clients.pdf, id=770, 361.35pt x 361.35pt>
+File: figures/pie_2_clients.pdf Graphic file (type pdf)
+<use figures/pie_2_clients.pdf>
+Package pdftex.def Info: figures/pie_2_clients.pdf  used on input line 93.
+(pdftex.def)             Requested size: 151.19897pt x 151.19804pt.
+<figures/pie_10_clients.pdf, id=771, 361.35pt x 361.35pt>
+File: figures/pie_10_clients.pdf Graphic file (type pdf)
+<use figures/pie_10_clients.pdf>
+Package pdftex.def Info: figures/pie_10_clients.pdf  used on input line 94.
+(pdftex.def)             Requested size: 151.19897pt x 151.19804pt.
+<figures/pie_15_clients.pdf, id=772, 361.35pt x 361.35pt>
+File: figures/pie_15_clients.pdf Graphic file (type pdf)
+<use figures/pie_15_clients.pdf>
+Package pdftex.def Info: figures/pie_15_clients.pdf  used on input line 100.
+(pdftex.def)             Requested size: 151.19897pt x 151.19804pt.
+<figures/pie_30_clients.pdf, id=773, 361.35pt x 361.35pt>
+File: figures/pie_30_clients.pdf Graphic file (type pdf)
+<use figures/pie_30_clients.pdf>
+Package pdftex.def Info: figures/pie_30_clients.pdf  used on input line 101.
+(pdftex.def)             Requested size: 151.19897pt x 151.19804pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<figures/15_clients_network.pdf, id=774, 433.62pt x 289.08pt>
+File: figures/15_clients_network.pdf Graphic file (type pdf)
+<use figures/15_clients_network.pdf>
+Package pdftex.def Info: figures/15_clients_network.pdf  used on input line 117.
+(pdftex.def)             Requested size: 268.80103pt x 179.2101pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[50 <./figures/timeouts.pdf> <./figures/pie_2_clients.pdf
+
+pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./figures/pie_2_clients.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+> <./figures/pie_10_clients.pdf
+
+pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./figures/pie_10_clients.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+>]
+./chapters/Chapter_Evaluation.tex:130: You can't use `macro parameter character #' in restricted horizontal mode.
+<recently read> ##
+                  
+l.130 		Request Art	 & #
+                        Anfragen 	& Durchschnitt 	& Standardbweichung	& Min	...
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+
+Overfull \hbox (98.86832pt too wide) in paragraph at lines 128--135
+ [] 
+ []
+
+[51 <./figures/pie_15_clients.pdf> <./figures/pie_30_clients.pdf
+
+pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./figures/pie_30_clients.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+> <./figures/15_clients_network.pdf
+
+pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./figures/15_clients_network.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+>]) [52]
 \openout2 = `chapters/Chapter_Conclusion.aux'.
 
  (./chapters/Chapter_Conclusion.tex
 Chapter 7.
-) [49
+) [53
 
 
 
@@ -2144,7 +2221,7 @@ Chapter 7.
 
  (./chapters/Chapter_Appendix_A.tex
 Appendix A.
-) [50
+) [54
 
 
 
@@ -2257,20 +2334,20 @@ Package logreq Info: Writing requests to 'modernthesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 40692 strings out of 492616
- 770591 string characters out of 6129482
- 1295782 words of memory out of 5000000
- 43215 multiletter control sequences out of 15000+600000
+ 40753 strings out of 492616
+ 772196 string characters out of 6129482
+ 1296227 words of memory out of 5000000
+ 43258 multiletter control sequences out of 15000+600000
  645595 words of font info for 450 fonts, out of 8000000 for 9000
  1147 hyphenation exceptions out of 8191
- 81i,23n,101p,9091b,4205s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 80i,23n,102p,9091b,4185s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{Hfootnote.3} has been referenced but does not exist, replaced by a fixed one
 
 {/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/euler/eurb10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/euler/eurm7.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/fpl/fplrc8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/fpl/fplrij8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/bera/fvmr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/bera/fvmro8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on /Users/t.friedrich/Projects/masterarbeit/.texpadtmp/modernthesis.pdf (63 pages, 808425 bytes).
+Output written on /Users/t.friedrich/Projects/masterarbeit/.texpadtmp/modernthesis.pdf (67 pages, 884475 bytes).
 PDF statistics:
- 1221 PDF objects out of 1440 (max. 8388607)
- 1080 compressed objects within 11 object streams
- 239 named destinations out of 1000 (max. 500000)
- 94132 words of extra memory for PDF output out of 106986 (max. 10000000)
+ 1475 PDF objects out of 1728 (max. 8388607)
+ 1153 compressed objects within 12 object streams
+ 250 named destinations out of 1000 (max. 500000)
+ 94175 words of extra memory for PDF output out of 106986 (max. 10000000)
 

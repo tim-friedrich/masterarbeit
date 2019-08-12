@@ -393,6 +393,15 @@ Das Vergleichen von IP-Adressen hat den Vorteil das bereits zur Einteilung in di
 %javascript modul
 %support von eigenen oder öffentlichen stun servern
 %%Plug and play
+\section{Umgang mit älteren Browsern}
+\begin{itemize}
+	\item system test
+	\item script wird nicht geladen falls browser nicht unterstützt wird
+	\item falls verbindung nicht aufgebaut werden kann wird client aussortiert
+	\item über normales cdn
+	\item 
+\end{itemize}
+
 \section{Open Source}
 \begin{itemize}
 	\item evtl. Open source erklären
@@ -406,8 +415,11 @@ Das Vergleichen von IP-Adressen hat den Vorteil das bereits zur Einteilung in di
 \section{Offline Support}
 \begin{itemize}
 	\item Motivation: Internet in Schulen ist nicht immer verfügbar
+	\item lehrer lädt inhalte zuhause vor
+	\item stellt sie schülern zur Verfügung
 	\item wie funktionieren offline webanwendungen
 	\item Service Worker
+	\item prefetching
 	\item Live Streams: Ausfallsicherheit wird erhöht.
 	\item quasi bei design
 	\item Resourcen werden gecached und sind offline verfügbar
