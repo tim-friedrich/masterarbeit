@@ -152,77 +152,77 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {5.2.2}{Service worker}}{33}{subsection.5.2.2}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2.3}{Tests}}{34}{subsection.5.2.3}% 
+\contentsline {subsection}{\numberline {5.2.3}{Tests}}{35}{subsection.5.2.3}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.3}{Ressourcen Management}}{34}{section.5.3}% 
+\contentsline {section}{\numberline {5.3}{Ressourcen Management}}{35}{section.5.3}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.4}{Configuration}}{34}{section.5.4}% 
+\contentsline {section}{\numberline {5.4}{Configuration}}{35}{section.5.4}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.5}{Client UI Event}}{36}{section.5.5}% 
+\contentsline {section}{\numberline {5.5}{Client UI Event}}{37}{section.5.5}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.6}{Signaling Server}}{36}{section.5.6}% 
+\contentsline {section}{\numberline {5.6}{Signaling Server}}{37}{section.5.6}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.6.1}{Slidesync}}{37}{subsection.5.6.1}% 
+\contentsline {subsection}{\numberline {5.6.1}{Slidesync}}{38}{subsection.5.6.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.6.2}{Schul-Cloud\xspace }}{37}{subsection.5.6.2}% 
+\contentsline {subsection}{\numberline {5.6.2}{Schul-Cloud\xspace }}{38}{subsection.5.6.2}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.7}{Message protocol}}{37}{section.5.7}% 
+\contentsline {section}{\numberline {5.7}{Message protocol}}{38}{section.5.7}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.7.1}{Updates}}{38}{subsection.5.7.1}% 
+\contentsline {subsection}{\numberline {5.7.1}{Updates}}{39}{subsection.5.7.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.7.2}{Client fragt Ressource an}}{39}{subsection.5.7.2}% 
+\contentsline {subsection}{\numberline {5.7.2}{Client fragt Ressource an}}{40}{subsection.5.7.2}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.8}{Mesh Zuordnung}}{39}{section.5.8}% 
+\contentsline {section}{\numberline {5.8}{Mesh Zuordnung}}{40}{section.5.8}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.9}{Reusability}}{39}{section.5.9}% 
+\contentsline {section}{\numberline {5.9}{Reusability}}{40}{section.5.9}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.10}{Serialisierung der Daten}}{39}{section.5.10}% 
+\contentsline {section}{\numberline {5.10}{Serialisierung der Daten}}{40}{section.5.10}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.11}{System Test}}{40}{section.5.11}% 
+\contentsline {section}{\numberline {5.11}{System Test}}{41}{section.5.11}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.12}{Erfassen von Statistiken}}{41}{section.5.12}% 
+\contentsline {section}{\numberline {5.12}{Erfassen von Statistiken}}{42}{section.5.12}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.13}{Quota limits - L\IeC {\"o}schen von Requests aus dem Cache}}{43}{section.5.13}% 
+\contentsline {section}{\numberline {5.13}{Quota limits - L\IeC {\"o}schen von Requests aus dem Cache}}{44}{section.5.13}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.14}{Resource loading}}{43}{section.5.14}% 
+\contentsline {section}{\numberline {5.14}{Resource loading}}{45}{section.5.14}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.15}{ Configuration von Unternehmensnetzwerken }}{43}{section.5.15}% 
+\contentsline {section}{\numberline {5.15}{ Configuration von Unternehmensnetzwerken }}{45}{section.5.15}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {6}{Evaluation}}{47}{chapter.6}% 
+\contentsline {chapter}{\numberline {6}{Evaluation}}{48}{chapter.6}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.1}{Prequisites}}{47}{section.6.1}% 
+\contentsline {section}{\numberline {6.1}{Prequisites}}{48}{section.6.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.2}{Browser compatbility}}{47}{section.6.2}% 
+\contentsline {section}{\numberline {6.2}{Browser compatbility}}{48}{section.6.2}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.2.1}{Browser Usage in coropate networks}}{47}{subsection.6.2.1}% 
+\contentsline {subsection}{\numberline {6.2.1}{Browser Usage in coropate networks}}{48}{subsection.6.2.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {6.2.1.1}{Chunking}}{47}{subsubsection.6.2.1.1}% 
+\contentsline {subsubsection}{\numberline {6.2.1.1}{Chunking}}{49}{subsubsection.6.2.1.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.2.2}{Browser usage in eduational networks}}{48}{subsection.6.2.2}% 
+\contentsline {subsection}{\numberline {6.2.2}{Browser usage in eduational networks}}{49}{subsection.6.2.2}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.3}{Bandwidth}}{48}{section.6.3}% 
+\contentsline {section}{\numberline {6.3}{Bandwidth}}{49}{section.6.3}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.3.1}{Latency}}{48}{subsection.6.3.1}% 
+\contentsline {subsection}{\numberline {6.3.1}{Latency}}{49}{subsection.6.3.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {6.3.1.1}{Webrtc Verbindungsaufbau}}{48}{subsubsection.6.3.1.1}% 
+\contentsline {subsubsection}{\numberline {6.3.1.1}{Webrtc Verbindungsaufbau}}{49}{subsubsection.6.3.1.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.3.2}{Simulierter Workload}}{48}{subsection.6.3.2}% 
+\contentsline {subsection}{\numberline {6.3.2}{Simulierter Workload}}{49}{subsection.6.3.2}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {6.3.2.1}{Ladezeiten von verschiedenen Dateigr\IeC {\"o}\IeC {\ss }en}}{48}{subsubsection.6.3.2.1}% 
+\contentsline {subsubsection}{\numberline {6.3.2.1}{Durchsatz - Ladezeiten von verschiedenen Dateigr\IeC {\"o}\IeC {\ss }en}}{49}{subsubsection.6.3.2.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.3.3}{Educational context}}{48}{subsection.6.3.3}% 
+\contentsline {subsection}{\numberline {6.3.3}{Educational context}}{50}{subsection.6.3.3}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.3.4}{Live Streaming}}{49}{subsection.6.3.4}% 
+\contentsline {subsection}{\numberline {6.3.4}{Live Streaming}}{51}{subsection.6.3.4}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.3.5}{Nutzerzufriedenheit}}{52}{subsection.6.3.5}% 
+\contentsline {subsection}{\numberline {6.3.5}{Nutzerzufriedenheit}}{54}{subsection.6.3.5}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.4}{Security considerations}}{52}{section.6.4}% 
+\contentsline {section}{\numberline {6.4}{Security considerations}}{54}{section.6.4}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.5}{DRM licencing}}{52}{section.6.5}% 
+\contentsline {section}{\numberline {6.5}{DRM licencing}}{54}{section.6.5}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {7}{Conclusion}}{53}{chapter.7}% 
+\contentsline {chapter}{\numberline {7}{Conclusion}}{55}{chapter.7}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {A}{An Appendix}}{54}{appendix.A}% 
+\contentsline {chapter}{\numberline {A}{An Appendix}}{56}{appendix.A}% 
 \defcounter {refsection}{0}\relax 
 \vspace {\beforebibskip }
 \defcounter {refsection}{0}\relax 

@@ -3,14 +3,27 @@
 \section{Prequisites}
 
 \section{Browser compatbility}
+\begin{table}[!htb]
+\begin{center}
 
-\begin{itemize}
-	\item Kein IE
-	\item Edge nur in neuer version mit chrome dahinter
-	\item Chrome
-	\item Firefox
-	\item Analyse von verwendeten Clients aktueller Events
-\end{itemize}
+	\begin{tabular}{|l|l|l|l|l|}
+		\hline
+		Chrome & Firefox & Edge & Safari & Internet Explorer	  \\ \hline
+		75 	   & 68 	  & 76	 & 12.1	  & Not supported    				\\ \hline
+	\end{tabular}
+	
+	\begin{tabular}{|l|l|l|l|l|}
+		\hline
+		IOS Safari & Samsung Internet & Android Browser	& Chrome (Android) \\ \hline
+		12.3	   & 9.2				  & 67				& 75  \\ \hline
+	\end{tabular}
+
+	\caption{Unterstützte Browser Versionen}
+\end{center}
+
+Um die unterstützten Browser zu verifizieren wurden die vom \pTp \cdn verwendeten Browser Funktionalitäten bei caniuse.com\footnote{https://caniuse.com/} eingegeben. Darüber hinaus wurden Chrome, Firefox, Edge, Safari und der Internet Explorer manuell getestet, um sicherzustellen das das \pTp \cdn das Nutzererlebnis nicht negativ beeinflusst. Der Internet Explorer unterstütz auch in der aktuellen Version keine Service Worker\footnote{https://caniuse.com/#search=service\%20worker}. Auch wenn der Edge Browser Webrtc seit Version 17 unterstützt, ist es leider erst ab version 76 möglich Datachannels zu verwenden. Da der Datenverkehr des \pTp \cdns über Datachannel gehandhabt wird, ist eine Verwendung erst ab der nächsten Version die auf Chrome aufbauen wird, möglich.
+\end{table}
+
 \subsection{Browser Usage in coropate networks}
 
 \begin{itemize}
@@ -37,6 +50,11 @@
 
 \subsubsection{Webrtc Verbindungsaufbau}
 
+\begin{itemize}
+	\item Page load bis cdn is ready
+	\item verschiedene Anzahl an Peers im Netzwerk 
+\end{itemize}
+
 \subsection{Simulierter Workload}
 \begin{itemize}
 	\item batches
@@ -45,9 +63,24 @@
 	\item Future Soc lab
 \end{itemize}
 
-\subsubsection{Ladezeiten von verschiedenen Dateigrößen}
+\subsubsection{Durchsatz - Ladezeiten von verschiedenen Dateigrößen}
 Um die Ladezeiten verschiedener Dateigrößen zu evaluieren wurde auf einem Mac book pro Ende 2013 mit 2.3 GHz und 16GB Arbeitsspeicher getestet. 
-Getestet wurde mit zwei Teilnehmern. Einer lud die Ressource vor und der zweite lud sie über das \pTp \cdn. Die Timeouts des \pTp \cdns wurden für diesen Test deaktiviert.3
+Getestet wurde mit zwei Teilnehmern. Einer lud die Ressource vor und der zweite lud sie über das \pTp \cdn. Die Timeouts des \pTp \cdns wurden für diesen Test deaktiviert. Um Netzlaufzeiten auszuklammern befand sich der Anwendungsserver ebenso wie die zu ladene Ressource auf dem selben Rechner wie die Clients. 
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.8\textwidth]{figures/Timing_file_size}
+	\caption[A Figure Short-Title]{}
+	\label{fig:timing_file_size}
+\end{figure}
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.8\textwidth]{figures/durchsatz_file_size}
+	\caption[A Figure Short-Title]{Durchsatz}
+	\label{fig:durchsatz_file_size}
+\end{figure}
+
 
 \begin{itemize}
 	\item Mac book pro Ende 2013
@@ -59,6 +92,7 @@ Getestet wurde mit zwei Teilnehmern. Einer lud die Ressource vor und der zweite 
 	\item lokal auf einem Rechner um Netzlaufzeiten auszuklammern
 	\item 1 Peer lädt vor
 	\item der andere lädt von peer
+	\item benchmarkt das nur das lokale netzwerk?? --> routingy
 \end{itemize}
 \subsection{Educational context}
 \begin{itemize}
@@ -122,7 +156,6 @@ Betrachtet man die zusätzlich Notwendigen Server Anfragen so lässt sich beobac
 Abbildung \ref{fig:15_clients_network} zeigt welche Teilnehmer untereinander Daten ausgetauscht haben. Auffällig ist das einige Teilnehmer besonders vielen Teilnehmern Daten gesendet haben. Dies war besonders dann der Fall wenn sie die einzigen im Netzwerk waren die das Segment bereits geladen hatten. Die meisten Kanten sind jedoch bidirektional, sprich zwar haben einige Teilnehmer besonders viele Anfragen beantwortet, jedoch haben sie sich nicht als zentrale Punkte des Netzwerkes etabliert sondern ebenfalls ihre Daten von anderen Teilnehmern geladen. \todo{gewichtung??} 
 
 \begin{table}[!htb]
-	\caption{Browser Storage Quotas }
 \begin{center}
 
 	\begin{tabular}{|r|l|l|l|l|l|l|}
@@ -132,7 +165,9 @@ Abbildung \ref{fig:15_clients_network} zeigt welche Teilnehmer untereinander Dat
 		Server 		& 1870		 		& 63.61 ms		& 62.99	ms				& 9.41 ms	& 649 ms	\\
 		\hline
 	\end{tabular}
+	\caption{Browser Storage Quotas }
 \end{center}
+
 \end{table}
 
 Bei der Betrachtung der Ladezeiten wurden alle erfassten Anfragen berücksichtigt. Allerdings wurden die Daten um die Server Anfragen bereinigt bei denen zuvor das \pTp \cdn einen timeout verursacht hat. Insgesamt wurden 4571 Peer Anfragen und 1870 Server Anfragen betrachtet. 

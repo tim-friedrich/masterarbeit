@@ -61,31 +61,21 @@ Die ServiceWorker Middleware fungiert als Vermittler zwischen Service Worker und
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=0.8\textwidth]{figures/ServiceWorker}
-	\caption[A Figure Short-Title]{A Figure Title}
-	\label{fig:sequenceDiagram}
+	\caption[A Figure Short-Title]{Service Worker}
+	\label{fig:serviceWorker}
 \end{figure}
+
+Als Proxy zwischen Client Anwendung und Browser wird ein Service Worker verwendet. Der Service Worker fängt von der Anwendung gesendete Anfragen im Fetch event ab und versucht sie als erstes durch den eigenen Cache zu beantworten. Ist die Anfrage nicht bereits im Cache vorhanden wird versucht sie über das \pTp Netzwerk zu laden. Ist das nicht möglich so lädt er sie vom Server. 
+Um eine Anfrage über das \pTp Netzwerk zu beantworten muss zuvor das Client Script geladen sein, da Service Worker die Webrtc API nicht unterstützen. Die Kommunikation zwischen Service Worker und Anwendungs Script geschieht mit Hilfe der post Message API\footnote{https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage}. Um sicherzustellen das das Client Script geladen und bereit zur Kommunikation ist sendet der Service Worker eine nicht blockende Heartbeat Anfrage an das Script. Antwortet das Script nicht innerhalb eines bestimmten Zeitfensters so muss der Service Worker davon ausgehen, dass es noch nicht geladen ist. Die Anfrage wird an den Server weiter geleitet. Da nicht davon ausgegangen werden kann das das Script verfügbar bleibt nachdem es geladen wurde, die Seite könnte z.B. geschlossen worden sein, muss der Service Worker sich vor jeder Blockenden Anfrage vergewissern das das Script in der Lage ist zu antworten.
+Nachrichten die zwischen Anwendungs Script und Service Worker gesendet werden haben das Format: { type: "Art der Nachricht", msg: "Inhalt der Nachricht" }. Das Attribut "type" kann folgende werde enthalten: "resource", "cache", "hearbeat". Nachrichten vom Typ "resource" ordnen den Service Worker an eine Nachricht aus seinem Cache an das Anwendungs Script zu übergeben. Empfangt der Service Worker eine solche Nachricht lädt er die Angefragte Ressource aus dem Cache und fügt sie der Antwort bei. Nachrichten vom Typ "cache" dienen dazu beim Server den momentanen Inhalt des caches zu erfragen. Dies wird genutzt um einem neu Verbundenen Peer die Liste der aktuell gecachten Ressourcen mitzuteilen. Mit dem Typ "heartbeat" erfragt der Service Worker beim Anwendungs Script ob es momentan verfügbar ist.   
+Ist das Script noch nicht verfügbar hat der Service Worker zwei Möglichkeiten damit umzugehen. Er kann darauf warten das das Script verfügbar ist und alle Anfragen bis dahin aufhalten oder er leitet die Anfragen direkt an den Server weiter. Leitet er die Anfragen direkt an den Server so wird die Ladezeit der Ressource nicht verzögert, jedoch ist es erst Möglich Ressourcen über das \pTp \cdn zu laden wenn das Script geladen wurde. Das \cdn arbeitet weniger effektiv, dafür wird das Nutzererlebnis jedoch nicht negativ beeinflusst. Wartet der Service Worker bis das Script aktiv ist, so können mehr Anfragen über das \cdn beantwortet werden, jedoch ist nicht garantiert wann es antwortet oder ob es überhaupt fehlerfrei geladen wird. Deshalb wurde sich bei der Implementierung des \cdns dafür entschieden das in diesem Fall Anfragen direkt an den Server weiter geleitet werden sollen. Das hat zur Folge das sich die gewählte Implementierung besonders für Single Page Applications sowie für Anwendungen die Navigationen z.B. mithilfe von Turbolinks vermeiden eignet. Bleibt beim Laden von neuen Inhalten das Anwendungsscript in Ausführung und muss nicht geladen werden, so kann der Service Worker Anfragen über das \pTp Netzwerk beantworten.
+ Vor der Registrierung des Service Workers speichert das Anwendungs Script die Konfiguration in die IndexDB des Browsers. Der Service Worker liest die Konfiguration von dort aus. Auf diesem Weg ist es möglich den Service Worker dynamisch zu konfigurieren und ihm unter anderem die zu verarbeitenden URLs zu übergeben. Die URLs werden als Regex übergeben. Fällt eine Anfrage nicht in die übergebenen URLs so unterbricht er die Verarbeitung und die Anfrage wird vom Server beantwortet.
+ Sobald der Service Worker aktiv ist ist ruft er self.clients.claim() auf um Sicherzustellen das er schon beim ersten Seitenaufruf aktiv ist und anfragen der Clients verarbeiten kann.
+ 
 \begin{itemize}
-  \item warten bis sw Aktiv ist/alle verbindungen ready sind vs request normal durchgehen lassen bis alles fertig ist.
-  \item 	Austausch erst möglich wenn script geladen ist
-  \item 	blockent: 
-  \item 		Ressourcen werden so lange aufgehalten bis verbindung initialisiert
-  \item 		--> längere Ladezeiten
-  \item 		mehr Bandbreite kann gespart werden
-  \item 	nicht blockent: 
-  \item 		Ressourcen werden über server geladen bis verbinungen aufgebaut sind
-  \item 		Weniger Bandbreite wird gespart
-  \item 		Ladezeit wird nicht verzögert
-  \item 		Heartbeat um zu überprüfen ob script geladen ist
-  \item Mehrere Tabs?
-  \item 		
-  \item first page load
-  \item Single page apps
-  \item Turbolinks
-  \item Requests werden erst nach erfolgreicher registrierung behandelt
-  \item clients.claim + skip waiting für den ersten aufruf (12)
   \item Codebeispiel für wartende messages
   \item 	Callbacks
-\end{itemize}
+  \end{itemize}
 
 \subsection{Tests}
 Um das Plugin zu testen wird als test Runner Karma verwendet.\footnote{https://karma-runner.github.io/latest/index.html} Als test framework wird mochajs\footnote{https://mochajs.org/} und als assertion Library wird Chai\footnote{https://www.chaijs.com/} eingesetzt 
@@ -147,8 +137,8 @@ URL an die die erhobenen Statistiken gesendet werden sollen. siehe \ref{ch:imple
 Um es der einbindenden Anwendung zu ermöglichen auf Änderungen bezüglich der verbundenen Peers sowie deren Ressourcen zu Reagieren stellt das Plugin das Event ui:onUpdate bereit das bei Änderungen ausgelöst wird. Das Event übergibt das Peer Object des Clients wodurch der Event Empfänger zugriff auf die Anzahl der verbundenen Peers so wie deren Ressourcen hat. 
 
 \section{Signaling Server}
-The signaling server itself uses socket.io and can be found here. The client ID is created there and is essential for the lifecycle of a peer in the whole network. It is not clear if the client IDs given by socket.io always have the same length. Therefore, client IDs will be padded to a maximal length of 24. This is necessary because the client IDs need to be sent via the binary datachannel and consequently, this requires a fixed length.
-
+Der Signaling Server nutzt Faye\footnote{https://faye.jcoglan.com/ruby/websockets.html} als Websocket Bibliothek. Die Anwendung muss lediglich einen Faye Server anbieten um das Signaling zu ermöglichen. Der Verbindungsaufbau wird im Anschluss Client seitig gehandhabt. 
+Um Clients einem Peer Mesh zuzuordnen werden verschiedene Websocket Channels verwendet. Wird zwei Clients der selbe Datachannel in der Konfiguration übergeben so befinden sie sich im selben Peer Mesh. So ist eine einfache Konfiguration möglich. Das \cdn selbst macht keine Annahmen darüber welche Clients sich sinnvollerweise im selben Mesh befinden sollten. Die Entscheidung darüber ist der Anwendungslogick überlassen. Dadurch ist es möglich ein Domänen spezifisches Peer Meshing vorzunehmen.
 
 \begin{itemize}
   \item websockets faye
@@ -162,8 +152,14 @@ The signaling server itself uses socket.io and can be found here. The client ID 
 \end{itemize}
 
 \subsection{Slidesync}
+Um das Signaling zu realisieren implementiert Slidesync ein eigenes Model das für die Zuordnung von \clients zu Peer Meshes verantwortlich ist.  
 \begin{itemize}
 	\item Rails Model
+	\item öffentliche API
+	\item remove old peers
+	\item join
+	\item track presence
+	\item redis zum speichern
 	\item Code Beispiel
 	\item Tracking in Redis welcher Peer in welchem Submesh ist
 	\item Peer wird aus liste nicht voller mehses gewählt
@@ -225,14 +221,21 @@ Für den Austausch von Daten werden die von WebRTC angebotene DataChannel genutz
 	\label{lst:code-handle-chunk}
 \end{listing}
 
+Datachannel haben in der aktuellen Browser Implementation eine maximale Buffergröße. Der client der die Datachannel verwendet ist dafür verantwortlich sicher zu stellen, dass die maximale Buffergröße nicht überschritten ist. Ist die maximale Buffergröße erreicht, so werden weitere Chunks erst gesendet, wenn sich der Buffer wieder geleert hat.
+
+Empfängt ein Client eine Anfrage in Form von Chunks so muss er diese wieder zu der eigentlichen Ressource zusammen setzen. Dazu wird für die Anfrage ein Array verwaltet in denen alle empfangenen Chunks gespeichert werden. Wurden alle Chunks einer Anfrage empfangen werden sie wieder zu einem Objekt zusammengesetzt und die Anfrage wird an den Service Worker weiter geleitet
+
 \begin{itemize}
-  \item SCTP(DataChannel) Message size limit 16kiB
-  \item Fixe id länge notwendig
-  \item datachannel buffersize muss berücksichtigt werden
-  \item chunking reassembling nötig
-  \item Performance einbussen
-  \item abToMessage und sendToPeer
+	\item evtl serialisierung thematisieren.
 \end{itemize}
+%\begin{itemize}
+%  \item SCTP(DataChannel) Message size limit 16kiB
+%  \item Fixe id länge notwendig
+%  \item datachannel buffersize muss berücksichtigt werden
+%  \item chunking reassembling nötig
+%  \item Performance einbussen
+%  \item abToMessage und sendToPeer
+%\end{itemize}
 
 % SCTP(DataChannel) message size limit 16kiB
 % chunking reassembling nötig
@@ -241,9 +244,9 @@ Für den Austausch von Daten werden die von WebRTC angebotene DataChannel genutz
 
 %Currently, it is only possible to send messages not larger than 16kiB via the RTCDataChannel. In order to send larger messages chunking and reassembling is necessary. These procedures take place in the _abToMessage() and _sendToPeer() methods in the peer.js file.
 
-\begin{itemize}
-	\item Details zum Algorithmus
-\end{itemize}
+%\begin{itemize}
+%	\item Details zum Algorithmus
+%\end{itemize}
 \section{System Test}
 Das Plugin stellt ein Modul bereit um zu testen ob es einem Client möglich ist am \pTp CDN teilzunehmen.
 
@@ -339,4 +342,5 @@ Mit Hilfe der Quota Management API\footnote{https://developers.google.com/web/up
 \begin{itemize}
 	\item Port range
 	\item firewalls?w
+	\item client firewalls
 \end{itemize}
