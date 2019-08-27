@@ -394,13 +394,9 @@ Das Vergleichen von IP-Adressen hat den Vorteil das bereits zur Einteilung in di
 %support von eigenen oder öffentlichen stun servern
 %%Plug and play
 \section{Umgang mit älteren Browsern}
-\begin{itemize}
-	\item system test
-	\item script wird nicht geladen falls browser nicht unterstützt wird
-	\item falls verbindung nicht aufgebaut werden kann wird client aussortiert
-	\item über normales cdn
-	\item 
-\end{itemize}
+Um sicherzustellen das das Nutzererlebnis für Teilnehmer mit nicht unterstützen Browser Versionen nicht negativ beeinträchtigt wird, überprüft das \cdn bevor es initialisiert wird ob der Browser alle notwendigen Funktionalitäten unterstützt. Dazu wird der System Test verwendet. Wird der Browser nicht unterstützt so wird die Initialisierung des Scripts abgebrochen. 
+Kann eine Verbindung zu einem Teilnehmer nicht aufgebaut werden oder bricht sie ab so wird er aus der eigenen Liste der Teilnehmer gelöscht, so das nicht versucht wird Anfragen über ihn zu beantworten. 
+Kann das \cdn nicht erfolgreich initialisiert werden, sei es weil der Browser nicht unterstützt wird oder weil die Netzwerk Einstellungen dies nicht zulassen, so werden Anfragen so beantwortet als wäre das \cdn nicht vorhanden.
 
 \section{Open Source}
 \begin{itemize}
@@ -462,6 +458,7 @@ Das Vergleichen von IP-Adressen hat den Vorteil das bereits zur Einteilung in di
 	\item Datachannel ist verschlüsselt
 	\item https notwendig
 	\item websocket ist verschlüsselt
+	\item https://webrtc-security.github.io/
 
 \end{itemize}
 

@@ -138,7 +138,7 @@ Um es der einbindenden Anwendung zu ermöglichen auf Änderungen bezüglich der 
 
 \section{Signaling Server}
 Der Signaling Server nutzt Faye\footnote{https://faye.jcoglan.com/ruby/websockets.html} als Websocket Bibliothek. Die Anwendung muss lediglich einen Faye Server anbieten um das Signaling zu ermöglichen. Der Verbindungsaufbau wird im Anschluss Client seitig gehandhabt. 
-Um Clients einem Peer Mesh zuzuordnen werden verschiedene Websocket Channels verwendet. Wird zwei Clients der selbe Datachannel in der Konfiguration übergeben so befinden sie sich im selben Peer Mesh. So ist eine einfache Konfiguration möglich. Das \cdn selbst macht keine Annahmen darüber welche Clients sich sinnvollerweise im selben Mesh befinden sollten. Die Entscheidung darüber ist der Anwendungslogick überlassen. Dadurch ist es möglich ein Domänen spezifisches Peer Meshing vorzunehmen.
+Um Clients einem Peer Mesh zuzuordnen werden verschiedene Websocket Channels verwendet. Wird zwei Clients der selbe Datachannel in der Konfiguration übergeben so befinden sie sich im selben Peer Mesh. So ist eine einfache Konfiguration möglich. Das \cdn selbst macht keine Annahmen darüber welche Clients sich sinnvollerweise im selben Mesh befinden sollten. Die Entscheidung darüber ist der Anwendungslogik überlassen. Dadurch ist es möglich ein Domänen spezifisches Peer Meshing vorzunehmen.
 
 \begin{itemize}
   \item websockets faye

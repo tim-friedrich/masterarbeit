@@ -200,25 +200,27 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {6.2.2}{Browser usage in eduational networks}}{49}{subsection.6.2.2}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.3}{Bandwidth}}{49}{section.6.3}% 
+\contentsline {section}{\numberline {6.3}{Webrtc Routing}}{49}{section.6.3}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.3.1}{Latency}}{49}{subsection.6.3.1}% 
+\contentsline {section}{\numberline {6.4}{Bandwidth}}{49}{section.6.4}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {6.3.1.1}{Webrtc Verbindungsaufbau}}{49}{subsubsection.6.3.1.1}% 
+\contentsline {subsection}{\numberline {6.4.1}{Latency}}{49}{subsection.6.4.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.3.2}{Simulierter Workload}}{49}{subsection.6.3.2}% 
+\contentsline {subsubsection}{\numberline {6.4.1.1}{Webrtc Verbindungsaufbau}}{49}{subsubsection.6.4.1.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {6.3.2.1}{Durchsatz - Ladezeiten von verschiedenen Dateigr\IeC {\"o}\IeC {\ss }en}}{49}{subsubsection.6.3.2.1}% 
+\contentsline {subsection}{\numberline {6.4.2}{Simulierter Workload}}{49}{subsection.6.4.2}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.3.3}{Educational context}}{50}{subsection.6.3.3}% 
+\contentsline {subsubsection}{\numberline {6.4.2.1}{Durchsatz - Ladezeiten von verschiedenen Dateigr\IeC {\"o}\IeC {\ss }en}}{49}{subsubsection.6.4.2.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.3.4}{Live Streaming}}{51}{subsection.6.3.4}% 
+\contentsline {subsection}{\numberline {6.4.3}{Educational context}}{51}{subsection.6.4.3}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.3.5}{Nutzerzufriedenheit}}{54}{subsection.6.3.5}% 
+\contentsline {subsection}{\numberline {6.4.4}{Live Streaming}}{51}{subsection.6.4.4}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.4}{Security considerations}}{54}{section.6.4}% 
+\contentsline {subsection}{\numberline {6.4.5}{Nutzerzufriedenheit}}{54}{subsection.6.4.5}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.5}{DRM licencing}}{54}{section.6.5}% 
+\contentsline {section}{\numberline {6.5}{Security considerations}}{54}{section.6.5}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6.6}{DRM licencing}}{54}{section.6.6}% 
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {7}{Conclusion}}{55}{chapter.7}% 
 \defcounter {refsection}{0}\relax 
