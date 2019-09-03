@@ -62,12 +62,116 @@ Um die unterstützten Browser zu verifizieren wurden die vom \pTp \cdn verwendet
 	\item verschiedene Anzahl an Peers im Netzwerk 
 \end{itemize}
 
-\subsection{Simulierter Workload}
+\subsection{Simulierter Workload - Slidesync}
+\begin{itemize}
+	\item Server load steigt --> cpu bei clients
+	\item mehr als 100 --> load beim client zu hoch --> dropouts
+	\item dropout --> clients waren nicht in der Lage ping zu beantworten
+	\item t2.2xlarge
+	\item 8 vcpus
+	\item 16gb ram ?
+	\item load ca 70% cpu
+	\item 25 clients pro server
+	\item Meshing tests:
+	\item 10
+	\item 40% load
+	\item 92872 pro segment (ca 92 kb) 
+	\item ca 9,2 mb pro client pro event
+	\item bandbreiten diagram? 
+\end{itemize}
 \begin{itemize}
 	\item batches
 	\item gleicher Zeitabstand gleiche Client zahl
 	\item Random client ankunft
 	\item Future Soc lab
+\end{itemize}
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.8\textwidth]{figures/single_mesh_line}
+	\caption[A Figure Short-Title]{Vergleich der Bearbeitung nach Art in einem Mesh}
+	\label{fig:single_mesh_line}
+\end{figure}
+
+\begin{itemize}
+	\item ab 75 Clients fangen erste an wegen zu hohem load nicht mehr laden zu können
+	\item Bei 100 einbruch noch stärker
+	\item --> mehr über server als über peer netzwerk
+	\item --> timeouts
+	\item bei 125 verstärkt sich der effekt
+	\item zwar waren mehr clients in der Lage den stream un unterbrochen zu schauen (peer verbindungen sind abgebrochen --> weniger last) jedoch wird der Anteil der Server anfragen größer
+\end{itemize}
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.8\textwidth]{figures/timeouts_single}
+	\caption[A Figure Short-Title]{Timeouts bei einem Mesh}
+	\label{fig:timeouts_single}
+\end{figure}
+
+\begin{itemize}
+	\item Anzahl an Timeouts steigt ab 75 stark an
+	\item evtl in Kontext setzen mit gesamt anzahl an anfragen (prozent)
+	\item Zu viele Clients fragen den selben client
+	\item timeout kein problem wegen buffer
+	\item timout so gewählt das es nicht zu unterbrechungen kommt
+\end{itemize}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.8\textwidth]{figures/peer_vs_server_over_time}
+	\caption[A Figure Short-Title]{Anfrageart über die Zeit bei 30 Teilnehmern}
+	\label{fig:peer_vs_server_over_time}
+\end{figure}
+
+\begin{itemize}
+	\item Rampup time
+	\item Zu beginn besonders viele anfragen da buffer gefüllt werden muss
+	\item immer 3 segmente werden vor geladen (6 sekunden pro segment --> 18 sekunden video)
+	\item Clients laden Seite fast gleichzeitig (innerhalb weniger sekunden)
+	\item cdn braucht um sich "einzuspielen"
+	\item dann konstant
+	\item evtl überflüssige anfragen über zeit zeigen + timeouts 
+\end{itemize}
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.8\textwidth]{figures/mesh_comparison}
+	\caption[A Figure Short-Title]{Vergleich verschiedener Mesh Größen}
+	\label{fig:mesh_comparison}
+\end{figure}
+
+
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.8\textwidth]{figures/timeouts_meshed}
+	\caption[A Figure Short-Title]{#Timeouts bei verschiedenen Mesh Größen (125 Teilnehmer)}
+	\label{fig:timeouts_meshed}
+\end{figure}
+
+\begin{itemize}
+	\item Mesh göße von 10 zu klein 
+	\item viele Timeouts
+	\item wahrscheinlichkeit das nur 1 peer vorgeladen hat größer
+	\item mehr anfragen nötig
+	\item 30 bestes Verhältniss von peer/server
+	\item ab 50 steigt der load bei den Teilnehmern
+	\item Verzögerte benachrichtigung über updates
+	\item mehr unnötige anfragen über Server
+	\item mehr timeouts
+\end{itemize}
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.8\textwidth]{figures/meshed_30_line}
+	\caption[A Figure Short-Title]{Mesh Größe von 30 bei steigender Teilnehmer Zahl}
+	\label{fig:meshed_30_line}
+\end{figure}
+
+\begin{itemize}
+	\item Verhältnisse berechnen
+	\item evtl ramp up anschauen
+	\item  
 \end{itemize}
 
 \subsubsection{Durchsatz - Ladezeiten von verschiedenen Dateigrößen}

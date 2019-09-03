@@ -208,23 +208,23 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{\numberline {6.4.1.1}{Webrtc Verbindungsaufbau}}{49}{subsubsection.6.4.1.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.4.2}{Simulierter Workload}}{49}{subsection.6.4.2}% 
+\contentsline {subsection}{\numberline {6.4.2}{Simulierter Workload - Slidesync}}{49}{subsection.6.4.2}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {6.4.2.1}{Durchsatz - Ladezeiten von verschiedenen Dateigr\IeC {\"o}\IeC {\ss }en}}{49}{subsubsection.6.4.2.1}% 
+\contentsline {subsubsection}{\numberline {6.4.2.1}{Durchsatz - Ladezeiten von verschiedenen Dateigr\IeC {\"o}\IeC {\ss }en}}{53}{subsubsection.6.4.2.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.4.3}{Educational context}}{51}{subsection.6.4.3}% 
+\contentsline {subsection}{\numberline {6.4.3}{Educational context}}{54}{subsection.6.4.3}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.4.4}{Live Streaming}}{51}{subsection.6.4.4}% 
+\contentsline {subsection}{\numberline {6.4.4}{Live Streaming}}{55}{subsection.6.4.4}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.4.5}{Nutzerzufriedenheit}}{54}{subsection.6.4.5}% 
+\contentsline {subsection}{\numberline {6.4.5}{Nutzerzufriedenheit}}{58}{subsection.6.4.5}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.5}{Security considerations}}{54}{section.6.5}% 
+\contentsline {section}{\numberline {6.5}{Security considerations}}{58}{section.6.5}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.6}{DRM licencing}}{54}{section.6.6}% 
+\contentsline {section}{\numberline {6.6}{DRM licencing}}{58}{section.6.6}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {7}{Conclusion}}{55}{chapter.7}% 
+\contentsline {chapter}{\numberline {7}{Conclusion}}{59}{chapter.7}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {A}{An Appendix}}{56}{appendix.A}% 
+\contentsline {chapter}{\numberline {A}{An Appendix}}{60}{appendix.A}% 
 \defcounter {refsection}{0}\relax 
 \vspace {\beforebibskip }
 \defcounter {refsection}{0}\relax 
