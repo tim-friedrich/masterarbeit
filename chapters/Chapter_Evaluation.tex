@@ -53,6 +53,13 @@ Um die unterstützten Browser zu verifizieren wurden die vom \pTp \cdn verwendet
 \end{itemize}
 \section{Bandwidth}
 
+# weiteres szenario 
+# 1 User hat geladen
+# rest kommt
+# mit inhalten pdf?
+# 
+
+
 \subsection{Latency}
 
 \subsubsection{Webrtc Verbindungsaufbau}
@@ -78,6 +85,7 @@ Um die unterstützten Browser zu verifizieren wurden die vom \pTp \cdn verwendet
 	\item 92872 pro segment (ca 92 kb) 
 	\item ca 9,2 mb pro client pro event
 	\item bandbreiten diagram? 
+	\item Wenn client von server lädt teilt er das direkt mit
 \end{itemize}
 \begin{itemize}
 	\item batches
@@ -92,6 +100,7 @@ Um die unterstützten Browser zu verifizieren wurden die vom \pTp \cdn verwendet
 	\caption[A Figure Short-Title]{Vergleich der Bearbeitung nach Art in einem Mesh}
 	\label{fig:single_mesh_line}
 \end{figure}
+# Datenpunkte mehr ersichtilich machen
 
 \begin{itemize}
 	\item ab 75 Clients fangen erste an wegen zu hohem load nicht mehr laden zu können
@@ -139,7 +148,7 @@ Um die unterstützten Browser zu verifizieren wurden die vom \pTp \cdn verwendet
 	\caption[A Figure Short-Title]{Vergleich verschiedener Mesh Größen}
 	\label{fig:mesh_comparison}
 \end{figure}
-
+# Rahmenbedingungen müssen klar sein
 
 
 \begin{figure}[!h]
@@ -207,10 +216,44 @@ Getestet wurde mit zwei Teilnehmern. Einer lud die Ressource vor und der zweite 
 	\item sicherstellen das datenverkehr nicht über internet geroutet werden...
 \end{itemize}
 \subsection{Educational context}
+
 \begin{itemize}
-	\item machbarkeitstests in schule
-	\item setup erklären
-	
+	\item Testsetup
+	\item 30 Schüler
+	\item 3 Clicks
+	\item Dashboard
+	\item kurs liste
+	\item kurs
+	\item Thema
+	\item hauptsächlich css etc
+	\item 1 Server macht anfragen
+	\item verschieden zufällig gewählte startzeiten in verschiedenen Zeiträumen
+	\item wo turbolinks erwähnen?
+\end{itemize}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.8\textwidth]{figures/sc_stacked_interval}
+	\caption[A Figure Short-Title]{Vergleich der Anfragen nach Anfrageart}
+	\label{fig:15_clients_network}
+\end{figure}
+
+\begin{itemize}
+	\item Kein Großer unterschied zwischen den Zeiträumen
+\end{itemize}
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.8\textwidth]{figures/sc_first_vs_later}
+	\caption[A Figure Short-Title]{Vergleich der Anfragen nach Anfrageart}
+	\label{fig:15_clients_network}
+\end{figure}
+\todo{Beschriftungen}
+
+\begin{itemize}
+	\item First load vs navigationen
+	\item First load schlechte abdeckung -> erst möglich wenn cdn initialisiert ist
+	\item navigationen sehr hohe abdeckung
+	\item swa/turbolinks notwendig
 \end{itemize}
 
 \subsection{Live Streaming}

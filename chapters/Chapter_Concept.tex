@@ -194,105 +194,21 @@ Verlässt ein Client das \pTp Netzwerk so müssen die andern Clients darauf reag
 %	\item Anwendungslogick
 %	\item Signaling over Kademlia
 %\end{itemize}
+\section{Routing - Auffinden von Ressourcen}
+
+Das vorgeschlagene \pTp \cdn ist als strukturiertes \pTp Netzwerk ohne verteilte Hashtabelle implementiert. Da das auffinden von Ressourcen in einem zeitkritischen Moment erfolgt, während der Ladezeit der Seite und sich bei den betrachteten Anwendungsfällen gut vorher sagen lässt welche Ressourcen benötigt werden erscheint es als sinnvoll das Routing im Vorfeld geschehen zu lassen. Zwar scalieren algorithmen wie kademlia \cite{kademlia} sehr gut für eine große Anzahl an Teilnehmern, jedoch ist zum Zeitpunkt der Anfrage einer Ressource ein nicht unerheblicher Kommunikationsaufwand notwendig. Es müssen zwar für z.B. 1000 Teilnehmer im Netzwerk nur drei Teilnehmer gefragt werden um zu ermitteln wer die Ressource speichert, jedoch ist der Verbindungsaufbau mit Webrtc relativ aufwändig. In Tests im Rahmen dieser Arbeit wurden Verbindungsaufbauzeiten von ca. 80ms gemessen. Da im Vorfeld nicht bekannt ist müssen sämtliche Verbindungen im Moment des Routings aufgebaut werden. Für das Beispiel mit 1000 Teilnehmern hieße es das 3 Verbindungen zum auffinden der Ressource hergestellt werden müssen plus eine zu dem Teilnehmer der die Ressource speichert. Die Bearbeitung der Anfrage würde um 320ms Sekunden verzögert werden. Während dies für Filesharing systeme wie Bittorent kein großes Problem darstellt, ist diese Verzögerung für ein \cdn zu groß. Daher hällt in dem vorgeschlagenen \cdn jeder Teilnehmer eine Hastabelle vor in der gespeichert wird welcher Teilnehmer welche Ressourcen speichert. Diese muss aktualisiert werden was zwar zu einer höheren Last und einem erhöhten Kommunikationsaufwand führt, jedoch kann dies zu einem zeitunkritischen Moment zwischen den Anfragen geschehen. Muss ein Peer eine Ressource auffinden so hält er diese Information bereit. 
 
 \section{Mesh Zuordnung}
-Im Folgenden werden verschiedene Zuordnungsstrategien zur Bildung von Peer Meshes diskutiert. Dazu wird der typische Workload beider Anwendungen analysiert um eine jeweils geeignete Strategie zu wählen. 
 
-- Vergleich von Meshing verfahren/peer routing aus Literatur
-\subsection{Routing}
-Im Folgenden werden verschiedene Routing \pTp Routing Algorithmen aus der Literatur vorgestellt und diskutiert welcher Ansatz für die betrachteten Anwendungsfälle am geeignetsten ist.
 
 \begin{itemize}
-	\item Datenstruktur
-	\item  Dezentralisierte Datenspeicherung
-	\item Daten werden über SPeicherknoten verteilt
-	\item Jeder Knoten Eintrag in Hashtabelle
-	\item direct storage: Daten in Hashtabelle
-	\item nur für kleine Daten
-	\item indirect storage: Verweis auf daten in Hashtabelle
-	\item Eigenschaften:
-Fehlertoleranz
-Lastenverteilung
-Robustheit
-Selbstorganisation
-Skalierbarkeit
-	\item consistent hashing
-	\item Server zum routen
-https://www.coralcdn.org/pubs/
-\end{itemize}
-
-\begin{itemize}
-	\item Rechnung Peersuche laufzeit:
-	\item Verbinden von 2Peers ohne Netzlaufzeit: 30ms
-	\item Angenommene Latenz: round trip: 50ms
-	\item 80ms
-	\item 80*4 = 320ms
-	\item Log(1000) = 3 + 1 
-	\item 4 Verbindungen müssen aufgebaut werden
-\end{itemize}
-
-\subsubsection{Chord}
-
-How to save files in advance???
-save file references
-\subsubsection{Kademlia}
-\begin{itemize}
+	\item Voll vermaschtes Netz
+	\item zuoordnung aufgabe der Anwendung
+	\item Ausnutzen von Domänen wissen der Anwendung
 	\item 
 \end{itemize}
-\subsubsection{IPFS}
-\subsubsection{Kelips}
-\subsubsection{Pastry}
-\subsection{\schulCloud}
-Analyse workload mit grafik
-
-\begin{itemize}
-	\item Schulcloud
-	\item 	
-\end{itemize}
-Schulcloud
-- Global
-einfache umsetzung
-Kurs unabhänige assets können geteilt werden
-Maximale Mesh größe
-Mehrere Meshes nötig
-Möglicherweise nicht im Mesh mit relevanten Peers
-Maximiert die Anzahl der Peers pro Mesh
-Wahrscheinlichkeit für selbes Subnetz eher gering
-Funktioniert auch mit wenigen Clients
-Ineffektiv wenn viele Clients vorhanden sind
-
-- Schule
-Einfache Umsetzung
-Funktioniert auch mit wenigen Clients
-Relativ hohe trefferrate da schulen selten mehr als 1000 Schüler hat
-Max mesh größe um die 256(Chrome)
-Relativ wahrscheinlich gleiches Subnetz
-
-- Kurs
-Hohe trefferrate
-Kleine Meshes
-benötigt mehr Clients
-Relativ wahrscheinlich gleiches Subnetz --> Daten die das bestätigen
-
-hybride Ansätze:
-Zwei priorisierte Meshes Schule und Klasse
-
-Berechnung eines Scores für jeden Peer:
-Möglichst viele gemeinsame kurse
-Liste von Kursen für jeden Peer
-Schnittmenge für jeden peer der online ist bilden
-Kardinalität der Menge = Score von Peer
-Rechenaufwendig Aber machbar
-Beste Trefferrate
-Funktioniert wenn wenige und wenn viele Peers anwesend sind
 
 \subsection{Slidesync}
-Slidesync ist eine Plattform deren Nutzung stark durch die durchgeführten live Events dominiert wird. Ein Moderator erstellt das Event lädt die notwendigen Assets, z.B. Foliensätze, hoch. Live Events werden für eine bestimmte Zeit festgesetzt und Teilnehmer laden zum Start des Events die Seite.\todo{Grafik visits} Ein Großteil des entstandenen Traffics besteht aus HLS Videoseqmenten. Jeder Teilnehmer eines Events benötigt die selben Inhalte.\todo{Grafik traffic} 
-
-Die Peer Meshes in Slidesync werden als voll vermaschte Netzte abgebildet. Da alle Teilnehmer eines Events zu großen Teilen die selben Daten benötigen können sie in dem selben Mesh untergebracht werden. Um zu gewährleisten das sich die Peers im Selben Subnetz befinden teilen sich nur solche ein Peer Mesh die sich in der Selben IP Range befinden. Ein weiterer wichtiger Factor ist der Kommunkationsmehraufwand der durch das halten von Verbindungen zu vielen Peers entsteht. Deshalb ist es nicht möglich bei größeren Events alle Peers im selben Peer Mesh unter zu bringen. Deshalb werden Sub Meshes gebildet in denen sich eine maximale Anzahl an Peers befinden können. 
-
-Abbildung \ref{fig:mesh-slidesync} zeigt eine beispielhafte Aufteilung von Peer Meshes für ein Event. Für Netzwerk A und B werden jeweils zwei Meshes erzeugt und nur solche Clients werden miteinander verbunden die sich auch im Selben Subnetz befinden. Jedes Netzwerk wird wiederum in zwei Sub-Meshes unterteilt.
-
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=0.8\textwidth]{figures/slidesync_peer_meshes}
@@ -300,8 +216,82 @@ Abbildung \ref{fig:mesh-slidesync} zeigt eine beispielhafte Aufteilung von Peer 
 	\label{fig:mesh-slidesync}
 \end{figure}
 
+Slidesync ist eine Plattform deren Nutzung stark durch die durchgeführten live Events dominiert wird. Ein Moderator erstellt das Event lädt die notwendigen Assets, z.B. Foliensätze, hoch. Live Events werden für eine bestimmte Zeit festgesetzt und Teilnehmer laden zum Start des Events die Seite.\todo{Grafik visits} Ein Großteil des entstandenen Traffics besteht aus HLS Videoseqmenten. Jeder Teilnehmer eines Events benötigt die selben Inhalte.\todo{Grafik traffic} 
+
+Die Peer Meshes in Slidesync werden als voll vermaschte Netzte abgebildet. Da alle Teilnehmer eines Events zu großen Teilen die selben Daten benötigen können sie in dem selben Mesh untergebracht werden. Um zu gewährleisten das sich die Peers im Selben Subnetz befinden teilen sich nur solche ein Peer Mesh die sich in der Selben IP Range befinden. Ein weiterer wichtiger Factor ist der Kommunkationsmehraufwand der durch das halten von Verbindungen zu vielen Peers entsteht. Deshalb ist es nicht möglich bei größeren Events alle Peers im selben Peer Mesh unter zu bringen. Deshalb werden Sub Meshes gebildet in denen sich eine maximale Anzahl an Peers befinden können. 
+
+Abbildung \ref{fig:mesh-slidesync} zeigt eine beispielhafte Aufteilung von Peer Meshes für ein Event. Für Netzwerk A und B werden jeweils zwei Meshes erzeugt und nur solche Clients werden miteinander verbunden die sich auch im Selben Subnetz befinden. Jedes Netzwerk wird wiederum in zwei Sub-Meshes unterteilt.
+
 Um sicherzustellen das ein Peer sich auch aktiv am Mesh beteiligen kann sendet er regelmäßig ping Nachrichten an den Server. Da dieser Mechanismus in Slidesync schon zu vor zur Erhebung von Statistiken verwendet wurde, wird diese Nachricht lediglich um den Zustand des \cdns erweitert. Meldet ein Peer sich nicht innerhalb einer Minute oder meldet er das eine Verbindung zum \pTp Netzwerk nicht möglich ist, so wird er als nicht mehr mit dem \pTp \cdn verbunden betrachtet. Sind alle aktuell verfügbaren Peer Meshes voll, so wird ein neues Peer Mesh angelegt und ein Hintergrund Job gestartet der alle Peer die als nicht verbunden betrachtet werden aus den Peer Meshes entfernt und die Meshes wieder als verfügbar markiert. Dadurch wird die Beantwortung der aktuelle Anfrage nicht verzögert und der Hintergrund Job nur bei Bedarf gestartet. Ebenso werden so Peers aussortiert deren Browser das \pTp \cdn nicht unterstützen, da der Anwendungsserver darüber zum Zeitpunkt der Zuordnung noch keine Kenntnis darüber hat.
+
+\begin{itemize}
+	\item berücksichtigung des Netzwerkes
+	\item IP range in vielen Fällen bekannt
+\end{itemize}
+\subsection{Schul-Cloud}
+\begin{itemize}
+	\item Aufteilung nach Klassen
+	\item setting schulklasse
+	\item geringe Teilnehmerzahl 
+	\item Gleiche Daten
+	\item wichtig vor allem im Schulnetz
+\end{itemize}
+
+%\section{Mesh Zuordnung}
+%Im Folgenden werden verschiedene Zuordnungsstrategien zur Bildung von Peer Meshes diskutiert. Dazu wird der typische Workload beider Anwendungen analysiert um eine jeweils geeignete Strategie zu wählen. 
 %
+%- Vergleich von Meshing verfahren/peer routing aus Literatur
+%\subsection{Routing}
+%Im Folgenden werden verschiedene Routing \pTp Routing Algorithmen aus der Literatur vorgestellt und diskutiert welcher Ansatz für die betrachteten Anwendungsfälle am geeignetsten ist.
+%
+%\begin{itemize}
+%	\item Datenstruktur
+%	\item  Dezentralisierte Datenspeicherung
+%	\item Daten werden über SPeicherknoten verteilt
+%	\item Jeder Knoten Eintrag in Hashtabelle
+%	\item direct storage: Daten in Hashtabelle
+%	\item nur für kleine Daten
+%	\item indirect storage: Verweis auf daten in Hashtabelle
+%	\item Eigenschaften:
+%Fehlertoleranz
+%Lastenverteilung
+%Robustheit
+%Selbstorganisation
+%Skalierbarkeit
+%	\item consistent hashing
+%	\item Server zum routen
+%https://www.coralcdn.org/pubs/
+%\end{itemize}
+%
+%\begin{itemize}
+%	\item Rechnung Peersuche laufzeit:
+%	\item Verbinden von 2Peers ohne Netzlaufzeit: 30ms
+%	\item Angenommene Latenz: round trip: 50ms
+%	\item 80ms
+%	\item 80*4 = 320ms
+%	\item Log(1000) = 3 + 1 
+%	\item 4 Verbindungen müssen aufgebaut werden
+%\end{itemize}
+%
+%\subsubsection{Chord}
+%
+%How to save files in advance???
+%save file references
+%\subsubsection{Kademlia}
+%\begin{itemize}
+%	\item 
+%\end{itemize}
+%\subsubsection{IPFS}
+%\subsubsection{Kelips}
+%\subsubsection{Pastry}
+%\subsection{\schulCloud}
+%Analyse workload mit grafik
+%
+%\begin{itemize}
+%	\item Schulcloud
+%	\item 	
+%\end{itemize}
+
 %\begin{itemize}
 %	\item Aussortieren von alten peers
 %	\item Background Job
@@ -324,21 +314,21 @@ Um sicherzustellen das ein Peer sich auch aktiv am Mesh beteiligen kann sendet e
 % ip subnetz plus gleicher Kurs/stream
 
 
-\section{Routing - finden von Ressourcen}
-
-Um das \pTp Netzwerk als \cdn Nutzbar zu machen ist es wichtig das ein Peer in der Lage ist herauszufinden wer welche resource bereitstellt.
-
-%DHT\todo{distributed hash tables erklären}
+%\section{Routing - finden von Ressourcen}
 %
-%Structured vs untructured
-
-Da das Routing von Ressourcen bei den Betrachteten Anwendungsfällen in einem Zeitkritischen Moment erfolgen muss wurde sich für einen anderen Ansatz entschieden. Jeder Peer hält eine Hashtabelle mit den Ressourcen seiner Peers vor. Fügt ein Peer eine neue Ressource zu seinem Cache hinzu oder entfernt sie muss er alle verbundenen Peers über diese Änderung informieren. Dadurch muss im Falle einer Anfrage nicht erst die Ressource im Netzwerk gesucht werden. Dies ist möglich durch die Struktur des Netzwerkes. Da nicht alle Peers miteinander verbunden sind sondern voll vermaschte sub-meshes gebildet werden ist es möglich alle relevanten Peers über Änderungen zu informieren. Dadurch ist es möglich die Rechenleistung für das auffinden von Ressourcen in einen weniger Zeitkritischen Moment zu verlagern. Jedoch hat dies zur Folge das die Meshes so gebildet werden müssen das die Peers möglichst viele Ressourcen gemeinsam benötigen. Ist eine Ressource nicht im Mesh vorhanden wird sie vom Server geladen. 
+%Um das \pTp Netzwerk als \cdn Nutzbar zu machen ist es wichtig das ein Peer in der Lage ist herauszufinden wer welche resource bereitstellt.
+%
+%%DHT\todo{distributed hash tables erklären}
+%%
+%%Structured vs untructured
+%
+%Da das Routing von Ressourcen bei den Betrachteten Anwendungsfällen in einem Zeitkritischen Moment erfolgen muss wurde sich für einen anderen Ansatz entschieden. Jeder Peer hält eine Hashtabelle mit den Ressourcen seiner Peers vor. Fügt ein Peer eine neue Ressource zu seinem Cache hinzu oder entfernt sie muss er alle verbundenen Peers über diese Änderung informieren. Dadurch muss im Falle einer Anfrage nicht erst die Ressource im Netzwerk gesucht werden. Dies ist möglich durch die Struktur des Netzwerkes. Da nicht alle Peers miteinander verbunden sind sondern voll vermaschte sub-meshes gebildet werden ist es möglich alle relevanten Peers über Änderungen zu informieren. Dadurch ist es möglich die Rechenleistung für das auffinden von Ressourcen in einen weniger Zeitkritischen Moment zu verlagern. Jedoch hat dies zur Folge das die Meshes so gebildet werden müssen das die Peers möglichst viele Ressourcen gemeinsam benötigen. Ist eine Ressource nicht im Mesh vorhanden wird sie vom Server geladen. 
 
 %\begin{itemize}
 %	\item 
 %\end{itemize}
 
-\todo{Duplicate}
+%\todo{Duplicate}
 %Structured vs unstructured networks
 %
 %Kollaborative File Sharing Protokolle wie z.B. Bitorrent verwenden häufig verteilte Hashtabellen zum auffinden von Ressourcen im Netzwerk. 
@@ -386,27 +376,20 @@ Alternativ kann auch auf die Angabe eine NAT-Servers beim Webrtc Verbindungsaufb
 
 Das Vergleichen von IP-Adressen hat den Vorteil das bereits zur Einteilung in die Peer meshes bekannt ist in welchem lokalen Netzwerk sich der Peer befindet. Dadurch können die Peers effizienter in die Meshes eingeteilt werden. Jedoch muss das Subnetz bekannt sein und in der Anwendung konfiguriert werden. Auch muss der Anwendung die IP-Adresse des Clients bekannt sein, was im Fall von Schul-Cloud aus Datenschutzgründen nicht möglich ist.
 
-\section{Wiederverwendbarkeit}
-%Plug and play
-%Konfigurierbarkeit
-%einfaches einbinden in existierende anwendungen über npm
-%javascript modul
-%support von eigenen oder öffentlichen stun servern
-%%Plug and play
 \section{Umgang mit älteren Browsern}
 Um sicherzustellen das das Nutzererlebnis für Teilnehmer mit nicht unterstützen Browser Versionen nicht negativ beeinträchtigt wird, überprüft das \cdn bevor es initialisiert wird ob der Browser alle notwendigen Funktionalitäten unterstützt. Dazu wird der System Test verwendet. Wird der Browser nicht unterstützt so wird die Initialisierung des Scripts abgebrochen. 
 Kann eine Verbindung zu einem Teilnehmer nicht aufgebaut werden oder bricht sie ab so wird er aus der eigenen Liste der Teilnehmer gelöscht, so das nicht versucht wird Anfragen über ihn zu beantworten. 
 Kann das \cdn nicht erfolgreich initialisiert werden, sei es weil der Browser nicht unterstützt wird oder weil die Netzwerk Einstellungen dies nicht zulassen, so werden Anfragen so beantwortet als wäre das \cdn nicht vorhanden.
 
-\section{Open Source}
-\begin{itemize}
-	\item evtl. Open source erklären
-	\item bereitstellung für die Öffentlichkeit
-	\item Welche Lizenz?
-\end{itemize}
-%was ist open source
-%bereitstellung für die Öffentlichkeit
-%
+%\section{Open Source}
+%\begin{itemize}
+%	\item evtl. Open source erklären
+%	\item bereitstellung für die Öffentlichkeit
+%	\item Welche Lizenz?
+%\end{itemize}
+%%was ist open source
+%%bereitstellung für die Öffentlichkeit
+%%
 
 \section{Offline Support}
 \begin{itemize}
