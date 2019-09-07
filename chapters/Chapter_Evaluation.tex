@@ -35,12 +35,6 @@ Um die unterstützten Browser zu verifizieren wurden die vom \pTp \cdn verwendet
 	\item 
 \end{itemize}
 
-\subsubsection{Chunking}
-\begin{itemize}
-	\item messen des aufwandes für chunking und wieder zusammensetzen
-	\item woher kommt der zusätzliche Aufwand bei größen dateien??
-	\item limit ist der durchsatz nicht das chunking
-\end{itemize}
 
 \subsection{Browser usage in eduational networks}
 
@@ -53,11 +47,6 @@ Um die unterstützten Browser zu verifizieren wurden die vom \pTp \cdn verwendet
 \end{itemize}
 \section{Bandwidth}
 
-# weiteres szenario 
-# 1 User hat geladen
-# rest kommt
-# mit inhalten pdf?
-# 
 
 
 \subsection{Latency}
@@ -69,121 +58,15 @@ Um die unterstützten Browser zu verifizieren wurden die vom \pTp \cdn verwendet
 	\item verschiedene Anzahl an Peers im Netzwerk 
 \end{itemize}
 
-\subsection{Simulierter Workload - Slidesync}
+\section{Simulierter Workload}
+\subsection{Chunking}
 \begin{itemize}
-	\item Server load steigt --> cpu bei clients
-	\item mehr als 100 --> load beim client zu hoch --> dropouts
-	\item dropout --> clients waren nicht in der Lage ping zu beantworten
-	\item t2.2xlarge
-	\item 8 vcpus
-	\item 16gb ram ?
-	\item load ca 70% cpu
-	\item 25 clients pro server
-	\item Meshing tests:
-	\item 10
-	\item 40% load
-	\item 92872 pro segment (ca 92 kb) 
-	\item ca 9,2 mb pro client pro event
-	\item bandbreiten diagram? 
-	\item Wenn client von server lädt teilt er das direkt mit
-\end{itemize}
-\begin{itemize}
-	\item batches
-	\item gleicher Zeitabstand gleiche Client zahl
-	\item Random client ankunft
-	\item Future Soc lab
+	\item messen des aufwandes für chunking und wieder zusammensetzen
+	\item woher kommt der zusätzliche Aufwand bei größen dateien??
+	\item limit ist der durchsatz nicht das chunking
 \end{itemize}
 
-\begin{figure}[!h]
-	\centering
-	\includegraphics[width=0.8\textwidth]{figures/single_mesh_line}
-	\caption[A Figure Short-Title]{Vergleich der Bearbeitung nach Art in einem Mesh}
-	\label{fig:single_mesh_line}
-\end{figure}
-# Datenpunkte mehr ersichtilich machen
-
-\begin{itemize}
-	\item ab 75 Clients fangen erste an wegen zu hohem load nicht mehr laden zu können
-	\item Bei 100 einbruch noch stärker
-	\item --> mehr über server als über peer netzwerk
-	\item --> timeouts
-	\item bei 125 verstärkt sich der effekt
-	\item zwar waren mehr clients in der Lage den stream un unterbrochen zu schauen (peer verbindungen sind abgebrochen --> weniger last) jedoch wird der Anteil der Server anfragen größer
-\end{itemize}
-
-\begin{figure}[!h]
-	\centering
-	\includegraphics[width=0.8\textwidth]{figures/timeouts_single}
-	\caption[A Figure Short-Title]{Timeouts bei einem Mesh}
-	\label{fig:timeouts_single}
-\end{figure}
-
-\begin{itemize}
-	\item Anzahl an Timeouts steigt ab 75 stark an
-	\item evtl in Kontext setzen mit gesamt anzahl an anfragen (prozent)
-	\item Zu viele Clients fragen den selben client
-	\item timeout kein problem wegen buffer
-	\item timout so gewählt das es nicht zu unterbrechungen kommt
-\end{itemize}
-\begin{figure}[!h]
-	\centering
-	\includegraphics[width=0.8\textwidth]{figures/peer_vs_server_over_time}
-	\caption[A Figure Short-Title]{Anfrageart über die Zeit bei 30 Teilnehmern}
-	\label{fig:peer_vs_server_over_time}
-\end{figure}
-
-\begin{itemize}
-	\item Rampup time
-	\item Zu beginn besonders viele anfragen da buffer gefüllt werden muss
-	\item immer 3 segmente werden vor geladen (6 sekunden pro segment --> 18 sekunden video)
-	\item Clients laden Seite fast gleichzeitig (innerhalb weniger sekunden)
-	\item cdn braucht um sich "einzuspielen"
-	\item dann konstant
-	\item evtl überflüssige anfragen über zeit zeigen + timeouts 
-\end{itemize}
-
-\begin{figure}[!h]
-	\centering
-	\includegraphics[width=0.8\textwidth]{figures/mesh_comparison}
-	\caption[A Figure Short-Title]{Vergleich verschiedener Mesh Größen}
-	\label{fig:mesh_comparison}
-\end{figure}
-# Rahmenbedingungen müssen klar sein
-
-
-\begin{figure}[!h]
-	\centering
-	\includegraphics[width=0.8\textwidth]{figures/timeouts_meshed}
-	\caption[A Figure Short-Title]{#Timeouts bei verschiedenen Mesh Größen (125 Teilnehmer)}
-	\label{fig:timeouts_meshed}
-\end{figure}
-
-\begin{itemize}
-	\item Mesh göße von 10 zu klein 
-	\item viele Timeouts
-	\item wahrscheinlichkeit das nur 1 peer vorgeladen hat größer
-	\item mehr anfragen nötig
-	\item 30 bestes Verhältniss von peer/server
-	\item ab 50 steigt der load bei den Teilnehmern
-	\item Verzögerte benachrichtigung über updates
-	\item mehr unnötige anfragen über Server
-	\item mehr timeouts
-\end{itemize}
-
-\begin{figure}[!h]
-	\centering
-	\includegraphics[width=0.8\textwidth]{figures/meshed_30_line}
-	\caption[A Figure Short-Title]{Mesh Größe von 30 bei steigender Teilnehmer Zahl}
-	\label{fig:meshed_30_line}
-\end{figure}
-
-\begin{itemize}
-	\item Verhältnisse berechnen
-	\item evtl ramp up anschauen
-	\item  
-\end{itemize}
-
-\subsubsection{Durchsatz - Ladezeiten von verschiedenen Dateigrößen}
+\subsection{Durchsatz - Ladezeiten von verschiedenen Dateigrößen}
 Um die Ladezeiten verschiedener Dateigrößen zu evaluieren wurde auf einem Mac book pro Ende 2013 mit 2.3 GHz und 16GB Arbeitsspeicher getestet. 
 Getestet wurde mit zwei Teilnehmern. Einer lud die Ressource vor und der zweite lud sie über das \pTp \cdn. Die Timeouts des \pTp \cdns wurden für diesen Test deaktiviert. Um Netzlaufzeiten auszuklammern befand sich der Anwendungsserver ebenso wie die zu ladene Ressource auf dem selben Rechner wie die Clients. 
 
@@ -215,7 +98,85 @@ Getestet wurde mit zwei Teilnehmern. Einer lud die Ressource vor und der zweite 
 	\item benchmarkt das nur das lokale netzwerk?? --> routing
 	\item sicherstellen das datenverkehr nicht über internet geroutet werden...
 \end{itemize}
-\subsection{Educational context}
+
+\subsection{Live Streaming}
+Um einen Live Stream mit höherer Teilnehmerzahl zu testen wurde ein Script geschrieben, das mit Hilfe von puppeteer\footnote{TODO: puppeteer} mehrere Chrome browser um headless Mode startet und die Event Seite besucht. Dabei musste eine Chrome installation gewählt werden, da Chromium nicht über die notwendigen Codecs verfügt um HLS Video wieder zu geben. 
+Das Script wurde auf Amazon AWS t2.xlarge Instanzen installiert. Jede dieser Instanzen verfügt über 8 vcpus und 32 GB Arbeitsspeicher. Auf jeder Instanz wurden 25 Browser Sessions geöffnet.  Das \cdn wurde so konfiguriert das es ausschließlich .ts Dateien, also die Video Segmente bearbeitet. Bei 25 Teilnehmern lag die CPU Last bei den Testservern bei deaktiviertem \pTp \cdn bei 50-60\%. 
+Die Teilnehmer luden die Event Seite während das Event noch nicht Live geschaltet war. Wenn alle Teilnehmer die Seite geladen hatten wurde das Event live geschaltet und die Teilnehmer auf die Live stream Seite weiter geleitet. Die Weiterleitung geschieht verzögert in einem Zeitraum von 18-60 Sekunden mit einer Dreicks-verteilung um die Last auf Seiten der Slidesync Servern zu verringern Der Stream wurde für zehn Minuten live geschaltet und anschließend beendet.
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.8\textwidth]{figures/single_mesh_line}
+	\caption[A Figure Short-Title]{Vergleich der Bearbeitung nach Art in einem Mesh}
+	\label{fig:single_mesh_line}
+\end{figure}
+\todo{Datenpunkte mehr ersichtlich machen}
+
+Abbildung \ref{fig:single_mesh_line} zeigt die wie sich das \pTp \cdn bei steigender Teilnehmerzahl mit einem Mesh verhält. Bis 50 Teilnehmern hat das \cdn ein lineares Verhalten hinsichtlich bearbeiteter Anfragen. Ab 75 Teilnehmern ist zu sehen das die Gesamtanzahl der verarbeiten Anfragen einbricht. Die CPU Last der Test Server stieg auf 100\% und die Clients waren dadurch nicht mehr in der Lage an dem \cdn Teilzunehmen und Anfragen zu bearbeiten. Der Kommunikationsaufwand die Peers in dem Mesh über Veränderungen des Caches zu Benachrichtigen wurde zu groß. Zwar wurden bei 125 Teilnehmern wieder mehr Anfragen vom \cdn verarbeitet, jedoch stieg der Anteil der Anfragen die über den Server liefen weiter an. Die höhere Anzahl an Anfragen die vom \cdn bearbeitet wurden ist vor allem darauf zurück zu führen, dass die Verbindungen zwischen den Peer durch die hohe Last teilweise unterbrochen wurde, wodurch sich die Last bei den Teilnehmern verringerte.   
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.8\textwidth]{figures/timeouts_single}
+	\caption[A Figure Short-Title]{Timeouts bei einem Mesh}
+	\label{fig:timeouts_single}
+\end{figure}
+
+Betrachtet man die Anzahl an Timeouts, so bestätigen sich die vorherigen Beobachtungen. Ab 75 Teilnehmern steigt die Anzahl an Timeouts stark an. Die CPU Last auf Seiten der Teilnehmern wurde zu groß um alle Anfragen in der geforderten Zeit zu beantworten. Neben der zu hohen Last ist kann es zu Timouts kommen falls zu viele Teilnehmer gleichzeitig eine Anfrage an den Selben Teilnehmer stellen. Der betroffene Teilnehmer ist in diesem Fall nicht in der Lage alle Anfragen schnell genug zu bearbeiten. Der Timeout wurde mit drei Sekunden so gewählt das es trotz Timeouts nicht zu einer Unterbrechung des Streams kommt. Der Video Player von Slidesync lädt drei HLS vor die je sechs Sekunden Video beinhalten insgesamt werden also 18 Sekunden vor geladen. Zu einer Unterbrechung der Wiedergabe kann es also erst kommen wenn eine Anfrage länger als 6 Sekunden benötigt. Da die längste verarbeitete Anfrage XXX Sekunden benötigte kam es zu keiner Unterbrechung der Wiedergabe aufgrund von Timeouts.
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.8\textwidth]{figures/mesh_comparison}
+	\caption[A Figure Short-Title]{Vergleich verschiedener Mesh Größen}
+	\label{fig:mesh_comparison}
+\end{figure}
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.8\textwidth]{figures/timeouts_meshed}
+	\caption[A Figure Short-Title]{#Timeouts bei verschiedenen Mesh Größen (125 Teilnehmer)}
+	\label{fig:timeouts_meshed}
+\end{figure}
+
+Abbildung \ref{fig:mesh_comparison} zeigt die Verarbeitungsart der Anfragen bei steigender Mesh Größe. Alle Tests wurden mit einer Teilnehmerzahl von 125 durchgeführt. Bei einer Mesh Größe von zehn ist die mindestanzahl an Anfragen die von dem Server beantwortet werden müssen mit 10\% relativ groß. Auch wenn nur selten Timeouts durch zu viele Anfragen bei dem selben Teilnehmer vorkommen konnten nur 84\% der Anfragen über das \pTp \cdn beantwortet werden. Die Beste Abdeckung hatte das \cdn bei einer Mesh Größe von 30 Teilnehmern mit 92\%. Bei einer Mesh Größe sind müssen mindestens 4\% der Anfrage über den Server beantwortet werden, damit jedes HLS Segment in jedem Peer Mesh vorhanden ist. Wird eine größere Mesh Größe als 30 gewählt so steigt auch die Anzahl der Timeouts ebenso wie die CPU Auslastung bei den Teilnehmern. So konnte bei einer Mesh Größe von 90 lediglich die Hälfte aller Anfragen durch das \pTp \cdn beantwortet werden.
+
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.8\textwidth]{figures/meshed_30_line}
+	\caption[A Figure Short-Title]{Mesh Größe von 30 bei steigender Teilnehmer Zahl}
+	\label{fig:meshed_30_line}
+\end{figure}
+
+Um zu testen wie sich das \cdn bei größeren Teilnehmerzahlen verhält wurden Tests mit einer Mesh Größe von 30 durchgeführt. Abbildung \ref{fig:meshed_30_line} zeigt einen Vergleich der Verarbeitungsarten. Die Anzahl an Peer Anfragen Verhält sich linear mit steigender Teilnehmerzahl. Die Abdeckung durch das \cdn schwankt zwischen 70-76\%.
+
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.8\textwidth]{figures/peer_vs_server_over_time}
+	\caption[A Figure Short-Title]{Anfrageart über die Zeit bei 30 Teilnehmern}
+	\label{fig:peer_vs_server_over_time}
+\end{figure}
+
+Abbildung \ref{fig:peer_vs_server_over_time} zeigt eine zeitliche Darstellung von beginn des Streams bis zum Ende des Streams für 30 Teilnehmer in einem Mesh. Es ist gut zu sehen, dass zu Beginn des Tests mehr Anfragen über die Server beantwortet werden müssen. Auch die Gesamtanzahl der Anfragen ist zu beginn des Tests höher als im späteren Verlauf. Nachdem die Seite geladen ist laden alle Teilnehmer drei HLS Segemente vor. Diese HLS Segmente werden gleichzeitig geladen, wodurch sich die Wahrscheinlichkeit erhöht das mehere Teilnehmer annähernd gleichzeitig die selbe Ressource anfragen und kein anderer Teilnehmer sie bereits geladen hat. 
+
+
+\todo{Rahmenbedingungen müssen klar sein}
+
+
+\begin{itemize}
+	\item Verhältnisse berechnen
+	\item evtl ramp up anschauen
+	\item  
+\end{itemize}
+
+\begin{itemize}
+	\item 92872 pro segment (ca 92 kb) 
+	\item ca 9,2 mb pro client pro event
+	\item bandbreiten diagram? 
+	\item Wenn client von server lädt teilt er das direkt mit
+\end{itemize}
+
+\subsection{Schul-Cloud}
 
 \begin{itemize}
 	\item Testsetup
@@ -256,15 +217,24 @@ Getestet wurde mit zwei Teilnehmern. Einer lud die Ressource vor und der zweite 
 	\item swa/turbolinks notwendig
 \end{itemize}
 
-\subsection{Live Streaming}
+
+\begin{itemize}
+	\item weiteres szenario 
+	\item 1 User hat geladen(Lehrer)
+	\item rest kommt
+	\item inhalt mit pdf
+
+\end{itemize}
+
+\section{Livestreaming in Unternehmensnetzwerken}
+
+Um die Funktionalität des \cdns im Falle eines Livestreams zu testen wurde ein Livestream mit der Infrastruktur von Slidesync aufgesetzt. Slidesync verwendet bei der Verteilung des Videos das Datenformat HLS. Das \cdn wurde so konfiguriert das ausschließlich die HLS Segmente über das \cdn behandelt werden. Sämtliche im folgenden betrachteten Anfragen sind demnach HLS Segmente. 
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=0.8\textwidth]{figures/clients_line_chart}
 	\caption[A Figure Short-Title]{Vergleich der Anfragen nach Anfrageart}
 	\label{fig:live_stream_line_chart}
 \end{figure}
-Um die Funktionalität des \cdns im Falle eines Livestreams zu testen wurde ein Livestream mit der Infrastruktur von Slidesync aufgesetzt. Slidesync verwendet bei der Verteilung des Videos das Datenformat HLS. Das \cdn wurde so konfiguriert das ausschließlich die HLS Segmente über das \cdn behandelt werden. Sämtliche im folgenden betrachteten Anfragen sind demnach HLS Segmente. 
-
 Der Test wurde in einem Unternehmensnetzwerk durchgeführt um die Funktionalität in einem solchen Netzwerk zu gewährleisten. In diesem Netzwerk wurden insgesamt 30 Rechner aufgestellt. Da es vor allem um den Durchsatz des \cdns ging wurde auf allen Clients ein aktueller Chrome Browser verwendet. Auf den Clients wurde zuerst die Event Seite geladen und erst im Anschluss der Livestream gestartet. Getestet wurden sechs, zehn, 15, 20 und 30 Clients, die sich alle im selben lokalen Netzwerk befanden. Der Streaming- und der Anwendungsserver befand sich außerhalb des Netzwerkes und waren nur über die Internetverbindung zu erreichen. Bei jedem Test wurde der Stream zehn Minuten laufen gelassen und alle Clients befanden sich in dem selben Peer Mesh.
 
 \begin{figure}[!h]

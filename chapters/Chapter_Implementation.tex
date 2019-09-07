@@ -152,22 +152,10 @@ Um Clients einem Peer Mesh zuzuordnen werden verschiedene Websocket Channels ver
 \end{itemize}
 
 \subsection{Slidesync}
-Um das Signaling zu realisieren implementiert Slidesync ein eigenes Model das für die Zuordnung von \clients zu Peer Meshes verantwortlich ist.  
-\begin{itemize}
-	\item Rails Model
-	\item öffentliche API
-	\item remove old peers
-	\item join
-	\item track presence
-	\item redis zum speichern
-	\item Code Beispiel
-	\item Tracking in Redis welcher Peer in welchem Submesh ist
-	\item Peer wird aus liste nicht voller mehses gewählt
-	\item Falls alle voll sind wird neues Mesh angelegt und garbage collection gestartet.
-	\item Datentyen und mapping erklären
-	\item Background job räumt leere meshes auf (Garbage collection)
-	\item 	löscht leere meshes aus liste
-\end{itemize}
+Um das Signaling zu realisieren implementiert Slidesync ein eigen Klasse das für die Zuordnung von \clients zu Peer Meshes verantwortlich ist. Der Klasse wird der Scope des Aufrufs so wie die maximale Mesh Größe bei der Initialisierung übergeben. Wobei der Scope die ID des aufgerufenen Events ist. Durch Aufruf der join() Methode wird der Peer einem geeigneten Mesh zugeordnet und der Faye Channel des Meshes zurückgegeben. Dabei wird immer das erste freie Mesh gewählt um möglichst viele volle Meshes zu erreichen. 
+Die Zuordnung muss performant geschehen und in einem scalierten Multi Server Setup funktionieren. Um dies zu erreichen wird Redis als Datenspeicher verwendet. Redis bietet geignete Datenstrukturen mit geringen Zugriffszeiten und ist gut für ein multi Server Setup geeignet. 
+Die Klasse speichert die liste der verfügbaren Submeshes in einer Liste. Jedes Mesh wird über eine Aufsteigende ID in Kombination mit dem Scope identifiziert. Mit Hilfe eines Redis Counters wird die ID des letzten Submeshes gespeichert. Dadurch lassen sich alle angelegten Meshes ermitteln ohne sie explizit speichern zu müssen. Erreicht ein Mesh die Maximale Teilnehmerzahl so wird es aus der Liste der verfügbaren Submeshes entfernt. Ist kein freies Mesh verfügbar so wird ein neues Mesh eröffnet. Dazu wird der Counter der letzten Mesh ID erhöht und ein neues Mesh mit dieser ID wird der Liste der verfügbaren Meshes hinzugefügt. Im Anschluss wird ein Hintergrund Job gestartet der überprüft ob bereits angelegte Meshes wieder frei geworden sind. Dazu wird für jedes Mesh überprüft ob sich alle Teilnehmer in der letzten Minute zurückgemeldet haben. Haben sich Teilnehmer nicht zurück gemeldet, so wird das Mesh wieder zu den verfügbaren meshes hinzugefügt. Da über sämtliche Submeshes und alle Peers iteriert werden muss macht es Sinn die Operation im Hintergrund durchzuführen.
+Die Zuordnung von Teilnehmern zu Meshes wird für jedes Mesh ein Redis Set angelegt in dem die ID jedes Peers der dem Mesh beigetreten ist gespeichert wird. Zusätzlich wird für jeden Peer ein temporärer Key angelegt der nach 40 Sekunden automatisch gelöscht wird. Um Statistiken über Events zu erheben meldet sich jeder Teilnehmer eines Events alle 30 Sekunden bei dem Server und übermittelt Daten von seinem Client. Im Rahmen dieser Statistischen Erhebung wird ebenfalls der temporäre key erneuert, falls er sich am \pTp Netzwerk beteiligen kann. Ist der temporäre Key für einen Peer nicht verfügbar so wird angenommen das er nicht mehr am \pTp Netzwerk teilnimmt und sich demnach auch nicht mehr in dem Peer mesh befindet.     
 
 \subsection{\schulCloud}
 
@@ -201,9 +189,6 @@ Client 1 (C1) ist der erste der die Webseite aufruft. Er registriert sich beim S
 	\item Message Format
 	\item Diagram beschreiben
 \end{itemize}
-\section{Mesh Zuordnung}
-% data Channels zur mesh verbindung definiert über Anwendung
-% ip subnetz erkennung wie implementiert?
 
 \section{Reusability}
 

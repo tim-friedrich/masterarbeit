@@ -199,14 +199,7 @@ Verlässt ein Client das \pTp Netzwerk so müssen die andern Clients darauf reag
 Das vorgeschlagene \pTp \cdn ist als strukturiertes \pTp Netzwerk ohne verteilte Hashtabelle implementiert. Da das auffinden von Ressourcen in einem zeitkritischen Moment erfolgt, während der Ladezeit der Seite und sich bei den betrachteten Anwendungsfällen gut vorher sagen lässt welche Ressourcen benötigt werden erscheint es als sinnvoll das Routing im Vorfeld geschehen zu lassen. Zwar scalieren algorithmen wie kademlia \cite{kademlia} sehr gut für eine große Anzahl an Teilnehmern, jedoch ist zum Zeitpunkt der Anfrage einer Ressource ein nicht unerheblicher Kommunikationsaufwand notwendig. Es müssen zwar für z.B. 1000 Teilnehmer im Netzwerk nur drei Teilnehmer gefragt werden um zu ermitteln wer die Ressource speichert, jedoch ist der Verbindungsaufbau mit Webrtc relativ aufwändig. In Tests im Rahmen dieser Arbeit wurden Verbindungsaufbauzeiten von ca. 80ms gemessen. Da im Vorfeld nicht bekannt ist müssen sämtliche Verbindungen im Moment des Routings aufgebaut werden. Für das Beispiel mit 1000 Teilnehmern hieße es das 3 Verbindungen zum auffinden der Ressource hergestellt werden müssen plus eine zu dem Teilnehmer der die Ressource speichert. Die Bearbeitung der Anfrage würde um 320ms Sekunden verzögert werden. Während dies für Filesharing systeme wie Bittorent kein großes Problem darstellt, ist diese Verzögerung für ein \cdn zu groß. Daher hällt in dem vorgeschlagenen \cdn jeder Teilnehmer eine Hastabelle vor in der gespeichert wird welcher Teilnehmer welche Ressourcen speichert. Diese muss aktualisiert werden was zwar zu einer höheren Last und einem erhöhten Kommunikationsaufwand führt, jedoch kann dies zu einem zeitunkritischen Moment zwischen den Anfragen geschehen. Muss ein Peer eine Ressource auffinden so hält er diese Information bereit. 
 
 \section{Mesh Zuordnung}
-
-
-\begin{itemize}
-	\item Voll vermaschtes Netz
-	\item zuoordnung aufgabe der Anwendung
-	\item Ausnutzen von Domänen wissen der Anwendung
-	\item 
-\end{itemize}
+Als Netz Topologie wurde ein voll-vermaschtes Netz gewählt. Jeder Teilnehmer eines Meshes baut also Verbindungen zu jedem anderen Teilnehmer des Meshes auf. Zwar müssen mehr Verbindungen hergestellt werden als bei einem teil-vermaschten Netz oder einer Ring Topologie, jedoch kann ein Ausfall von Teilnehmern besser abgefangen werden. Da mit jedem neuen Peer ein Mehraufwand an Kommunikation entsteht ist die maximale Anzahl an Teilnehmern die sich in einem Mesh befinden können geringer. Dadurch ist es besonders wichtig die Teilnehmer sinnvoll auf die Meshes zu verteilen. Wobei sinnvoll bedeutet das sie eine möglichst große Schnittmenge an gemeinsamen Ressourcen haben. Da dies sehr Domänen spezifisch ist wurde ein Ansatz gewählt bei dem das \cdn selbst keine Annahmen über Mesh Zuordnungen macht. Dies ist Aufgabe der Anwendung die das \cdn verwendet, denn nur sie kennt den Kontext in dem der Nutzer die Anwendung verwendet. 
 
 \subsection{Slidesync}
 \begin{figure}[!h]
@@ -229,13 +222,7 @@ Um sicherzustellen das ein Peer sich auch aktiv am Mesh beteiligen kann sendet e
 	\item IP range in vielen Fällen bekannt
 \end{itemize}
 \subsection{Schul-Cloud}
-\begin{itemize}
-	\item Aufteilung nach Klassen
-	\item setting schulklasse
-	\item geringe Teilnehmerzahl 
-	\item Gleiche Daten
-	\item wichtig vor allem im Schulnetz
-\end{itemize}
+Bei der Schulcloud wird die Aufteilung der Nutzer anhand von Klassen gemacht. Alle Schüler die in der Selben Klasse sind werden dem selben Mesh zugeordnet. Schüler einer Klasse haben eine sehr große Überschneidung an Kursen die sie besuchen, und damit auch eine sehr große Übereinstimmung an Seiten die sie bei der Schul-Cloud aufrufen. Durch die überschaubare Klassengröße, in der Regel um die 30 Schüler, ist eine weitere Einteilung in Sub Meshes nicht nötig da diese Anzahl von einem Mesh gehandhabt werden kann. Eine mauelle Subnetzerkennung ist ebenfalls nicht notwendig da der Einsatz des \pTp \cdns nur im Schulnetzwerk notwendig ist. Wird kein STUN Server spezifiziert so kann sich ein Schüler der von ausserhalb des Schulnetzwerk auf die Seite zugreift sich nicht mit Schülern innerhalb des Schulnetzwerks über WebRtc Verbinden und wird als möglicher Peer aussortiert.
 
 %\section{Mesh Zuordnung}
 %Im Folgenden werden verschiedene Zuordnungsstrategien zur Bildung von Peer Meshes diskutiert. Dazu wird der typische Workload beider Anwendungen analysiert um eine jeweils geeignete Strategie zu wählen. 
