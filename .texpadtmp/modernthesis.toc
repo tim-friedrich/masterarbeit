@@ -50,7 +50,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.3.3}{Topologien}}{8}{subsection.3.3.3}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3.4}{Verteilte Hashtabellen}}{8}{subsection.3.3.4}% 
+\contentsline {subsection}{\numberline {3.3.4}{Routing}}{8}{subsection.3.3.4}% 
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {3.4}{Webrtc\xspace - Web Real-Time Communication}}{8}{section.3.4}% 
 \defcounter {refsection}{0}\relax 
@@ -60,13 +60,13 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.4.3}{TURN Server}}{9}{subsection.3.4.3}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.4.4}{SDP - Session Description Protocol}}{9}{subsection.3.4.4}% 
+\contentsline {subsection}{\numberline {3.4.4}{SDP - Session Description Protocol}}{10}{subsection.3.4.4}% 
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.4.5}{ICE - Interactive Connectivity Establishment}}{10}{subsection.3.4.5}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.4.6}{Webrtc APIs}}{10}{subsection.3.4.6}% 
+\contentsline {subsection}{\numberline {3.4.6}{Webrtc APIs}}{11}{subsection.3.4.6}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.5}{DataCache API}}{11}{section.3.5}% 
+\contentsline {section}{\numberline {3.5}{DataCache API}}{12}{section.3.5}% 
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {3.6}{IndexedDB}}{12}{section.3.6}% 
 \defcounter {refsection}{0}\relax 
@@ -88,7 +88,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {3.12}{Single Page Applications}}{15}{section.3.12}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.13}{Redis}}{15}{section.3.13}% 
+\contentsline {section}{\numberline {3.13}{Redis}}{16}{section.3.13}% 
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {4}{Konzept}}{17}{chapter.4}% 
 \defcounter {refsection}{0}\relax 
@@ -121,6 +121,8 @@
 \contentsline {section}{\numberline {4.8}{Offline Support}}{27}{section.4.8}% 
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {4.9}{Security}}{28}{section.4.9}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.10}{DRM licencing}}{31}{section.4.10}% 
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {5}{Implementierung}}{32}{chapter.5}% 
 \defcounter {refsection}{0}\relax 
@@ -195,8 +197,6 @@
 \contentsline {subsection}{\numberline {6.5.4}{Schul-Cloud}}{58}{subsection.6.5.4}% 
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {6.6}{Livestreaming in Unternehmensnetzwerken}}{59}{section.6.6}% 
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.7}{DRM licencing}}{62}{section.6.7}% 
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {7}{Ausblick}}{63}{chapter.7}% 
 \defcounter {refsection}{0}\relax 
