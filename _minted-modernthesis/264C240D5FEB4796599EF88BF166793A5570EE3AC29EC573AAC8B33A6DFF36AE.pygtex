@@ -1,0 +1,26 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kd}{var} \PYG{n+nx}{config} \PYG{o}{=} \PYG{p}{\PYGZob{}}
+  \PYG{n+nx}{channel}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZlt{}\PYGZpc{}= peerMesh \PYGZpc{}\PYGZgt{}\PYGZsq{}}\PYG{p}{,}
+  \PYG{n+nx}{clientId}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZlt{}\PYGZpc{}= peerId \PYGZpc{}\PYGZgt{}\PYGZsq{}}\PYG{p}{,}
+  \PYG{n+nx}{idLength}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZlt{}\PYGZpc{}= maxIdLength \PYGZpc{}\PYGZgt{}\PYGZsq{}}\PYG{p}{,}
+  \PYG{n+nx}{stunServer}\PYG{o}{:} \PYG{p}{\PYGZob{}}
+    \PYG{l+s+s1}{\PYGZsq{}iceServers\PYGZsq{}}\PYG{o}{:} \PYG{p}{[}
+      \PYG{p}{\PYGZob{}}
+        \PYG{l+s+s1}{\PYGZsq{}urls\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZlt{}\PYGZpc{}= stunServer \PYGZpc{}\PYGZgt{}\PYGZsq{}}\PYG{p}{,}
+      \PYG{p}{\PYGZcb{},}
+    \PYG{p}{]}
+  \PYG{p}{\PYGZcb{},}
+  \PYG{n+nx}{verbose}\PYG{o}{:} \PYG{k+kc}{true}\PYG{p}{,}
+  \PYG{n+nx}{serviceWorker}\PYG{o}{:} \PYG{p}{\PYGZob{}}
+    \PYG{n+nx}{urlsToShare}\PYG{o}{:} \PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}/img/\PYGZsq{}}\PYG{p}{],}
+    \PYG{n+nx}{path}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}/p2pCDNsw.js\PYGZsq{}}\PYG{p}{,}
+    \PYG{n+nx}{scope}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}/\PYGZsq{}}\PYG{p}{,}
+    \PYG{n+nx}{basePath}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}/\PYGZsq{}}\PYG{p}{,}
+    \PYG{n+nx}{storageQuota}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}10000\PYGZsq{}}\PYG{p}{,}
+    \PYG{n+nx}{cachingEnabled}\PYG{o}{:} \PYG{k+kc}{false}\PYG{p}{,}
+    \PYG{n+nx}{verbose}\PYG{o}{:} \PYG{k+kc}{true}\PYG{p}{,}
+    \PYG{n+nx}{statisticPath}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}/logs\PYGZsq{}}
+  \PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{};}
+\PYG{k+kd}{var} \PYG{n+nx}{cdn} \PYG{o}{=} \PYG{k}{new} \PYG{n+nx}{P2pCDN}\PYG{p}{(}\PYG{n+nx}{config}\PYG{p}{);}
+\end{Verbatim}

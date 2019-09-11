@@ -1,22 +1,17 @@
 var config = {
-  channel: 'FIXED_CLASS_1',
+  channel: '<%= peerMesh %>',
   clientId: '<%= peerId %>',
-  idLength: 32,
+  idLength: '<%= maxIdLength %>',
   stunServer: {
     'iceServers': [
-      // {
-      //   'urls': 'stun:stun.l.google.com:19302',
-      // },
+      {
+        'urls': '<%= stunServer %>',
+      },
     ]
   },
   verbose: true,
   serviceWorker: {
-    urlsToShare:
-      [
-        '/img/',
-        '/video/',
-        '/testfiles/'
-      ],
+    urlsToShare: ['/img/'],
     path: '/p2pCDNsw.js',
     scope: '/',
     basePath: '/',

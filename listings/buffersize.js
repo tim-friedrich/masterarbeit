@@ -1,4 +1,3 @@
-// maximum buffer size is 16mb
 if(peer.dataChannel.bufferedAmount <= 16000000) {
   peer.dataChannel.send(msg);
   return;

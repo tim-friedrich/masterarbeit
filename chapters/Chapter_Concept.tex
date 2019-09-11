@@ -4,22 +4,14 @@
 %
 
 \section{Netzwerk Strukturen}
-\todo{Anwendungsfall Analyse? -- evt in Einleitung schieben.}
-
-Im Folgenden wird betrachtet wie die Netzwerkstruktur der Clients im Falle von Slidesync und \schulCloud zusammensetzen.
+Im Folgenden wird betrachtet wie sich die Netzwerkstruktur der Clients im Kontext der betrachteten Anwendungsfällen - Lernanwendungen in Schulen und interne Unternehmenslivestreams zusammensetzt.
 \subsection{\schulCloud}
-Bei der \schulCloud lassen sich im wesentlichen zwei Anwendungsszenarien unterscheiden. Zum einen die Anwendung im Unterricht. Der Lehrer stellt z.B. eine Aufgabe die mit Hilfe der \schulCloud durchgeführt werden soll. Daraufhin besuchen die Schüler die entsprechende Seite und bearbeiten die Aufgabe. In einem kurzen Zeitfenster laden also mehrer Schüler während sie sich im gleichen lokalen Netzwerk befinden, dem der Schule, die selben Inhalte herunter. Bei dem anderen Szenario wird die \schulCloud außerhalb des Unterrichts genutzt. Z.B. bereitet der Lehrer den Unterricht vor oder die Schüler bearbeiten gestellte Hausaufgaben. Die Nutzer befinden sich nicht zwangsläufig im selben Netzwerk. Auch Laden die Nutzer die selben Daten nicht notwendigerweise in einem kurz Zeitfenster sondern verteilt über einen längeren Zeitraum. Es findet jedoch auch keine so starke Auslastung des Netzwerks statt. Deshalb wird im Rahmen dieser Arbeit vor allem das erste Szenario betrachtet.
+Bei der \schulCloud lassen sich im wesentlichen zwei Anwendungsszenarien unterscheiden. Zum einen die Anwendung im Unterricht. Der Lehrer stellt z.B. eine Aufgabe die mit Hilfe der \schulCloud durchgeführt werden soll. Daraufhin besuchen die Schüler die entsprechende Seite und bearbeiten die Aufgabe. In einem kurzen Zeitfenster laden also mehrer Schüler, während sie sich im gleichen lokalen Netzwerk befinden, die selben Inhalte herunter. Bei dem anderen Szenario wird die \schulCloud außerhalb des Unterrichts genutzt. Z.B. bereitet der Lehrer den Unterricht vor oder die Schüler bearbeiten gestellte Hausaufgaben. Die Nutzer befinden sich nicht zwangsläufig im selben Netzwerk. Auch laden sie die Daten nicht notwendigerweise in einem kurz Zeitfenster sondern verteilt über einen längeren Zeitraum. Es findet jedoch auch keine so starke Auslastung des Netzwerks statt. Deshalb wird im Rahmen dieser Arbeit vor allem das erste Szenario betrachtet.
 
 \subsection{Slidesync}
-Die Verteilung der Clients auf Netzwerke kann sich bei Slidesync von Event zu Event stark unterscheiden. Da sich Slidesync jedoch hauptsächlich für Streams von mittleren bis großen Unternehmen wendet, lässt sich beobachten das viele der Nutzer sich gemeinsam in einem lokalen Netzwerk, einem Standort, befinden. Um die Last der Unternehmensnetzwerke zu reduzieren, werden bei einigen Unternehmen caching Server eingesetzt. Betrachtet man 10 Events mit caching Infrastruktur im Internen netz stellt man fest das 64\% der Teilnehmer aus dem internen Netz \todo{caching erklären} auf das Event zugegriffen haben. In dieser Arbeit wird betrachtet wie die Last auf das interne Netz reduziert werden kann ohne das zusätzliche caching Server eingesetzt werden müssen.
+Die Verteilung der Clients auf Netzwerke kann sich bei Slidesync von Event zu Event stark unterscheiden. Da sich Slidesync jedoch hauptsächlich für Streams von mittleren bis großen Unternehmen wendet, lässt sich beobachten das viele der Nutzer sich gemeinsam in einem lokalen Netzwerk, einem Standort, befinden. Um die Last der Unternehmensnetzwerke zu reduzieren, werden bei einigen Unternehmen caching Server eingesetzt. Betrachtet man 10 Events mit caching Infrastruktur im Internen netz stellt man fest das 64\% der Teilnehmer aus dem internen Netz auf das Event zugegriffen haben. In dieser Arbeit wird betrachtet wie die Last auf das interne Netz reduziert werden kann ohne das zusätzliche caching Server eingesetzt werden müssen.
 
 \subsection{Gemeinsamkeiten}
-
-\begin{itemize}
-	\item 
-\end{itemize}
-
-\section{Architektur}
 
 Schul und Unternehmens Netzwerke sind meistens so aufgebaut das viele Clients über einen oder mehrere WAN Anbindungen mit dem Internet verbunden sind. Werden Ressourcen geladen müssen diese über das WAN geladen werden. Dies ist in der Regel auch der Fall wenn mehrere Clients die selben Ressourcen benötigen. Abbildung \ref{fig:school} zeigt den typischen Aufbau eines solchen Netzwerks. Übersteigt die benötigte Bandbreite der Clients die der durch as WAN zur Verfügung gestellten, so kommt es zu mitunter sehr teuren Netzwerk Ausfällen die ganze Unternehmensstandorte betreffen können. Durch die dadurch resultierenden langen Ladezeiten kann es zu einer starken Einschränkung des Nutzererlebnisses und der Nutzerzufriedenheit kommen.\cite{userWaitingTime} Um dem entgegen zu wirken wird versucht mit caching Appliances den Datenverkehr der über das Internet geladen werden muss zu reduzieren. Slidesync z.B. bietet dazu Unternehmen ein eigenes lokales CDN an bei dem Server in dem Netzwerk betrieben werden. Dies verursacht jedoch kosten und Konfigurationsaufwand. Damit eigenen es sich nur für größere Unternehmen die den Service häufig nutzen.
 
@@ -31,6 +23,8 @@ Schul und Unternehmens Netzwerke sind meistens so aufgebaut das viele Clients ü
 \end{figure}
 
 In den betrachteten Anwendungsfällen besteht eine hohe zeitlich und inhaltliche Lokalität der Daten. Dies kann genutzt werden um die benötigte Bandbreite zu reduzieren. Dazu soll im Folgenden eine interne Verteilung mittels eines hybriden \pTp CDNs untersucht werden. Abbildung \ref{fig:mesh} zeigt exemplarisch den Aufbau eines solchen Netzwerkes. Anstatt das jeder Client sich die Ressource von einem externen Server lädt, lädt nur noch ein Nutzer je Subnetz die Resource über das WAN. Dieser verteilt die Resource dann im internen Netzwerk an andere Clients die diese dann ebenfalls wieder bereitstellen.
+
+\section{Architektur}
 
 Benötigt ein Client eine Resource versucht er zunächst die Resource über sein \pTp Mesh zu laden. Ist dies nicht möglich lädt er sie über einen externen Server. Hat ein Peer eine Resource geladen speichert er sie zwischen und stellt sie für andere Clients bereit.
 
@@ -45,11 +39,13 @@ Da sowohl im Kontext der Schule als auch bei Unternehmen kein Wissen im Bereich 
 
 Um dies zu erreichen wird eine Kombination aus Webrtc und Service Workern verwendet. Der Javascript Code lässt sich als ein Plugin einbinden und erfordert nur geringen Konfigurationsaufwand seitens der Anwendungsentwickler. Da sich die Art der Seitennutzung von Anwendung zu Anwendung jedoch stark unterscheidet muss das Peer Meshing serverseitig für jede Anwendung geschrieben werden. So kann Domainenspezifisches wissen ausgenutzt werden um eine bessere überlappung der von den Clients benötigten Ressourcen zu erreichen. 
 
+Das vorgestellte \pTp \cdn lässt sich in drei teile Gliedern. Den Service Worker - der für das abfangen und cachen von Anfragen zuständig ist - das Javascript Plugin - das die Webrtc Kommunikation übernimmt - und den Signaling Server - der für das Peer Mehsing verantwortlich ist. 
+
 Die eingesetzte Technologie zur Übertragung von Daten zwischen Browsern ist WebRTC. WebRTC ist ein offener Standard und ermöglicht es Browser paarweise zwecks Datenaustausch zu verbinden. Der große Vorteil dieser Technologie ist, dass sie direkt von modernen Browsern unterstützt wird, wodurch keine zusätzliche Software installiert werden muss. Konkret werden Webrtc DataChannel genutzt.
 
-Für den Datenaustausch müssen wechselseitig DataChannel zueinander aufgebaut werden. Die Ausgangslage ist, dass die Peers wissen, dass es den anderen gibt, aber nicht wie der jeweils andere zu erreichen ist. Um diese Problematik zu lösen, existiert ein Vermittlungsserver (Signaling server).
+Für den Datenaustausch müssen wechselseitig DataChannel zueinander aufgebaut werden. Die Ausgangslage ist, dass die Peers wissen, dass es den anderen gibt, aber nicht wie der jeweils andere zu erreichen ist. Um diese Problematik zu lösen, existiert ein Vermittlungsserver - der sogenannte Singaling Server.
 
-Als erstes werden Informationen, über die Verbindung die aufgebaut werden soll, an den Signaling server gesendet. Es wird ein SDP-Offer gesendet(SDP für Session Description Protocol). Dieses SDP-Offer leitet der Signaling server an die Peers in dem selben Mesh sind weiter. Geantwortet wird mit einer SDP-Answer, welche Informationen über die abgestimmte Verbindung enthält und über den Signaling server zurück geleitet wird.
+Als erstes werden Informationen, über die Verbindung die aufgebaut werden soll, an den Signaling Server gesendet. Es wird ein SDP-Offer gesendet(SDP für Session Description Protocol). Dieses SDP-Offer leitet der Signaling server an die Peers in dem selben Mesh sind weiter. Geantwortet wird mit einer SDP-Answer, welche Informationen über die abgestimmte Verbindung enthält und über den Signaling server zurück geleitet wird.
 
 Damit eine direkte Verbindung aufgebaut werden kann, müssen über den Signaling server noch weitere Informationen wie ICE-Kandidaten ausgetauscht werden. ICE steht hierbei für Interactive Connectivity Establishment und ist fester Bestandteil von WebRTC. Es ist für den Aufbau der Browser-zu-Browser-Verbindung verantwortlich. ICE-Kandidaten enthalten hauptsächlich Informationen darüber wie ein bestimmter Nutzer erreichbar ist (also z.B. private oder öffentliche IP-Adresse). Ermittelt werden diese ICE-Kandidaten mithilfe eines STUN-Servers und dem dazugehörigen Session Traversal Utilities for NAT (STUN) Protokoll. Wie der Name des Protokolls schon verrät, wird es vor allem benötigt um auch Nutzer erreichen zu können die keine eigene öffentliche IP-Adresse besitzen, bei denen also Network Address Translation (NAT) eingesetzt wird. Dies ist aufgrund der mangelnden Anzahl an IPv4-Adressen bei fast jedem Internetnutzer der Fall.
 
@@ -88,12 +84,8 @@ Damit eine direkte Verbindung aufgebaut werden kann, müssen über den Signaling
 
 % "hybrid p2p cdn"
 %konfiguration von subnetzen?
-\begin{figure}[!h]
-	\centering
-	\includegraphics[width=0.8\textwidth]{figures/service_worker_app}
-	\caption[A Figure Short-Title]{Service Worker - Webrtc}
-	\label{fig:mesh}
-\end{figure}
+
+
 
 %\begin{itemize}
 %	\item Browser based without plugin
@@ -128,6 +120,8 @@ Damit eine direkte Verbindung aufgebaut werden kann, müssen über den Signaling
 
 \section{Javascript Proxies - Abfangen von Anfrage}
 
+
+
 Damit ein Client-seitiges \cdn möglich ist, ist es notwendig das die Abfragen des Browsers abgefangen und auf anderem Weg beantwortet werden können. Nachdem der Browser nach einer Anfrage URL augelöst hat(DNS-lookup) lädt er die abgefragte Seite. Ist die Seite geladen beginnt der Browser die im HTML Dokument verlinkten Dokumente zu laden. Das sind neben Bildern auch CSS und Javascript Dateien. Ein CDN muss in der Lage sein auf all diese Anfragen reagieren zu können.
 
 \begin{figure}[!h]
@@ -141,6 +135,13 @@ Damit ein Client-seitiges \cdn möglich ist, ist es notwendig das die Abfragen d
 Um dies zu realisieren gibt es verschiedene Möglichkeiten. Turbolinks unterbricht die Weiterleitung nachdem ein Link angeklickt wurde und lädt die abgefragte Seite mit Ajax. Dadurch ist es möglich die zu zeichnenden Elemente selbst auszuwählen und manuell teile der Seite zu cachen. Dieser Ansatz ließe sich auch für ein \cdn verwenden. Allerdings ist es nötig die Javascript Page load Events durch eigene Events zu ersetzen und bestimmte Teile des Javascript Codes umzuschreiben. Javascript Code wird bei diesem Ansatz nach Navigation auf eine neue Seite nicht neu geladen. Auch wenn dies die Ladezeiten verringert ist eine Integration ohne Anpassung des Anwendungscodes nicht möglich. Ebenfalls ist es nicht möglich Anfragen abzufangen die beim ersten Besuch der Seite entstehen, sondern nur solche die nach weiterer Navigation entstehen.
 
 Eine weitere Möglichkeit besteht darin eigene HTML tags einzuführen und diese nachdem die eigentliche Seite und das \cdn script geladen wurde mit Ajax nachzuladen. Dadurch lässt sich mit Javascript kontrollieren woher die Ressource geladen werden soll. Allerdings können Ressourcen die über das \pTp CDN geladen werden sollen erst geladen werden wenn das komplette HTML Dokument und das \cdn script geladen sind. Dies kann die Ladezeiten beeinflussen und ebenfalls Anpassungen im Javascript Code der Anwendung notwendig machen. Wird in einer nachgeladenen Javascript Datei ein Eventhandler auf ein Event registriert das bereits gefeuert wurde, so wird dieser Code nicht mehr ausgeführt. 
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.8\textwidth]{figures/service_worker_app}
+	\caption[A Figure Short-Title]{Service Worker - Webrtc}
+	\label{fig:mesh}
+\end{figure}
 
 Service Worker sind eigene Prozesse die in einem anderen Kontext laufen als die eigentliche Webseite. Einmal registriert existieren sie und fungieren als proxy, unabhängig davon ob die Webseite gerade geladen ist oder nicht. Besucht ein Nutzer die Seite wird der Service Worker geladen. Kehrt er wieder so ist der Service Worker bereits aktiv und kann Anfragen des Browsers abfangen. Da einer der Anwendungsfälle für Service Worker das Offline verfügbar machen von Webanwendungen ist, verfügen sie über Unterstützung von Caching-APIs. Durch die Caching-API ist es möglich Anfragen zu speichern und zu einem späteren Zeitpunkt wieder abzurufen. Somit ist es nicht nur möglich eigene Anfragen aus dem Cache zu beantworten, sondern ebenfalls gespeicherte Ressourcen an andere Clients auf Anfrage weiter zu leiten. Daher eigenen sie sich gut für die Verwendung als Proxy in einem Clientseitigen \cdn.   
 
@@ -196,7 +197,7 @@ Verlässt ein Client das \pTp Netzwerk so müssen die andern Clients darauf reag
 %\end{itemize}
 \section{Routing - Auffinden von Ressourcen}
 
-Das vorgeschlagene \pTp \cdn ist als strukturiertes \pTp Netzwerk ohne verteilte Hashtabelle implementiert. Da das auffinden von Ressourcen in einem zeitkritischen Moment erfolgt, während der Ladezeit der Seite und sich bei den betrachteten Anwendungsfällen gut vorher sagen lässt welche Ressourcen benötigt werden erscheint es als sinnvoll das Routing im Vorfeld geschehen zu lassen. Zwar scalieren algorithmen wie kademlia \cite{kademlia} sehr gut für eine große Anzahl an Teilnehmern, jedoch ist zum Zeitpunkt der Anfrage einer Ressource ein nicht unerheblicher Kommunikationsaufwand notwendig. Es müssen zwar für z.B. 1000 Teilnehmer im Netzwerk nur drei Teilnehmer gefragt werden um zu ermitteln wer die Ressource speichert, jedoch ist der Verbindungsaufbau mit Webrtc relativ aufwändig. In Tests im Rahmen dieser Arbeit wurden Verbindungsaufbauzeiten von ca. 80ms gemessen. Da im Vorfeld nicht bekannt ist müssen sämtliche Verbindungen im Moment des Routings aufgebaut werden. Für das Beispiel mit 1000 Teilnehmern hieße es das 3 Verbindungen zum auffinden der Ressource hergestellt werden müssen plus eine zu dem Teilnehmer der die Ressource speichert. Die Bearbeitung der Anfrage würde um 320ms Sekunden verzögert werden. Während dies für Filesharing systeme wie Bittorent kein großes Problem darstellt, ist diese Verzögerung für ein \cdn zu groß. Daher hällt in dem vorgeschlagenen \cdn jeder Teilnehmer eine Hastabelle vor in der gespeichert wird welcher Teilnehmer welche Ressourcen speichert. Diese muss aktualisiert werden was zwar zu einer höheren Last und einem erhöhten Kommunikationsaufwand führt, jedoch kann dies zu einem zeitunkritischen Moment zwischen den Anfragen geschehen. Muss ein Peer eine Ressource auffinden so hält er diese Information bereit. 
+Das vorgeschlagene \pTp \cdn ist als strukturiertes \pTp Netzwerk ohne verteilte Hashtabelle implementiert. Da das auffinden von Ressourcen in einem zeitkritischen Moment erfolgt, während der Ladezeit der Seite und sich bei den betrachteten Anwendungsfällen gut vorher sagen lässt welche Ressourcen benötigt werden erscheint es als sinnvoll das Routing im Vorfeld geschehen zu lassen. Zwar scalieren Algorithmen wie Kademlia \cite{kademlia} sehr gut für eine große Anzahl an Teilnehmern, jedoch ist zum Zeitpunkt der Anfrage einer Ressource ein nicht unerheblicher Kommunikationsaufwand notwendig. Es müssen zwar für z.B. 1000 Teilnehmer im Netzwerk nur drei Teilnehmer gefragt werden um zu ermitteln wer die Ressource speichert, jedoch ist der Verbindungsaufbau mit Webrtc relativ aufwändig. In Tests im Rahmen dieser Arbeit wurden Verbindungsaufbauzeiten von ca. 80ms gemessen. Da im Vorfeld nicht bekannt ist müssen sämtliche Verbindungen im Moment des Routings aufgebaut werden. Für das Beispiel mit 1000 Teilnehmern hieße es das 3 Verbindungen zum auffinden der Ressource hergestellt werden müssen plus eine zu dem Teilnehmer der die Ressource speichert. Die Bearbeitung der Anfrage würde um 320ms Sekunden verzögert werden. Während dies für Filesharing systeme wie Bittorent kein großes Problem darstellt, ist diese Verzögerung für ein \cdn zu groß. Daher hällt in dem vorgeschlagenen \cdn jeder Teilnehmer eine Hastabelle vor in der gespeichert wird welcher Teilnehmer welche Ressourcen speichert. Diese muss aktualisiert werden was zwar zu einer höheren Last und einem erhöhten Kommunikationsaufwand führt, jedoch kann dies zu einem zeitunkritischen Moment zwischen den Anfragen geschehen. Muss ein Peer eine Ressource auffinden so hält er diese Information bereit. 
 
 \section{Mesh Zuordnung}
 Als Netz Topologie wurde ein voll-vermaschtes Netz gewählt. Jeder Teilnehmer eines Meshes baut also Verbindungen zu jedem anderen Teilnehmer des Meshes auf. Zwar müssen mehr Verbindungen hergestellt werden als bei einem teil-vermaschten Netz oder einer Ring Topologie, jedoch kann ein Ausfall von Teilnehmern besser abgefangen werden. Da mit jedem neuen Peer ein Mehraufwand an Kommunikation entsteht ist die maximale Anzahl an Teilnehmern die sich in einem Mesh befinden können geringer. Dadurch ist es besonders wichtig die Teilnehmer sinnvoll auf die Meshes zu verteilen. Wobei sinnvoll bedeutet das sie eine möglichst große Schnittmenge an gemeinsamen Ressourcen haben. Da dies sehr Domänen spezifisch ist wurde ein Ansatz gewählt bei dem das \cdn selbst keine Annahmen über Mesh Zuordnungen macht. Dies ist Aufgabe der Anwendung die das \cdn verwendet, denn nur sie kennt den Kontext in dem der Nutzer die Anwendung verwendet. 
@@ -209,7 +210,7 @@ Als Netz Topologie wurde ein voll-vermaschtes Netz gewählt. Jeder Teilnehmer ei
 	\label{fig:mesh-slidesync}
 \end{figure}
 
-Slidesync ist eine Plattform deren Nutzung stark durch die durchgeführten live Events dominiert wird. Ein Moderator erstellt das Event lädt die notwendigen Assets, z.B. Foliensätze, hoch. Live Events werden für eine bestimmte Zeit festgesetzt und Teilnehmer laden zum Start des Events die Seite.\todo{Grafik visits} Ein Großteil des entstandenen Traffics besteht aus HLS Videoseqmenten. Jeder Teilnehmer eines Events benötigt die selben Inhalte.\todo{Grafik traffic} 
+Slidesync ist eine Plattform deren Nutzung stark durch die durchgeführten live Events dominiert wird. Ein Moderator erstellt das Event lädt die notwendigen Assets, z.B. Foliensätze, hoch. Live Events werden für eine bestimmte Zeit festgesetzt und Teilnehmer laden zum Start des Events die Seite. Ein Großteil des entstandenen Traffics besteht aus HLS Videoseqmenten. Jeder Teilnehmer eines Events benötigt die selben Inhalte. 
 
 Die Peer Meshes in Slidesync werden als voll vermaschte Netzte abgebildet. Da alle Teilnehmer eines Events zu großen Teilen die selben Daten benötigen können sie in dem selben Mesh untergebracht werden. Um zu gewährleisten das sich die Peers im Selben Subnetz befinden teilen sich nur solche ein Peer Mesh die sich in der Selben IP Range befinden. Ein weiterer wichtiger Factor ist der Kommunkationsmehraufwand der durch das halten von Verbindungen zu vielen Peers entsteht. Deshalb ist es nicht möglich bei größeren Events alle Peers im selben Peer Mesh unter zu bringen. Deshalb werden Sub Meshes gebildet in denen sich eine maximale Anzahl an Peers befinden können. 
 
@@ -217,10 +218,10 @@ Abbildung \ref{fig:mesh-slidesync} zeigt eine beispielhafte Aufteilung von Peer 
 
 Um sicherzustellen das ein Peer sich auch aktiv am Mesh beteiligen kann sendet er regelmäßig ping Nachrichten an den Server. Da dieser Mechanismus in Slidesync schon zu vor zur Erhebung von Statistiken verwendet wurde, wird diese Nachricht lediglich um den Zustand des \cdns erweitert. Meldet ein Peer sich nicht innerhalb einer Minute oder meldet er das eine Verbindung zum \pTp Netzwerk nicht möglich ist, so wird er als nicht mehr mit dem \pTp \cdn verbunden betrachtet. Sind alle aktuell verfügbaren Peer Meshes voll, so wird ein neues Peer Mesh angelegt und ein Hintergrund Job gestartet der alle Peer die als nicht verbunden betrachtet werden aus den Peer Meshes entfernt und die Meshes wieder als verfügbar markiert. Dadurch wird die Beantwortung der aktuelle Anfrage nicht verzögert und der Hintergrund Job nur bei Bedarf gestartet. Ebenso werden so Peers aussortiert deren Browser das \pTp \cdn nicht unterstützen, da der Anwendungsserver darüber zum Zeitpunkt der Zuordnung noch keine Kenntnis darüber hat.
 
-\begin{itemize}
-	\item berücksichtigung des Netzwerkes
-	\item IP range in vielen Fällen bekannt
-\end{itemize}
+%\begin{itemize}
+%	\item berücksichtigung des Netzwerkes
+%	\item IP range in vielen Fällen bekannt
+%\end{itemize}
 \subsection{Schul-Cloud}
 Bei der Schulcloud wird die Aufteilung der Nutzer anhand von Klassen gemacht. Alle Schüler die in der Selben Klasse sind werden dem selben Mesh zugeordnet. Schüler einer Klasse haben eine sehr große Überschneidung an Kursen die sie besuchen, und damit auch eine sehr große Übereinstimmung an Seiten die sie bei der Schul-Cloud aufrufen. Durch die überschaubare Klassengröße, in der Regel um die 30 Schüler, ist eine weitere Einteilung in Sub Meshes nicht nötig da diese Anzahl von einem Mesh gehandhabt werden kann. Eine mauelle Subnetzerkennung ist ebenfalls nicht notwendig da der Einsatz des \pTp \cdns nur im Schulnetzwerk notwendig ist. Wird kein STUN Server spezifiziert so kann sich ein Schüler der von ausserhalb des Schulnetzwerk auf die Seite zugreift sich nicht mit Schülern innerhalb des Schulnetzwerks über WebRtc Verbinden und wird als möglicher Peer aussortiert.
 
@@ -336,16 +337,6 @@ Bei der Schulcloud wird die Aufteilung der Nutzer anhand von Klassen gemacht. Al
 %	 peer weiß immer bei wer welche resource hat
 % am Anfang wird die zuordnung von einem peer an den neuen geschickt
 
-\subsection{ Updates }
-\begin{figure}[!h]
-	\centering
-	\includegraphics[width=0.8\textwidth]{figures/Ressourcen_update}
-	\caption[A Figure Short-Title]{Flussdiagramm Ressourcen Update}
-	\label{fig:update_resource}
-\end{figure}
-
-Lädt ein Client eine neue Ressource in den Cache oder löscht er eine aus dem Cache so muss er seinem Peer Mesh dies mitteilen. Dazu sendet er eine Nachricht an alle Peers mit denen er verbunden ist. Die Kommunikation findet über den zuvor geöffneten Webrtc Datachannel statt. Empfängt ein Peer ein Update von einem anderen Peer so ändert er entsprechend die gespeicherte Hashmap von Ressourcen für diesen Peer.
-
 %\begin{itemize}
 %	\item Diagramm
 %	\item Client lädt ressource 
@@ -379,68 +370,96 @@ Kann das \cdn nicht erfolgreich initialisiert werden, sei es weil der Browser ni
 %%
 
 \section{Offline Support}
-\begin{itemize}
-	\item Motivation: Internet in Schulen ist nicht immer verfügbar
-	\item lehrer lädt inhalte zuhause vor
-	\item stellt sie schülern zur Verfügung
-	\item wie funktionieren offline webanwendungen
-	\item Service Worker
-	\item prefetching
-	\item Live Streams: Ausfallsicherheit wird erhöht.
-	\item quasi bei design
-	\item Resourcen werden gecached und sind offline verfügbar
-	\item Tobias arbeit Refernzieren
-	\item Übertragung im lokalen Netzwerk möglich wenn verbindung aufgebaut ist
-	\item Signaling müsste in lokalem netzwerk sein z.b. Rechner vom Lehrer
-	\item signaling könnte über webrtc erfolgen z.b. über 
-	\item kademlia routing indem Peers als vermittler fungieren
-	\item 	evt. browser plugin
-	\item 	Wie das routing machen?
-	\item Offline scenario:
-	\item 	Lehrer Lädt ressourcen vor und macht sie für schüler verfügbar
-	\item 	Kein Internet vorhanden
-	\item 	Schüler laden Ressourcen von Lehrer
-\end{itemize}
+
+Service Worker werden häufig im Rahmen von Offline-Support für Websites genannt. Mit Hilfe der Caching Api lassen sich Internetseiten speichern und später, wenn kein Internet vorhanden ist, wieder abrufen. Insbesondere für Schulen ist die Interessant, da die Internetanbindung in Schulen in vielen Fällen nach wie vor unzureichend ist. Die Sonderstudie Digital der Initiative befragte 2016 1426 Lehrer von denen 4\% Angaben das es an Ihrer Schule kein Internet gibt. In Rund 50\% der befragten Lehrer gab an das es Internet nur in bestimmten Räumen gebe.\cite{sonderstudie_digital} In Kombination mit einem \pTp \cdn lässt sich dies nutzen um Internetseiten und Ressourcen, auch im Falle eines Internetausfalls oder falls kein Internet vorhanden ist, zu laden. Insbesondere das Scenario das der Lehrer die Seite bzw. Inhalte zu Hause vor lädt und im Anschluss den Schülern bereit stellt erscheint interessant. Tobias Wollowski beschreibt in seiner Arbeit "Optimierung von Web-Anwendungen für den Einsatz im Klassenzimmer"\cite{tobi} Möglichkeiten zur Nutzung von Offline Caches im Unterricht. Im Folgenden wird Konzeptionell beschrieben wie das vorgestellte \pTp \cdn angepasst werden kann um auch im Falle einer nicht vorhandenen Internetanbindung funktionieren kann.
+
+Durch die Verwendung von Service Workern als Proxy und Cache bietet das \cdn eine gute Grundlage für offline Support. Es stellt die Möglichkeit bereit Inhalte aus dem Cache an andere Nutzer zu verteilen. Die Größte Herausforderung bei der Offline Nutzung stellt das Signaling, also das Verbinden von Nutzern, dar. Um dies zu bewerkstelligen ist bei der gewählten Implementierung ein Websocket Server notwendig. Ist die Verbindung bereits hergestellt, z.B. vor einem Internetausfall, so können bereits bei der momentanenen Implementierung Inhalte in dem Peer Mesh verteilt werden. Ist dies nicht der Fall so muss im lokalen Netzwerk ein Signaling Server bereit gestellt werden, so das dieser auch ohne Internet Verbindung erreichbar ist. Auch muss der Schüler bestimmte Ressourcen wie das \pTp \cdn schon im Vorfeld geladen, und mit Hilfe eines Service Workers gespeichert, haben. Sind die Ips einiger Nutzer bereits bekannt, so ist es ebenfalls denkbar das weitere Signaling über Webrtc auszuhandeln. Dazu ließen sich Algorithmen wie Kademlia\cte{kademlia} zum auffinden von Peers verwenden. Der Größe Nachteil ist jedoch das initial die IP Adressen von Nutzern bekannt sein muss. Hassan Ijaz\cite{signaling_no_i_patent} beschreibt in verschieden Möglichkeiten um \webrtc Verbindungen auch ohne Internet aufzubauen. Unter anderem ist es möglich \webrtc Verbindungen mit Hilfe von QR Codes zu initialisieren. Der Lehrer könnte den Schülern einen QR code, oder in einer anderen Codierung, ein SDP Packet bereitstellen mit dessen Hilfe die Schüler eine \webrtc Verbindung zum Lehrer herstellen können. Anschließend fungiert der Lehrer als Signaling Server für die Schüler über \webrtc, so das Verbindungen zwischen den Schülern hergestellt werden können.
+
+Offline Support ist für Livestreams vor allem Interessant um die Ausfallsicherheit zu erhöhen. Slidesync lädt 18 Sekunden Video vor bevor es abgespielt wird. Durch Verwendung des \pTp \cdn können kürzere Ausfälle überbrückt werden, so das zumindest ein Teil der Nutzer weiterhin das Video über andere Nutzer Laden und verteilen können. Ein Signaling ist nicht notwendig da die Verbindungen bereits hergestellt wurden. Da Unternehmen in aller Regel über ausreichende Internetverbindungen Verfügen und es sich um Live Inhalte handelt ist ein reiner Offline Support eher von geringem Interesse. 
+
+%\begin{itemize}
+%	\item Motivation: Internet in Schulen ist nicht immer verfügbar
+%	\item lehrer lädt inhalte zuhause vor
+%	\item stellt sie schülern zur Verfügung
+%	\item wie funktionieren offline webanwendungen
+%	\item Service Worker
+%	\item prefetching
+%	\item Live Streams: Ausfallsicherheit wird erhöht.
+%	\item quasi bei design
+%	\item Resourcen werden gecached und sind offline verfügbar
+%	\item Tobias arbeit Refernzieren
+%	\item Übertragung im lokalen Netzwerk möglich wenn verbindung aufgebaut ist
+%	\item Signaling müsste in lokalem netzwerk sein z.b. Rechner vom Lehrer
+%	\item signaling könnte über webrtc erfolgen z.b. über 
+%	\item kademlia routing indem Peers als vermittler fungieren
+%	\item 	evt. browser plugin
+%	\item 	Wie das routing machen?
+%	\item Offline scenario:
+%	\item 	Lehrer Lädt ressourcen vor und macht sie für schüler verfügbar
+%	\item 	Kein Internet vorhanden
+%	\item 	Schüler laden Ressourcen von Lehrer
+%\end{itemize}
 
 \section{Security}
-\begin{itemize}
-	\item Owasp
-%	\item https://www.owasp.org/images/9/90/OWASP_Top_10-2017_de_V1.0.pdf
-	\item IP Leak möglich
-	\item Stun Server kann nach IP Adresse fragen
-	\item Über js auslesbar
-	\item Pluckins können das blocken
-	\item media.peerconnection.enabled ausschalten
-	\item --> kein webrtc mehr möglich
-	\item 
-	\item Datenintegrität integrity
-	\item Integrität des kommunikationspartners confidentiality
-	\item 	--vertrauensumgebung??
-	\item availability
-	\item durch hybrid cdn 
-	\item fallback lösung
-	\item authenticity
-	\item kann durch authority gelöst werden
-	\item non repudiation
-	\item accountability
-	\item kann mit Statistiken getrackt werden
-	\item 
-	\item Datachannel ist verschlüsselt
-	\item https notwendig
-	\item websocket ist verschlüsselt
-	\item https://webrtc-security.github.io/
+Bei der Verwendung von \pTp \cdns bringen einige Security Herausforderungen mit sich. Da dies nicht Schwerpunkt der Untersuchungen im Rahmen dieser Arbeit ist wird eine vertrauenswürdige Umgebung angenommen. Dennoch werden im Folgenden Herausforderungen im Bereich der Sicherheit bei der Verwendung eines \pTp \cdns beleuchtet und mögliche Lösungen vorgestellt.
 
+Eines der Grundprinzipien des Internet Sicherheits Models ist das Nutzer bedenkenlos Internet Seiten aufrufen und dort Scripts laden können.\cite{huang_chen} Dieses Versprechen an den Nutzer muss der Browser garantieren um eine sichere Benutzung des Internet zu gewährleisten. Dazu werden Scripts in Sandboxes ausgeführt.\cite{chrome_sandbox} Ein Script kann nur im Kontext der aktuellen Seite ausgeführt werden und Anfragen die über die aktuelle Seite hinausgehen müssen vom Quellen Server explizit dafür frei gegeben werden.\cite{cors_std} 
+
+Service Worker arbeiten nach dem Selben Prinzip. Sie haben keinen Zugriff auf das DOM und können nur Anfragen verarbeiten die unterhalb des Ihnen zugewiesenen Scopes, der Seite die sie geladen hat, liegen.\cite{moz_sw} Anfragen die über einen Service Worker behandelt werden und nicht der Same-Origin Policy folgen müssen mit dem Entsprechenden CORS Header versehen sein um geladen zu werden. Service Worker können nur über HTTPS geladen werden. Wird eine Ressource neu vom Server in das \pTp \cdn geladen so muss sie den gleichen Sicherheitsvorkehrungen des Browsers entsprechen wie jede andere Anfrage. Wird eine Anfrage über das \pTp \cdn selbst beantwortet so greifen diese Mechanismen jedoch nicht. Es ist möglich das ein bösartiger Client eine Ressource verändert bevor er sie an einen Client sendet, der diese dann lädt. 
+
+Um die Integrität einer Ressource stellen Browser Funktionalitäten bereit die auf Hashes der Ressource beruhen die bei Anfrage mitgesendet werden.\cite{sub_res_integrity} Dies wird bei Anfragen automatisch durch den Browser übernommen. Bei der Übertragung mittels \webrtc muss dies die Anwendung selbst übernehmen.  
+
+Durch die Verwendung von nativen Browser Funktionalitäten entfällt die Installation von Plugins oder Anwendungen. Dadurch entfällt das Risiko von Malware in Installationsdateien. Umso wichtiger ist jedoch das ein Vertrauenswürdiger Browser verwendet wird. Wurde der Browser aus einer unsicheren Quelle geladen, so kann eine sichere Verwendung des \cdns nicht gewährleistet werden, da die Sicherheitskonzepte auf der Implementation des Browser beruhen.\cite{webrtc-security}
+
+Wird HTTPS bei der zugrundeliegenden Anwendung verwendet, so wird auch der Datenverkehr über Webrtc mittels TLS verschlüsselt.\cite{rtcweb-security} Daten die mittels \webrtc Datachannels gesendet werden, werden über DTLS(Datagram Transport Layer Security) übertragen. Dies geschieht auch falls ein TURN Server verwendet wird. Dadurch sind die Verbindungen Ende-zu-Ende verschlüsselt.
+
+Die Websocket Verbindung die für das Signaling verwendet wird sollte ebenfalls verschlüsselt werden. Die Anwendung muss außerdem Sicherstellen, dass sich keine Clients, die nicht autorisiert sind mit sich deinem Websocket Channel verbinden, da sie ansonsten in der Lage sind Ressourcen anzufragen für die sie keine Berechtigung haben, oder schadhafte Scripts an Nutzer senden könnten.
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.8\textwidth]{figures/user_auth}
+	\caption[A Figure Short-Title]{IdP basierter Verbindungsaufbau\cite{rtcweb-security}}
+	\label{fig:user_auth}
+\end{figure}
+
+Ein weiteres in dem Schul Kontext zu betrachtendes Szenario ist die Verwendung eines Rechners von mehreren Nutzern. Viele Schulen haben Computerräume in denen Rechner stehen die von verschiedenen Klassen und Schülern verwendet werden. Zwar wäre es prinzipiell möglich den gesamten cache beim Login/logout zu löschen, jedoch würde das die Cache Trefferrate negativ beeinflussen. Um dies zu umgehen können die Ressourcen verschlüsselt gespeichert werden. Wird dazu ein Schlüssel verwendet der nur im aktuellen Scope verfügbar ist so kann er sie nur entschlüsselt werden falls der Nutzer Zugriff auf den Scope der Resource hat. Ein unbefugtes auslesen des Caches ist somit zwar möglich, jedoch sind die Daten für den Angreifer unbrauchbar.
+
+Auch wenn der Signaling Server einen Teil der Nutzer Authentizität sicher stellt so sollte diesem nicht vollkommen vertraut werden. Der Signaling Server kann lediglich sicher stellen das ein Nutzer in eine bestimmte sicherheitsklasse gehört, da er nur den Zugriff auf einen Websocket Channel sicher stellt. Ist es darüber hinaus notwendig die Autentizität eines Nutzers zu gewährleisten können Web basierte Identitäts Provider(IdP) verwendet werden. Diese fungieren als vertrauenswürdige Partei und können die Identität eines Nutzers bestätigen. Abbildung \ref{fig:user_auth} zeigt die Struktur einer solchen Verbindung.
+
+Durch die Verwendung von \webrtc, bei der Verwendung von STUN Servern besteht das Risiko eines IP-Leaks.\cite{rtcweb-security} Es ist prinzipiell möglich die IP-Adresse eines Nutzers zu ermitteln. Eine mögliche Gegenmaßnahmen ist die Deactivierung von Webrtc. Dies kann entweder in der Browser Konfiguration oder durch Plugins geschehen. Jedoch ist dann die Verwendung von \webrtc nicht mehr möglich. Um eine direkte Verbindung zu einem anderen Nutzer aufzubauen ist es notwendig dessen IP-Adresse zu ermitteln. Stellt die Gefahr eines IP-Leaks ein großes Risiko in der betrachteten Domäne da, so kann das \pTp \cdn nicht verwendet werden. Im Rahmen dieser Masterarbeit wird jedoch nur die Verbindung im Lokalen Netzwerk, ohne die Verwendung eines STUN Servers untersucht. Es besteht also lediglich die Gefahr das die lokale IP Adresse eines Nutzers ermittelt werden kann - Nicht jedoch dessen öffentlich IP Adresse.
+
+\section{DRM licencing}
+\begin{itemize}
+	\item unsicher welche relevanz das hat
 \end{itemize}
 
-% Wikipedia: (https://de.wikipedia.org/wiki/WebRTC)
-%P-Leak
-%In Verbindung mit WebRTC können private IP-Adressen trotz VPN-Verbindung über JavaScript ausgelesen werden.[19] Das Beispiel Firefox Hello schließt Rechner hinter einer Firewall und mit privaten IP-Adressen aus. Deshalb kann eine Website mit JavaScript einen STUN-Server nach der tatsächlichen IP-Adresse fragen lassen. Dies hat zur Folge, dass Anonymisierungsdienste ihren Zweck nicht mehr erfüllen und keinen Schutz mehr vor einem IP-Leak bieten können.
-%
-%Gegenmaßnahmen
-%Zum Schutz vor einem IP-Leak bieten sich zwei Vorgehensweisen an. Eine Option bietet die Installation von Add-Ons/Plugins zur Verhinderung der Weitergabe der öffentlichen IP-Adresse, beispielsweise "WebRTC Leak Prevent"[20] oder "Easy WebRTC Block".[21][22]
-%
-%Die andere Möglichkeit ist eine Änderung der Einstellungen im Browser. Im Firefox kann über about:config der Wert media.peerconnection.enabled auf false gesetzt werden, wodurch ein IP-Leak verhindert wird.[23]
-%
-%Die gemeinhin als Werbeblocker bekannte plattformübergreifende Browser-Erweiterung uBlock Origin zum Filtern von Webinhalten bietet in ihren Einstellungen im Abschnitt "Privatsphäre" die zuschaltbare Möglichkeit, die Freigabe der lokalen IP-Adresse via WebRTC zu verhindern.
 
+%\begin{itemize}
+%	\item http://www.adambarth.com/papers/2011/huang-chen-barth-rescorla-jackson.pdf [huang_chen]
+%	\item https://blog.cryptographyengineering.com/2012/01/10/attack-of-week-datagram-tls/
+%	\item https://tools.ietf.org/html/draft-ietf-rtcweb-security-05 [rtcweb-security]
+%	\item ---
+%	\item Vertrauensbeziehung zwischen Clients
+%	\item Websocket channels müssen gesichert werden!
+%	\item Trust enviroment
+%	\item resource integrity
+%	\item hash
+%	\item in logik
+%	\item 
+%	\item dateien im local cache verschlüsseln nur entschlüsseln durch kurs
+%	\item mehrere an einem Rechner
+%\end{itemize}
+%\begin{itemize}
+%	\item Owasp
+%%	\item https://www.owasp.org/images/9/90/OWASP_Top_10-2017_de_V1.0.pdf
+%	\item IP Leak möglich
+%	\item Stun Server kann nach IP Adresse fragen
+%	\item Über js auslesbar
+%	\item Pluckins können das blocken
+%	\item media.peerconnection.enabled ausschalten
+%	\item --> kein webrtc mehr möglich
+%	\item non repudiation
+%	\item accountability
+%
+%\end{itemize}
 

@@ -3,13 +3,13 @@
 
 \section{Ressourcen}
 \subsection{Statische Ressourcen}
-Statische Ressourcen sind Inhalte einer Website die für alle Nutzer gleich sind. Sie sind im Gegensatz zu dynamischen Inhalten nicht nutzerspezifisch und können daher gut über ein CDN verteilt werden. Insbesondere die so genannten Assets einer Internetseite sind meist statisch. Dies sind meist Javascript, CSS aber auch Bild Dateien. Auch Videos fallen häufig in diese Kategorie.
+Unter statischen Ressourcen werden im Rahmen dieser Arbeit Inhalte einer Website verstanden, die für alle Nutzer gleich sind. Sie sind im Gegensatz zu dynamischen Inhalten nicht nutzerspezifisch und können daher gut über ein CDN verteilt werden. Insbesondere die so genannten Assets einer Internetseite sind meist statisch. Dies sind meist Javascript, CSS aber auch Bild Dateien. Auch Videos fallen häufig in diese Kategorie.
 
 \subsection{Dynamisch generierte Ressourcen}
 
-Dynamisch generierte Ressourcen werden zur Laufzeit der Website erzeugt und werden nicht im Vorfeld festgelegt. Dabei lässt sich zwischen Nutzergenerierten Inhalten und automatisch generierten Inhalten, z.b. Statistiken, unterscheiden.
+Im Gegensatz zu statischen Ressourcen werden im Kontext dieser Arbeit Inhalte als dynamisch generiert bezeichnet wenn sie zur Laufzeit der Website erzeugt und werden nicht im Vorfeld festgelegt. Dabei lässt sich zwischen Nutzergenerierten Inhalten und automatisch generierten Inhalten, z.b. Statistiken, unterscheiden.
 
-Dynamische Inhalte sowohl Nutzer spezifisch sein, in diesem Fall werden jedem Nutzer bei selber abfrage andere Inhalte angezeigt.
+Dynamische Inhalte können Nutzer spezifisch sein, in diesem Fall werden jedem Nutzer bei selber Abfrage andere Inhalte angezeigt.
 
 \section{\cdn}
 \todo{Detaillierter Komponenten Beschreiben plus Grafik. Siehe CDN Paper}
@@ -63,7 +63,6 @@ Infrastruktur basierte \cdns bestehen aus einem Ursprungsservern, der von dem Be
 %Alle übrigen Systeme bleiben konstant intakt und nicht skaliert.
 \subsection{Hybrid \cdns}
 Hybrid \cdns kombinieren \pTp \cdns und Infrastruktur basierte \cdns. Bei hybriden \cdns wird zuerst versucht die Resource über das Peer Netzwerk zu laden. Ist dies nicht möglich wird auf ein Infrastruktur basiertes \cdn zurück gegriffen. Dadurch kann die Last auf dem \cdn verringert und durch die Kombination verschiedener \cdns eine bessere Ausfallsicherheit erreicht werden. Häufig kommt diese Art der \cdns zum Einsatz wenn Ressourcen für Websites mit einem \pTp Ansatz verteilt werden sollen. Da in diesem Kontext nicht alle Teilnehmer die technischen Vorraussetzungen mitbringen um an dem \pTp Netzwerk teilzunehmen ist eine entsprechende alternative Lösung nötig. Da die viele Websites bereits mit einem Infrastruktur basierten \cdn arbeiten ist es naheliegend dieses weiter zu verwenden.
-\section{Verteilte Hashtabellen}
 
 \section{\pTp Netzwerke}
 Bei einem \pTp Netzwerk handelt es sich um eine Netzwerk Struktur bei der alle Teilnehmer gleichberechtigt sind. Sie bildet damit das gegen Konzept zur klassischen Client-Server Struktur, bei der einer oder mehrere Server einen Dienst anbieten der von Clients genutzt werden kann. In einem \pTp Netzwerk können die Teilnehmer sowohl Dienste anbieten als auch nutzen. Typische wenn auch nicht notwendige Charakteristika sind laut Steinmetz\cite{p2pBook2005}:
@@ -92,13 +91,15 @@ Strukturierte \pTp Netzwerke haben eine Zuordnung von Objekt und Teilnehmer. Es 
 	\item Ring
 	\item Fully/pariatial meshed
 \end{itemize}
+\subsection{Verteilte Hashtabellen}
 
 \section{\webrtc - Web Real-Time Communication}
 
-\webrtc ist ein offener Standard mit dem Echtzeit Kommunikation zwischen Browser und mobilen Anwendungen ermöglicht wird. Mit Hilfe von \webrtc ist es möglich eine \pTp Verbindung zwischen Browsern aufzubauen und Daten direkt zwischen den Clients auszutauschen ohne das externe Plugins erforderlich sind. Insbesondere der Austausch von Multimedia Inhalten wird ermöglicht. Neben der Unterstützung für Video und Audio Inhalten gibt es jedoch auch die Möglichkeit Daten auszutauschen. \webrtc wird vom W3C\cite{w3Webrtc} standarisiert und definiert eine Sammlung von APIs und Protokollen.
+\webrtc ist ein offener Standard mit dem Echtzeit Kommunikation zwischen Browser und mobilen Anwendungen ermöglicht wird. Mit Hilfe von \webrtc ist es möglich eine direkte Verbindung zwischen Browsern aufzubauen und Daten direkt zwischen den Clients auszutauschen ohne das externex Plugins erforderlich sind. \webrtc ermöglicht neben dem Austausch von Video und Audio Daten auch die Übertragung von binär Daten.\cite{webrtc-book} Der W3C\cite{w3Webrtc} standarisiert \webrtc und definiert dafür eine Sammlung von APIs und Protokollen.
 
+Aktuell wird \webrtc von Chrome, Firefox, Safari, Android und iOS unterstützt.\cite{caniuse-webrtc}
 
-Aktuell wird \webrtc von Chrome, Firefox, Safari, Android und iOS unterstützt.\footnote{https://caniuse.com/\#feat=rtcpeerconnection} \webrtc implementiert drei APIs: MediaStream, RTCPeerConnection und RTCDataChannel die im folgenden genauer beschrieben werden.
+\subsection{Verbindungsaufbau - Signaling}
 
 \begin{figure}[!h]
 	\centering
@@ -107,20 +108,9 @@ Aktuell wird \webrtc von Chrome, Firefox, Safari, Android und iOS unterstützt.\
 	\label{fig:webrtc_overview}
 \end{figure}
 
-% SSl erwähnen
-% Server wird durch pTp gespart 
-% TODO: SSL erklären???
-
-
-%https://de.wikipedia.org/wiki/WebRTC
-%https://www.w3.org/TR/webrtc/
-%https://webrtc.org/
-
-\subsection{Signaling}
-
 Damit zwei \clients sich miteinander verbinden können müssen sie voneinander wissen und Informationen über Metadaten zum Verbindungsaufbau, wie z.B. IP-Adressen und Ports austauschen.
 
-Das Signaling koordiniert die Kommunikation der Verbindungen zwischen Peers. Mit Hilfe des Signalings werden unter anderem die Metadaten ausgetauscht, die benötigt werden, um eine erfolgreiche WebRtc Verbindung aufzubauen. Dazu wird das SDP Protokoll verwendet. Unter anderem werden folgende Metdaten ausgetauscht:
+Das Signaling koordiniert die Kommunikation der Verbindungen zwischen Peers. Mit Hilfe des Signalings werden unter anderem die Metadaten ausgetauscht, die benötigt werden, um eine erfolgreiche WebRtc Verbindung aufzubauen. Dazu wird das SDP Protokoll verwendet. Unter anderem werden folgende Metdaten ausgetauscht\cite{html5-rocks-signaling}:
 
 \begin{itemize}
 	\item Session Metadaten zum öffnen/schließen von Verbindungen
@@ -135,10 +125,10 @@ Der Webrtc Standart legt keine für das Signaling zu verwendende Technologie und
 %https://www.html5rocks.com/en/tutorials/webrtc/infrastructure/#what-is-signaling
 
 % For signaling: to enable the exchange of media and network metadata to bootstrap a peer connection.
-
+%
 \subsection{STUN Server - Simple Traversal of User Datagram Protocol [UDP] Through Network Address Translators}
 
-Da die Anzahl von IPv4 Adressen begrenzt ist, verwenden die meisten Subnetze NATs. Das hat zur Folge das diese Clients nicht wissen wie über welche IP Adresse und welchen Port sie erreichbar sind. Daher ist der Einsatz von STUN Servern nötig um einen Verbindungsaufbau zu ermöglichen. Stun Server überprüfen eingehende Anfragen auf IP Adresse und Port und senden diese Informationen zurück an den Client, der somit in der Lage ist diese Information weiter zureichen und damit auch außerhalb seines lokalen Netzwerkes erreichbar ist. Das STUN-Protokoll ist im RFC 3489 \cite{rfcStun} definiert und ist nicht auf Webrtc beschränkt.
+Da die Anzahl von IPv4 Adressen begrenzt ist, verwenden die meisten Subnetze NATs. Das hat zur Folge das diese Clients nicht wissen wie über welche IP Adresse und welchen Port sie erreichbar sind. Daher ist der Einsatz von STUN Servern nötig um einen Verbindungsaufbau zu ermöglichen. Stun Server überprüfen eingehende Anfragen auf IP Adresse und Port und senden diese Informationen zurück an den Client, der somit in der Lage ist diese Information weiter zureichen und damit auch außerhalb seines lokalen Netzwerkes erreichbar ist. Das STUN-Protokoll ist im RFC 3489\cite{rfcStun} definiert und ist nicht auf Webrtc beschränkt.
 
 
 % TODO: evtl NATs erklären
@@ -157,34 +147,27 @@ Verwaltete Netzwerke, wie die von Unternehmen, haben häufig Firewalls und Port 
 TURN Server bieten eine Fallback Lösung für diesen Fall. Sie haben eine öffentliche IP und sind über das Internet erreichbar. Im Fehlerfall kann der Datenverkehr über einen TURN Server geleitet werden, so das die Kommunikation nicht unterbrochen wird.
 
 \subsection{SDP - Session Description Protocol}
+\begin{listing}[h]
+	\inputminted{javascript}{listings/sdp_example.txt}
+	\caption{Beispiel eines SDP Paketes}
+	\label{lst:sdp_example}
+\end{listing}
+SDP\cite{sdp-standard} wurde zu Verwaltung von Kommunikationssitzungen wie z.B. SIP(Internet Telefonie) entwickelt. Mit Hilfe von SDP werden beim Verbindungsaufbau wichtige Metadaten ausgetauscht. Über SDP Pakete teilt ein Nutzer einem anderen Nutzer unter anderem verfügbare Codecs, IP Adresse und den zu verwendenden Port mit. Listing \ref{lst:sdp_example} zeigt Beispielhaft ein SDP Packet.
 
-\begin{itemize}
-	\item Session Description Protocol (SDP, RFC 4566) 
-	\item beschreibt Eigenschaften von Eigenschaften von Multimediadatenströmen
-	\item verwaltet kommunikationssitzungen z.b. SIP(IP-telefonie)
-	\item keine aushandlungsmechaniken sondern nur beschreibungen der Datenströme
-	\item v=0
-o=Alice 1234 1234 IN IP4 host.provider1.com
-s=Video von 987654
-c=IN IP4 host.provider2.com
-t=0 0
-m=audio 20000 RTP/AVP 97
-a=rtpmap:97 iLBC/8000
-a=fmtp:97 mode=30
-m=video 20001 RTP/AVP 31
-a=rtpmap:31 H261/90000
-	\item daten aus eigener anwendung einfügen
-	\item Felder beschreiben? zumindest die wichtigesten/verwendeten
-\end{itemize}
 
-\subsection{ICE}
+%\begin{itemize}
+%	\item Session Description Protocol (SDP, RFC 4566) 
+%	\item beschreibt Eigenschaften von Eigenschaften von Multimediadatenströmen
+%	\item verwaltet kommunikationssitzungen z.b. SIP(IP-telefonie)
+%	\item keine aushandlungsmechaniken sondern nur beschreibungen der Datenströme
+%	\item 
+%	\item daten aus eigener anwendung einfügen
+%	\item Felder beschreiben? zumindest die wichtigesten/verwendeten
+%\end{itemize}
 
-\begin{itemize}
-	\item Methode zur Überwindung von NAT
-	\item Interactive Connectivity Establishment
-	\item https://tools.ietf.org/html/rfc5245
-	\item 
-\end{itemize}
+\subsection{ICE - Interactive Connectivity Establishment}
+Um den Verbindungsaufbau zwischen zwei Clients auszuhandeln greift Webrtc auf das ICE\cite{rfc-ice} Framework zurück. Aufgrund des begrenzten IPv4 Adressraums verwenden viele Netzwerke NATs. Das hat zur folge das ein Client nicht mehr direkt über seine öffentliche IP-Adresse erreichbar ist. ICE ist dafür zuständig einen Weg zu finden dennoch zwei Peers zu Verbinden. Dazu wird zuerst versucht eine direkte \pTp Verbindung mit Hilfe der lokalen IP des Host Gerätes aufzubauen. Ist dies nicht möglich so wird versucht mit Hilfe eines STUN Servers die öffentliche IP und der öffentliche Port zu ermitteln und mit diesen eine Verbindung zu initialisieren. Schlägt dies ebenfalls fehl, so wird auf einen TURN Server zurück gegriffen der als Mittelsmann für die Kommunikation fungiert. Alle drei Verfahren werden parallel angestoßen um so den effektivsten Weg zu ermitteln.  Die bereitgestellten Kandidaten werden in Textform nach Priorität sortiert bereitgestellt. Aus allen Kandidaten wird der mit dem geringsten Mehraufwand verwendet.
+
 %setting: 2 peers, signaling server, STUN server
 %each peer has a variety of candidate transport addresses (IP:port) 
 %addresses from directly attached network (host candidate)
@@ -192,7 +175,8 @@ a=rtpmap:31 H261/90000
 %ICE determine  which pairs of addresses work and which connection should be used
 %try all possible pairs in smart order
 
-\subsection{Webrtc API}
+\subsection{Webrtc APIs}
+Um eine \pTp Verbindung zu ermöglichen stellt der Webrtc standard drei Apis zur Verfügung. Im folgenden wird ein grober überblich über die APIs gegeben.
 \begin{description}
 \item[RTCPeerConnection]\hfill \\
 Das RTCPeerConntection Interface repräsentiert eine Verbindung vom lokalen \client zu einem anderen \client. Ein RTCPeerConnection Objekt hält den momentanen Zustand der Verbindung ebenso wie Metadaten über den verbundenen Peer. Sie stellt Funktionen zum verwalten von Verbindungen bereit.
@@ -205,36 +189,15 @@ Das RTCPeerConntection Interface repräsentiert eine Verbindung vom lokalen \cli
 
 
 \item[RTCDataChannel]\hfill \\
-\begin{itemize}
-	\item Übertragung von raw data (Bitstreams)
-	\item string, blob, arraybuffer, ArrayBufferView
-	\item Übertragung mit Stream Control Transmission Protocol (SCTP)
-	\item kurze erklärung SCTP
-	\item 	Verbindungsorientiertes Netzwerkprotololl
-	\item 	 RFC 4960
-	\item 	Das zuständige Gremium bei der IETF ist die Arbeitsgruppe Signaling Transport, kurz SIGTRAN.xX
-	\item 	Selbe stufe als Transportprokoll im stack wie TCP/UDP
-	\item 	Konzept der Association: 
-	\item 		mehrere Nachrichten-Datenströme in sich reihenfolgenerhaltend
-	\item 		zwischen den Datenströmen muss die Reihenfolge nicht erhalten bleiben
-	\item 	Multistreaming - Ein host mehere Ips
-	\item 	Vier wege Handschake
-	\item 		Hierbei speichert der Server bei einer Verbindungsanfrage (INIT-Paket) keine Zustandsinformationen, sondern schickt diese in Form eines Cookies (INIT-ACK-Paket) an den Client. Der Client muss dieses Cookie in seine Antwort (COOKIE-ECHO-Paket) einfügen und wird damit vom Server als zum Verbindungsaufbau berechtigt erkannt, was dieser ihm bestätigt (COOKIE-ACK-Paket)x
-\end{itemize}
-% Übertragung von allem was nicht audio oder video ist. zb. text von chats
-% support für string, blob, arraybuffer, ArrayBufferView
+Die RTCDataChannel API ermöglicht die Übertragung von Text und binär Daten in form von Bitstreams. Mit ihr ist es möglich die Datenformate String, Blob, Arraybuffer und ArraybufferView zu übertragen.\cite{rfc-datachannel} Um eine verschlüsselte Übertragung zu ermöglichen werden Daten mittels SCTP(Stream Control Transmission Protocol) übertragen. SCTP ist ein verbindungsorientiertes Protokoll mit Unterstützung für Multistreaming.\cite{rfc-sctp} 
 
-% RTCDataChannel uses Stream Control Transmission Protocol (SCTP)
-% RTCDataChannel can work in unreliable and unordered mode (analogous to User Datagram Protocol or UDP), reliable and ordered mode (analogous to Transmission Control Protocol or TCP) and partial reliable modes:
-% Reliable and ordered mode guarantees the transmission of messages and also the order in which they are delivered. This takes extra overhead, thus potentially making this mode slower.
-% Unreliable and unordered mode does not guarantee every message will get to the other side nor what order they get there. This removes the overhead, allowing this mode to work much faster.
-% Partial reliable mode guarantees the transmission of message under a specific condition (such as a retransmit timeout or a maximum amount of retransmissions). The ordering of messages is also configurable.
+RTCDataChannel stellen mehrere Übertragungsmodi zur Verfügung. Wird ein Datachannel als Reliable initialisiert so wird garantiert das der Empfänger die Nachricht erhält. Ist dies nicht erforderlich so kann ein Datachannel als unreliable initialisiert werden. Dadurch entsteht weniger Mehraufwand und die Übertragung wird beschleunigt. Wird ein Datachannel als Ordered initialisiert so wird nicht nur sichergestellt das die Packete empfangen wurden, sondern auch das sie in richtigen Reihenfolge beim Empfänger ankommen. Es ist ebenso möglich DataChannels als partial reliable zu definieren. Partial Reliable garantiert die Übertragung der Daten unter bestimmten Bedingungen, wie z.B. Timeouts.
 
 % https://bloggeek.me/sctp-data-channel/
 
 
 \item[MediaStream]\hfill \\
-Die Mediastream Api, auch getUserMedia, ermöglicht es Echtzeit Daten wie audio oder Video aufzunehmen, anzuzeigen und an andere Clients weiter zu leiten und repräsentiert Medien Streams wie z.b. Audio oder Video Streams. Sie ermöglicht unter anderem den Zugriff auf Video Kameras und Mikrofone. Durch Sie ist es möglich auf die Hardwareunterstützung für Videos mittels open GL zuzugreifen. MediaStreams lassen sich mithilfe des src Attributes von HTML 5 video Elementen in das DOM einbinden. MediaStreams wurden von vom W3C in einem eigenen Standart definiert.\cite{w3MediaStream} 
+Die Mediastream Api, auch getUserMedia, ermöglicht es Echtzeit Daten wie Audio oder Video aufzunehmen, anzuzeigen und an andere Clients weiter zu leiten und repräsentiert Medien Streams wie z.b. Audio oder Video Streams. Sie ermöglicht unter anderem den Zugriff auf Video Kameras und Mikrofone. Durch Sie ist es möglich auf die Hardwareunterstützung für Videos mittels open GL zuzugreifen. MediaStreams lassen sich mithilfe des src Attributes von HTML 5 video Elementen in das DOM einbinden. MediaStreams wurden von vom W3C in einem eigenen Standart definiert.\cite{w3MediaStream} 
 
 \end{description}
 
@@ -242,11 +205,7 @@ Die Mediastream Api, auch getUserMedia, ermöglicht es Echtzeit Daten wie audio 
 
 \section{DataCache API}
 
-Die DataCache Api ermöglicht es Netzwerk Requests zu cachen. Ursprünglich wurde die Api entwickelt um Service Workern die Möglichkeit zu geben einen Cache anzulegen und selbst zu verwalten. Dadurch ist es möglich mithilfe von Service Workern und der DataCache Api Websiten auch verfügbar zu machen wenn kein internet verfügbar ist. 
-
-\begin{itemize}
-	\item https://developers.google.com/web/fundamentals/instant-and-offline/web-storage/cache-api
-\end{itemize}
+Die DataCache Api ermöglicht es Netzwerk Requests zu zwischen zuspeichern.\cite{google-cache-api} Ursprünglich wurde die Api entwickelt um Service Workern die Möglichkeit zu geben einen Cache anzulegen und selbst zu verwalten. Dadurch ist es möglich mithilfe von Service Workern und der DataCache Api Websiten auch verfügbar zu machen wenn kein internet verfügbar ist. 
 
 % https://www.w3.org/TR/DataCache/
 
@@ -305,15 +264,6 @@ Neben dem unverschlüsseltem URI-Schema ws definiert RFC6455\cite{rfcWebsockets}
 %  
 %WebSockets are supported by all modern browsers.
 
-
-RFC6455\cite{rfcWebsockets}
-
-\section{Distributed caches}
-\begin{itemize}
-	\item Hier Algorithmen erklären?
-	\item auf hashes eingehen
-	\item wie ein hash nur verteilt
-\end{itemize}
 \section{IP Adressen}
 Eine IP Adresse ist ein eindeutiger Identifizier für Computer in einem Netzwerk. Jedem Computer in einem Netzwerk wird eine eindeutige IP Adresse zugewiesen über die der Computer adressierbar ist. Dadurch ist der Computer für andere erreichbar. Sie wird benötigt um ein routing vom Sender zum Empfänger zu ermöglichen. \cite{www}
 \subsection{Aufbau von IP Adressen}
@@ -336,10 +286,10 @@ IPv4 wurde im Jahr 1981 durch das RFC 791\cite{rfc791} definiert und besteht aus
 Aufgrund der stark ansteigenden Zahl an Geräten die mit dem Internet verbunden sind ist der Adressbereich der IPv4 Adressen nicht mehr ausreichend. Entwickelte der ITFE 1998 einen neuen Standard. IPv6 verwendet 128 anstatt der 32 Bits zur Darstellung von IP Adressen. Dadurch ist es möglich 2$^3^2$ Geräte abzubilden. IPv6 wird meist als vier Oktette in hexadezimal dargestellt. Zur Unterscheidung von Host- und Netzanteil werden Präfixlängen angegeben.  
 
 \subsection{Network Adress Translation(NAT)}
-Mit Hilfe von NAT können mehrere Geräte über die selbe öffentliche IP-Adresse über das Internet verbunden werden. Dadurch ist es möglich trotz des begrenzten Adressraums von IPv4 mehr Geräte mit dem Internet zu verbinden. Dazu werden werden vom die IP-Adress header Felder der Datenpackete verändert. 
+Mit Hilfe von NAT können mehrere Geräte über die selbe öffentliche IP-Adresse über das Internet verbunden werden. Dadurch ist es möglich trotz des begrenzten Adressraums von IPv4 mehr Geräte mit dem Internet zu verbinden. Dazu werden werden vom die IP-Adress Header Felder der Datenpackete verändert. 
 
 \section{Ruby on Rails}
-Ruby on Rails ist ein in Ruby geschriebenes Opensource Webframework. Zentraler Ansatz der Entwicklung des Frameworks ist es, es Software Entwicklern einfacher zu machen Webanwendungen zu schreiben. Die Philosophie des Frameworks beinhaltet zwei Prinzipien:\footnote{https://guides.rubyonrails.org/}
+Ruby on Rails ist ein in Ruby geschriebenes Opensource Webframework. Zentraler Ansatz der Entwicklung des Frameworks ist es, es Software Entwicklern einfacher zu machen Webanwendungen zu schreiben. Die Philosophie des Frameworks beinhaltet zwei Prinzipien\cite{ror-guide}:
 
 \textbf{Don't Repeat Yourself(DRY):}
 Jede Information und Funktionalität soll einen Repräsentation im System haben. Dadurch soll erreicht werden das die Software einfacher wartbar, über­sicht­licher und fehlerfreier sein.
@@ -347,15 +297,14 @@ Jede Information und Funktionalität soll einen Repräsentation im System haben.
 \textbf{Convention over Configuration:}
 Um die Entwicklung für den Programmierer zu erleichtern werden annahmen getroffen und Standard Einstellungen festgelegt. Diese lassen sich zwar durch die Entwickler ändern sind zu beginn jedes Projektes erst einmal gleich. So werden z.b. auch Vereinbarungen über die Benennung von Methoden und Klassen getroffen(Naming Conventions).
 
-Ruby on Rails ist ein Model View Controller basiertes Framework. \todo{MVC Beschreiben?}
+Ruby on Rails ist ein Model View Controller basiertes Framework.
 
 \section{Turbolinks}
 Turbolinks\footnote{https://github.com/turbolinks/turbolinks} ist eine Javascript Bibliothek zur Beschleunigung der Navigation auf Internetseiten. Klick ein Nutzer auf einen Link wird der Seitenabruf unterbrochen und stattdessen mit Ajax geladen. Anschließend überprüft Turbolinks welche Teile der Seite sich verändert haben und rendert nur diese Elemente. Dadurch entsteht ein flüssigeres Nutzererlebnis da Teile der Seite bestehen bleiben und nicht ersetzt werden. Da nachgeladene Ressourcen die sich bei der Navigation nicht ändern nicht erneut geladen werden müssen beschleunigt sich die Ladezeit. Javascript scripts müssen nicht neu geladen werden sondern bleiben in ihrem vorigen Zustand bestehen da kein kompletter Pageload vorgenommen werden muss.
 
 \section{Single Page Applications}
 
-Unter Single Page Applications(SPA) versteht man Webanwendungen bei denen der Client aus einem einzigen HTML Dokument besteht. Inhalte werden meist dynamisch mit AJAX oder Websocket nachgeladen. Dadurch entsteht ein Nutzererlebnis das flüssiger erscheint da Seiten nicht bei Navigation komplett neu geladen werden müssen. Sie bieten sich für Anwendungen mit hoher Nutzerzahl an da der Aufwand der HTML renderings com Server auf den Client verlagert wird. Da das Backend zumeist nur Daten ausliefert wird die Entwicklung nativer Clients für Mobilgeräte vereinfacht da zumeist das Backend wiederverwendet werden kann.
-\todo{Woher quellen nehmen??? online??}
+Unter Single Page Applications(SPA) versteht man Webanwendungen bei denen der Client aus einem einzigen HTML Dokument besteht.\cite{spa-def} Inhalte werden meist dynamisch mit AJAX oder Websocket nachgeladen. Dadurch entsteht ein Nutzererlebnis das flüssiger erscheint da Seiten nicht bei Navigation komplett neu geladen werden müssen. Sie bieten sich für Anwendungen mit hoher Nutzerzahl an da der Aufwand der HTML renderings com Server auf den Client verlagert wird. Da das Backend zumeist nur Daten ausliefert wird die Entwicklung nativer Clients für Mobilgeräte vereinfacht da zumeist das Backend wiederverwendet werden kann.
 
 \section{Redis}
 Bei Redis handelt es sich um einen In-Memory Datenstruktur Speicher der als LRU cache, Datenbank oder Message Broker verwendet werden kann.\footnote{https://redis.io/} Redis ist ein Opensource Projekt und  wird von Redis Labs gesponsert. Jede gespeicherte Datenstruktur ist über einen Key abrufbar.

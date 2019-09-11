@@ -1,0 +1,12 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n+nx}{v}\PYG{o}{=}\PYG{l+m+mi}{0}
+\PYG{n+nx}{o}\PYG{o}{=}\PYG{n+nx}{Alice} \PYG{l+m+mi}{1234} \PYG{l+m+mi}{1234} \PYG{n+nx}{IN} \PYG{n+nx}{IP4} \PYG{n+nx}{host}\PYG{p}{.}\PYG{n+nx}{provider1}\PYG{p}{.}\PYG{n+nx}{com}
+\PYG{n+nx}{s}\PYG{o}{=}\PYG{n+nx}{Video} \PYG{n+nx}{von} \PYG{l+m+mi}{987654}
+\PYG{n+nx}{c}\PYG{o}{=}\PYG{n+nx}{IN} \PYG{n+nx}{IP4} \PYG{n+nx}{host}\PYG{p}{.}\PYG{n+nx}{provider2}\PYG{p}{.}\PYG{n+nx}{com}
+\PYG{n+nx}{t}\PYG{o}{=}\PYG{l+m+mi}{0} \PYG{l+m+mi}{0}
+\PYG{n+nx}{m}\PYG{o}{=}\PYG{n+nx}{audio} \PYG{l+m+mi}{20000} \PYG{n+nx}{RTP}\PYG{o}{/}\PYG{n+nx}{AVP} \PYG{l+m+mi}{97}
+\PYG{n+nx}{a}\PYG{o}{=}\PYG{n+nx}{rtpmap}\PYG{o}{:}\PYG{l+m+mi}{97} \PYG{n+nx}{iLBC}\PYG{o}{/}\PYG{l+m+mi}{8000}
+\PYG{n+nx}{a}\PYG{o}{=}\PYG{n+nx}{fmtp}\PYG{o}{:}\PYG{l+m+mi}{97} \PYG{n+nx}{mode}\PYG{o}{=}\PYG{l+m+mi}{30}
+\PYG{n+nx}{m}\PYG{o}{=}\PYG{n+nx}{video} \PYG{l+m+mi}{20001} \PYG{n+nx}{RTP}\PYG{o}{/}\PYG{n+nx}{AVP} \PYG{l+m+mi}{31}
+\PYG{n+nx}{a}\PYG{o}{=}\PYG{n+nx}{rtpmap}\PYG{o}{:}\PYG{l+m+mi}{31} \PYG{n+nx}{H261}\PYG{o}{/}\PYG{l+m+mi}{90000}
+\end{Verbatim}

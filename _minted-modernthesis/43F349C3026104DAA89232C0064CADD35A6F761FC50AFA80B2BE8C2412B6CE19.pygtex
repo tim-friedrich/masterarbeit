@@ -1,0 +1,17 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n+nx}{getFromCache}\PYG{p}{(}\PYG{n+nx}{hash}\PYG{p}{).}\PYG{n+nx}{then}\PYG{p}{(}\PYG{n+nx}{cacheResponse} \PYG{p}{=\PYGZgt{}} \PYG{p}{\PYGZob{}}
+  \PYG{k}{if} \PYG{p}{(}\PYG{n+nx}{cacheResponse} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{n+nx}{config}\PYG{p}{.}\PYG{n+nx}{cachingEnabled}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+    \PYG{n+nx}{resolve}\PYG{p}{(}\PYG{n+nx}{cacheResponse}\PYG{p}{);}
+    \PYG{k}{return}\PYG{p}{;}
+  \PYG{p}{\PYGZcb{}}
+  \PYG{n+nx}{getFromClient}\PYG{p}{(}\PYG{n+nx}{clientId}\PYG{p}{,} \PYG{n+nx}{hash}\PYG{p}{).}\PYG{n+nx}{then}\PYG{p}{(}\PYG{n+nx}{data} \PYG{p}{=\PYGZgt{}} \PYG{p}{\PYGZob{}}
+    \PYG{k}{if} \PYG{p}{(}\PYG{n+nx}{data} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{n+nx}{data}\PYG{p}{.}\PYG{n+nx}{response}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+      \PYG{n+nx}{resolve}\PYG{p}{(}\PYG{n+nx}{data}\PYG{p}{.}\PYG{n+nx}{response}\PYG{p}{);}
+      \PYG{k}{return}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{n+nx}{getFromInternet}\PYG{p}{(}\PYG{n+nx}{url}\PYG{p}{).}\PYG{n+nx}{then}\PYG{p}{(}\PYG{n+nx}{response} \PYG{p}{=\PYGZgt{}} \PYG{p}{\PYGZob{}}
+      \PYG{n+nx}{resolve}\PYG{p}{(}\PYG{n+nx}{response}\PYG{p}{);}
+    \PYG{p}{\PYGZcb{});}
+  \PYG{p}{\PYGZcb{});}
+\PYG{p}{\PYGZcb{});}
+\end{Verbatim}

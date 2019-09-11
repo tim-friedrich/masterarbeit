@@ -1,0 +1,14 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{if}\PYG{p}{(}\PYG{n+nx}{peer}\PYG{p}{.}\PYG{n+nx}{dataChannel}\PYG{p}{.}\PYG{n+nx}{bufferedAmount} \PYG{o}{\PYGZlt{}=} \PYG{l+m+mi}{16000000}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+  \PYG{n+nx}{peer}\PYG{p}{.}\PYG{n+nx}{dataChannel}\PYG{p}{.}\PYG{n+nx}{send}\PYG{p}{(}\PYG{n+nx}{msg}\PYG{p}{);}
+  \PYG{k}{return}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{c+c1}{// if maximum buffersize is reached delay sending of chunks}
+\PYG{n+nx}{peer}\PYG{p}{.}\PYG{n+nx}{requestQueue}\PYG{p}{.}\PYG{n+nx}{push}\PYG{p}{(}\PYG{n+nx}{msg}\PYG{p}{);}
+\PYG{n+nx}{peer}\PYG{p}{.}\PYG{n+nx}{dataChannel}\PYG{p}{.}\PYG{n+nx}{bufferedAmountLowThreshold} \PYG{o}{=} \PYG{l+m+mi}{65536}\PYG{p}{;}
+\PYG{n+nx}{peer}\PYG{p}{.}\PYG{n+nx}{dataChannel}\PYG{p}{.}\PYG{n+nx}{onbufferedamountlow} \PYG{o}{=} \PYG{k+kd}{function} \PYG{p}{()} \PYG{p}{\PYGZob{}}
+  \PYG{k+kd}{var} \PYG{n+nx}{reqs} \PYG{o}{=} \PYG{n+nx}{peer}\PYG{p}{.}\PYG{n+nx}{requestQueue}\PYG{p}{.}\PYG{n+nx}{slice}\PYG{p}{();}
+  \PYG{n+nx}{peer}\PYG{p}{.}\PYG{n+nx}{requestQueue} \PYG{o}{=} \PYG{p}{[];}
+  \PYG{n+nx}{reqs}\PYG{p}{.}\PYG{n+nx}{forEach}\PYG{p}{(}\PYG{n+nx}{\PYGZus{}msg} \PYG{p}{=\PYGZgt{}} \PYG{n+nx}{send}\PYG{p}{(}\PYG{n+nx}{\PYGZus{}msg}\PYG{p}{));}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}
