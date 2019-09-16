@@ -1,7 +1,6 @@
-\chapter{Implementierung}\label{yy}
+\chapter{Implementierung}\label{implementierung}
 
-
-
+\todo{einleitung schreiben}
 %Für unsere Implementation wird für das Zwischenspeichern von Daten ein Serviceworker eingesetzt. Serviceworker können wie ein Proxy zwischen dem Webbrowser und dem Webserver agieren, welcher die Webseite bereitstellt. Stellt ein Browser eine Anfrage, so wird diese vom Serviceworker abgefangen. Der Serviceworker schaut zunächst in seinem Cache, der sog. IndexDB, ob er die gestellte Anfrage beantworten kann. Ist dies nicht der Fall, so wird die Anfrage an den Webserver weitergeleitet. Wird die gleiche Anfrage nochmals gestellt, kann diese aus dem Cache beantwortet werden, da gestellte Anfragen eine gewisse Zeit lang zwischengespeichert werden.
 %\begin{figure}[!h]
 %	\centering
@@ -27,6 +26,7 @@ Das \pTp \cdn ist eine Javascript Bibliothek, die nach erfolgreicher Einbindung 
 Der Javascript Code ist in ES6 geschrieben und wird mittels Babel\footnote{https://babeljs.io/} in Browser kompatiblen Javascript Code übersetzt und anschließend mit Node-minify komprimiert. \footnote{https://www.npmjs.com/package/node-minify}
 
 \section{Architektur}
+\todo{einleitung schreiben}
 
 \begin{figure}[!h]
 	\centering
@@ -102,7 +102,7 @@ Um es der einbindenden Anwendung zu ermöglichen auf Änderungen bezüglich der 
 
 \section{Nachrichten protocol}
 
-Für die Funktion des \cdns sind einige Nachrichten zwischen den Komponenten und den Clients notwendig. Im Folgenden wird auf einige dieser Nachrichten genauer eingegangen, sowie der Kommunikationsablauf zweier CLients anhand eines Beispiels erläutert.
+Für die Funktion des \cdns sind einige Nachrichten zwischen den Komponenten und den Clients notwendig. Im Folgenden wird auf einige dieser Nachrichten genauer eingegangen, sowie der Kommunikationsablauf zweier \clients anhand eines Beispiels erläutert.
 
 \subsection{Beispielhafter Kommunikationsfluss zwischen zwei Clients}
 \begin{figure}[!h]
@@ -195,7 +195,7 @@ Empfängt ein Client eine Anfrage in Form von Chunks so muss er diese wieder zu 
 %\begin{itemize}
 %	\item Details zum Algorithmus
 %\end{itemize}
-\section{System Test}
+\section{System Test}\label{system-test}
 Das Plugin stellt ein Modul bereit um zu testen ob es einem Client möglich ist am \pTp CDN teilzunehmen.
 
 Dazu werden drei Tests bereitgestellt.

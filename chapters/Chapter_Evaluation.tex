@@ -1,6 +1,5 @@
 \chapter{Evaluation}\label{ch:evaluation}
-
-\section{Prequisites}
+\todo{einleitung schreiben}
 
 \section{Browser compatbility}
 \begin{table}[!htb]
@@ -9,31 +8,117 @@
 	\begin{tabular}{|l|l|l|l|l|}
 		\hline
 		Chrome & Firefox & Edge & Safari & Internet Explorer	  \\ \hline
-		75 	   & 68 	  & 76	 & 12.1	  & Not supported    				\\ \hline
+		22 	   & 23 	  & 76	 & 11	  & Not supported    				\\ \hline
 	\end{tabular}
 	
 	\begin{tabular}{|l|l|l|l|l|}
 		\hline
 		IOS Safari & Samsung Internet & Android Browser	& Chrome (Android) \\ \hline
-		12.3	   & 9.2				  & 67				& 75  \\ \hline
+		11	   & 4				  & 67				& 76  \\ \hline
 	\end{tabular}
 
 	\caption{Unterstützte Browser Versionen}
 \end{center}
-
-Um die unterstützten Browser zu verifizieren wurden die vom \pTp \cdn verwendeten Browser Funktionalitäten bei caniuse.com\footnote{https://caniuse.com/} eingegeben. Darüber hinaus wurden Chrome, Firefox, Edge, Safari und der Internet Explorer manuell getestet, um sicherzustellen das das \pTp \cdn das Nutzererlebnis nicht negativ beeinflusst. Der Internet Explorer unterstütz auch in der aktuellen Version keine Service Worker\footnote{https://caniuse.com/#search=service\%20worker}. Auch wenn der Edge Browser Webrtc seit Version 17 unterstützt, ist es leider erst ab version 76 möglich Datachannels zu verwenden. Da der Datenverkehr des \pTp \cdns über Datachannel gehandhabt wird, ist eine Verwendung erst ab der nächsten Version die auf Chrome aufbauen wird, möglich.
 \end{table}
 
-\subsection{Browser Usage in coropate networks}
+Um die unterstützten Browser zu verifizieren wurden die vom \pTp \cdn verwendeten Browser Funktionalitäten bei caniuse.com\footnote{https://caniuse.com/} eingegeben. Darüber hinaus wurden Chrome, Firefox, Edge, Safari und der Internet Explorer manuell getestet, um sicherzustellen das das \pTp \cdn das Nutzererlebnis nicht negativ beeinflusst. Der Internet Explorer unterstütz auch in der aktuellen Version keine Service Worker\footnote{https://caniuse.com/#search=service\%20worker}. Auch wenn der Edge Browser Webrtc seit Version 17 unterstützt, ist es leider erst ab version 76 möglich Datachannels zu verwenden. Da der Datenverkehr des \pTp \cdns über Datachannel gehandhabt wird, ist eine Verwendung erst ab der nächsten Version die auf Chrome aufbauen wird, möglich.
 
-\begin{itemize}
-	\item Statistic über typische nutzung
-	\item Statistic über Nutzung bei dem test
-	\item Diskussion Edge on Chromium
-	\item evtl aussage von deutscher bank mit aufnehmen
-	\item  --- major update hinauszögern, in 1-2 Jahren
-	\item 
-\end{itemize}
+\subsection{Browser Nutzung von SlideSync Kunden}
+
+\begin{table}[!htb]\label{table-browser-slidesync}
+\begin{center}
+
+	\begin{tabular}{|r|l|l|l|l|l|l|}
+		\hline
+		Event	 & Intern 	& Extern 	& Unterstützt & Nicht unterstützt \\ \hline
+		Event 1	 & 2816		& 4073	  	& 4357		  & 2532		\\ \hline 
+		Event 2	 & 50		& 48		 	& 37			  & 60		\\ \hline 
+		Event 3	 & 43		& 248	  	& 224		  & 67		\\ \hline 
+		Event 4	 & 740		& 569	  	& 735		  & 573		\\ \hline 
+		Event 5	 & 300		& 520	  	& 600		  & 220		\\ \hline 
+		Event 6	 & 365		& 656	  	& 773		  & 248		\\ \hline 
+		Gesamt	 & 4314		& 6114	  	& 6726		  & 3700		\\ \hline 
+
+	\end{tabular}
+	\caption{Vergleich von 6 Events}
+\end{center}
+
+\end{table}
+
+Um die Browser Nutzung von SlideSync Nutzern zu evaluieren wurden je drei Events von 2 großen Kunden betrachtet. Beide Kunden verwenden momentan einen von SlideSync vertriebenen Netzwerk internen Caching Servern und mit beiden Kunden wird derzeit eine Verwendung des \pTp \cdns anstelle der momentanen \cdn Server diskutiert. Event eins bis drei wurden von Kunden 1 und Event 4 bis 6 wurden von Kunde 2 durchgeführt. 
+
+ Von den insgesamt 10426 betrachteten Browser Sitzungen verfügten 64,5\% über einen Browser der von dem \pTp \cdn unterstützt wird. Die vergleichsweise geringe Prozentzahl ist vor allem auf die nach wie vor starke Verbreitung des Internet Explorers in Unternehmen zurückzuführen. So handelte es sich bei 96,5\% der nicht unterstützen Browser von Event 1 um Nutzer mit Internet Explorer 11. In Gesprächen mit Kunden wurde deutlich das diese jedoch in absehbarer Zeit auf Edge 76 wechseln werden, welcher auf Chrome basiert und damit volle Unterstützung des \cdns bietet.\cite{edge-chrome} Ein Mitarbeiter einer großen Bank gab einen Zeithorizont von ein bis zwei Jahren an. Außerdem würden sie als Bank Updates eher hinauszögern weshalb bei anderen Unternehmen ein kürzerer Zeithorizont zu erwarten wäre.
+
+%tk 2444
+%Annual General Meeting 2019
+%https://slidesync.com/admin/events/21BNZWjB3y/overview
+%Supported	4357
+%un sup	2532
+%External	4073
+%Internal	2816
+%https://slidesync.com/admin/events/eavm3EYAMY/statistics
+%LEX Global Town Hall Call
+%sup	37
+%unsup	60
+%Internal	50
+%External	48
+%https://slidesync.com/admin/events/oKkY3x4BwQ/statistics
+%Sup	224
+%un sup	67
+%External	248
+%Internal	43
+%%Bundesbank:
+%%https://slidesync.com/admin/events/ajAZ3VEk2O/statistics
+%
+%Pro 7
+%https://slidesync.com/admin/events/1Oxv7loBlo/statistics
+%Sup	735
+%no sup	573
+%Internal	740
+%External	569
+%https://slidesync.com/admin/events/rlB6xP6kWR/statistics
+%Sup	600
+%un sup	220
+%External	520
+%Internal	300
+%https://slidesync.com/admin/events/MwBwGloBEL/statistics
+%Sup	600
+%un sup	220
+%Extern	656
+%Intern	365
+%öffentlich (landing page)
+%Chrome
+%607	48,76 %
+%2.	
+%Internet Explorer
+%170	13,65 %
+%3.	
+%Safari
+%156	12,53 %
+%4.	
+%Firefox
+%119	9,56 %
+%5.	
+%Edge
+%58	4,66 %
+%6.	
+%UC Browser
+%56	4,50 %
+%7.	
+%'Mozilla
+%40	3,21 %
+%8.	
+%Samsung Internet
+%15	1,20 %
+%\begin{itemize}
+%	\item Statistic über typische nutzung
+%	\item Statistic über Nutzung bei dem test
+%	\item Diskussion Edge on Chromium
+%	\item evtl aussage von deutscher bank mit aufnehmen
+%	\item  --- major update hinauszögern, in 1-2 Jahren
+%	\item Anderer Kunde wechsel kein Problem
+%	\item \cite{edge-chrome}
+%\end{itemize}
 
 
 \subsection{Browser usage in eduational networks}
@@ -41,69 +126,74 @@ Um die unterstützten Browser zu verifizieren wurden die vom \pTp \cdn verwendet
 	\item evtl einfach normale verteilung
 	\item schauen ob es quellen gibt
 \end{itemize}
-\section{Webrtc Routing}
-\begin{itemize}
-	\item mit und ohne STUN
-	\item lokales routing
-	\item externes Routing
-	\item implikationen für Konfiguration
-\end{itemize}
-\section{Bandwidth}
+%\section{Webrtc Routing}
+%\begin{itemize}
+%	\item mit und ohne STUN
+%	\item lokales routing
+%	\item externes Routing
+%	\item implikationen für Konfiguration
+%\end{itemize}
+%\section{Bandwidth}
+
+
+%
+%\subsection{Latency}
 
 
 
-\subsection{Latency}
+\section{Simulierter Workload}
 
-\subsubsection{Webrtc Verbindungsaufbau}
+Einleitung \todo{Einleitung schreiben}
+\subsection{Webrtc Verbindungsaufbau}
 
 \begin{itemize}
 	\item Page load bis cdn is ready
 	\item verschiedene Anzahl an Peers im Netzwerk 
 \end{itemize}
+%\subsection{Chunking}
+%\begin{itemize}
+%	\item messen des aufwandes für chunking und wieder zusammensetzen
+%	\item woher kommt der zusätzliche Aufwand bei größen dateien??
+%	\item limit ist der durchsatz nicht das chunking
+%\end{itemize}
 
-\section{Simulierter Workload}
-\subsection{Chunking}
-\begin{itemize}
-	\item messen des aufwandes für chunking und wieder zusammensetzen
-	\item woher kommt der zusätzliche Aufwand bei größen dateien??
-	\item limit ist der durchsatz nicht das chunking
-\end{itemize}
-
-\subsection{Durchsatz - Ladezeiten von verschiedenen Dateigrößen}
-Um die Ladezeiten verschiedener Dateigrößen zu evaluieren wurde auf einem Mac book pro Ende 2013 mit 2.3 GHz und 16GB Arbeitsspeicher getestet. 
-Getestet wurde mit zwei Teilnehmern. Einer lud die Ressource vor und der zweite lud sie über das \pTp \cdn. Die Timeouts des \pTp \cdns wurden für diesen Test deaktiviert. Um Netzlaufzeiten auszuklammern befand sich der Anwendungsserver ebenso wie die zu ladene Ressource auf dem selben Rechner wie die Clients. 
-
+\subsection{Ladezeiten von verschiedenen Dateigrößen}
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=0.8\textwidth]{figures/Timing_file_size}
-	\caption[A Figure Short-Title]{}
+	\caption[A Figure Short-Title]{Vergleich verschiedener Dateigrößen}
 	\label{fig:timing_file_size}
 \end{figure}
+
+Um die Ladezeiten verschiedener Dateigrößen zu evaluieren wurde auf einem Mac book pro Ende 2013 mit 2.3 GHz und 16GB Arbeitsspeicher getestet. 
+Getestet wurde mit zwei Teilnehmern. Einer lud die Ressource vor und der zweite lud sie über das \pTp \cdn. Die Timeouts des \pTp \cdns wurden für diesen Test deaktiviert. Alle tests wurden zehn Mal ausgeführt. Das \pTp Datenpackete wurden über das lokale Netzwerk geleitet.
 
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=0.8\textwidth]{figures/durchsatz_file_size}
-	\caption[A Figure Short-Title]{Durchsatz}
+	\caption[A Figure Short-Title]{Durchsatz des \ptp \cdns in einem lokalen Netzwerk}
 	\label{fig:durchsatz_file_size}
 \end{figure}
 
+Abbildung \ref{fig:timing_file_size} zeigt wie sich das \cdn bei steigender Dateigröße verhält. Es ist deutlich zu sehen das die Ladezeit bei steigender Größe linear steigt. Zwar schwankt der Durchsatz des \cdns in einem Bereich von 20 MBits/s jedoch scheint es keinen Zusammenhang mit der Größe der Datei zu geben. Das Chunking der Dateien durch das \pTp \cdn scheint keinen negativen Einfluss auf die Ladegeschwindigkeit zu haben. Im Bereich von 100 MBits/s ist nach wie vor die zur Verfügung stehende Bandbreite und nicht das Chunking als Bottleneck zu betrachten.
 
-\begin{itemize}
-	\item Mac book pro Ende 2013
-	\item 2.3 ghz i7
-	\item 16gb ram
-	\item 1, 5, 10, 20, 30, 40, 50, 60, 70, 80, 90 , 100 mb
-	\item durchsatz berechnen
-	\item Limitierung durch websockets
-	\item lokal auf einem Rechner um Netzlaufzeiten auszuklammern
-	\item 1 Peer lädt vor
-	\item der andere lädt von peer
-	\item benchmarkt das nur das lokale netzwerk?? --> routing
-	\item sicherstellen das datenverkehr nicht über internet geroutet werden...
-\end{itemize}
+
+%\begin{itemize}
+%	\item Mac book pro Ende 2013
+%	\item 2.3 ghz i7
+%	\item 16gb ram
+%	\item 1, 5, 10, 20, 30, 40, 50, 60, 70, 80, 90 , 100 mb
+%	\item durchsatz berechnen
+%	\item Limitierung durch websockets
+%	\item lokal auf einem Rechner um Netzlaufzeiten auszuklammern
+%	\item 1 Peer lädt vor
+%	\item der andere lädt von peer
+%	\item benchmarkt das nur das lokale netzwerk?? --> routing
+%	\item sicherstellen das datenverkehr nicht über internet geroutet werden...
+%\end{itemize}
 
 \subsection{Live Streaming}
-Um einen Live Stream mit höherer Teilnehmerzahl zu testen wurde ein Script geschrieben, das mit Hilfe von puppeteer\footnote{TODO: puppeteer} mehrere Chrome browser um headless Mode startet und die Event Seite besucht. Dabei musste eine Chrome installation gewählt werden, da Chromium nicht über die notwendigen Codecs verfügt um HLS Video wieder zu geben. 
+Um einen Live Stream mit höherer Teilnehmerzahl zu testen wurde ein Script geschrieben, das mit Hilfe von puppeteer\footnote{https://github.com/GoogleChrome/puppeteer} mehrere Chrome browser um headless Mode startet und die Event Seite besucht. Dabei musste eine Chrome installation gewählt werden, da Chromium nicht über die notwendigen Codecs verfügt um HLS Video wieder zu geben. 
 Das Script wurde auf Amazon AWS t2.xlarge Instanzen installiert. Jede dieser Instanzen verfügt über 8 vcpus und 32 GB Arbeitsspeicher. Auf jeder Instanz wurden 25 Browser Sessions geöffnet.  Das \cdn wurde so konfiguriert das es ausschließlich .ts Dateien, also die Video Segmente bearbeitet. Bei 25 Teilnehmern lag die CPU Last bei den Testservern bei deaktiviertem \pTp \cdn bei 50-60\%. 
 Die Teilnehmer luden die Event Seite während das Event noch nicht Live geschaltet war. Wenn alle Teilnehmer die Seite geladen hatten wurde das Event live geschaltet und die Teilnehmer auf die Live stream Seite weiter geleitet. Die Weiterleitung geschieht verzögert in einem Zeitraum von 18-60 Sekunden mit einer Dreicks-verteilung um die Last auf Seiten der Slidesync Servern zu verringern Der Stream wurde für zehn Minuten live geschaltet und anschließend beendet.
 
@@ -166,18 +256,18 @@ Abbildung \ref{fig:peer_vs_server_over_time} zeigt eine zeitliche Darstellung vo
 \todo{Rahmenbedingungen müssen klar sein}
 
 
-\begin{itemize}
-	\item Verhältnisse berechnen
-	\item evtl ramp up anschauen
-	\item  
-\end{itemize}
+%\begin{itemize}
+%	\item Verhältnisse berechnen
+%	\item evtl ramp up anschauen
+%	\item  
+%\end{itemize}
 
-\begin{itemize}
-	\item 92872 pro segment (ca 92 kb) 
-	\item ca 9,2 mb pro client pro event
-	\item bandbreiten diagram? 
-	\item Wenn client von server lädt teilt er das direkt mit
-\end{itemize}
+%\begin{itemize}
+%	\item 92872 pro segment (ca 92 kb) 
+%	\item ca 9,2 mb pro client pro event
+%	\item bandbreiten diagram? 
+%	\item Wenn client von server lädt teilt er das direkt mit
+%\end{itemize}
 
 \subsection{Schul-Cloud}
 
@@ -250,22 +340,16 @@ Der Test wurde in einem Unternehmensnetzwerk durchgeführt um die Funktionalitä
 
 Abbildung \ref{fig:live_stream_line_chart} zeigt die Abhandlungsart der Anfragen. Dabei ist zu beachten das ca 100 Requests notwendig waren damit sämtliche HLS Segmente im \pTp Netzwerk verfügbar sind. Bei steigender Anzahl von Teilnehmern ist zu beobachten das eine größere Anzahl an Anfragen über den Server geladen werden müssen. Ein möglicher Grund hierfür ist Die Zeitliche Verteilung der Anfragen. Befinden sich mehr Peers im Netzwerk so wird es wahrscheinlicher das zwei Teilnehmer sich beide an der selben Stelle im Video befinden, die HLS Segmente laden müssen, jedoch noch kein Teilnehmer das Segment heruntergeladen hat. Auch wird es wahrscheinlicher das eine größere Anzahl an Teilnehmern ein Segment über den selben Teilnehmer laden wollen. Fragen zu viele Teilnehmer eine Ressource bei selben Teilnehmer an, so kann er nicht mehr alle Anfragen bearbeiten. Die Anfrage über das \pTp \cdn wird abgebrochen und über den Server geladen. Abbildung \ref{fig:timeouts} zeigt die Anzahl der Timeouts bei steigender Teilnehmerzahl. Dabei ist zu beachten das der Timeout so gewählt wurde das das Video weiterhin flüssig lief.
 
+
 \begin{figure}[!h]
 	\centering
-	\includegraphics[width=0.45\textwidth]{figures/pie_2_clients}
-	\includegraphics[width=0.45\textwidth]{figures/pie_10_clients}
-	\caption[A Figure Short-Title]{Verteilung der Anfragen bei zwei und 10 Clients}
-	\label{fig:corporate_pie_2}
-\end{figure}
-\begin{figure}[!h]
-	\centering
-	\includegraphics[width=0.45\textwidth]{figures/pie_15_clients}
-	\includegraphics[width=0.45\textwidth]{figures/pie_30_clients}
-	\caption[A Figure Short-Title]{Verteilung der Anfragen bei zwei und 10 Clients}
-	\label{fig:corporate_pie_3}
+	\includegraphics[width=0.8\textwidth]{figures/anfragen_verteilung_bar}
+	\caption[A Figure Short-Title]{Vergleich der Anfragen nach Anfrageart}
+	\label{fig:anfragen_verteilung_bar}
 \end{figure}
 
-Betrachtet man die zusätzlich Notwendigen Server Anfragen so lässt sich beobachten das der Prozentsatz in diesem Test annähernd konstant ist.  
+
+Betrachtet man die zusätzlich notwendigen Server Anfragen so lässt sich beobachten das der Prozentsatz in diesem Test annähernd konstant ist.  
 
 %\begin{figure}[!h]
 %	\centering
@@ -288,12 +372,12 @@ Abbildung \ref{fig:15_clients_network} zeigt welche Teilnehmer untereinander Dat
 
 	\begin{tabular}{|r|l|l|l|l|l|l|}
 		\hline
-		Request Art	 & #Anfragen 	& Durchschnitt 	& Standardbweichung	& Min		& Max	 \\ \hline
-		Peer 		& 4571 				& 201.60	 ms	  	& 190.14	 ms				& 27.02 ms	& 2832.27 ms \\ \hline
-		Server 		& 1870		 		& 63.61 ms		& 62.99	ms				& 9.41 ms	& 649 ms	\\
+		Bearbeitung	 & #Anfragen 	& Durchschnitt 	& Standardbweichung \\ \hline %	& Min		& Max	 \\ \hline
+		Peer 		& 4571 				& 201.60	 ms	  	& 190.14	 ms	\\ \hline %			& 27.02 ms	& 2832.27 ms \\ \hline
+		Server 		& 1870		 		& 63.61 ms		& 62.99	ms	\\ %			& 9.41 ms	& 649 ms	\\
 		\hline
 	\end{tabular}
-	\caption{Browser Storage Quotas }
+	\caption{Verarbeitungsdauer}
 \end{center}
 
 \end{table}
@@ -308,11 +392,102 @@ Anfragen die vom \pTp \cdn beantwortet wurden brauchten im Durchschnitt 201,60ms
 %	\item serverResponse   1870.0
 %	\item Serveranfragen bereinigt um die Timeouts
 %\end{itemize}
-\begin{itemize}
-	\item andere auflösungen
-	\item s vs p
-	\item server downloadtime berücksichtigen
-	\item besonders vergleich für hohe auflösungen
-	\item vergleich verschiedener Auflösungen
-\end{itemize}
-%passt hier nicht wirklich hin
+%\begin{itemize}
+%	\item andere auflösungen
+%	\item s vs p
+%	\item server downloadtime berücksichtigen
+%	\item besonders vergleich für hohe auflösungen
+%	\item vergleich verschiedener Auflösungen
+%\end{itemize}
+%%passt hier nicht wirklich hin
+
+
+\section{Offline Support}
+
+Service Worker werden häufig im Rahmen von Offline-Support für Websites genannt. Mit Hilfe der Caching Api lassen sich Internetseiten speichern und später, wenn kein Internet vorhanden ist, wieder abrufen. Insbesondere für Schulen ist die Interessant, da die Internetanbindung in Schulen in vielen Fällen nach wie vor unzureichend ist. Die Sonderstudie Digital der Initiative befragte 2016 1426 Lehrer von denen 4\% Angaben das es an Ihrer Schule kein Internet gibt. In Rund 50\% der befragten Lehrer gab an das es Internet nur in bestimmten Räumen gebe.\cite{sonderstudie_digital} In Kombination mit einem \pTp \cdn lässt sich dies nutzen um Internetseiten und Ressourcen, auch im Falle eines Internetausfalls oder falls kein Internet vorhanden ist, zu laden. Insbesondere das Scenario das der Lehrer die Seite bzw. Inhalte zu Hause vor lädt und im Anschluss den Schülern bereit stellt erscheint interessant. Tobias Wollowski beschreibt in seiner Arbeit "Optimierung von Web-Anwendungen für den Einsatz im Klassenzimmer"\cite{tobi} Möglichkeiten zur Nutzung von Offline Caches im Unterricht. Im Folgenden wird Konzeptionell beschrieben wie das vorgestellte \pTp \cdn angepasst werden kann um auch im Falle einer nicht vorhandenen Internetanbindung funktionieren kann.
+
+Durch die Verwendung von Service Workern als Proxy und Cache bietet das \cdn eine gute Grundlage für offline Support. Es stellt die Möglichkeit bereit Inhalte aus dem Cache an andere Nutzer zu verteilen. Die Größte Herausforderung bei der Offline Nutzung stellt das Signaling, also das Verbinden von Nutzern, dar. Um dies zu bewerkstelligen ist bei der gewählten Implementierung ein Websocket Server notwendig. Ist die Verbindung bereits hergestellt, z.B. vor einem Internetausfall, so können bereits bei der momentanenen Implementierung Inhalte in dem Peer Mesh verteilt werden. Ist dies nicht der Fall so muss im lokalen Netzwerk ein Signaling Server bereit gestellt werden, so das dieser auch ohne Internet Verbindung erreichbar ist. Auch muss der Schüler bestimmte Ressourcen wie das \pTp \cdn schon im Vorfeld geladen, und mit Hilfe eines Service Workers gespeichert, haben. Sind die Ips einiger Nutzer bereits bekannt, so ist es ebenfalls denkbar das weitere Signaling über Webrtc auszuhandeln. Dazu ließen sich Algorithmen wie Kademlia\cte{kademlia} zum auffinden von Peers verwenden. Der Größe Nachteil ist jedoch das initial die IP Adressen von Nutzern bekannt sein muss. Hassan Ijaz\cite{signaling_no_i_patent} beschreibt in verschieden Möglichkeiten um \webrtc Verbindungen auch ohne Internet aufzubauen. Unter anderem ist es möglich \webrtc Verbindungen mit Hilfe von QR Codes zu initialisieren. Der Lehrer könnte den Schülern einen QR code, oder in einer anderen Codierung, ein SDP Packet bereitstellen mit dessen Hilfe die Schüler eine \webrtc Verbindung zum Lehrer herstellen können. Anschließend fungiert der Lehrer als Signaling Server für die Schüler über \webrtc, so das Verbindungen zwischen den Schülern hergestellt werden können.
+
+Offline Support ist für Livestreams vor allem Interessant um die Ausfallsicherheit zu erhöhen. Slidesync lädt 18 Sekunden Video vor bevor es abgespielt wird. Durch Verwendung des \pTp \cdn können kürzere Ausfälle überbrückt werden, so das zumindest ein Teil der Nutzer weiterhin das Video über andere Nutzer Laden und verteilen können. Ein Signaling ist nicht notwendig da die Verbindungen bereits hergestellt wurden. Da Unternehmen in aller Regel über ausreichende Internetverbindungen Verfügen und es sich um Live Inhalte handelt ist ein reiner Offline Support eher von geringem Interesse. 
+
+%\begin{itemize}
+%	\item Motivation: Internet in Schulen ist nicht immer verfügbar
+%	\item lehrer lädt inhalte zuhause vor
+%	\item stellt sie schülern zur Verfügung
+%	\item wie funktionieren offline webanwendungen
+%	\item Service Worker
+%	\item prefetching
+%	\item Live Streams: Ausfallsicherheit wird erhöht.
+%	\item quasi bei design
+%	\item Resourcen werden gecached und sind offline verfügbar
+%	\item Tobias arbeit Refernzieren
+%	\item Übertragung im lokalen Netzwerk möglich wenn verbindung aufgebaut ist
+%	\item Signaling müsste in lokalem netzwerk sein z.b. Rechner vom Lehrer
+%	\item signaling könnte über webrtc erfolgen z.b. über 
+%	\item kademlia routing indem Peers als vermittler fungieren
+%	\item 	evt. browser plugin
+%	\item 	Wie das routing machen?
+%	\item Offline scenario:
+%	\item 	Lehrer Lädt ressourcen vor und macht sie für schüler verfügbar
+%	\item 	Kein Internet vorhanden
+%	\item 	Schüler laden Ressourcen von Lehrer
+%\end{itemize}
+
+\section{Security}
+Bei der Verwendung von \pTp \cdns bringen einige Security Herausforderungen mit sich. Da dies nicht Schwerpunkt der Untersuchungen im Rahmen dieser Arbeit ist wird eine vertrauenswürdige Umgebung angenommen. Dennoch werden im Folgenden Herausforderungen im Bereich der Sicherheit bei der Verwendung eines \pTp \cdns beleuchtet und mögliche Lösungen vorgestellt.
+
+Eines der Grundprinzipien des Internet Sicherheits Models ist das Nutzer bedenkenlos Internet Seiten aufrufen und dort Scripts laden können.\cite{huang_chen} Dieses Versprechen an den Nutzer muss der Browser garantieren um eine sichere Benutzung des Internet zu gewährleisten. Dazu werden Scripts in Sandboxes ausgeführt.\cite{chrome_sandbox} Ein Script kann nur im Kontext der aktuellen Seite ausgeführt werden und Anfragen die über die aktuelle Seite hinausgehen müssen vom Quellen Server explizit dafür frei gegeben werden.\cite{cors_std} 
+
+Service Worker arbeiten nach dem Selben Prinzip. Sie haben keinen Zugriff auf das DOM und können nur Anfragen verarbeiten die unterhalb des Ihnen zugewiesenen Scopes, der Seite die sie geladen hat, liegen.\cite{moz_sw} Anfragen die über einen Service Worker behandelt werden und nicht der Same-Origin Policy folgen müssen mit dem Entsprechenden CORS Header versehen sein um geladen zu werden. Service Worker können nur über HTTPS geladen werden. Wird eine Ressource neu vom Server in das \pTp \cdn geladen so muss sie den gleichen Sicherheitsvorkehrungen des Browsers entsprechen wie jede andere Anfrage. Wird eine Anfrage über das \pTp \cdn selbst beantwortet so greifen diese Mechanismen jedoch nicht. Es ist möglich das ein bösartiger Client eine Ressource verändert bevor er sie an einen Client sendet, der diese dann lädt. 
+
+Um die Integrität einer Ressource stellen Browser Funktionalitäten bereit die auf Hashes der Ressource beruhen die bei Anfrage mitgesendet werden.\cite{sub_res_integrity} Dies wird bei Anfragen automatisch durch den Browser übernommen. Bei der Übertragung mittels \webrtc muss dies die Anwendung selbst übernehmen.  
+
+Durch die Verwendung von nativen Browser Funktionalitäten entfällt die Installation von Plugins oder Anwendungen. Dadurch entfällt das Risiko von Malware in Installationsdateien. Umso wichtiger ist jedoch das ein Vertrauenswürdiger Browser verwendet wird. Wurde der Browser aus einer unsicheren Quelle geladen, so kann eine sichere Verwendung des \cdns nicht gewährleistet werden, da die Sicherheitskonzepte auf der Implementation des Browser beruhen.\cite{webrtc-security}
+
+Wird HTTPS bei der zugrundeliegenden Anwendung verwendet, so wird auch der Datenverkehr über Webrtc mittels TLS verschlüsselt.\cite{rtcweb-security} Daten die mittels \webrtc Datachannels gesendet werden, werden über DTLS(Datagram Transport Layer Security) übertragen. Dies geschieht auch falls ein TURN Server verwendet wird. Dadurch sind die Verbindungen Ende-zu-Ende verschlüsselt.
+
+Die Websocket Verbindung die für das Signaling verwendet wird sollte ebenfalls verschlüsselt werden. Die Anwendung muss außerdem Sicherstellen, dass sich keine Clients, die nicht autorisiert sind mit sich deinem Websocket Channel verbinden, da sie ansonsten in der Lage sind Ressourcen anzufragen für die sie keine Berechtigung haben, oder schadhafte Scripts an Nutzer senden könnten.
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.8\textwidth]{figures/user_auth}
+	\caption[A Figure Short-Title]{IdP basierter Verbindungsaufbau\cite{rtcweb-security}}
+	\label{fig:user_auth}
+\end{figure}
+
+Ein weiteres in dem Schul Kontext zu betrachtendes Szenario ist die Verwendung eines Rechners von mehreren Nutzern. Viele Schulen haben Computerräume in denen Rechner stehen die von verschiedenen Klassen und Schülern verwendet werden. Zwar wäre es prinzipiell möglich den gesamten cache beim Login/logout zu löschen, jedoch würde das die Cache Trefferrate negativ beeinflussen. Um dies zu umgehen können die Ressourcen verschlüsselt gespeichert werden. Wird dazu ein Schlüssel verwendet der nur im aktuellen Scope verfügbar ist so kann er sie nur entschlüsselt werden falls der Nutzer Zugriff auf den Scope der Resource hat. Ein unbefugtes auslesen des Caches ist somit zwar möglich, jedoch sind die Daten für den Angreifer unbrauchbar.
+
+Auch wenn der Signaling Server einen Teil der Nutzer Authentizität sicher stellt so sollte diesem nicht vollkommen vertraut werden. Der Signaling Server kann lediglich sicher stellen das ein Nutzer in eine bestimmte sicherheitsklasse gehört, da er nur den Zugriff auf einen Websocket Channel sicher stellt. Ist es darüber hinaus notwendig die Autentizität eines Nutzers zu gewährleisten können Web basierte Identitäts Provider(IdP) verwendet werden. Diese fungieren als vertrauenswürdige Partei und können die Identität eines Nutzers bestätigen. Abbildung \ref{fig:user_auth} zeigt die Struktur einer solchen Verbindung.
+
+Durch die Verwendung von \webrtc, bei der Verwendung von STUN Servern besteht das Risiko eines IP-Leaks.\cite{rtcweb-security} Es ist prinzipiell möglich die IP-Adresse eines Nutzers zu ermitteln. Eine mögliche Gegenmaßnahmen ist die Deactivierung von Webrtc. Dies kann entweder in der Browser Konfiguration oder durch Plugins geschehen. Jedoch ist dann die Verwendung von \webrtc nicht mehr möglich. Um eine direkte Verbindung zu einem anderen Nutzer aufzubauen ist es notwendig dessen IP-Adresse zu ermitteln. Stellt die Gefahr eines IP-Leaks ein großes Risiko in der betrachteten Domäne da, so kann das \pTp \cdn nicht verwendet werden. Im Rahmen dieser Masterarbeit wird jedoch nur die Verbindung im Lokalen Netzwerk, ohne die Verwendung eines STUN Servers untersucht. Es besteht also lediglich die Gefahr das die lokale IP Adresse eines Nutzers ermittelt werden kann - Nicht jedoch dessen öffentlich IP Adresse.
+
+
+%\begin{itemize}
+%	\item http://www.adambarth.com/papers/2011/huang-chen-barth-rescorla-jackson.pdf [huang_chen]
+%	\item https://blog.cryptographyengineering.com/2012/01/10/attack-of-week-datagram-tls/
+%	\item https://tools.ietf.org/html/draft-ietf-rtcweb-security-05 [rtcweb-security]
+%	\item ---
+%	\item Vertrauensbeziehung zwischen Clients
+%	\item Websocket channels müssen gesichert werden!
+%	\item Trust enviroment
+%	\item resource integrity
+%	\item hash
+%	\item in logik
+%	\item 
+%	\item dateien im local cache verschlüsseln nur entschlüsseln durch kurs
+%	\item mehrere an einem Rechner
+%\end{itemize}
+%\begin{itemize}
+%	\item Owasp
+%%	\item https://www.owasp.org/images/9/90/OWASP_Top_10-2017_de_V1.0.pdf
+%	\item IP Leak möglich
+%	\item Stun Server kann nach IP Adresse fragen
+%	\item Über js auslesbar
+%	\item Pluckins können das blocken
+%	\item media.peerconnection.enabled ausschalten
+%	\item --> kein webrtc mehr möglich
+%	\item non repudiation
+%	\item accountability
+%
+%\end{itemize}
+

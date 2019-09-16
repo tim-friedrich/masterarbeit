@@ -1,17 +1,18 @@
 \chapter{Grundlagen}\label{ch:related_work}
 %alles was man braucht um den Rest zu verstehen
+In dem folgenden Kapitel werden Technologien und Konzepte vorgestellt die für das  Verständnis der Arbeit erforderlich sind. Es wird angenommen das der Leser über grundlegendes Verständnis der Funktionsweise des Internets und der Webentwicklung verfügt.
 
 \section{Ressourcen}
-\subsection{Statische Ressourcen}
-Unter statischen Ressourcen werden im Rahmen dieser Arbeit Inhalte einer Website verstanden, die für alle Nutzer gleich sind. Sie sind im Gegensatz zu dynamischen Inhalten nicht nutzerspezifisch und können daher gut über ein CDN verteilt werden. Insbesondere die so genannten Assets einer Internetseite sind meist statisch. Dies sind meist Javascript, CSS aber auch Bild Dateien. Auch Videos fallen häufig in diese Kategorie.
+%\subsection{Statische Ressourcen}
+Unter statischen Ressourcen werden im Rahmen dieser Arbeit Inhalte einer Website verstanden, die für alle Nutzer gleich sind. Sie sind im Gegensatz zu dynamischen Inhalten nicht nutzerspezifisch und können daher gut über ein CDN(siehe \ref{cdn}}) verteilt werden. Insbesondere die so genannten Assets einer Internetseite sind meist statisch. Dies sind meist Javascript, CSS aber auch Bild Dateien. Auch Videos fallen häufig in diese Kategorie.
 
-\subsection{Dynamisch generierte Ressourcen}
+%\subsection{Dynamisch generierte Ressourcen}
 
-Im Gegensatz zu statischen Ressourcen werden im Kontext dieser Arbeit Inhalte als dynamisch generiert bezeichnet wenn sie zur Laufzeit der Website erzeugt und werden nicht im Vorfeld festgelegt. Dabei lässt sich zwischen Nutzergenerierten Inhalten und automatisch generierten Inhalten, z.b. Statistiken, unterscheiden.
+Im Gegensatz zu statischen Ressourcen werden im Kontext dieser Arbeit Inhalte als dynamisch generiert bezeichnet wenn sie zur Laufzeit der Website erzeugt. Dabei lässt sich zwischen Nutzergenerierten Inhalten und automatisch generierten Inhalten, z.b. Statistiken, unterscheiden.
 
 Dynamische Inhalte können Nutzer spezifisch sein, in diesem Fall werden jedem Nutzer bei selber Abfrage andere Inhalte angezeigt.
 
-\section{\cdn}
+\section{\cdn} \label{cdn}
 \todo{Detaillierter Komponenten Beschreiben plus Grafik. Siehe CDN Paper}
 Unter einem \cdn, auch Content Delivery Network versteht man ein Netzwerk in dem sich Clients Inhalte von einer Reihe von Knoten laden. Ein \cdn stellt dem Nutzer Auslieferungs- und Speicherkapazitäten zur Verfügung. Dadurch kann die Last auf dem Ursprungsserver und die Latenz auf Seiten der Nutzer reduziert werden. Die reduzierten Ladezeiten werden unter anderem durch eine bessere geographische Nähe und damit geringerer Netzlaufzeiten erreicht. %TODO: gute definition finden
 
@@ -32,8 +33,6 @@ Infrastruktur basierte \cdns bestehen aus einem Ursprungsservern, der von dem Be
 
 %https://de.wikipedia.org/wiki/Content_Delivery_Network
 \subsection{\pTp basierte \cdns }
-
-
 
 %
 %
@@ -65,6 +64,7 @@ Infrastruktur basierte \cdns bestehen aus einem Ursprungsservern, der von dem Be
 Hybrid \cdns kombinieren \pTp \cdns und Infrastruktur basierte \cdns. Bei hybriden \cdns wird zuerst versucht die Resource über das Peer Netzwerk zu laden. Ist dies nicht möglich wird auf ein Infrastruktur basiertes \cdn zurück gegriffen. Dadurch kann die Last auf dem \cdn verringert und durch die Kombination verschiedener \cdns eine bessere Ausfallsicherheit erreicht werden. Häufig kommt diese Art der \cdns zum Einsatz wenn Ressourcen für Websites mit einem \pTp Ansatz verteilt werden sollen. Da in diesem Kontext nicht alle Teilnehmer die technischen Vorraussetzungen mitbringen um an dem \pTp Netzwerk teilzunehmen ist eine entsprechende alternative Lösung nötig. Da die viele Websites bereits mit einem Infrastruktur basierten \cdn arbeiten ist es naheliegend dieses weiter zu verwenden.
 
 \section{\pTp Netzwerke}
+\todo{p2p überarbeiten}
 Bei einem \pTp Netzwerk handelt es sich um eine Netzwerk Struktur bei der alle Teilnehmer gleichberechtigt sind. Sie bildet damit das gegen Konzept zur klassischen Client-Server Struktur, bei der einer oder mehrere Server einen Dienst anbieten der von Clients genutzt werden kann. In einem \pTp Netzwerk können die Teilnehmer sowohl Dienste anbieten als auch nutzen. Typische wenn auch nicht notwendige Charakteristika sind laut Steinmetz\cite{p2pBook2005}:
 
 \begin{itemize}
@@ -76,7 +76,7 @@ Bei einem \pTp Netzwerk handelt es sich um eine Netzwerk Struktur bei der alle T
   \item Das System ist selbstorganisiert
   \item Die restlichen Systeme müssen nicht skaliert werden und bleiben intakt
 \end{itemize}
-Sie lassen sich einteilen in zentralisierte, reine und hybride \pTp Netzwerke. Zentralisierte Netze haben zur Verwaltung einen Server der unter anderem die Verbindung der Teilnehmer übernimmt. Dadurch ist es möglich eine Verbindung aufzubauen ohne das die IP Adresse im Vorfeld bekannt ist. Reine \pTp Netzwerke haben keinen zentralen Verwaltungsserver. Die Verwaltung des Netzwerkes wird von den Teilnehmern selber übernommen. Das hat zur Folge das eine Verbindung nur möglich ist, wenn die IP Adresse des anderen Teilnehmers bekannt ist. 
+\pTp Netzwerke lassen sich einteilen in zentralisierte, reine und hybride \pTp Netzwerke. Zentralisierte Netze haben zur Verwaltung einen Server der unter anderem die Verbindung der Teilnehmer übernimmt. Dadurch ist es möglich eine Verbindung aufzubauen ohne das die IP Adresse im Vorfeld bekannt ist. Reine \pTp Netzwerke haben keinen zentralen Verwaltungsserver. Die Verwaltung des Netzwerkes wird von den Teilnehmern selber übernommen. Das hat zur Folge das eine Verbindung nur möglich ist, wenn die IP Adresse des anderen Teilnehmers bekannt ist. 
 
 Man unterscheidet zwischen unstrukturierten und strukturierten \pTp Netzwerken. 
 
@@ -128,7 +128,7 @@ Das Signaling koordiniert die Kommunikation der Verbindungen zwischen Peers. Mit
 Der Webrtc Standart legt keine für das Signaling zu verwendende Technologie und Protokolle fest um die Integration mit bestehenden Technologien zu verbessern und es dem Entwicklern zu ermöglichen das für den Anwendungsfall beste Protokoll zu verwenden. Allerdings legt er fest das eine bidirektionale Kommunikation zwischen den \clients notwendig ist.
 
 %https://www.html5rocks.com/en/tutorials/webrtc/infrastructure/#what-is-signaling
-
+%https://courses.cs.washington.edu/courses/cse522/05au/searchingsurvey.pdf
 % For signaling: to enable the exchange of media and network metadata to bootstrap a peer connection.
 %
 \subsection{STUN Server - Simple Traversal of User Datagram Protocol [UDP] Through Network Address Translators}
@@ -323,3 +323,6 @@ Redis Strings sind binary safe, das heißt sie können jegliche Daten, z.B. auch
 
 List:
 Listen enthalten eine geordnete Liste von Strings, in der Reihenfolge in der sie hinzugefügt wurden. Elemente können sowohl vorne als auch hinten in die Liste eingefügt werden
+
+\section{HTTP Live Streaming - HLS}
+Beim HTTP Live Streaming\cite{hls-sdt} werden konventionelle Webserver zur Auslieferung der Video Segmente verwendet. Das Video wird in einzelne Segmente zerlegt die jeweils einen Teil des Videos enthalten. Diese Segmente werden über HTTP an die Nutzer verteilt. Dadurch ist es möglich auf bestehende Verteilungsstrukturen zurückzugreifen. Indem für jedes Segment unterschiedliche Qualitäten vorgehalten werden ist es möglich die Qualität des Video an die Bandbreite des Nutzers anzupassen während das Video abgespielt wird.

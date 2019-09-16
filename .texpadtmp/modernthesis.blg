@@ -33,7 +33,7 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated field_info (elt_size=4) to 10421 items from 5000.
+Reallocated field_info (elt_size=4) to 10699 items from 5000.
 Database file #1: modernthesis-blx.bib
 Database file #2: ../bibliography.bib
 I was expecting a `,' or a `}'---line 101 of file ../bibliography.bib
@@ -360,45 +360,45 @@ Too many commas in name 1 of "Huang, Lin-Shung und Chen, Eric Y. und Barth, Adam
 while executing---line 2774 of file biblatex.bst
 Too many commas in name 1 of "Huang, Lin-Shung und Chen, Eric Y. und Barth, Adam und Rescorla, Eric und Jackson, Collin" for entry huang_chen
 while executing---line 2774 of file biblatex.bst
-You've used 38 entries,
+You've used 40 entries,
             6304 wiz_defined-function locations,
-            1370 strings with 14950 characters,
-and the built_in function-call counts, 164869 in all, are:
-= -- 11105
+            1378 strings with 15270 characters,
+and the built_in function-call counts, 168026 in all, are:
+= -- 11177
 > -- 2243
-< -- 1078
-+ -- 3032
-- -- 772
-* -- 11112
-:= -- 14696
+< -- 1106
++ -- 3034
+- -- 778
+* -- 11254
+:= -- 14751
 add.period$ -- 0
-call.type$ -- 38
-change.case$ -- 37
+call.type$ -- 40
+change.case$ -- 39
 chr.to.int$ -- 118
-cite$ -- 74
-duplicate$ -- 17213
-empty$ -- 17436
+cite$ -- 78
+duplicate$ -- 17660
+empty$ -- 17964
 format.name$ -- 1208
-if$ -- 35104
+if$ -- 35864
 int.to.chr$ -- 0
-int.to.str$ -- 68
+int.to.str$ -- 70
 missing$ -- 0
-newline$ -- 871
+newline$ -- 894
 num.names$ -- 1065
-pop$ -- 12574
+pop$ -- 13220
 preamble$ -- 1
-purify$ -- 618
+purify$ -- 624
 quote$ -- 0
-skip$ -- 5467
+skip$ -- 5603
 stack$ -- 0
-substring$ -- 19676
-swap$ -- 4466
-text.length$ -- 786
-text.prefix$ -- 37
+substring$ -- 19698
+swap$ -- 4617
+text.length$ -- 812
+text.prefix$ -- 39
 top$ -- 1
-type$ -- 1280
+type$ -- 1348
 warning$ -- 0
-while$ -- 1859
+while$ -- 1865
 width$ -- 0
-write$ -- 834
+write$ -- 855
 (There were 150 error messages)

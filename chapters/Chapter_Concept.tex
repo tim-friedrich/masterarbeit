@@ -3,13 +3,15 @@
 %************************************************
 %
 
+\todo{einleitung schreiben}
+
 \section{Netzwerk Strukturen}
 Im Folgenden wird betrachtet wie sich die Netzwerkstruktur der Clients im Kontext der betrachteten Anwendungsfällen - Lernanwendungen in Schulen und interne Unternehmenslivestreams zusammensetzt.
 \subsection{\schulCloud}
-Bei der \schulCloud lassen sich im wesentlichen zwei Anwendungsszenarien unterscheiden. Zum einen die Anwendung im Unterricht. Der Lehrer stellt z.B. eine Aufgabe die mit Hilfe der \schulCloud durchgeführt werden soll. Daraufhin besuchen die Schüler die entsprechende Seite und bearbeiten die Aufgabe. In einem kurzen Zeitfenster laden also mehrer Schüler, während sie sich im gleichen lokalen Netzwerk befinden, die selben Inhalte herunter. Bei dem anderen Szenario wird die \schulCloud außerhalb des Unterrichts genutzt. Z.B. bereitet der Lehrer den Unterricht vor oder die Schüler bearbeiten gestellte Hausaufgaben. Die Nutzer befinden sich nicht zwangsläufig im selben Netzwerk. Auch laden sie die Daten nicht notwendigerweise in einem kurz Zeitfenster sondern verteilt über einen längeren Zeitraum. Es findet jedoch auch keine so starke Auslastung des Netzwerks statt. Deshalb wird im Rahmen dieser Arbeit vor allem das erste Szenario betrachtet.
+Bei der \schulCloud lassen sich im wesentlichen zwei Anwendungsszenarien unterscheiden. Zum einen die Anwendung im Unterricht. Der Lehrer stellt z.B. eine Aufgabe die mit Hilfe der \schulCloud durchgeführt werden soll. Daraufhin besuchen die Schüler die entsprechende Seite und bearbeiten die Aufgabe. In einem kurzen Zeitfenster laden also mehrer Schüler, während sie sich im gleichen lokalen Netzwerk befinden, die selben Inhalte herunter. Bei dem anderen Szenario wird die \schulCloud außerhalb des Unterrichts genutzt, z.B. bereitet der Lehrer den Unterricht vor oder die Schüler bearbeiten gestellte Hausaufgaben. Die Nutzer befinden sich nicht zwangsläufig im selben Netzwerk. Auch laden sie die Daten nicht notwendigerweise in einem kurz Zeitfenster sondern verteilt über einen längeren Zeitraum. Es findet jedoch auch keine so starke Auslastung des Netzwerks statt. Deshalb wird im Rahmen dieser Arbeit vor allem das erste Szenario betrachtet.
 
 \subsection{Slidesync}
-Die Verteilung der Clients auf Netzwerke kann sich bei Slidesync von Event zu Event stark unterscheiden. Da sich Slidesync jedoch hauptsächlich für Streams von mittleren bis großen Unternehmen wendet, lässt sich beobachten das viele der Nutzer sich gemeinsam in einem lokalen Netzwerk, einem Standort, befinden. Um die Last der Unternehmensnetzwerke zu reduzieren, werden bei einigen Unternehmen caching Server eingesetzt. Betrachtet man 10 Events mit caching Infrastruktur im Internen netz stellt man fest das 64\% der Teilnehmer aus dem internen Netz auf das Event zugegriffen haben. In dieser Arbeit wird betrachtet wie die Last auf das interne Netz reduziert werden kann ohne das zusätzliche caching Server eingesetzt werden müssen.
+Die Verteilung der Clients auf Netzwerke kann sich bei Slidesync von Event zu Event stark unterscheiden. Da sich Slidesync jedoch hauptsächlich für Streams von mittleren bis großen Unternehmen wendet, lässt sich beobachten das viele der Nutzer sich gemeinsam in einem lokalen Netzwerk, einem Standort, befinden. Um die Last der Unternehmensnetzwerke zu reduzieren, werden bei einigen Unternehmen caching Server eingesetzt. Betrachtet man 10 Events mit caching Infrastruktur im Internen netz stellt man fest das 64\% der Teilnehmer aus dem internen Netz auf das Event zugegriffen haben.\todo{unklar formuliert ref auf evaluation} In dieser Arbeit wird betrachtet wie die Last auf das interne Netz reduziert werden kann ohne das zusätzliche caching Server eingesetzt werden müssen.
 
 \subsection{Gemeinsamkeiten}
 
@@ -39,7 +41,7 @@ Da sowohl im Kontext der Schule als auch bei Unternehmen kein Wissen im Bereich 
 
 Um dies zu erreichen wird eine Kombination aus Webrtc und Service Workern verwendet. Der Javascript Code lässt sich als ein Plugin einbinden und erfordert nur geringen Konfigurationsaufwand seitens der Anwendungsentwickler. Da sich die Art der Seitennutzung von Anwendung zu Anwendung jedoch stark unterscheidet muss das Peer Meshing serverseitig für jede Anwendung geschrieben werden. So kann Domainenspezifisches wissen ausgenutzt werden um eine bessere überlappung der von den Clients benötigten Ressourcen zu erreichen. 
 
-Das vorgestellte \pTp \cdn lässt sich in drei teile Gliedern. Den Service Worker - der für das abfangen und cachen von Anfragen zuständig ist - das Javascript Plugin - das die Webrtc Kommunikation übernimmt - und den Signaling Server - der für das Peer Mehsing verantwortlich ist. 
+Das vorgestellte \pTp \cdn lässt sich in drei Komponenten gliedern. Den Service Worker - der für das Abfangen und Zwischenspeichern von Anfragen zuständig ist - das Javascript Plugin - das die Webrtc Kommunikation übernimmt - und den Signaling Server - der für das Peer Mehsing verantwortlich ist. 
 
 Die eingesetzte Technologie zur Übertragung von Daten zwischen Browsern ist WebRTC. WebRTC ist ein offener Standard und ermöglicht es Browser paarweise zwecks Datenaustausch zu verbinden. Der große Vorteil dieser Technologie ist, dass sie direkt von modernen Browsern unterstützt wird, wodurch keine zusätzliche Software installiert werden muss. Konkret werden Webrtc DataChannel genutzt.
 
@@ -355,7 +357,7 @@ Alternativ kann auch auf die Angabe eine NAT-Servers beim Webrtc Verbindungsaufb
 Das Vergleichen von IP-Adressen hat den Vorteil das bereits zur Einteilung in die Peer meshes bekannt ist in welchem lokalen Netzwerk sich der Peer befindet. Dadurch können die Peers effizienter in die Meshes eingeteilt werden. Jedoch muss das Subnetz bekannt sein und in der Anwendung konfiguriert werden. Auch muss der Anwendung die IP-Adresse des Clients bekannt sein, was im Fall von Schul-Cloud aus Datenschutzgründen nicht möglich ist.
 
 \section{Umgang mit älteren Browsern}
-Um sicherzustellen das das Nutzererlebnis für Teilnehmer mit nicht unterstützen Browser Versionen nicht negativ beeinträchtigt wird, überprüft das \cdn bevor es initialisiert wird ob der Browser alle notwendigen Funktionalitäten unterstützt. Dazu wird der System Test verwendet. Wird der Browser nicht unterstützt so wird die Initialisierung des Scripts abgebrochen. 
+Um sicherzustellen das das Nutzererlebnis für Teilnehmer mit nicht unterstützen Browser Versionen nicht negativ beeinträchtigt wird, überprüft das \cdn bevor es initialisiert wird, ob der Browser alle notwendigen Funktionalitäten unterstützt. Dazu wird der System Test(siehe \ref{system-test}) verwendet. Wird der Browser nicht unterstützt so wird die Initialisierung des Scripts abgebrochen. 
 Kann eine Verbindung zu einem Teilnehmer nicht aufgebaut werden oder bricht sie ab so wird er aus der eigenen Liste der Teilnehmer gelöscht, so das nicht versucht wird Anfragen über ihn zu beantworten. 
 Kann das \cdn nicht erfolgreich initialisiert werden, sei es weil der Browser nicht unterstützt wird oder weil die Netzwerk Einstellungen dies nicht zulassen, so werden Anfragen so beantwortet als wäre das \cdn nicht vorhanden.
 
@@ -368,98 +370,3 @@ Kann das \cdn nicht erfolgreich initialisiert werden, sei es weil der Browser ni
 %%was ist open source
 %%bereitstellung für die Öffentlichkeit
 %%
-
-\section{Offline Support}
-
-Service Worker werden häufig im Rahmen von Offline-Support für Websites genannt. Mit Hilfe der Caching Api lassen sich Internetseiten speichern und später, wenn kein Internet vorhanden ist, wieder abrufen. Insbesondere für Schulen ist die Interessant, da die Internetanbindung in Schulen in vielen Fällen nach wie vor unzureichend ist. Die Sonderstudie Digital der Initiative befragte 2016 1426 Lehrer von denen 4\% Angaben das es an Ihrer Schule kein Internet gibt. In Rund 50\% der befragten Lehrer gab an das es Internet nur in bestimmten Räumen gebe.\cite{sonderstudie_digital} In Kombination mit einem \pTp \cdn lässt sich dies nutzen um Internetseiten und Ressourcen, auch im Falle eines Internetausfalls oder falls kein Internet vorhanden ist, zu laden. Insbesondere das Scenario das der Lehrer die Seite bzw. Inhalte zu Hause vor lädt und im Anschluss den Schülern bereit stellt erscheint interessant. Tobias Wollowski beschreibt in seiner Arbeit "Optimierung von Web-Anwendungen für den Einsatz im Klassenzimmer"\cite{tobi} Möglichkeiten zur Nutzung von Offline Caches im Unterricht. Im Folgenden wird Konzeptionell beschrieben wie das vorgestellte \pTp \cdn angepasst werden kann um auch im Falle einer nicht vorhandenen Internetanbindung funktionieren kann.
-
-Durch die Verwendung von Service Workern als Proxy und Cache bietet das \cdn eine gute Grundlage für offline Support. Es stellt die Möglichkeit bereit Inhalte aus dem Cache an andere Nutzer zu verteilen. Die Größte Herausforderung bei der Offline Nutzung stellt das Signaling, also das Verbinden von Nutzern, dar. Um dies zu bewerkstelligen ist bei der gewählten Implementierung ein Websocket Server notwendig. Ist die Verbindung bereits hergestellt, z.B. vor einem Internetausfall, so können bereits bei der momentanenen Implementierung Inhalte in dem Peer Mesh verteilt werden. Ist dies nicht der Fall so muss im lokalen Netzwerk ein Signaling Server bereit gestellt werden, so das dieser auch ohne Internet Verbindung erreichbar ist. Auch muss der Schüler bestimmte Ressourcen wie das \pTp \cdn schon im Vorfeld geladen, und mit Hilfe eines Service Workers gespeichert, haben. Sind die Ips einiger Nutzer bereits bekannt, so ist es ebenfalls denkbar das weitere Signaling über Webrtc auszuhandeln. Dazu ließen sich Algorithmen wie Kademlia\cte{kademlia} zum auffinden von Peers verwenden. Der Größe Nachteil ist jedoch das initial die IP Adressen von Nutzern bekannt sein muss. Hassan Ijaz\cite{signaling_no_i_patent} beschreibt in verschieden Möglichkeiten um \webrtc Verbindungen auch ohne Internet aufzubauen. Unter anderem ist es möglich \webrtc Verbindungen mit Hilfe von QR Codes zu initialisieren. Der Lehrer könnte den Schülern einen QR code, oder in einer anderen Codierung, ein SDP Packet bereitstellen mit dessen Hilfe die Schüler eine \webrtc Verbindung zum Lehrer herstellen können. Anschließend fungiert der Lehrer als Signaling Server für die Schüler über \webrtc, so das Verbindungen zwischen den Schülern hergestellt werden können.
-
-Offline Support ist für Livestreams vor allem Interessant um die Ausfallsicherheit zu erhöhen. Slidesync lädt 18 Sekunden Video vor bevor es abgespielt wird. Durch Verwendung des \pTp \cdn können kürzere Ausfälle überbrückt werden, so das zumindest ein Teil der Nutzer weiterhin das Video über andere Nutzer Laden und verteilen können. Ein Signaling ist nicht notwendig da die Verbindungen bereits hergestellt wurden. Da Unternehmen in aller Regel über ausreichende Internetverbindungen Verfügen und es sich um Live Inhalte handelt ist ein reiner Offline Support eher von geringem Interesse. 
-
-%\begin{itemize}
-%	\item Motivation: Internet in Schulen ist nicht immer verfügbar
-%	\item lehrer lädt inhalte zuhause vor
-%	\item stellt sie schülern zur Verfügung
-%	\item wie funktionieren offline webanwendungen
-%	\item Service Worker
-%	\item prefetching
-%	\item Live Streams: Ausfallsicherheit wird erhöht.
-%	\item quasi bei design
-%	\item Resourcen werden gecached und sind offline verfügbar
-%	\item Tobias arbeit Refernzieren
-%	\item Übertragung im lokalen Netzwerk möglich wenn verbindung aufgebaut ist
-%	\item Signaling müsste in lokalem netzwerk sein z.b. Rechner vom Lehrer
-%	\item signaling könnte über webrtc erfolgen z.b. über 
-%	\item kademlia routing indem Peers als vermittler fungieren
-%	\item 	evt. browser plugin
-%	\item 	Wie das routing machen?
-%	\item Offline scenario:
-%	\item 	Lehrer Lädt ressourcen vor und macht sie für schüler verfügbar
-%	\item 	Kein Internet vorhanden
-%	\item 	Schüler laden Ressourcen von Lehrer
-%\end{itemize}
-
-\section{Security}
-Bei der Verwendung von \pTp \cdns bringen einige Security Herausforderungen mit sich. Da dies nicht Schwerpunkt der Untersuchungen im Rahmen dieser Arbeit ist wird eine vertrauenswürdige Umgebung angenommen. Dennoch werden im Folgenden Herausforderungen im Bereich der Sicherheit bei der Verwendung eines \pTp \cdns beleuchtet und mögliche Lösungen vorgestellt.
-
-Eines der Grundprinzipien des Internet Sicherheits Models ist das Nutzer bedenkenlos Internet Seiten aufrufen und dort Scripts laden können.\cite{huang_chen} Dieses Versprechen an den Nutzer muss der Browser garantieren um eine sichere Benutzung des Internet zu gewährleisten. Dazu werden Scripts in Sandboxes ausgeführt.\cite{chrome_sandbox} Ein Script kann nur im Kontext der aktuellen Seite ausgeführt werden und Anfragen die über die aktuelle Seite hinausgehen müssen vom Quellen Server explizit dafür frei gegeben werden.\cite{cors_std} 
-
-Service Worker arbeiten nach dem Selben Prinzip. Sie haben keinen Zugriff auf das DOM und können nur Anfragen verarbeiten die unterhalb des Ihnen zugewiesenen Scopes, der Seite die sie geladen hat, liegen.\cite{moz_sw} Anfragen die über einen Service Worker behandelt werden und nicht der Same-Origin Policy folgen müssen mit dem Entsprechenden CORS Header versehen sein um geladen zu werden. Service Worker können nur über HTTPS geladen werden. Wird eine Ressource neu vom Server in das \pTp \cdn geladen so muss sie den gleichen Sicherheitsvorkehrungen des Browsers entsprechen wie jede andere Anfrage. Wird eine Anfrage über das \pTp \cdn selbst beantwortet so greifen diese Mechanismen jedoch nicht. Es ist möglich das ein bösartiger Client eine Ressource verändert bevor er sie an einen Client sendet, der diese dann lädt. 
-
-Um die Integrität einer Ressource stellen Browser Funktionalitäten bereit die auf Hashes der Ressource beruhen die bei Anfrage mitgesendet werden.\cite{sub_res_integrity} Dies wird bei Anfragen automatisch durch den Browser übernommen. Bei der Übertragung mittels \webrtc muss dies die Anwendung selbst übernehmen.  
-
-Durch die Verwendung von nativen Browser Funktionalitäten entfällt die Installation von Plugins oder Anwendungen. Dadurch entfällt das Risiko von Malware in Installationsdateien. Umso wichtiger ist jedoch das ein Vertrauenswürdiger Browser verwendet wird. Wurde der Browser aus einer unsicheren Quelle geladen, so kann eine sichere Verwendung des \cdns nicht gewährleistet werden, da die Sicherheitskonzepte auf der Implementation des Browser beruhen.\cite{webrtc-security}
-
-Wird HTTPS bei der zugrundeliegenden Anwendung verwendet, so wird auch der Datenverkehr über Webrtc mittels TLS verschlüsselt.\cite{rtcweb-security} Daten die mittels \webrtc Datachannels gesendet werden, werden über DTLS(Datagram Transport Layer Security) übertragen. Dies geschieht auch falls ein TURN Server verwendet wird. Dadurch sind die Verbindungen Ende-zu-Ende verschlüsselt.
-
-Die Websocket Verbindung die für das Signaling verwendet wird sollte ebenfalls verschlüsselt werden. Die Anwendung muss außerdem Sicherstellen, dass sich keine Clients, die nicht autorisiert sind mit sich deinem Websocket Channel verbinden, da sie ansonsten in der Lage sind Ressourcen anzufragen für die sie keine Berechtigung haben, oder schadhafte Scripts an Nutzer senden könnten.
-
-\begin{figure}[!h]
-	\centering
-	\includegraphics[width=0.8\textwidth]{figures/user_auth}
-	\caption[A Figure Short-Title]{IdP basierter Verbindungsaufbau\cite{rtcweb-security}}
-	\label{fig:user_auth}
-\end{figure}
-
-Ein weiteres in dem Schul Kontext zu betrachtendes Szenario ist die Verwendung eines Rechners von mehreren Nutzern. Viele Schulen haben Computerräume in denen Rechner stehen die von verschiedenen Klassen und Schülern verwendet werden. Zwar wäre es prinzipiell möglich den gesamten cache beim Login/logout zu löschen, jedoch würde das die Cache Trefferrate negativ beeinflussen. Um dies zu umgehen können die Ressourcen verschlüsselt gespeichert werden. Wird dazu ein Schlüssel verwendet der nur im aktuellen Scope verfügbar ist so kann er sie nur entschlüsselt werden falls der Nutzer Zugriff auf den Scope der Resource hat. Ein unbefugtes auslesen des Caches ist somit zwar möglich, jedoch sind die Daten für den Angreifer unbrauchbar.
-
-Auch wenn der Signaling Server einen Teil der Nutzer Authentizität sicher stellt so sollte diesem nicht vollkommen vertraut werden. Der Signaling Server kann lediglich sicher stellen das ein Nutzer in eine bestimmte sicherheitsklasse gehört, da er nur den Zugriff auf einen Websocket Channel sicher stellt. Ist es darüber hinaus notwendig die Autentizität eines Nutzers zu gewährleisten können Web basierte Identitäts Provider(IdP) verwendet werden. Diese fungieren als vertrauenswürdige Partei und können die Identität eines Nutzers bestätigen. Abbildung \ref{fig:user_auth} zeigt die Struktur einer solchen Verbindung.
-
-Durch die Verwendung von \webrtc, bei der Verwendung von STUN Servern besteht das Risiko eines IP-Leaks.\cite{rtcweb-security} Es ist prinzipiell möglich die IP-Adresse eines Nutzers zu ermitteln. Eine mögliche Gegenmaßnahmen ist die Deactivierung von Webrtc. Dies kann entweder in der Browser Konfiguration oder durch Plugins geschehen. Jedoch ist dann die Verwendung von \webrtc nicht mehr möglich. Um eine direkte Verbindung zu einem anderen Nutzer aufzubauen ist es notwendig dessen IP-Adresse zu ermitteln. Stellt die Gefahr eines IP-Leaks ein großes Risiko in der betrachteten Domäne da, so kann das \pTp \cdn nicht verwendet werden. Im Rahmen dieser Masterarbeit wird jedoch nur die Verbindung im Lokalen Netzwerk, ohne die Verwendung eines STUN Servers untersucht. Es besteht also lediglich die Gefahr das die lokale IP Adresse eines Nutzers ermittelt werden kann - Nicht jedoch dessen öffentlich IP Adresse.
-
-\section{DRM licencing}
-\begin{itemize}
-	\item unsicher welche relevanz das hat
-\end{itemize}
-
-
-%\begin{itemize}
-%	\item http://www.adambarth.com/papers/2011/huang-chen-barth-rescorla-jackson.pdf [huang_chen]
-%	\item https://blog.cryptographyengineering.com/2012/01/10/attack-of-week-datagram-tls/
-%	\item https://tools.ietf.org/html/draft-ietf-rtcweb-security-05 [rtcweb-security]
-%	\item ---
-%	\item Vertrauensbeziehung zwischen Clients
-%	\item Websocket channels müssen gesichert werden!
-%	\item Trust enviroment
-%	\item resource integrity
-%	\item hash
-%	\item in logik
-%	\item 
-%	\item dateien im local cache verschlüsseln nur entschlüsseln durch kurs
-%	\item mehrere an einem Rechner
-%\end{itemize}
-%\begin{itemize}
-%	\item Owasp
-%%	\item https://www.owasp.org/images/9/90/OWASP_Top_10-2017_de_V1.0.pdf
-%	\item IP Leak möglich
-%	\item Stun Server kann nach IP Adresse fragen
-%	\item Über js auslesbar
-%	\item Pluckins können das blocken
-%	\item media.peerconnection.enabled ausschalten
-%	\item --> kein webrtc mehr möglich
-%	\item non repudiation
-%	\item accountability
-%
-%\end{itemize}
-

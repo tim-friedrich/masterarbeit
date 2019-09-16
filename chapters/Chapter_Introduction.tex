@@ -17,7 +17,7 @@ In den letzten Jahren hat sich das verwendete Datenvolumen des Internets immer w
 
 Immer mehr Unternehmen halten Ihre Hauptversammlungen, Kundgebungen, und Pressemitteilungen über Live Streams im Internet ab. Dies stellt sie vor das Problem das trotz oftmals guter Internetanbindung zu viele Mitarbeiter das Video über die Internetanbindung laden müssen, was zu einer vollständigen Auslastung des WANs führen kann. Dies wiederum kann zur Folge haben, dass ein Arbeiten für die restliche Belegschaft schwierig bis unmöglich wird. Der dadurch entstandene Schaden ist oft nur schwer zu beziffern, beläuft sich aber schon bei Mittelständischen Unternehmen auf bis zu 25000 Euro pro Stunde.\cite{zero-internet-schaden}
 
-Nicht nur bei Unternehmen sondern auch in Schulen ist die Digitalisierung auf dem Vormarsch. Zunehmend werden Online-Lernplattformen im Unterricht eingesetzt. Diese Entwicklung wird jedoch stark ausgebremst durch fehlende Internet Bandbreiten. Viele Schulen haben eine schlechtere Internetanbindung als viele privat Haushalte.\cite{sonderstudie_digital} Um Inhalte anzeigen zu können, muss jeder Schüler einer Klasse sich diese über das WAN aus dem Internet herunterladen. Da jedoch Schüler in derselben Klasse oft die gleichen Inhalte benötigen, kann Bandbreite gespart werden, indem diese Inhalte nur einmal über das Internet geladen und anschließend im lokalen Netzwerk verteilt werden.
+Nicht nur bei Unternehmen sondern auch in Schulen ist die Digitalisierung auf dem Vormarsch. Zunehmend werden Online-Lernplattformen im Unterricht eingesetzt. Diese Entwicklung wird jedoch stark ausgebremst durch fehlende Internet Bandbreiten. Viele Schulen haben eine schlechtere Internetanbindung als viele privat Haushalte.\cite{sonderstudie_digital} Um Inhalte anzeigen zu können, muss jeder Schüler einer Klasse sich diese über das WAN aus dem Internet herunterladen. Da jedoch Schüler in derselben Klasse oft die gleichen Inhalte benötigen, kann Bandbreite gespart werden, indem diese Inhalte nur einmal über das Internet geladen und anschließend im lokalen Netzwerk verteilt werden. Eine gängige Methode um dies zu erreichen ist die Installation von lokalen Schulservern oder Caching Appliances. Diese Lösungen bringen jedoch einige Nachteile mit sich. So muss eine Schule die fachlichen und räumlichen Kapazitäten zur Installation und Wartung der Server bereit stellen. 
 
 Beide Anwendungsfälle haben gemeinsam das viele Nutzer die selben Inhalte zur annähernd gleichen Zeit benötigen und zum aktuellen Zeitpunkt häufig über das Internet laden müssen. Diese Zeitliche und inhaltlich Lokalität kann genutzt werden um die benötigte Bandbreite zu reduzieren, indem die Inhalte nur einmal über das WAN geladen und anschließend im lokalen Netzwerk verteilt werden.
 
@@ -43,16 +43,22 @@ Die folgende Arbeit betrachtet den Anwendungsfall des Live-Streaming und den Ein
 %\label{tab:first-table}
 %\end{table}
 
-\section{Projekt \schulCloud}
+\section{HPI \schulCloud}
 %Das Projekt \schulCloud\footnote{https://schul-cloud.org/} ist eine webbasierte Lehr- und Lernplattform dessen Ziel es ist die Digitalisierung an Schulen zu fördern. Zusammen mit dem nationalen Excellence-Schulnetzwerk(MINTEC) wurde das Projekt vom \hpi 2016 ins leben gerufen. Im Mai 2017 startet die Pilotphase des Projektes mit insgesamt 27 Schulen. 
 %Die Plattform soll Lehrer dabei unterstützen Unterrichtsstunden vorzubereiten, durchzuführen und Aufgaben an die Schüler zu verteilen. Auch die Verteilung von externen Materialien wie Bücher für die Schüler ist möglich.
 
 Das Projekt \schulCloud\footnote{https://schul-cloud.org/} ist ein Gemeinschaftsprojekt des \hpi und des nationalen Execellence-Schulnetzwerkes (MINT-EC). Im Mai 2017 startete die Pilotphase des Projektes mit insgesamt 27 Schulen. Ziel des Projektes ist die Förderung der Digitalisierung in Schulen. 
-Zu diesem Zweck wurde eine Web basierte Plattform entwickelt die Lehrer und Schüler bei der Unterrichtsvorbereitung, Durchführung und Nachbereitung unterstützen soll. 
+Zu diesem Zweck wurde eine Webbasierte Plattform entwickelt die Lehrer und Schüler bei der Unterrichtsvorbereitung, Durchführung und Nachbereitung unterstützen soll. 
 
-Lehrer können Kurse anlegen und diese nutzen um Materialien sowie Aufgaben zu verteilen. Schülern ist es über die Plattform möglich Lösungen für Aufgaben einzureichen und ihr Ergebnis einzusehen. Über einen Kalender können sie Ihren Stundenplan abrufen.
+Lehrer können Kurse anlegen und diese nutzen, um Materialien sowie Aufgaben zu verteilen. Schülern ist es über die Plattform möglich, Lösungen für Aufgaben einzureichen und ihr Ergebnis einzusehen. Über einen Kalender können sie Ihren Stundenplan abrufen.
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.8\textwidth]{figures/screenshot_schul-cloud}
+	\caption[A Figure Short-Title]{Schul-Cloud Kurs Seite}
+	\label{fig:screenshot_schul-clould}
+\end{figure}
 
-Das Projekt wird als Open Source Projekt zur Verfügung gestellt und basiert auf einer Microservices Architektur. Bei diesem Architekturmuster wird die Software aus unabhängigen Softwarekomponenten(Services) zusammengesetzt. Die Komponenten kommunizieren über Schnittstellen, sind aber darüber hinaus eigenständige Entitäten und können von beliebig vielen anderen Komponenten verwendet werden. Durch die Verwendung von Microservices wird eine einfachere Anbindung an bestehende Infrastrukturen ermöglicht. Des weiteren können einzelne Services ersetzt werden um die Plattform an die Anforderungen der Schulen anzupassen. Bereitgestellt wird die Plattform mit Hilfe von Cloud Hosting, bei dem die Infrastruktur zentral und nicht von jeder Schule bereitgestellt wird. Dies ermöglicht eine einfache Skalierung. Neben der Web Anwendung existieren native Apps für Android und IOS.
+Das Projekt wird als Open Source zur Verfügung gestellt und basiert auf einer Microservices Architektur. Bei diesem Architekturmuster wird die Software aus unabhängigen Softwarekomponenten(Services) zusammengesetzt. Die Komponenten kommunizieren über Schnittstellen, sind aber darüber hinaus eigenständige Entitäten und können von beliebig vielen anderen Komponenten verwendet werden. Durch die Verwendung von Microservices wird eine einfachere Anbindung an bestehende Infrastrukturen ermöglicht. Des weiteren können einzelne Services ersetzt werden um die Plattform an die Anforderungen der Schulen anzupassen. Bereitgestellt wird die Plattform mit Hilfe von Cloud Hosting, bei dem die Infrastruktur zentral und nicht von jeder Schule bereitgestellt wird. Dies ermöglicht eine einfache Skalierung. Neben der Web Anwendung existieren native Apps für Android und IOS.
 
 %\note{unsicher wie detailliert ich hier werden soll}
 
@@ -104,8 +110,8 @@ Slidesync\footnote{www.slidesync.com} ist eine Live Streaming Plattform des Unte
 \section{Ziele}
 \subsection{Forschungsfrage}
 \begin{itemize}
-	\item Wie können in einem Netzwerk mit geringerer Internetanbindung Datenintensiven Ressourcen ausgeliefert werden?
-	\item Eignet sich ein Peer to Peer Ansatz um die benötigte Internetbandbreite von Schulen und Unternehmen im Rahmen von Livestreams zu verbessern?
+	\item Wie können in einem Netzwerk mit begrenzter Internetanbindung Datenintensiven Ressourcen ausgeliefert werden?
+	\item Eignet sich ein Peer to Peer Ansatz um die benötigte Internetbandbreite von Schulen im Unterricht und Unternehmen im Rahmen von Livestreams zu verbessern?
 \end{itemize}
 Diese Arbeit wird versuchen die Frage: 
 Wie können in einem Netzwerk mit geringerer Internetanbindung Datenintensiven Ressourcen ausgeliefert werden? 
