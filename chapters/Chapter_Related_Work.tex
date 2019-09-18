@@ -136,7 +136,6 @@ Der Webrtc Standart legt keine für das Signaling zu verwendende Technologie und
 Da die Anzahl von IPv4 Adressen begrenzt ist, verwenden die meisten Subnetze NATs. Das hat zur Folge das diese Clients nicht wissen wie über welche IP Adresse und welchen Port sie erreichbar sind. Daher ist der Einsatz von STUN Servern nötig um einen Verbindungsaufbau zu ermöglichen. Stun Server überprüfen eingehende Anfragen auf IP Adresse und Port und senden diese Informationen zurück an den Client, der somit in der Lage ist diese Information weiter zureichen und damit auch außerhalb seines lokalen Netzwerkes erreichbar ist. Das STUN-Protokoll ist im RFC 3489\cite{rfcStun} definiert und ist nicht auf Webrtc beschränkt.
 
 
-% TODO: evtl NATs erklären
 %not enough IPv4 addresses
 %→ most clients behind NATs, not reachable directly by IP address
 %

@@ -1,6 +1,5 @@
 \chapter{Evaluation}\label{ch:evaluation}
-\todo{einleitung schreiben}
-
+Um die Effektivität und Funktion des \cdns zu evaluieren wurden simulierte tests so wie tests unter echten Bedingungen durchgeführt. Neben der Betrachtung der Effektivität ist es ebenfalls wichtig sicherzustellen, das das \cdn von den Nutzern verwendet werden kann dazu wurden die verwendet Browser der Nutzer evaluiert und betrachtet wie viele Nutzer einen geeigneten Browser verwenden. Da die Internetanbindung an Schulen in vielen Fällen nicht gegeben ist wird erläutert wie eine reine Offline Nutzung des \cdns gewährleistet werden könnte. Eine Betrachtung der Implikationen für die Sicherheit bei der Verwendung des \cdns befindet sich am Ende des Kapitels.   
 \section{Browser compatbility}
 \begin{table}[!htb]
 \begin{center}
@@ -143,19 +142,7 @@ Um die Browser Nutzung von SlideSync Nutzern zu evaluieren wurden je drei Events
 
 \section{Simulierter Workload}
 
-Einleitung \todo{Einleitung schreiben}
-\subsection{Webrtc Verbindungsaufbau}
-
-\begin{itemize}
-	\item Page load bis cdn is ready
-	\item verschiedene Anzahl an Peers im Netzwerk 
-\end{itemize}
-%\subsection{Chunking}
-%\begin{itemize}
-%	\item messen des aufwandes für chunking und wieder zusammensetzen
-%	\item woher kommt der zusätzliche Aufwand bei größen dateien??
-%	\item limit ist der durchsatz nicht das chunking
-%\end{itemize}
+Im Folgenden werden verschiedene Tests zur Evaluation des \pTp \cdns vorgestellt und erläutert. Um zu Untersuchen wie sich das \cdn unter verschiedenen Bedingungen verhält wurde die Ladezeit verschieden großer Dateien gemessen, livestreams mit simulierten Nutzern getestet und eine Schulklasse simuliert. Um möglichst viele Variablen kontrollieren zu können wurden die Tests unter Laborbedingungen durchgeführt und alle Nutzer simuliert.
 
 \subsection{Ladezeiten von verschiedenen Dateigrößen}
 \begin{figure}[!h]
@@ -203,7 +190,6 @@ Die Teilnehmer luden die Event Seite während das Event noch nicht Live geschalt
 	\caption[A Figure Short-Title]{Vergleich der Bearbeitung nach Art in einem Mesh}
 	\label{fig:single_mesh_line}
 \end{figure}
-\todo{Datenpunkte mehr ersichtlich machen}
 
 Abbildung \ref{fig:single_mesh_line} zeigt die wie sich das \pTp \cdn bei steigender Teilnehmerzahl mit einem Mesh verhält. Bis 50 Teilnehmern hat das \cdn ein lineares Verhalten hinsichtlich bearbeiteter Anfragen. Ab 75 Teilnehmern ist zu sehen das die Gesamtanzahl der verarbeiten Anfragen einbricht. Die CPU Last der Test Server stieg auf 100\% und die Clients waren dadurch nicht mehr in der Lage an dem \cdn Teilzunehmen und Anfragen zu bearbeiten. Der Kommunikationsaufwand die Peers in dem Mesh über Veränderungen des Caches zu Benachrichtigen wurde zu groß. Zwar wurden bei 125 Teilnehmern wieder mehr Anfragen vom \cdn verarbeitet, jedoch stieg der Anteil der Anfragen die über den Server liefen weiter an. Die höhere Anzahl an Anfragen die vom \cdn bearbeitet wurden ist vor allem darauf zurück zu führen, dass die Verbindungen zwischen den Peer durch die hohe Last teilweise unterbrochen wurde, wodurch sich die Last bei den Teilnehmern verringerte.   
 
@@ -252,10 +238,6 @@ Um zu testen wie sich das \cdn bei größeren Teilnehmerzahlen verhält wurden T
 
 Abbildung \ref{fig:peer_vs_server_over_time} zeigt eine zeitliche Darstellung von beginn des Streams bis zum Ende des Streams für 30 Teilnehmer in einem Mesh. Es ist gut zu sehen, dass zu Beginn des Tests mehr Anfragen über die Server beantwortet werden müssen. Auch die Gesamtanzahl der Anfragen ist zu beginn des Tests höher als im späteren Verlauf. Nachdem die Seite geladen ist laden alle Teilnehmer drei HLS Segemente vor. Diese HLS Segmente werden gleichzeitig geladen, wodurch sich die Wahrscheinlichkeit erhöht das mehere Teilnehmer annähernd gleichzeitig die selbe Ressource anfragen und kein anderer Teilnehmer sie bereits geladen hat. 
 
-
-\todo{Rahmenbedingungen müssen klar sein}
-
-
 %\begin{itemize}
 %	\item Verhältnisse berechnen
 %	\item evtl ramp up anschauen
@@ -270,58 +252,42 @@ Abbildung \ref{fig:peer_vs_server_over_time} zeigt eine zeitliche Darstellung vo
 %\end{itemize}
 
 \subsection{Schul-Cloud}
-
-\begin{itemize}
-	\item Testsetup
-	\item 30 Schüler
-	\item 3 Clicks
-	\item Dashboard
-	\item kurs liste
-	\item kurs
-	\item Thema
-	\item hauptsächlich css etc
-	\item 1 Server macht anfragen
-	\item verschieden zufällig gewählte startzeiten in verschiedenen Zeiträumen
-	\item wo turbolinks erwähnen?
-\end{itemize}
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=0.8\textwidth]{figures/sc_stacked_interval}
-	\caption[A Figure Short-Title]{Vergleich der Anfragen nach Anfrageart}
-	\label{fig:15_clients_network}
+	\caption[A Figure Short-Title]{Anfragearten gegliedert nach Ladeintervall}
+	\label{fig:sc_stacked_interval}
 \end{figure}
-
-\begin{itemize}
-	\item Kein Großer unterschied zwischen den Zeiträumen
-\end{itemize}
+Um die Verwendung des \cdns in Schulen zu evaluieren wurde simuliert das 30 Schüler im Rahmen des Unterrichts auf die Seite Dashboard Seite zugreifen, die Kurs Liste Aufrufe einen Kurs Öffnen und ein Thema auswählen. Alle Clients wurden von einem Server aus gestartet und riefen die Seite zu einem zufälligen Zeitpunkt innerhalb verschiedener Intervalle auf. 
 
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=0.8\textwidth]{figures/sc_first_vs_later}
-	\caption[A Figure Short-Title]{Vergleich der Anfragen nach Anfrageart}
-	\label{fig:15_clients_network}
+	\caption[A Figure Short-Title]{Erstmaliges Laden vs. Navigation}
+	\label{fig:sc_first_vs_later}
 \end{figure}
-\todo{Beschriftungen}
+Abbildung \ref{fig:sc_stacked_interval} zeigt die Verteilung der Anfragen nach Anfrage Art. Es ist gut zu sehen das die größe des Intervalls indem die Schüler auf die Seiten zugriffen keinen großen Einfluss auf die Effektivität des \pTp \cdns hatte. Zwar war die Effektivität bei einem Zugriff aller Schüler innerhalb einer Sekunde geringfügig schlechter, jedoch fällt dies kaum ins Gewicht. Bei einem Intervall von mehr als 5 Sekunden ist kaum noch eine Verbesserung der Effektivität zu beobachten.
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.8\textwidth]{figures/page_load_sc}
+	\caption[A Figure Short-Title]{Seitenladezeiten}
+	\label{fig:page_load_sc}
+\end{figure}
 
-\begin{itemize}
-	\item First load vs navigationen
-	\item First load schlechte abdeckung -> erst möglich wenn cdn initialisiert ist
-	\item navigationen sehr hohe abdeckung
-	\item swa/turbolinks notwendig
-\end{itemize}
+Jedoch ist die Effektivität des \cdns bei den durchgeführten Tests bei nur ca. 38\%. Betrachtet man den Vergleich von dem ersten Laden der Seite und den folgenden Navigationen wird schnell ersichtlich worauf dies zurück zu führen ist. Beim ersten laden der Seite, einem kompletten Page Load, werden Anteilig deutlich mehr Anfragen gestellt als bei den folgenden Navigationen. Da das \cdn jedoch noch nicht komplett geladen ist kann nur ein kleiner Anteil der Anfragen durch das \cdn beantwortet werden. Da die Navigationen über Turbolinks gehandhabt wurden war kein kompletter Page Load notwendig. Das \cdn war zwar von Beginn der Navigation an verfügbar, jedoch war Turbolinks in der Lage einen Großteil der Anfragen zu vermeiden, da es sich um Assets handelte die für beide Seiten gleich waren. Ein erneutes Laden dieser Ressourcen war demnach nicht notwendig. Bei den Navigationen konnte das \cdn eine Effektivität von annähernd 100\% erreichen. 
 
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.8\textwidth]{figures/request_load}
+	\caption[A Figure Short-Title]{Durchschnittliche Ladezeit von Anfragen nach Bearbeitungsart}
+	\label{fig:request_load}
+\end{figure}
 
-\begin{itemize}
-	\item weiteres szenario 
-	\item 1 User hat geladen(Lehrer)
-	\item rest kommt
-	\item inhalt mit pdf
-
-\end{itemize}
+Abbildung \ref{fig:page_load_sc} zeigt einen vergleich der Seitenladezeiten mit und ohne verfügbare Peers. Hierbei gilt zu beachten das für den ersten Page Load andere Metriken verwendet werden müssen als bei den Navigationen. Turbolinks greift in den Ladeprozess des Browsers ein wodurch Metriken die von den Browsern zur Verfügung gestellt werden, im Falle einer Navigation, incorrekte Daten zurück geben. Umgekehrt stellt Turbolinks zwar ebenfalls Methodiken zur Messung von Metriken bereit, jedoch geben diese für den ersten Page Load keine Ergebnisse zurück da Turbolinks diese Metriken selbst erfasst. Betrachtet man beide Fälle separat ist ein Vergleich jedoch möglich. Zur Messung des ersten Page Loads wurde die Time to Interactive gemessen. Es ist gut zu sehen das das \pTp \cdn einen gewissen Mehraufwand bedeutet. Bei den folgenden Navigationen kann jedoch eine Verbesserung der Ladezeit beobachtet werden. Dies ist vor allem auf die schnellere Beantwortung von Antworten zurückzuführen. Abbildung \ref{fig:request_load} zeigt deutlich das Anfragen die über das \pTp \cdn bearbeitet wurden deutlich schneller beantwortet werden konnten.
+ 
 
 \section{Livestreaming in Unternehmensnetzwerken}
-
-Um die Funktionalität des \cdns im Falle eines Livestreams zu testen wurde ein Livestream mit der Infrastruktur von Slidesync aufgesetzt. Slidesync verwendet bei der Verteilung des Videos das Datenformat HLS. Das \cdn wurde so konfiguriert das ausschließlich die HLS Segmente über das \cdn behandelt werden. Sämtliche im folgenden betrachteten Anfragen sind demnach HLS Segmente. 
+Um zu testen wie sich das \cdn innerhalb eines echten Netzwerks mit separaten Rechnern verhält wurde ein Livestream mit der Infrastruktur von Slidesync aufgesetzt. Slidesync verwendet bei der Verteilung des Videos das Datenformat HLS. Das \cdn wurde so konfiguriert das ausschließlich die HLS Segmente über das \cdn behandelt werden. Sämtliche im folgenden betrachteten Anfragen sind demnach HLS Segmente. 
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=0.8\textwidth]{figures/clients_line_chart}
@@ -433,7 +399,7 @@ Offline Support ist für Livestreams vor allem Interessant um die Ausfallsicherh
 %	\item 	Schüler laden Ressourcen von Lehrer
 %\end{itemize}
 
-\section{Security}
+\section{Sicherheit}
 Bei der Verwendung von \pTp \cdns bringen einige Security Herausforderungen mit sich. Da dies nicht Schwerpunkt der Untersuchungen im Rahmen dieser Arbeit ist wird eine vertrauenswürdige Umgebung angenommen. Dennoch werden im Folgenden Herausforderungen im Bereich der Sicherheit bei der Verwendung eines \pTp \cdns beleuchtet und mögliche Lösungen vorgestellt.
 
 Eines der Grundprinzipien des Internet Sicherheits Models ist das Nutzer bedenkenlos Internet Seiten aufrufen und dort Scripts laden können.\cite{huang_chen} Dieses Versprechen an den Nutzer muss der Browser garantieren um eine sichere Benutzung des Internet zu gewährleisten. Dazu werden Scripts in Sandboxes ausgeführt.\cite{chrome_sandbox} Ein Script kann nur im Kontext der aktuellen Seite ausgeführt werden und Anfragen die über die aktuelle Seite hinausgehen müssen vom Quellen Server explizit dafür frei gegeben werden.\cite{cors_std} 

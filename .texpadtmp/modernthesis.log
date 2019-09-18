@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.1)  16 SEP 2019 15:17
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.1)  17 SEP 2019 18:34
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1524,20 +1524,7 @@ LaTeX Warning: Label `lst:code-stats' multiply defined.
 
 LaTeX Warning: Label `lst:code-stats@cref' multiply defined.
 
-) (/Users/t.friedrich/Projects/masterarbeit/.texpadtmp/chapters/Chapter_Evaluation.aux
-
-LaTeX Warning: Label `fig:15_clients_network' multiply defined.
-
-
-LaTeX Warning: Label `fig:15_clients_network@cref' multiply defined.
-
-
-LaTeX Warning: Label `fig:15_clients_network' multiply defined.
-
-
-LaTeX Warning: Label `fig:15_clients_network@cref' multiply defined.
-
-) (/Users/t.friedrich/Projects/masterarbeit/.texpadtmp/chapters/Chapter_Conclusion.aux) (/Users/t.friedrich/Projects/masterarbeit/.texpadtmp/chapters/Chapter_Appendix_A.aux) (/Users/t.friedrich/Projects/masterarbeit/.texpadtmp/frontback/Bibliography.aux) (/Users/t.friedrich/Projects/masterarbeit/.texpadtmp/frontback/ListOfFiguresTablesListings.aux) (/Users/t.friedrich/Projects/masterarbeit/.texpadtmp/frontback/Declaration.aux))
+) (/Users/t.friedrich/Projects/masterarbeit/.texpadtmp/chapters/Chapter_Evaluation.aux) (/Users/t.friedrich/Projects/masterarbeit/.texpadtmp/chapters/Chapter_Conclusion.aux) (/Users/t.friedrich/Projects/masterarbeit/.texpadtmp/chapters/Chapter_Appendix_A.aux) (/Users/t.friedrich/Projects/masterarbeit/.texpadtmp/frontback/Bibliography.aux) (/Users/t.friedrich/Projects/masterarbeit/.texpadtmp/frontback/ListOfFiguresTablesListings.aux) (/Users/t.friedrich/Projects/masterarbeit/.texpadtmp/frontback/Declaration.aux))
 \openout1 = `modernthesis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 34.
@@ -1797,7 +1784,7 @@ Overfull \hbox (13.92842pt too wide) in paragraph at lines 24--25
 []\T1/pplj/m/n/10.95 (-20) Die fol-gende Ar-beit be-tra-chtet den An-wen-dungs-fall des Live-Streaming
  []
 
-<figures/screenshot_schul-cloud.pdf, id=270, 1445.4pt x 788.9475pt>
+<figures/screenshot_schul-cloud.pdf, id=268, 1445.4pt x 788.9475pt>
 File: figures/screenshot_schul-cloud.pdf Graphic file (type pdf)
 <use figures/screenshot_schul-cloud.pdf>
 Package pdftex.def Info: figures/screenshot_schul-cloud.pdf  used on input line 56.
@@ -1808,7 +1795,7 @@ Overfull \hbox (6.04684pt too wide) in paragraph at lines 53--60
  []
 
 [2 <./figures/screenshot_schul-cloud.pdf>]
-<figures/slidesync_screenshot.pdf, id=287, 642.4pt x 365.86688pt>
+<figures/slidesync_screenshot.pdf, id=285, 642.4pt x 365.86688pt>
 File: figures/slidesync_screenshot.pdf Graphic file (type pdf)
 <use figures/slidesync_screenshot.pdf>
 Package pdftex.def Info: figures/slidesync_screenshot.pdf  used on input line 104.
@@ -1875,7 +1862,7 @@ Overfull \hbox (5.8788pt too wide) in paragraph at lines 73--74
  []
 
 [8]
-<figures/Webrtc_overview.pdf, id=336, 591.20876pt x 425.59pt>
+<figures/Webrtc_overview.pdf, id=334, 591.20876pt x 425.59pt>
 File: figures/Webrtc_overview.pdf Graphic file (type pdf)
 <use figures/Webrtc_overview.pdf>
 Package pdftex.def Info: figures/Webrtc_overview.pdf  used on input line 112.
@@ -1906,7 +1893,7 @@ Overfull \hbox (0.28749pt too wide) in paragraph at lines 205--207
 [12]
 
 pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./figures/sw-lifecycle.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<figures/sw-lifecycle.pdf, id=396, 528.47438pt x 515.67656pt>
+<figures/sw-lifecycle.pdf, id=394, 528.47438pt x 515.67656pt>
 File: figures/sw-lifecycle.pdf Graphic file (type pdf)
 <use figures/sw-lifecycle.pdf>
 Package pdftex.def Info: figures/sw-lifecycle.pdf  used on input line 233.
@@ -1952,13 +1939,13 @@ Overfull \hbox (14.6164pt too wide) in paragraph at lines 11--12
 
 
 ]
-<figures/network_current.pdf, id=456, 512.8761pt x 305.22029pt>
+<figures/network_current.pdf, id=454, 512.8761pt x 305.22029pt>
 File: figures/network_current.pdf Graphic file (type pdf)
 <use figures/network_current.pdf>
 Package pdftex.def Info: figures/network_current.pdf  used on input line 22.
 (pdftex.def)             Requested size: 268.80103pt x 159.97293pt.
  [19 <./figures/network_current.pdf>]
-<figures/network_p2p.png, id=471, 713.66624pt x 423.5825pt>
+<figures/network_p2p.png, id=469, 713.66624pt x 423.5825pt>
 File: figures/network_p2p.png Graphic file (type png)
 <use figures/network_p2p.png>
 Package pdftex.def Info: figures/network_p2p.png  used on input line 35.
@@ -1973,7 +1960,7 @@ Overfull \hbox (17.93979pt too wide) in paragraph at lines 52--53
 \T1/pplj/m/n/10.95 (-20) �ber den Sig-nal-ing server noch weit-ere In-for-ma-tio-nen wie ICE-Kandidaten
  []
 
-<figures/browser_abfrage.pdf, id=479, 319.1925pt x 126.4725pt>
+<figures/browser_abfrage.pdf, id=477, 319.1925pt x 126.4725pt>
 File: figures/browser_abfrage.pdf Graphic file (type pdf)
 <use figures/browser_abfrage.pdf>
 Package pdftex.def Info: figures/browser_abfrage.pdf  used on input line 131.
@@ -1986,7 +1973,7 @@ Overfull \hbox (7.13776pt too wide) in paragraph at lines 139--140
 []\T1/pplj/m/n/10.95 (-20) Eine weit-ere M�glichkeit besteht darin eigene HTML tags einzuf�hren
  []
 
-<figures/service_worker_app.pdf, id=484, 845.04686pt x 597.50786pt>
+<figures/service_worker_app.pdf, id=482, 845.04686pt x 597.50786pt>
 File: figures/service_worker_app.pdf Graphic file (type pdf)
 <use figures/service_worker_app.pdf>
 Package pdftex.def Info: figures/service_worker_app.pdf  used on input line 143.
@@ -1995,12 +1982,12 @@ Package pdftex.def Info: figures/service_worker_app.pdf  used on input line 143.
 
 pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./figures/browser_abfrage.pdf): PDF inclusion: invalid other resource which is no dict (key 'ProcSets', type <array>); ignored.
 > <./figures/service_worker_app.pdf, page is rotated 90 degrees>]
-<figures/Signaling.pdf, id=515, 312.20638pt x 181.6386pt>
+<figures/Signaling.pdf, id=513, 312.20638pt x 181.6386pt>
 File: figures/Signaling.pdf Graphic file (type pdf)
 <use figures/Signaling.pdf>
 Package pdftex.def Info: figures/Signaling.pdf  used on input line 173.
 (pdftex.def)             Requested size: 268.80103pt x 156.39459pt.
-<figures/Signaling-Webrtc.pdf, id=516, 328.3467pt x 283.0575pt>
+<figures/Signaling-Webrtc.pdf, id=514, 328.3467pt x 283.0575pt>
 File: figures/Signaling-Webrtc.pdf Graphic file (type pdf)
 <use figures/Signaling-Webrtc.pdf>
 Package pdftex.def Info: figures/Signaling-Webrtc.pdf  used on input line 182.
@@ -2029,7 +2016,7 @@ Overfull \hbox (10.84515pt too wide) in paragraph at lines 205--206
  []
 
 [25]
-<figures/slidesync_peer_meshes.pdf, id=563, 575.2692pt x 181.6386pt>
+<figures/slidesync_peer_meshes.pdf, id=561, 575.2692pt x 181.6386pt>
 File: figures/slidesync_peer_meshes.pdf Graphic file (type pdf)
 <use figures/slidesync_peer_meshes.pdf>
 Package pdftex.def Info: figures/slidesync_peer_meshes.pdf  used on input line 210.
@@ -2042,7 +2029,7 @@ pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./figures/slidesync_peer_mesh
 
  (./chapters/Chapter_Implementation.tex
 Chapter 5.
-<figures/Klassendiagramm.pdf, id=591, 333.245pt x 409.53pt>
+<figures/Klassendiagramm.pdf, id=589, 333.245pt x 409.53pt>
 File: figures/Klassendiagramm.pdf Graphic file (type pdf)
 <use figures/Klassendiagramm.pdf>
 Package pdftex.def Info: figures/Klassendiagramm.pdf  used on input line 33.
@@ -2058,7 +2045,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 ] [30 <./figures/Klassendiagramm.pdf>]
-<figures/ServiceWorker.pdf, id=622, 327.47343pt x 135.50626pt>
+<figures/ServiceWorker.pdf, id=620, 327.47343pt x 135.50626pt>
 File: figures/ServiceWorker.pdf Graphic file (type pdf)
 <use figures/ServiceWorker.pdf>
 Package pdftex.def Info: figures/ServiceWorker.pdf  used on input line 61.
@@ -2073,7 +2060,7 @@ Overfull \hbox (1.47052pt too wide) in paragraph at lines 105--106
 \T1/pplj/m/n/10.95 (-20) der Kom-mu-nika-tion-s-ablauf zweier Clients an-hand eines Beispiels
  []
 
-<figures/message_flow_cdn.pdf, id=648, 623.44919pt x 580.08719pt>
+<figures/message_flow_cdn.pdf, id=646, 623.44919pt x 580.08719pt>
 File: figures/message_flow_cdn.pdf Graphic file (type pdf)
 <use figures/message_flow_cdn.pdf>
 Package pdftex.def Info: figures/message_flow_cdn.pdf  used on input line 110.
@@ -2082,7 +2069,7 @@ Package pdftex.def Info: figures/message_flow_cdn.pdf  used on input line 110.
 
 pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./figures/message_flow_cdn.pdf): PDF inclusion: invalid other resource which is no dict (key 'ProcSets', type <array>); ignored.
 >]
-<figures/verbindungsaufbau.pdf, id=674, 300.1614pt x 262.0992pt>
+<figures/verbindungsaufbau.pdf, id=672, 300.1614pt x 262.0992pt>
 File: figures/verbindungsaufbau.pdf Graphic file (type pdf)
 <use figures/verbindungsaufbau.pdf>
 Package pdftex.def Info: figures/verbindungsaufbau.pdf  used on input line 126.
@@ -2092,7 +2079,7 @@ Package pdftex.def Info: figures/verbindungsaufbau.pdf  used on input line 126.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [36]
-<figures/cache_initialisierung.pdf, id=680, 334.3692pt x 175.61609pt>
+<figures/cache_initialisierung.pdf, id=678, 334.3692pt x 175.61609pt>
 File: figures/cache_initialisierung.pdf Graphic file (type pdf)
 <use figures/cache_initialisierung.pdf>
 Package pdftex.def Info: figures/cache_initialisierung.pdf  used on input line 137.
@@ -2104,7 +2091,7 @@ pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./figures/verbindungsaufbau.p
 
 pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./figures/cache_initialisierung.pdf): PDF inclusion: invalid other resource which is no dict (key 'ProcSets', type <array>); ignored.
 >]
-<figures/Ressourcen_update.pdf, id=716, 276.07141pt x 124.54529pt>
+<figures/Ressourcen_update.pdf, id=714, 276.07141pt x 124.54529pt>
 File: figures/Ressourcen_update.pdf Graphic file (type pdf)
 <use figures/Ressourcen_update.pdf>
 Package pdftex.def Info: figures/Ressourcen_update.pdf  used on input line 148.
@@ -2167,14 +2154,14 @@ Overfull \hbox (12.84032pt too wide) in paragraph at lines 335--337
  (./chapters/Chapter_Evaluation.tex
 Chapter 6.
 
-Overfull \hbox (25.64742pt too wide) in paragraph at lines 14--19
+Overfull \hbox (25.64742pt too wide) in paragraph at lines 13--18
  [][] 
  []
 
-./chapters/Chapter_Evaluation.tex:24: You can't use `macro parameter character #' in horizontal mode.
+./chapters/Chapter_Evaluation.tex:23: You can't use `macro parameter character #' in horizontal mode.
 <argument> ...\ignorespaces https://caniuse.com/##
                                                   search=service\%20worker
-l.24 ...s://caniuse.com/#search=service\%20worker}
+l.23 ...s://caniuse.com/#search=service\%20worker}
                                                   . Auch wenn der Edge Brows...
 Sorry, but I'm not programmed to handle this case;
 I'll just pretend that you didn't ask for it.
@@ -2188,23 +2175,22 @@ return to the right one by typing `I}' or `I$' or `I\par'.
 
 
 
-]
-<figures/Timing_file_size.pdf, id=822, 433.62pt x 289.08pt>
+] [49]
+<figures/Timing_file_size.pdf, id=826, 433.62pt x 289.08pt>
 File: figures/Timing_file_size.pdf Graphic file (type pdf)
 <use figures/Timing_file_size.pdf>
-Package pdftex.def Info: figures/Timing_file_size.pdf  used on input line 163.
+Package pdftex.def Info: figures/Timing_file_size.pdf  used on input line 150.
 (pdftex.def)             Requested size: 268.80103pt x 179.2101pt.
- [49]
-<figures/durchsatz_file_size.pdf, id=829, 433.62pt x 289.08pt>
+<figures/durchsatz_file_size.pdf, id=827, 433.62pt x 289.08pt>
 File: figures/durchsatz_file_size.pdf Graphic file (type pdf)
 <use figures/durchsatz_file_size.pdf>
-Package pdftex.def Info: figures/durchsatz_file_size.pdf  used on input line 173.
+Package pdftex.def Info: figures/durchsatz_file_size.pdf  used on input line 160.
 (pdftex.def)             Requested size: 268.80103pt x 179.2101pt.
 
-./chapters/Chapter_Evaluation.tex:174: Undefined control sequence.
+./chapters/Chapter_Evaluation.tex:161: Undefined control sequence.
 <argument> Durchsatz des \ptp 
                               \cdns in einem lokalen Netzwerk
-l.174 ...des \ptp \cdns in einem lokalen Netzwerk}
+l.161 ...des \ptp \cdns in einem lokalen Netzwerk}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2212,10 +2198,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./chapters/Chapter_Evaluation.tex:174: Undefined control sequence.
+./chapters/Chapter_Evaluation.tex:161: Undefined control sequence.
 <argument> Durchsatz des \ptp 
                               \cdns in einem lokalen Netzwerk
-l.174 ...des \ptp \cdns in einem lokalen Netzwerk}
+l.161 ...des \ptp \cdns in einem lokalen Netzwerk}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2223,67 +2209,72 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-[50 <./figures/Timing_file_size.pdf> <./figures/durchsatz_file_size.pdf
 
-pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./figures/durchsatz_file_size.pdf): PDF inclusion: multiple pdfs with page group included in a single page
->]
-<figures/single_mesh_line.pdf, id=901, 433.62pt x 289.08pt>
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[50 <./figures/Timing_file_size.pdf>]
+<figures/single_mesh_line.pdf, id=869, 433.62pt x 289.08pt>
 File: figures/single_mesh_line.pdf Graphic file (type pdf)
 <use figures/single_mesh_line.pdf>
-Package pdftex.def Info: figures/single_mesh_line.pdf  used on input line 202.
+Package pdftex.def Info: figures/single_mesh_line.pdf  used on input line 189.
 (pdftex.def)             Requested size: 268.80103pt x 179.2101pt.
- [51 <./figures/single_mesh_line.pdf>]
-<figures/timeouts_single.pdf, id=949, 433.62pt x 289.08pt>
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[51 <./figures/durchsatz_file_size.pdf>]
+<figures/timeouts_single.pdf, id=907, 433.62pt x 289.08pt>
 File: figures/timeouts_single.pdf Graphic file (type pdf)
 <use figures/timeouts_single.pdf>
-Package pdftex.def Info: figures/timeouts_single.pdf  used on input line 212.
+Package pdftex.def Info: figures/timeouts_single.pdf  used on input line 199.
 (pdftex.def)             Requested size: 268.80103pt x 179.2101pt.
-<figures/mesh_comparison.pdf, id=950, 433.62pt x 289.08pt>
+ [52 <./figures/single_mesh_line.pdf> <./figures/timeouts_single.pdf
+
+pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./figures/timeouts_single.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+>]
+<figures/mesh_comparison.pdf, id=981, 433.62pt x 289.08pt>
 File: figures/mesh_comparison.pdf Graphic file (type pdf)
 <use figures/mesh_comparison.pdf>
-Package pdftex.def Info: figures/mesh_comparison.pdf  used on input line 221.
+Package pdftex.def Info: figures/mesh_comparison.pdf  used on input line 208.
 (pdftex.def)             Requested size: 268.80103pt x 179.2101pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<figures/timeouts_meshed.pdf, id=951, 433.62pt x 289.08pt>
+<figures/timeouts_meshed.pdf, id=982, 433.62pt x 289.08pt>
 File: figures/timeouts_meshed.pdf Graphic file (type pdf)
 <use figures/timeouts_meshed.pdf>
-Package pdftex.def Info: figures/timeouts_meshed.pdf  used on input line 228.
+Package pdftex.def Info: figures/timeouts_meshed.pdf  used on input line 215.
 (pdftex.def)             Requested size: 268.80103pt x 179.2101pt.
-./chapters/Chapter_Evaluation.tex:229: Illegal parameter number in definition of \caption@tempa.
+
+./chapters/Chapter_Evaluation.tex:216: Illegal parameter number in definition of \caption@tempa.
 <to be read again> 
                    T
-l.229 ...chiedenen Mesh Größen (125 Teilnehmer)}
+l.216 ...chiedenen Mesh Größen (125 Teilnehmer)}
                                                   
 You meant to type ## instead of #, right?
 Or maybe a } was forgotten somewhere earlier, and things
 are all screwed up? I'm going to assume that you meant ##.
 
-./chapters/Chapter_Evaluation.tex:229: Illegal parameter number in definition of \caption@tempa.
+./chapters/Chapter_Evaluation.tex:216: Illegal parameter number in definition of \caption@tempa.
 <to be read again> 
                    }
-l.229 ...chiedenen Mesh Größen (125 Teilnehmer)}
+l.216 ...chiedenen Mesh Größen (125 Teilnehmer)}
                                                   
 You meant to type ## instead of #, right?
 Or maybe a } was forgotten somewhere earlier, and things
 are all screwed up? I'm going to assume that you meant ##.
 
-./chapters/Chapter_Evaluation.tex:229: You can't use `macro parameter character #' in restricted horizontal mode.
+./chapters/Chapter_Evaluation.tex:216: You can't use `macro parameter character #' in restricted horizontal mode.
 <argument> ##
              Timeouts bei verschiedenen Mesh Größen (125 Teilnehmer)
-l.229 ...chiedenen Mesh Größen (125 Teilnehmer)}
+l.216 ...chiedenen Mesh Größen (125 Teilnehmer)}
                                                   
 Sorry, but I'm not programmed to handle this case;
 I'll just pretend that you didn't ask for it.
 If you're in the wrong mode, you might be able to
 return to the right one by typing `I}' or `I$' or `I\par'.
 
-./chapters/Chapter_Evaluation.tex:229: You can't use `macro parameter character #' in horizontal mode.
+./chapters/Chapter_Evaluation.tex:216: You can't use `macro parameter character #' in horizontal mode.
 <argument> ##
              Timeouts bei verschiedenen Mesh Größen (125 Teilnehmer)
-l.229 ...chiedenen Mesh Größen (125 Teilnehmer)}
+l.216 ...chiedenen Mesh Größen (125 Teilnehmer)}
                                                   
 Sorry, but I'm not programmed to handle this case;
 I'll just pretend that you didn't ask for it.
@@ -2294,93 +2285,107 @@ return to the right one by typing `I}' or `I$' or `I\par'.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Overfull \hbox (0.87416pt too wide) in paragraph at lines 233--234
+Overfull \hbox (0.87416pt too wide) in paragraph at lines 220--221
 []\T1/pplj/m/n/10.95 (-20) Abbildung [][]22[][] zeigt die Ve-r-ar-beitungsart der An-fra-gen bei steigen-
  []
 
-[52 <./figures/timeouts_single.pdf>]
-<figures/meshed_30_line.pdf, id=986, 433.62pt x 289.08pt>
+<figures/meshed_30_line.pdf, id=984, 433.62pt x 289.08pt>
 File: figures/meshed_30_line.pdf Graphic file (type pdf)
 <use figures/meshed_30_line.pdf>
-Package pdftex.def Info: figures/meshed_30_line.pdf  used on input line 238.
+Package pdftex.def Info: figures/meshed_30_line.pdf  used on input line 225.
 (pdftex.def)             Requested size: 268.80103pt x 179.2101pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[53 <./figures/mesh_comparison.pdf> <./figures/timeouts_meshed.pdf
-
-pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./figures/timeouts_meshed.pdf): PDF inclusion: multiple pdfs with page group included in a single page
->]
-<figures/peer_vs_server_over_time.pdf, id=1075, 433.62pt x 289.08pt>
+[53 <./figures/mesh_comparison.pdf>]
+<figures/peer_vs_server_over_time.pdf, id=1037, 433.62pt x 289.08pt>
 File: figures/peer_vs_server_over_time.pdf Graphic file (type pdf)
 <use figures/peer_vs_server_over_time.pdf>
-Package pdftex.def Info: figures/peer_vs_server_over_time.pdf  used on input line 248.
+Package pdftex.def Info: figures/peer_vs_server_over_time.pdf  used on input line 235.
 (pdftex.def)             Requested size: 268.80103pt x 179.2101pt.
- [54 <./figures/meshed_30_line.pdf> <./figures/peer_vs_server_over_time.pdf
 
-pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./figures/peer_vs_server_over_time.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[54 <./figures/timeouts_meshed.pdf> <./figures/meshed_30_line.pdf
+
+pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./figures/meshed_30_line.pdf): PDF inclusion: multiple pdfs with page group included in a single page
 >]
-<figures/sc_stacked_interval.pdf, id=1155, 433.62pt x 289.08pt>
+<figures/sc_stacked_interval.pdf, id=1122, 433.62pt x 289.08pt>
 File: figures/sc_stacked_interval.pdf Graphic file (type pdf)
 <use figures/sc_stacked_interval.pdf>
-Package pdftex.def Info: figures/sc_stacked_interval.pdf  used on input line 289.
+Package pdftex.def Info: figures/sc_stacked_interval.pdf  used on input line 262.
 (pdftex.def)             Requested size: 268.80103pt x 179.2101pt.
-<figures/sc_first_vs_later.pdf, id=1156, 433.62pt x 289.08pt>
+<figures/sc_first_vs_later.pdf, id=1123, 433.62pt x 289.08pt>
 File: figures/sc_first_vs_later.pdf Graphic file (type pdf)
 <use figures/sc_first_vs_later.pdf>
-Package pdftex.def Info: figures/sc_first_vs_later.pdf  used on input line 300.
+Package pdftex.def Info: figures/sc_first_vs_later.pdf  used on input line 270.
 (pdftex.def)             Requested size: 268.80103pt x 179.2101pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[55 <./figures/sc_stacked_interval.pdf>]
-<figures/clients_line_chart.pdf, id=1188, 433.62pt x 289.08pt>
+<figures/page_load_sc.pdf, id=1125, 433.62pt x 289.08pt>
+File: figures/page_load_sc.pdf Graphic file (type pdf)
+<use figures/page_load_sc.pdf>
+Package pdftex.def Info: figures/page_load_sc.pdf  used on input line 277.
+(pdftex.def)             Requested size: 268.80103pt x 179.2101pt.
+[55 <./figures/peer_vs_server_over_time.pdf> <./figures/sc_stacked_interval.pdf
+
+pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./figures/sc_stacked_interval.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+>] [56 <./figures/sc_first_vs_later.pdf> <./figures/page_load_sc.pdf
+
+pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./figures/page_load_sc.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+>]
+<figures/request_load.pdf, id=1267, 433.62pt x 289.08pt>
+File: figures/request_load.pdf Graphic file (type pdf)
+<use figures/request_load.pdf>
+Package pdftex.def Info: figures/request_load.pdf  used on input line 286.
+(pdftex.def)             Requested size: 268.80103pt x 179.2101pt.
+<figures/clients_line_chart.pdf, id=1270, 433.62pt x 289.08pt>
 File: figures/clients_line_chart.pdf Graphic file (type pdf)
 <use figures/clients_line_chart.pdf>
-Package pdftex.def Info: figures/clients_line_chart.pdf  used on input line 327.
+Package pdftex.def Info: figures/clients_line_chart.pdf  used on input line 298.
 (pdftex.def)             Requested size: 268.80103pt x 179.2101pt.
- [56 <./figures/sc_first_vs_later.pdf> <./figures/clients_line_chart.pdf
-
-pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./figures/clients_line_chart.pdf): PDF inclusion: multiple pdfs with page group included in a single page
->]
-<figures/timeouts.pdf, id=1267, 433.62pt x 289.08pt>
+ [57 <./figures/request_load.pdf>]
+<figures/timeouts.pdf, id=1304, 433.62pt x 289.08pt>
 File: figures/timeouts.pdf Graphic file (type pdf)
 <use figures/timeouts.pdf>
-Package pdftex.def Info: figures/timeouts.pdf  used on input line 335.
-(pdftex.def)             Requested size: 268.80103pt x 179.2101pt.
-<figures/anfragen_verteilung_bar.pdf, id=1270, 433.62pt x 289.08pt>
-File: figures/anfragen_verteilung_bar.pdf Graphic file (type pdf)
-<use figures/anfragen_verteilung_bar.pdf>
-Package pdftex.def Info: figures/anfragen_verteilung_bar.pdf  used on input line 346.
+Package pdftex.def Info: figures/timeouts.pdf  used on input line 306.
 (pdftex.def)             Requested size: 268.80103pt x 179.2101pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<figures/15_clients_network.pdf, id=1271, 433.62pt x 289.08pt>
+[58 <./figures/clients_line_chart.pdf>]
+<figures/anfragen_verteilung_bar.pdf, id=1351, 433.62pt x 289.08pt>
+File: figures/anfragen_verteilung_bar.pdf Graphic file (type pdf)
+<use figures/anfragen_verteilung_bar.pdf>
+Package pdftex.def Info: figures/anfragen_verteilung_bar.pdf  used on input line 317.
+(pdftex.def)             Requested size: 268.80103pt x 179.2101pt.
+<figures/15_clients_network.pdf, id=1352, 433.62pt x 289.08pt>
 File: figures/15_clients_network.pdf Graphic file (type pdf)
 <use figures/15_clients_network.pdf>
-Package pdftex.def Info: figures/15_clients_network.pdf  used on input line 363.
+Package pdftex.def Info: figures/15_clients_network.pdf  used on input line 334.
 (pdftex.def)             Requested size: 268.80103pt x 179.2101pt.
-[57 <./figures/timeouts.pdf>]
-./chapters/Chapter_Evaluation.tex:375: You can't use `macro parameter character #' in restricted horizontal mode.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[59 <./figures/timeouts.pdf> <./figures/anfragen_verteilung_bar.pdf
+
+pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./figures/anfragen_verteilung_bar.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+>]
+./chapters/Chapter_Evaluation.tex:346: You can't use `macro parameter character #' in restricted horizontal mode.
 <recently read> ##
                   
-l.375 		Bearbeitung	 & #
+l.346 		Bearbeitung	 & #
                         Anfragen 	& Durchschnitt 	& Standardbweichung \\ \hl...
 Sorry, but I'm not programmed to handle this case;
 I'll just pretend that you didn't ask for it.
 If you're in the wrong mode, you might be able to
 return to the right one by typing `I}' or `I$' or `I\par'.
 
-[58 <./figures/anfragen_verteilung_bar.pdf> <./figures/15_clients_network.pdf
-
-pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./figures/15_clients_network.pdf): PDF inclusion: multiple pdfs with page group included in a single page
->]
-./chapters/Chapter_Evaluation.tex:409: Undefined control sequence.
-l.409 ...ließen sich Algorithmen wie Kademlia\cte
+[60 <./figures/15_clients_network.pdf>]
+./chapters/Chapter_Evaluation.tex:380: Undefined control sequence.
+l.380 ...ließen sich Algorithmen wie Kademlia\cte
                                                   {kademlia} zum auffinden v...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2388,31 +2393,35 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-[59] [60]
-Overfull \hbox (0.63614pt too wide) in paragraph at lines 439--440
+[61]
+Overfull \hbox (0.63614pt too wide) in paragraph at lines 410--411
 \T1/pplj/m/n/10.95 (-20) das Nutzer be-denken-los In-ter-net Seiten aufrufen und dort Scripts
  []
 
-[61]
-<figures/user_auth.pdf, id=1408, 597.23125pt x 845.1575pt>
+[62]
+<figures/user_auth.pdf, id=1482, 597.23125pt x 845.1575pt>
 File: figures/user_auth.pdf Graphic file (type pdf)
 <use figures/user_auth.pdf>
-Package pdftex.def Info: figures/user_auth.pdf  used on input line 453.
+Package pdftex.def Info: figures/user_auth.pdf  used on input line 424.
 (pdftex.def)             Requested size: 268.80103pt x 380.38184pt.
- [62 <./figures/user_auth.pdf>]) [63]
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[63] [64 <./figures/user_auth.pdf>]) [65]
 \openout2 = `chapters/Chapter_Conclusion.aux'.
 
  (./chapters/Chapter_Conclusion.tex
 Chapter 7.
 Chapter 8.
-[64
+[66
 
 
 
 
 
 
-]) [65
+]) [67
 
 
 ]
@@ -2420,7 +2429,7 @@ Chapter 8.
 
  (./chapters/Chapter_Appendix_A.tex
 Appendix A.
-) [66
+) [68
 
 
 
@@ -2570,20 +2579,20 @@ Package logreq Info: Writing requests to 'modernthesis.run.xml'.
 ### semi simple group (level 1) entered at line 42 (\begingroup)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 40988 strings out of 492616
- 779414 string characters out of 6129482
- 1307136 words of memory out of 5000000
- 43404 multiletter control sequences out of 15000+600000
+ 41010 strings out of 492616
+ 779965 string characters out of 6129482
+ 1307494 words of memory out of 5000000
+ 43421 multiletter control sequences out of 15000+600000
  647069 words of font info for 473 fonts, out of 8000000 for 9000
  1147 hyphenation exceptions out of 8191
  81i,23n,101p,9091b,4205s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{Hfootnote.3} has been referenced but does not exist, replaced by a fixed one
 
 {/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/euler/eurb10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/euler/eurm7.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/fpl/fplrc8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/fpl/fplrij8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/bera/fvmr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/bera/fvmro8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on /Users/t.friedrich/Projects/masterarbeit/.texpadtmp/modernthesis.pdf (82 pages, 2387506 bytes).
+Output written on /Users/t.friedrich/Projects/masterarbeit/.texpadtmp/modernthesis.pdf (84 pages, 2409411 bytes).
 PDF statistics:
- 2020 PDF objects out of 2073 (max. 8388607)
- 1422 compressed objects within 15 object streams
- 295 named destinations out of 1000 (max. 500000)
- 93651 words of extra memory for PDF output out of 106986 (max. 10000000)
+ 2100 PDF objects out of 2487 (max. 8388607)
+ 1442 compressed objects within 15 object streams
+ 298 named destinations out of 1000 (max. 500000)
+ 93653 words of extra memory for PDF output out of 106986 (max. 10000000)
 

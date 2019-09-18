@@ -164,31 +164,29 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {6.1}{Browser compatbility}}{48}{section.6.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.1.1}{Browser Nutzung von SlideSync Kunden}}{48}{subsection.6.1.1}% 
+\contentsline {subsection}{\numberline {6.1.1}{Browser Nutzung von SlideSync Kunden}}{49}{subsection.6.1.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.1.2}{Browser usage in eduational networks}}{49}{subsection.6.1.2}% 
+\contentsline {subsection}{\numberline {6.1.2}{Browser usage in eduational networks}}{50}{subsection.6.1.2}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.2}{Simulierter Workload}}{49}{section.6.2}% 
+\contentsline {section}{\numberline {6.2}{Simulierter Workload}}{50}{section.6.2}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.2.1}{Webrtc Verbindungsaufbau}}{49}{subsection.6.2.1}% 
+\contentsline {subsection}{\numberline {6.2.1}{Ladezeiten von verschiedenen Dateigr\IeC {\"o}\IeC {\ss }en}}{50}{subsection.6.2.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.2.2}{Ladezeiten von verschiedenen Dateigr\IeC {\"o}\IeC {\ss }en}}{50}{subsection.6.2.2}% 
+\contentsline {subsection}{\numberline {6.2.2}{Live Streaming}}{51}{subsection.6.2.2}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.2.3}{Live Streaming}}{51}{subsection.6.2.3}% 
+\contentsline {subsection}{\numberline {6.2.3}{Schul-Cloud}}{55}{subsection.6.2.3}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.2.4}{Schul-Cloud}}{55}{subsection.6.2.4}% 
+\contentsline {section}{\numberline {6.3}{Livestreaming in Unternehmensnetzwerken}}{58}{section.6.3}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.3}{Livestreaming in Unternehmensnetzwerken}}{56}{section.6.3}% 
+\contentsline {section}{\numberline {6.4}{Offline Support}}{61}{section.6.4}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.4}{Offline Support}}{59}{section.6.4}% 
+\contentsline {section}{\numberline {6.5}{Sicherheit}}{62}{section.6.5}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.5}{Security}}{60}{section.6.5}% 
+\contentsline {chapter}{\numberline {7}{Ausblick}}{66}{chapter.7}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {7}{Ausblick}}{64}{chapter.7}% 
+\contentsline {chapter}{\numberline {8}{Fazit}}{67}{chapter.8}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {8}{Fazit}}{65}{chapter.8}% 
-\defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {A}{An Appendix}}{66}{appendix.A}% 
+\contentsline {chapter}{\numberline {A}{An Appendix}}{68}{appendix.A}% 
 \defcounter {refsection}{0}\relax 
 \vspace {\beforebibskip }
 \defcounter {refsection}{0}\relax 
