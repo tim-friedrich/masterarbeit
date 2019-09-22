@@ -5,7 +5,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {listing}{\numberline {2}{\ignorespaces Buffersize Ber\IeC {\"u}cksichtigung\relax }}{39}{listing.2}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {listing}{\numberline {3}{\ignorespaces Buffersize Ber\IeC {\"u}cksichtigung\relax }}{39}{listing.3}% 
+\contentsline {listing}{\numberline {3}{\ignorespaces Ber\IeC {\"u}cksichtigung der Buffersize\relax }}{40}{listing.3}% 
 \defcounter {refsection}{0}\relax 
 \contentsline {listing}{\numberline {4}{\ignorespaces Erfassen der Statistiken\relax }}{41}{listing.4}% 
 \defcounter {refsection}{0}\relax 

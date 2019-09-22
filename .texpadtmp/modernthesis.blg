@@ -33,7 +33,7 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated field_info (elt_size=4) to 10699 items from 5000.
+Reallocated field_info (elt_size=4) to 11672 items from 5000.
 Database file #1: modernthesis-blx.bib
 Database file #2: ../bibliography.bib
 I was expecting a `,' or a `}'---line 101 of file ../bibliography.bib
@@ -68,7 +68,6 @@ I was expecting a `,' or a `}'---line 187 of file ../bibliography.bib
  : @misc{moz_sw,
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-Warning--I didn't find a database entry for "kademlia"
 Biblatex version: 3.11
 Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
 Too many commas in name 1 of "Huang, Lin-Shung und Chen, Eric Y. und Barth, Adam und Rescorla, Eric und Jackson, Collin" for entry huang_chen
@@ -360,45 +359,45 @@ Too many commas in name 1 of "Huang, Lin-Shung und Chen, Eric Y. und Barth, Adam
 while executing---line 2774 of file biblatex.bst
 Too many commas in name 1 of "Huang, Lin-Shung und Chen, Eric Y. und Barth, Adam und Rescorla, Eric und Jackson, Collin" for entry huang_chen
 while executing---line 2774 of file biblatex.bst
-You've used 40 entries,
+You've used 48 entries,
             6304 wiz_defined-function locations,
-            1378 strings with 15270 characters,
-and the built_in function-call counts, 168026 in all, are:
-= -- 11177
-> -- 2243
-< -- 1106
-+ -- 3034
-- -- 778
-* -- 11254
-:= -- 14751
+            1433 strings with 17551 characters,
+and the built_in function-call counts, 217885 in all, are:
+= -- 14594
+> -- 3195
+< -- 1358
++ -- 4334
+- -- 1143
+* -- 14960
+:= -- 20198
 add.period$ -- 0
-call.type$ -- 40
-change.case$ -- 39
-chr.to.int$ -- 118
-cite$ -- 78
-duplicate$ -- 17660
-empty$ -- 17964
-format.name$ -- 1208
-if$ -- 35864
+call.type$ -- 48
+change.case$ -- 47
+chr.to.int$ -- 155
+cite$ -- 94
+duplicate$ -- 23313
+empty$ -- 22456
+format.name$ -- 1796
+if$ -- 45811
 int.to.chr$ -- 0
-int.to.str$ -- 70
+int.to.str$ -- 88
 missing$ -- 0
-newline$ -- 894
-num.names$ -- 1065
-pop$ -- 13220
+newline$ -- 1192
+num.names$ -- 1421
+pop$ -- 16080
 preamble$ -- 1
-purify$ -- 624
+purify$ -- 774
 quote$ -- 0
-skip$ -- 5603
+skip$ -- 7035
 stack$ -- 0
-substring$ -- 19698
-swap$ -- 4617
-text.length$ -- 812
-text.prefix$ -- 39
+substring$ -- 25320
+swap$ -- 5929
+text.length$ -- 1044
+text.prefix$ -- 47
 top$ -- 1
-type$ -- 1348
+type$ -- 1620
 warning$ -- 0
-while$ -- 1865
+while$ -- 2686
 width$ -- 0
-write$ -- 855
+write$ -- 1145
 (There were 150 error messages)

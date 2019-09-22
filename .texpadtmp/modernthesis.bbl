@@ -228,6 +228,50 @@
     \endverb
   \endentry
 
+  \entry{freenet}{article}{}
+    \name{author}{4}{}{%
+      {{hash=CI}{%
+         family={Clarke},
+         familyi={C\bibinitperiod},
+         given={Ian},
+         giveni={I\bibinitperiod},
+      }}%
+      {{hash=SO}{%
+         family={Sandberg},
+         familyi={S\bibinitperiod},
+         given={Oskar},
+         giveni={O\bibinitperiod},
+      }}%
+      {{hash=WB}{%
+         family={Wiley},
+         familyi={W\bibinitperiod},
+         given={Brandon},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=HT}{%
+         family={Hong},
+         familyi={H\bibinitperiod},
+         given={Theodore},
+         giveni={T\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{CI+1}
+    \strng{fullhash}{CISOWBHT1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{C}
+    \field{sortinithash}{C}
+    \verb{doi}
+    \verb 10.1007/3-540-44702-4_4
+    \endverb
+    \field{title}{Freenet: A Distributed Anonymous Information Storage and
+  Retrieval System}
+    \field{volume}{2009}
+    \field{journaltitle}{Lecture Notes in Computer Science}
+    \field{month}{03}
+    \field{year}{2001}
+  \endentry
+
   \entry{cors_std}{misc}{}
     \field{labeltitlesource}{title}
     \field{sortinit}{C}
@@ -391,6 +435,158 @@
     \field{year}{2018}
   \endentry
 
+  \entry{intelligentSearch}{inproceedings}{}
+    \name{author}{3}{}{%
+      {{hash=KV}{%
+         family={Kalogeraki},
+         familyi={K\bibinitperiod},
+         given={Vana},
+         giveni={V\bibinitperiod},
+      }}%
+      {{hash=GD}{%
+         family={Gunopulos},
+         familyi={G\bibinitperiod},
+         given={Dimitrios},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=ZYD}{%
+         family={Zeinalipour-Yazti},
+         familyi={Z\bibinithyphendelim Y\bibinitperiod},
+         given={D.},
+         giveni={D\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {ACM}%
+    }
+    \keyw{distributed information retrieval, peer-to-peer netwroks}
+    \strng{namehash}{KVGDZYD1}
+    \strng{fullhash}{KVGDZYD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{K}
+    \field{sortinithash}{K}
+    \field{booktitle}{Proceedings of the Eleventh International Conference on
+  Information and Knowledge Management}
+    \verb{doi}
+    \verb 10.1145/584792.584842
+    \endverb
+    \field{isbn}{1-58113-492-4}
+    \field{pages}{300\bibrangedash 307}
+    \field{series}{CIKM '02}
+    \field{title}{A Local Search Mechanism for Peer-to-peer Networks}
+    \verb{url}
+    \verb http://doi.acm.org/10.1145/584792.584842
+    \endverb
+    \list{location}{1}{%
+      {McLean, Virginia, USA}%
+    }
+    \field{year}{2002}
+    \warn{\item Can't use 'location' + 'address'}
+  \endentry
+
+  \entry{searchingsurvey}{article}{}
+    \name{author}{2}{}{%
+      {{hash=LX}{%
+         family={Li},
+         familyi={L\bibinitperiod},
+         given={Xiuqi},
+         giveni={X\bibinitperiod},
+      }}%
+      {{hash=WJ}{%
+         family={Wu},
+         familyi={W\bibinitperiod},
+         given={Jie},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{LXWJ1}
+    \strng{fullhash}{LXWJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{L}
+    \field{sortinithash}{L}
+    \verb{doi}
+    \verb 10.1201/9780203323687.ch37
+    \endverb
+    \field{title}{Searching Techniques in Peer-to-Peer Networks}
+    \field{journaltitle}{Handbook on Theoretical and Algorithmic Aspects of
+  Sensor, Ad Hoc Wireless, and Peer-to-Peer Networks}
+    \field{month}{08}
+    \field{year}{2005}
+  \endentry
+
+  \entry{symphonie}{article}{}
+    \name{author}{4}{}{%
+      {{hash=MG}{%
+         family={Manku},
+         familyi={M\bibinitperiod},
+         given={Gurmeet},
+         giveni={G\bibinitperiod},
+      }}%
+      {{hash=BM}{%
+         family={Bawa},
+         familyi={B\bibinitperiod},
+         given={Mayank},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=RP}{%
+         family={Raghavan},
+         familyi={R\bibinitperiod},
+         given={Prabhakar},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=IV}{%
+         family={Inc},
+         familyi={I\bibinitperiod},
+         given={Verity},
+         giveni={V\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{MG+1}
+    \strng{fullhash}{MGBMRPIV1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{M}
+    \field{sortinithash}{M}
+    \field{title}{Symphony: Distributed Hashing in a Small World}
+    \field{month}{02}
+    \field{year}{2003}
+  \endentry
+
+  \entry{kademlia}{inproceedings}{}
+    \name{author}{2}{}{%
+      {{hash=MP}{%
+         family={Maymounkov},
+         familyi={M\bibinitperiod},
+         given={Petar},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=ED}{%
+         family={Eres},
+         familyi={E\bibinitperiod},
+         given={David},
+         giveni={D\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{MPED1}
+    \strng{fullhash}{MPED1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{M}
+    \field{sortinithash}{M}
+    \verb{doi}
+    \verb 10.1007/3-540-45748-8_5
+    \endverb
+    \field{title}{Kademlia: A Peer-to-peer Information System Based on the XOR
+  Metric}
+    \field{volume}{2429}
+    \field{journaltitle}{Kademlia: A Peer-to-peer Information System Based on
+  the XOR Metric}
+    \field{month}{04}
+    \field{year}{2002}
+  \endentry
+
   \entry{www}{book}{}
     \name{author}{2}{}{%
       {{hash=MC}{%
@@ -507,10 +703,11 @@
 
   \entry{statistica-datenvolumen}{misc}{}
     \field{labeltitlesource}{title}
-    \field{sortinit}{Q}
-    \field{sortinithash}{Q}
+    \field{sortinit}{P}
+    \field{sortinithash}{P}
     \field{note}{Abgerufen: 10.09.2019}
-    \field{title}{Quota Management API : Fast Facts}
+    \field{title}{Prognose zum Volumen der jährlich generierten digitalen
+  Datenmenge weltweit in den Jahren 2018 und 2025 (in Zettabyte)}
     \verb{url}
     \verb https://de.statista.com/statistik/daten/studie/267974/umfrage/progn
     \verb ose-zum-weltweit-generierten-datenvolumen/
@@ -527,6 +724,40 @@
     \verb https://developers.google.com/web/updates/2011/11/Quota-Management-
     \verb API-Fast-Facts
     \endverb
+  \endentry
+
+  \entry{gnutella}{inproceedings}{}
+    \name{author}{1}{}{%
+      {{hash=RM}{%
+         family={{Ripeanu}},
+         familyi={R\bibinitperiod},
+         given={M.},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \keyw{telecommunication network routing;open
+  systems;Internet;protocols;computer network reliability;peer-to-peer
+  architecture;Gnutella network;open architecture;virtual network;routing
+  mechanisms;overlay network
+  topology;performance;reliability;scalability;crawler;topology graph;network
+  traffic;Peer to peer computing;Computer aided software engineering;Network
+  topology;Routing;Protocols;Telecommunication traffic;Application
+  software;Computer architecture;Mechanical factors;Scalability}
+    \strng{namehash}{RM1}
+    \strng{fullhash}{RM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{R}
+    \field{sortinithash}{R}
+    \field{booktitle}{Proceedings First International Conference on
+  Peer-to-Peer Computing}
+    \verb{doi}
+    \verb 10.1109/P2P.2001.990433
+    \endverb
+    \field{pages}{99\bibrangedash 100}
+    \field{title}{Peer-to-peer architecture case study: Gnutella network}
+    \field{year}{2001}
+    \warn{\item Invalid format of field 'month'}
   \endentry
 
   \entry{rfc-ice}{misc}{}
@@ -733,6 +964,56 @@
     \field{year}{1981}
   \endentry
 
+  \entry{chord}{inproceedings}{}
+    \name{author}{5}{}{%
+      {{hash=SI}{%
+         family={Stoica},
+         familyi={S\bibinitperiod},
+         given={Ion},
+         giveni={I\bibinitperiod},
+      }}%
+      {{hash=MR}{%
+         family={Morris},
+         familyi={M\bibinitperiod},
+         given={Robert},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=KD}{%
+         family={Karger},
+         familyi={K\bibinitperiod},
+         given={David},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=KM}{%
+         family={Kaashoek},
+         familyi={K\bibinitperiod},
+         given={M.},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=BH}{%
+         family={Balakrishnan},
+         familyi={B\bibinitperiod},
+         given={Hari},
+         giveni={H\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{SI+1}
+    \strng{fullhash}{SIMRKDKMBH1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \verb{doi}
+    \verb 10.1145/383059.383071
+    \endverb
+    \field{pages}{149\bibrangedash 160}
+    \field{title}{Chord: A scalable peer-to-peer lookup service for internet
+  applications}
+    \field{volume}{149-160}
+    \field{month}{01}
+    \field{year}{2001}
+  \endentry
+
   \entry{sub_res_integrity}{misc}{}
     \field{labeltitlesource}{title}
     \field{sortinit}{S}
@@ -836,6 +1117,39 @@
   Klassenzimmers}
     \field{month}{08}
     \field{year}{2019}
+  \endentry
+
+  \entry{deepening}{inproceedings}{}
+    \name{author}{2}{}{%
+      {{hash=YB}{%
+         family={Yang},
+         familyi={Y\bibinitperiod},
+         given={Beverly},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=GmH}{%
+         family={Garcia-molina},
+         familyi={G\bibinithyphendelim m\bibinitperiod},
+         given={Hector},
+         giveni={H\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{YBGmH1}
+    \strng{fullhash}{YBGmH1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{Y}
+    \field{sortinithash}{Y}
+    \verb{doi}
+    \verb 10.1109/ICDCS.2002.1022237
+    \endverb
+    \field{isbn}{0-7695-1585-1}
+    \field{pages}{5\bibrangedash  14}
+    \field{title}{Improving search in peer-to-peer networks}
+    \field{journaltitle}{Proceedings - International Conference on Distributed
+  Computing Systems}
+    \field{month}{02}
+    \field{year}{2002}
   \endentry
 
   \entry{akamaiPeer}{inproceedings}{}
