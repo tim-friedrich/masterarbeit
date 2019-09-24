@@ -4,6 +4,7 @@
 \hyphenation{ent-spre-chen-den}
 \hyphenation{da-durch}
 
+
 % \hyphenation{Gül-tig-keit}
 
 % ********************************************************************
@@ -47,7 +48,7 @@
 \newcommand{\myTitle}{Webbasierte Verteilung großer Datenmengen in lokalen Netzwerken
 \xspace}
 
-\newcommand{\myGermanTitle}{Web-based distribution of large data in locale networks}\newcommand{\myDegree}{Bachelor of Science\xspace}
+\newcommand{\myGermanTitle}{Web-based distribution of large data in local networks}\newcommand{\myDegree}{Bachelor of Science\xspace}
 \newcommand{\myName}{Tim Friedrich\xspace}
 \newcommand{\myEmail}{tim.friedrich@student.hpi.de\xspace}
 \newcommand{\myProf}{Prof. Dr. Christoph Meinel\xspace}
@@ -297,5 +298,8 @@
 \addto\captionsamerican{%
   \renewcommand{\figurename}{Abbildung}%
   \renewcommand{\tablename}{Tabelle}%
+  \renewcommand{\listingautorefname}{Auflistung}%
 }
-
+\addto\captionsngerman{%
+   \renewcommand{\listingautorefname}{Auflistung}%
+}

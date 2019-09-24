@@ -1,10 +1,10 @@
 \boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
-\babel@toc {english}{}
+\babel@toc {ngerman}{}
 \defcounter {refsection}{0}\relax 
 \vspace {-\cftbeforepartskip }
-\babel@toc {american}{}
 \babel@toc {ngerman}{}
-\babel@toc {american}{}
+\babel@toc {ngerman}{}
+\babel@toc {ngerman}{}
 \defcounter {refsection}{0}\relax 
 \vspace {1.2\baselineskip }
 \defcounter {refsection}{0}\relax 
@@ -162,7 +162,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {6.2.3}{Schul-Cloud}}{54}{subsection.6.2.3}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.3}{Live-Streaming in Unternehmensnetzwerken}}{56}{section.6.3}% 
+\contentsline {section}{\numberline {6.3}{Live-Streaming in Unternehmensnetzwerken}}{57}{section.6.3}% 
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {6.4}{Offline-Support}}{59}{section.6.4}% 
 \defcounter {refsection}{0}\relax 
@@ -176,10 +176,10 @@
 \defcounter {refsection}{0}\relax 
 \vspace {\beforebibskip }
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {}{Bibliography}}{ix}{dummy.2}% 
+\contentsline {chapter}{\numberline {}{Literatur}}{ix}{dummy.2}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {}{Abbildungsverzeichnis}}{xiii}{dummy.3}% 
+\contentsline {chapter}{\numberline {}{Abbildungsverzeichnis}}{xiv}{dummy.3}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {}{Tabellenverzeichnis}}{xiv}{dummy.4}% 
+\contentsline {chapter}{\numberline {}{Tabellenverzeichnis}}{xv}{dummy.4}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {}{Auflistungsverzeichnis}}{xv}{dummy.5}% 
+\contentsline {chapter}{\numberline {}{Auflistungsverzeichnis}}{xvi}{dummy.5}% 

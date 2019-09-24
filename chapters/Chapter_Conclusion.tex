@@ -1,23 +1,22 @@
 \chapter{Zusammenfassung und Ausblick}
 \section{Zusammenfassung}
 
-Diese Masterarbeit versuchte die Fragen:
+Diese Masterarbeit versuchte folgende Fragen zu beantworten:
 \begin{itemize}
 	\item Wie können in einem Netzwerk mit begrenzter Internetanbindung datenintensive Ressourcen ausgeliefert werden?
-	\item Eignet sich ein Peer-to-Peer-Ansatz, um die benötigte Internetbandbreite im Rahmen von Unternehmensinternen Livestreams zu verbessern?
+	\item Eignet sich ein Peer-to-Peer-Ansatz, um die benötigte Internetbandbreite im Rahmen von unternehmensinternen Livestreams zu verbessern?
 	\item Eignet sich ein Peer-to-Peer-Ansatz, um die benötigte Internetbandbreite von Schulen im Unterricht zu verbessern?
 \end{itemize}
-zu beantworten.
 
-Es konnte gezeigt werden, dass mit einem rein Browser basierten \cdn, die Last auf die WAN-Anbindung um 70\%, bei Unternehmenslivestreams, reduziert werden kann. Damit ist ein \pTp Ansatz durchaus geeignet um Live-Streams mit größerer Teilnehmerzahl zu realisieren. Allerdings konnte eine nach wie vor sehr starke Verbreitung des Internet Explorers in Unternehmen festgestellt werden. Da der Internet Explorer keine WebrtcDatachannel unterstützt, können diese nicht am \pTp \cdn teilnehmen. Um das vorgestellte \cdn verwenden zu können, müssen Unternehmen in denen der Internet Explorer verwendet wird, einen unterstützten Browser einsetzt. Da Edge 76 allerdings auf der Chromium Engine basiert wird dieses Problem spätestens nach dem nächsten Update, seitens der Unternehmen, nicht mehr bestehen. 
+Es konnte gezeigt werden, dass mit einem browserbasierten \cdn, die Last auf die WAN-Anbindung um 70\%, bei Live-Streams in Unternehmen reduziert werden kann. Damit ist ein \pTp Ansatz durchaus geeignet um Live-Streams mit größerer Teilnehmerzahl zu realisieren. Allerdings konnte eine nach wie vor sehr starke Verbreitung des Internet Explorers in Unternehmen festgestellt werden. Da der Internet Explorer keine WebrtcDatachannel unterstützt, können diese nicht am \pTp \cdn teilnehmen. Um das vorgestellte \cdn verwenden zu können, müssen Unternehmen in denen der Internet Explorer verwendet wird, einen unterstützten Browser einsetzen. Da Edge 76 allerdings auf der Chromium Engine basiert wird dieses Problem spätestens nach dem nächsten Update seitens der Unternehmen nicht mehr bestehen. 
 
-Um die Verwendung im Rahmen des Schulunterrichts zu testen wurde das Verhalten einer Schulklasse simuliert. Dabei konnte festgestellt werden, dass nach dem ersten Page Load eine sehr gute Abdeckung durch das \pTp \cdn besteht. Da der erste Page Load jedoch zum Großteil über ein herkömmliches \cdn geladen werden musste ist für eine gute Funktion des \pTp \cdns eine SWA oder eine Technologie wie Turbolinks notwendig. Damit ist eine Reduktion der benötigten Bandbreite möglich, unter der Voraussetzung, dass die Anwendung entsprechend strukturiert ist. 
+Um die Verwendung im Rahmen des Schulunterrichts zu testen wurde das Verhalten einer Schulklasse simuliert. Dabei konnte festgestellt werden, dass nach dem ersten Page Load eine sehr gute Abdeckung durch das \pTp \cdn besteht. Da der erste Page Load jedoch zum Großteil über ein herkömmliches \cdn geladen werden musste, ist für eine gute Funktion des \pTp \cdns eine SWA oder eine Technologie wie Turbolinks notwendig. Damit ist eine Reduktion der benötigten Bandbreite möglich, unter der Voraussetzung, dass die Anwendung entsprechend strukturiert ist. 
 
 \section{Ausblick}
 
-Um einen Flächendeckenden Einsatz in Schulklassen zu ermöglichen muss sichergestellt werden, dass es zu keinen Urheberrechtsverletzungen kommt. Daher ist eine nähere Betrachtung von den Implikationen auf DRM-Lizenzierungen notwendig.
+Um einen flächendeckenden Einsatz in Schulklassen zu ermöglichen muss sichergestellt werden, dass es zu keinen Urheberrechtsverletzungen kommt. Daher ist eine nähere Betrachtung der Implikationen auf DRM-Lizenzierungen notwendig.
 
-Um die Abdeckung des \pTp \cdns zu verbessern sind eine Reihe von Optimierungen denkbar. Unter anderem könnten die Peer Meshes untereinander über \pTp Verbindungen verbunden werden. Dadurch ließe sich die Anzahl der Notwendigen Anfragen an den Server weiter reduzieren. Da es, insbesondere beim Livestreaming, häufiger vorkommt, dass zwei \clients eine Ressource annähernd gleichzeitig anfragen, könnte die Abdeckung dadurch verbessert werden das bereits eine Nachricht bei Beginn des Ressourcen Downloads gesendet wird. Dadurch wären andere \clients in der Lage auf Fertigstellung des Downloads zu warten und Anschließend die Ressource über das \pTp \cdn laden. Auch die Implementierung einer zweistufigen Web-app wäre denkbar, bei der zuerst eine sehr kleine Anwendung geladen wird, die das \pTp \cdn enthält, und erst im Anschluss die eigentliche Seite mittels AJAX geladen wird. 
+Um die Abdeckung des \pTp \cdns zu verbessern sind eine Reihe von Optimierungen denkbar. Unter anderem könnten die Peer Meshes untereinander über \pTp Verbindungen verbunden werden. Dadurch ließe sich die Anzahl der notwendigen Anfragen an den Server weiter reduzieren. Da es, insbesondere beim Livestreaming, häufiger vorkommt, dass zwei \clients eine Ressource annähernd gleichzeitig anfragen, könnte die Abdeckung dadurch verbessert werden, dass bereits eine Nachricht bei Beginn des Ressourcen Downloads gesendet wird. Dadurch wären andere \clients in der Lage auf Fertigstellung des Downloads zu warten und anschließend die Ressource über das \pTp \cdn laden. Auch die Implementierung einer zweistufigen Web-App wäre denkbar, bei der zuerst eine sehr kleine Anwendung geladen wird die das \pTp \cdn enthält und erst im Anschluss die eigentliche Seite mittels AJAX geladen wird. 
 
 %Eine detaillierte Untersuchung weiterer \pTp Netzwerk Topologien, insbesondere für das Live-Streaming, 
 %

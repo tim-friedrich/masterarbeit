@@ -248,17 +248,15 @@
          given={Brandon},
          giveni={B\bibinitperiod},
       }}%
-      {{hash=uTH}{%
-         prefix={und},
-         prefixi={u\bibinitperiod},
-         family={Theodore},
-         familyi={T\bibinitperiod},
-         given={Hong},
-         giveni={H\bibinitperiod},
+      {{hash=HT}{%
+         family={Hong},
+         familyi={H\bibinitperiod},
+         given={Theodore},
+         giveni={T\bibinitperiod},
       }}%
     }
     \strng{namehash}{CI+1}
-    \strng{fullhash}{CISOWBTHu1}
+    \strng{fullhash}{CISOWBHT1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{sortinit}{C}
@@ -367,27 +365,43 @@
   \endentry
 
   \entry{huang_chen}{inproceedings}{}
-    \name{author}{1}{}{%
-      {{hash=HEYuBAuREuJCLSuC}{%
+    \name{author}{5}{}{%
+      {{hash=HLS}{%
          family={Huang},
          familyi={H\bibinitperiod},
-         suffix={Lin-Shung und\bibnamedelima Chen},
-         suffixi={L\bibinithyphendelim S\bibinitperiod\bibinitdelim
-  u\bibinitperiod\bibinitdelim C\bibinitperiod},
-         given={Eric Y. und Barth Adam und Rescorla Eric und
-  Jackson\bibnamedelima Collin},
-         giveni={E\bibinitperiod\bibinitdelim Y\bibinitperiod\bibinitdelim
-  u\bibinitperiod\bibinitdelim B\bibinitperiod\bibinitdelim
-  A\bibinitperiod\bibinitdelim u\bibinitperiod\bibinitdelim
-  R\bibinitperiod\bibinitdelim E\bibinitperiod\bibinitdelim
-  u\bibinitperiod\bibinitdelim J\bibinitperiod\bibinitdelim C\bibinitperiod},
+         given={Lin-Shung},
+         giveni={L\bibinithyphendelim S\bibinitperiod},
+      }}%
+      {{hash=CEY}{%
+         family={Chen},
+         familyi={C\bibinitperiod},
+         given={Eric\bibnamedelima Y.},
+         giveni={E\bibinitperiod\bibinitdelim Y\bibinitperiod},
+      }}%
+      {{hash=BA}{%
+         family={Barth},
+         familyi={B\bibinitperiod},
+         given={Adam},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=RE}{%
+         family={Rescorla},
+         familyi={R\bibinitperiod},
+         given={Eric},
+         giveni={E\bibinitperiod},
+      }}%
+      {{hash=JC}{%
+         family={Jackson},
+         familyi={J\bibinitperiod},
+         given={Collin},
+         giveni={C\bibinitperiod},
       }}%
     }
     \list{publisher}{1}{%
       {Carnegie Mellon University}%
     }
-    \strng{namehash}{HLSuCEYuBAuREuJC1}
-    \strng{fullhash}{HLSuCEYuBAuREuJC1}
+    \strng{namehash}{HLS+1}
+    \strng{fullhash}{HLSCEYBAREJC1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{sortinit}{H}
@@ -398,19 +412,22 @@
   \endentry
 
   \entry{webrtc-book}{book}{}
-    \name{author}{1}{}{%
-      {{hash=JDCABuB}{%
+    \name{author}{2}{}{%
+      {{hash=JAB}{%
          family={Johnston},
          familyi={J\bibinitperiod},
-         suffix={Alan B. und\bibnamedelima Burnett},
-         suffixi={A\bibinitperiod\bibinitdelim B\bibinitperiod\bibinitdelim
-  u\bibinitperiod\bibinitdelim B\bibinitperiod},
+         given={Alan\bibnamedelima B.},
+         giveni={A\bibinitperiod\bibinitdelim B\bibinitperiod},
+      }}%
+      {{hash=BDC}{%
+         family={Burnett},
+         familyi={B\bibinitperiod},
          given={Daniel\bibnamedelima C.},
          giveni={D\bibinitperiod\bibinitdelim C\bibinitperiod},
       }}%
     }
-    \strng{namehash}{JABuBDC1}
-    \strng{fullhash}{JABuBDC1}
+    \strng{namehash}{JABBDC1}
+    \strng{fullhash}{JABBDC1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{sortinit}{J}

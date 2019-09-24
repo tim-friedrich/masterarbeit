@@ -1,14 +1,14 @@
 \boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
-\babel@toc {english}{}
+\babel@toc {ngerman}{}
 \defcounter {refsection}{0}\relax 
 \deactivateaddvspace 
-\babel@toc {american}{}
+\babel@toc {ngerman}{}
 \defcounter {refsection}{0}\relax 
 \ttl@tocsep 
 \babel@toc {ngerman}{}
 \defcounter {refsection}{0}\relax 
 \ttl@tocsep 
-\babel@toc {american}{}
+\babel@toc {ngerman}{}
 \defcounter {refsection}{0}\relax 
 \ttl@tocsep 
 \defcounter {refsection}{0}\relax 
@@ -88,7 +88,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {30}{\ignorespaces Vergleich der Anfragen nach Anfrageart}}{57}{figure.caption.35}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {31}{\ignorespaces Anzahl der Timeouts des CDNs\xspace }}{57}{figure.caption.36}% 
+\contentsline {figure}{\numberline {31}{\ignorespaces Anzahl der Timeouts des CDNs\xspace }}{58}{figure.caption.36}% 
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {32}{\ignorespaces Vergleich der Anfragen nach Anfrageart}}{58}{figure.caption.37}% 
 \defcounter {refsection}{0}\relax 
