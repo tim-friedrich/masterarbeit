@@ -1,26 +1,27 @@
 \chapter{Evaluation}\label{ch:evaluation}
-Um die Effektivität und Funktion des \cdns zu evaluieren, wurden simulierte Tests sowie Tests unter echten Bedingungen durchgeführt. Neben der Betrachtung der Effektivität, ist es ebenfalls wichtig sicherzustellen, dass das \cdn von den Nutzern verwendet werden kann. Dazu wurden die verwendeten Browser der Nutzer evaluiert und betrachtet, wie viele Nutzer einen geeigneten Browser verwenden. Da die Internetanbindung an Schulen in vielen Fällen nicht gegeben ist, wird erläutert, wie eine reine Offline-Nutzung des \cdns gewährleistet werden könnte. Eine Betrachtung der Implikationen für die Sicherheit bei der Verwendung des \cdns befindet sich am Ende des Kapitels.   
-\section{Browserkompatibilität}
+Um die Effektivität und Funktion des \cdns zu evaluieren, wurden in \ref{e:sim} simulierte Tests sowie in \ref{e:realNetwork} Tests unter echten Bedingungen durchgeführt. Neben der Betrachtung der Effektivität, ist es ebenfalls wichtig sicherzustellen, dass das \cdn von den Nutzern verwendet werden kann. Dazu wurden die verwendeten Browser der Nutzer evaluiert und betrachtet, wie viele Nutzer einen geeigneten Browser verwenden.(\ref{e:browserSup}) Da die Internetanbindung an Schulen in vielen Fällen nicht gegeben ist, wird in \ref{e:offline} erläutert, wie eine reine Offline-Nutzung des \cdns gewährleistet werden könnte. Die Implikationen für die Sicherheit bei der Verwendung des \cdns, werden in Abschnitt \ref{e:security} diskutiert.  
+
+\section{Browserkompatibilität}\label{e:browserSup}
 \begin{table}[!htb]
 \begin{center}
 
 	\begin{tabular}{|l|l|l|l|l|}
 		\hline
 		Chrome & Firefox & Edge & Safari & Internet Explorer	  \\ \hline
-		22 	   & 23 	  & 76	 & 11	  & Not supported    				\\ \hline
+		>= 22 	   &>= 23 	  &>= 76	 &>= 11	  & Not supported    				\\ \hline
 	\end{tabular}
 	
 	\begin{tabular}{|l|l|l|l|l|}
 		\hline
 		IOS Safari & Samsung Internet & Android Browser	& Chrome (Android) \\ \hline
-		11	   & 4				  & 67				& 76  \\ \hline
+		>= 11	   &>=  4				  &>=  67				&>=  76  \\ \hline
 	\end{tabular}
 
 	\caption{Unterstützte Browserversionen}
 \end{center}
 \end{table}
 
-Um die unterstützten Browser zu verifizieren, wurden die vom \pTp-\cdn verwendeten Browserfunktionalitäten bei caniuse.com\footnote{https://caniuse.com/} eingegeben. Darüber hinaus wurden Chrome, Firefox, Edge, Safari und der Internet Explorer manuell getestet, um sicherzustellen, dass das \pTp-\cdn das Nutzererlebnis nicht negativ beeinflusst. Der Internet Explorer unterstützt auch in der aktuellen Version keine Service Worker\footnote{https://caniuse.com/#search=service\%20worker}. Auch wenn der Edge Browser WebRTC seit Version 17 unterstützt, ist es leider erst ab Version 76 möglich Datachannels zu verwenden. Da der Datenverkehr des \pTp-\cdns über Datachannel gehandhabt wird, ist eine Verwendung erst ab der nächsten Version, die auf Chrome aufbauen wird, möglich.
+Um die unterstützten Browser zu verifizieren, wurden die vom \pTp-\cdn verwendeten Browserfunktionalitäten bei caniuse.com\footnote{https://caniuse.com/} eingegeben. Darüber hinaus wurden Chrome, Firefox, Edge, Safari und der Internet Explorer manuell getestet, um sicherzustellen, dass das \pTp-\cdn das Nutzererlebnis nicht negativ beeinflusst. Der Internet Explorer unterstützt auch in der aktuellen Version keine Service Worker\footnote{https://caniuse.com/\#search=service\%20worker}. Auch wenn der Edge Browser WebRTC seit Version 17 unterstützt, ist es leider erst ab Version 76 möglich Datachannels zu verwenden. Da der Datenverkehr des \pTp-\cdns über Datachannel gehandhabt wird, ist eine Verwendung erst ab der nächsten Version, die auf Chrome aufbauen wird, möglich.
 
 \subsection{Browsernutzung von SlideSync-Kunden}\label{e:BrowserSS}
 
@@ -29,19 +30,18 @@ Um die unterstützten Browser zu verifizieren, wurden die vom \pTp-\cdn verwende
 
 	\begin{tabular}{|r|l|l|l|l|l|l|}
 		\hline
-		Event	 & Intern 	& Extern 	& Unterstützt & Nicht unterstützt \\ \hline
-		Event 1	 & 2816		& 4073	  	& 4357		  & 2532		\\ \hline 
-		Event 2	 & 50		& 48		 	& 37			  & 60		\\ \hline 
-		Event 3	 & 43		& 248	  	& 224		  & 67		\\ \hline 
-		Event 4	 & 740		& 569	  	& 735		  & 573		\\ \hline 
-		Event 5	 & 300		& 520	  	& 600		  & 220		\\ \hline 
-		Event 6	 & 365		& 656	  	& 773		  & 248		\\ \hline 
-		Gesamt	 & 4314		& 6114	  	& 6726		  & 3700		\\ \hline 
+		Event	 & Intern 		& Extern 	& Unterstützt & Nicht unterstützt \\ \hline
+		Event 1	 & 2816 (40,9\%)		& 4073 (59,1\%)		  	& 4357 (63\%)  & 2532 (37\%)			\\ \hline 
+		Event 2	 & 50 (51\%)		& 48 (49\%)			 	& 37 (37,8\%) & 60 (62,2\%)		\\ \hline 
+		Event 3	 & 43 (14,8\%)		& 248 (85,2\%)	  	& 224 (77\%)		  & 67 (23\%)		\\ \hline 
+		Event 4	 & 740 (56,5\%)		& 569 (43,5\%)	  	& 735 (56\%)		  & 573 (44\%)		\\ \hline 
+		Event 5	 & 300 (36,6\%)		& 520 (63,4\%)	  	& 600 (73\%)		  & 220 (27\%)		\\ \hline 
+		Event 6	 & 365 (35,7\%)		& 656 (64,3\%)	  	& 773 (75,7\%)		  & 248 (24,3\%)		\\ \hline 
+		Gesamt	 & 4314 (41,4\%)		& 6114 (58,6\%)	  	& 6726 (65,5\%)		  & 3700 (34,5\%)		\\ \hline 
 
 	\end{tabular}
 	\caption{Vergleich von 6 Events}
 \end{center}
-
 \end{table}
 
 Um die Browsernutzung von SlideSync-Nutzern zu evaluieren, wurden je drei Events von zwei Kunden betrachtet. Beide Kunden verwenden momentan einen von SlideSync vertriebenen internen Caching-Server und mit beiden Kunden wird derzeit eine Verwendung des \pTp-\cdns anstelle der momentanen \cdn-Server diskutiert. Event 1 bis 3 wurden von Kunde 1, und Event 4 bis 6 wurden von Kunde 2 durchgeführt. 
@@ -121,28 +121,28 @@ Um die Browsernutzung von SlideSync-Nutzern zu evaluieren, wurden je drei Events
 
 
 \subsection{Browser usage in educational networks}
+\begin{table}[!htb]
+\begin{center}
 
-\todo{Browser usage schul-cloud schreiben}
-\begin{itemize}
-	\item evtl einfach normale verteilung
-	\item schauen ob es quellen gibt
-\end{itemize}
-%\section{Webrtc Routing}
-%\begin{itemize}
-%	\item mit und ohne STUN
-%	\item lokales routing
-%	\item externes Routing
-%	\item implikationen für Konfiguration
-%\end{itemize}
-%\section{Bandwidth}
+	\begin{tabular}{|l|l|l|l|l|l|l|}
+		\hline
+		Browser	 		& \#Sessions & \#Sessions in \% 	& Unterstützt  \\ \hline
+		Mobile Safari	& 19252 	 	 & 45,2\% 		  	& Ja 			\\ \hline 
+		Chrome			& 5726	 	 & 13,4\% 		  	& Ja 			\\ \hline 
+		Chrome Mobile	& 5653	 	 & 13,3\% 		  	& Ja 			\\ \hline 
+		Firefox			& 4310	 	 & 10,1\% 		  	& Ja 			\\ \hline 
+		Safari			& 2306	 	 & 5,4\% 		  	& Ja 			\\ \hline 
+		Samsung Browser	& 2012 	 	 & 4,7\% 		  	& Ja 			\\ \hline 
+		Microsoft Edge	& 1710 	 	 & 4\% 		  		& Nein 			\\ \hline 
+	\end{tabular}
+	\caption{Browsernutzung im Oktober 2019 mit > 1\% Anteil - \schulCloud}
+	\label{table-browser-schule}
+\end{center}
+\end{table}
 
-
-%
-%\subsection{Latency}
-
-
-
-\section{Simulierter Workload}
+Um die Browsernutzung von \schulCloud Nutzern zu analysieren wurden alle Session im Oktober 2019 analysiert. Tabelle \ref{table-browser-schule} zeigt die verwendeten Browser von Nutzern der \schulCloud. Der Übersichtlichkeit halber wurden nur jene Browser aufgelistete die einen Anteil von mehr als 1\% hatten. Mehr als 92\% der Nutzer verfügten über einen Browser den das vorgestellte \pTp \cdn unterstützt. Der am meisten vertretene Browser der nicht unterstützt wird ist Microsoft Edge. Jedoch verwendeten lediglich 4\% der Nutzer Edge.
+ 
+\section{Simulierter Workload}\label{e:sim}
 
 Im Folgenden werden verschiedene Tests zur Evaluation des \pTp-\cdns vorgestellt und erläutert. Um zu untersuchen, wie sich ,das \cdn unter verschiedenen Bedingungen verhält wurde die Ladezeit verschieden großer Dateien gemessen, Live-Streams mit simulierten Nutzern getestet und eine Schulklasse simuliert. Um möglichst viele Variablen kontrollieren zu können, wurden die Tests unter Laborbedingungen durchgeführt und alle Nutzer simuliert.
 
@@ -150,18 +150,17 @@ Im Folgenden werden verschiedene Tests zur Evaluation des \pTp-\cdns vorgestellt
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=0.8\textwidth]{figures/Timing_file_size}
-	\caption[A Figure Short-Title]{Vergleich verschiedener Dateigrößen}
+	\caption[Vergleich verschiedener Dateigrößen]{Vergleich verschiedener Dateigrößen}
 	\label{fig:timing_file_size}
 \end{figure}
 
-Um die Ladezeiten verschiedener Dateigrößen zu evaluieren wurde auf einem Macbook Pro Late 2013 mit 2.3 GHz und 16GB Arbeitsspeicher getestet. 
+Um die Ladezeiten verschiedener Dateigrößen zu evaluieren wurde auf einem Macbook Pro Late 2013 mit 2.3 GHz und 16 GB Arbeitsspeicher getestet. 
 Getestet wurde mit zwei Teilnehmern. Einer lud die Ressource vor und der zweite lud sie über das \pTp \cdn. Die Timeouts des \pTp \cdns wurden für diesen Test deaktiviert. Alle tests wurden zehn Mal ausgeführt. Das \pTp Datenpackete wurden über das lokale Netzwerk geleitet.
-\todo{Leerstelle vor Einheiten}
 
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=0.8\textwidth]{figures/durchsatz_file_size}
-	\caption[A Figure Short-Title]{Durchsatz des \ptp \cdns in einem lokalen Netzwerk}
+	\caption[Durchsatz des \pTp \cdns in einem lokalen Netzwerk]{Durchsatz des \pTp \cdns in einem lokalen Netzwerk}
 	\label{fig:durchsatz_file_size}
 \end{figure}
 
@@ -183,14 +182,14 @@ Abbildung \ref{fig:timing_file_size} zeigt, wie sich das \cdn bei steigender Dat
 %\end{itemize}
 
 \subsection{Live-Streaming}
-Um einen Live-Stream mit höherer Teilnehmerzahl zu testen, wurde ein Script geschrieben, das mit Hilfe von puppeteer\footnote{https://github.com/GoogleChrome/puppeteer} mehrere Chrome-Browser im Headless Mode startet und die Event-Seite besucht. Dabei musste eine Chrome-Installation gewählt werden, da Chromium nicht über die notwendigen Codecs verfügt, um HLS-Video wiederzugeben. 
+Um einen Live-Stream mit höherer Teilnehmerzahl zu testen, wurde ein Skript geschrieben, das mit Hilfe von puppeteer\footnote{https://github.com/GoogleChrome/puppeteer} mehrere Chrome-Browser im Headless Mode startet und die Event-Seite besucht. Dabei musste eine Chrome-Installation gewählt werden, da Chromium nicht über die notwendigen Codecs verfügt, um HLS-Video wiederzugeben. 
 Das Skript wurde auf Amazon AWS t2.xlarge Instanzen installiert. Jede dieser Instanzen verfügt über 8 VCPUs und 32 GB Arbeitsspeicher. Auf jeder Instanz wurden 25 Browser Sessions geöffnet.  Das \cdn wurde so konfiguriert, dass es ausschließlich .ts-Dateien, also die Videosegmente bearbeitet. Bei 25 Teilnehmern lag die CPU-Last bei den Testservern bei deaktiviertem \pTp-\cdn bei 50-60\%. 
-Die Teilnehmer luden die Event-Seite, während das Event noch nicht live geschaltet war. Wenn alle Teilnehmer die Seite geladen hatten, wurde das Event live geschaltet und die Teilnehmer auf die Live-Stream-Seite weitergeleitet. Die Weiterleitung erfolgte verzögert in einem Zeitraum von 18-60 Sekunden mit einer Dreiecksverteilung, um die Last auf Seiten der Slidesync-Server zu verringern. Der Stream wurde für zehn Minuten live geschaltet und anschließend beendet.
+Die Teilnehmer luden die Event-Seite, während das Event noch nicht live geschaltet war. Wenn alle Teilnehmer die Seite geladen hatten, wurde das Event live geschaltet und die Teilnehmer auf die Live-Stream-Seite weitergeleitet. Die Weiterleitung erfolgte verzögert in einem Zeitraum von 18-60 Sekunden mit einer Dreiecksverteilung, um die Last auf Seiten der SlideSync-Server zu verringern. Der Stream wurde für zehn Minuten live geschaltet und anschließend beendet.
 
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=0.8\textwidth]{figures/single_mesh_line}
-	\caption[A Figure Short-Title]{Vergleich der Bearbeitung nach Art in einem Mesh}
+	\caption[Vergleich der Bearbeitung nach Art in einem Mesh]{Vergleich der Bearbeitung nach Art in einem Mesh}
 	\label{fig:single_mesh_line}
 \end{figure}
 
@@ -199,25 +198,23 @@ Abbildung \ref{fig:single_mesh_line} zeigt, wie sich das \pTp-\cdn bei steigende
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=0.8\textwidth]{figures/timeouts_single}
-	\caption[A Figure Short-Title]{Timeouts bei einem Mesh}
+	\caption[Timeouts bei einem Mesh]{Timeouts bei einem Mesh}
 	\label{fig:timeouts_single}
 \end{figure}
 
-Betrachtet man die Anzahl an Timeouts, so bestätigen sich die vorherigen Beobachtungen. Ab 75 Teilnehmern steigt die Anzahl an Timeouts stark an. Die CPU-Last auf Seiten der Teilnehmern wurde zu groß, um alle Anfragen in der geforderten Zeit zu beantworten. Neben der zu hohen Last kann es zu Timeouts kommen, falls zu viele Teilnehmer gleichzeitig eine Anfrage an denselben Teilnehmer stellen. Der betroffene Teilnehmer ist in diesem Fall nicht in der Lage, alle Anfragen schnell genug zu bearbeiten. Der Timeout wurde mit drei Sekunden so gewählt, dass es trotz Timeouts nicht zu einer Unterbrechung des Streams kommt. Der Video Player von SlideSync lädt drei HLS vor, die je sechs Sekunden Video beinhalten, insgesamt werden also 18 Sekunden vor geladen. Zu einer Unterbrechung der Wiedergabe kann es also erst kommen, wenn eine Anfrage länger als 6 Sekunden benötigt. Da die längste verarbeitete Anfrage XXX Sekunden benötigte, kam es zu keiner Unterbrechung der Wiedergabe aufgrund von Timeouts.
-
-\todo{XXX}
+Betrachtet man die Anzahl an Timeouts, so bestätigen sich die vorherigen Beobachtungen. Ab 75 Teilnehmern steigt die Anzahl an Timeouts stark an. Die CPU-Last auf Seiten der Teilnehmern wurde zu groß, um alle Anfragen in der geforderten Zeit zu beantworten. Neben der zu hohen Last kann es zu Timeouts kommen, falls zu viele Teilnehmer gleichzeitig eine Anfrage an denselben Teilnehmer stellen. Der betroffene Teilnehmer ist in diesem Fall nicht in der Lage, alle Anfragen schnell genug zu bearbeiten. Der Timeout wurde mit drei Sekunden so gewählt, dass es trotz Timeouts nicht zu einer Unterbrechung des Streams kommt. Der Video Player von SlideSync lädt drei HLS vor, die je sechs Sekunden Video beinhalten, insgesamt werden also 18 Sekunden vor geladen. Zu einer Unterbrechung der Wiedergabe kann es also erst kommen, wenn eine Anfrage länger als 6 Sekunden benötigt. Da die längste verarbeitete Anfrage 4,4 Sekunden benötigte, kam es zu keiner Unterbrechung der Wiedergabe aufgrund von Timeouts.
 
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=0.8\textwidth]{figures/mesh_comparison}
-	\caption[A Figure Short-Title]{Vergleich verschiedener Mesh Größen}
+	\caption[Vergleich verschiedener Mesh Größen]{Vergleich verschiedener Mesh Größen}
 	\label{fig:mesh_comparison}
 \end{figure}
 
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=0.8\textwidth]{figures/timeouts_meshed}
-	\caption[A Figure Short-Title]{#Timeouts bei verschiedenen Mesh-Größen (125 Teilnehmer)}
+	\caption[\#Timeouts bei verschiedenen Mesh-Größen]{\#Timeouts bei verschiedenen Mesh-Größen (125 Teilnehmer)}
 	\label{fig:timeouts_meshed}
 \end{figure}
 
@@ -227,7 +224,7 @@ Abbildung \ref{fig:mesh_comparison} zeigt die Verarbeitungsart der Anfragen bei 
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=0.8\textwidth]{figures/meshed_30_line}
-	\caption[A Figure Short-Title]{Mesh-Größe von 30 bei steigender Teilnehmer Zahl}
+	\caption[Mesh-Größe von 30 bei steigender Teilnehmer Zahl]{Mesh-Größe von 30 bei steigender Teilnehmer Zahl}
 	\label{fig:meshed_30_line}
 \end{figure}
 
@@ -237,7 +234,7 @@ Um zu testen, wie sich das \cdn bei größeren Teilnehmerzahlen verhält, wurden
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=0.8\textwidth]{figures/peer_vs_server_over_time}
-	\caption[A Figure Short-Title]{Anfrageart über die Zeit bei 30 Teilnehmern}
+	\caption[Anfrageart über die Zeit bei 30 Teilnehmern]{Anfrageart über die Zeit bei 30 Teilnehmern}
 	\label{fig:peer_vs_server_over_time}
 \end{figure}
 
@@ -260,7 +257,7 @@ Abbildung \ref{fig:peer_vs_server_over_time} zeigt eine zeitliche Darstellung vo
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=0.8\textwidth]{figures/sc_stacked_interval}
-	\caption[A Figure Short-Title]{Anfragearten gegliedert nach Ladeintervall}
+	\caption[Anfragearten gegliedert nach Ladeintervall]{Anfragearten gegliedert nach Ladeintervall}
 	\label{fig:sc_stacked_interval}
 \end{figure}
 Um die Verwendung des \cdns in Schulen zu evaluieren, wurde simuliert, dass 30 Schüler im Rahmen des Unterrichts auf die Seite Dashboard  zugreifen, die Kursliste aufrufen, einen Kurs öffnen und ein Thema auswählen. Alle Clients wurden von einem Server gestartet und riefen die Seite zu einem zufälligen Zeitpunkt innerhalb verschiedener Intervalle auf. 
@@ -268,35 +265,34 @@ Um die Verwendung des \cdns in Schulen zu evaluieren, wurde simuliert, dass 30 S
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=0.8\textwidth]{figures/sc_first_vs_later}
-	\caption[A Figure Short-Title]{Erstmaliges Laden vs. Navigation}
+	\caption[Erstmaliges Laden vs. Navigation]{Erstmaliges Laden vs. Navigation}
 	\label{fig:sc_first_vs_later}
 \end{figure}
 Abbildung \ref{fig:sc_stacked_interval} zeigt die Verteilung der Anfragen nach Anfrageart. Es ist gut zu sehen, dass die Größe des Intervalls, in dem die Schüler auf die Seiten zugriffen, keinen großen Einfluss auf die Effektivität des \pTp-\cdn hatte. Zwar war die Effektivität bei einem Zugriff aller Schüler innerhalb einer Sekunde geringfügig schlechter, jedoch fällt dies kaum ins Gewicht. Bei einem Intervall von mehr als 5 Sekunden ist kaum noch eine Verbesserung der Effektivität zu beobachten.
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=0.8\textwidth]{figures/page_load_sc}
-	\caption[A Figure Short-Title]{Seitenladezeiten}
+	\caption[Seitenladezeiten]{Seitenladezeiten}
 	\label{fig:page_load_sc}
 \end{figure}
-\todo{Bildbeschriftung}
 Jedoch liegt die Effektivität des \cdn bei den durchgeführten Tests bei nur ca. 38\%. Betrachtet man den Vergleich des ersten Ladens der Seite und den folgenden Navigationen, wird schnell ersichtlich, worauf dies zurückzuführen ist. Beim ersten Laden der Seite, einem kompletten Page Load, werden Anteilig deutlich mehr Anfragen gestellt, als bei den folgenden Navigationen. Da das \cdn jedoch noch nicht komplett geladen ist, kann nur ein kleiner Anteil der Anfragen durch das \cdn beantwortet werden. Da die Navigationen über Turbolinks gehandhabt wurden, war kein kompletter Page Load notwendig. Das \cdn war zwar von Beginn der Navigation an verfügbar, jedoch war Turbolinks in der Lage einen Großteil der Anfragen zu vermeiden, da es sich um Assets handelte, die für beide Seiten gleich waren. Ein erneutes Laden dieser Ressourcen war demnach nicht notwendig. Bei den Navigationen konnte das \cdn eine Effektivität von annähernd 100\% erreichen. 
 
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=0.8\textwidth]{figures/request_load}
-	\caption[A Figure Short-Title]{Durchschnittliche Ladezeit von Anfragen nach Bearbeitungsart}
+	\caption[Durchschnittliche Ladezeit von Anfragen nach Bearbeitungsart]{Durchschnittliche Ladezeit von Anfragen nach Bearbeitungsart}
 	\label{fig:request_load}
 \end{figure}
 
 Abbildung \ref{fig:page_load_sc} zeigt einen Vergleich der Seitenladezeiten mit und ohne verfügbare Peers. Hierbei gilt zu beachten das für den ersten Page Load andere Metriken verwendet werden müssen als bei den Navigationen. Turbolinks greift in den Ladeprozess des Browsers ein, wodurch Metriken, die von den Browsern zur Verfügung gestellt werden, im Falle einer Navigation inkorrekte Daten zurückgeben. Umgekehrt stellt Turbolinks zwar ebenfalls Methodiken zur Messung von Metriken bereit, jedoch geben diese für den ersten Page Load keine Ergebnisse zurück, da Turbolinks diese Metriken selbst erfasst. Betrachtet man beide Fälle separat, ist ein Vergleich jedoch möglich. Zur Messung des ersten Page Load wurde die Time to Interactive gemessen. Es ist gut zu sehen das das \pTp-\cdn einen gewissen Mehraufwand bedeutet. Bei den folgenden Navigationen kann jedoch eine Verbesserung der Ladezeit beobachtet werden. Dies ist vor allem auf die schnellere Beantwortung von Antworten zurückzuführen. Abbildung \ref{fig:request_load} zeigt deutlich, dass Anfragen, die über das \pTp-\cdn bearbeitet wurden, deutlich schneller beantwortet werden konnten.
  
 
-\section{Live-Streaming in Unternehmensnetzwerken}
+\section{Live-Streaming in Unternehmensnetzwerken}\label{e:realNetwork}
 Um zu testen, wie sich das \cdn innerhalb eines echten Netzwerks mit separaten Rechnern verhält, wurde ein Live-Stream mit der Infrastruktur von SlideSync aufgesetzt. SlideSync verwendet bei der Verteilung des Videos das Datenformat HLS. Das \cdn wurde so konfiguriert, dass ausschließlich die HLS-Segmente über das \cdn behandelt werden. Sämtliche im folgenden betrachteten Anfragen sind demnach HLS-Segmente. 
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=0.8\textwidth]{figures/clients_line_chart}
-	\caption[A Figure Short-Title]{Vergleich der Anfragen nach Anfrageart}
+	\caption[Vergleich der Anfragen nach Anfrageart]{Vergleich der Anfragen nach Anfrageart}
 	\label{fig:live_stream_line_chart}
 \end{figure}
 Der Test wurde in einem Unternehmensnetzwerk durchgeführt, um die Funktionalität in einem solchen Netzwerk zu gewährleisten. In diesem Netzwerk wurden insgesamt 30 Rechner aufgestellt. Da es vor allem um den Durchsatz des \cdns ging, wurde auf allen Clients ein aktueller Chrome Browser verwendet. Auf den Clients wurde zuerst die Eventseite geladen und erst im Anschluss der Live-Stream gestartet. Getestet wurden sechs, zehn, 15, 20 und 30 Clients, die sich alle im selben lokalen Netzwerk befanden. Der Streaming- und der Anwendungsserver befanden sich außerhalb des Netzwerkes und waren nur über die Internetverbindung zu erreichen. Bei jedem Test wurde der Stream zehn Minuten laufen gelassen und alle Clients befanden sich in demselben Peer Mesh.
@@ -304,7 +300,7 @@ Der Test wurde in einem Unternehmensnetzwerk durchgeführt, um die Funktionalit�
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=0.8\textwidth]{figures/timeouts}
-	\caption[A Figure Short-Title]{Anzahl der Timeouts des \cdns}
+	\caption[Anzahl der Timeouts des \cdns]{Anzahl der Timeouts des \cdns}
 	\label{fig:timeouts}
 \end{figure}
 
@@ -315,7 +311,7 @@ Abbildung \ref{fig:live_stream_line_chart} zeigt die Abhandlungsart der Anfragen
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=0.8\textwidth]{figures/anfragen_verteilung_bar}
-	\caption[A Figure Short-Title]{Vergleich der Anfragen nach Anfrageart}
+	\caption[Vergleich der Anfragen nach Anfrageart]{Vergleich der Anfragen nach Anfrageart}
 	\label{fig:anfragen_verteilung_bar}
 \end{figure}
 
@@ -332,18 +328,18 @@ Betrachtet man die zusätzlich notwendigen Server-Anfragen, so lässt sich beoba
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=0.8\textwidth]{figures/15_clients_network}
-	\caption[A Figure Short-Title]{Vergleich der Anfragen nach Anfrageart}
+	\caption[Netzwerk Diagramm]{Netzwerk Diagramm}
 	\label{fig:15_clients_network}
 \end{figure}
 
-Abbildung \ref{fig:15_clients_network} zeigt, welche Teilnehmer untereinander Daten ausgetauscht haben. Auffällig ist, dass einige Teilnehmer besonders vielen Teilnehmern Daten gesendet haben. Dies war besonders dann der Fall, wenn sie die einzigen im Netzwerk waren, die das Segment bereits geladen hatten. Die meisten Kanten sind jedoch bidirektional, d.h. zwar haben einige Teilnehmer besonders viele Anfragen beantwortet, jedoch haben sie sich nicht als zentrale Punkte des Netzwerkes etabliert, sondern ebenfalls ihre Daten von anderen Teilnehmern geladen. \todo{gewichtung??} 
+Abbildung \ref{fig:15_clients_network} zeigt, welche Teilnehmer untereinander Daten ausgetauscht haben. Auffällig ist, dass einige Teilnehmer besonders vielen Teilnehmern Daten gesendet haben. Dies war besonders dann der Fall, wenn sie die einzigen im Netzwerk waren, die das Segment bereits geladen hatten. Die meisten Kanten sind jedoch bidirektional, d.h. zwar haben einige Teilnehmer besonders viele Anfragen beantwortet, jedoch haben sie sich nicht als zentrale Punkte des Netzwerkes etabliert, sondern ebenfalls ihre Daten von anderen Teilnehmern geladen.
 
 \begin{table}[!htb]
 \begin{center}
 
 	\begin{tabular}{|r|l|l|l|l|l|l|}
 		\hline
-		Bearbeitung	 & #Anfragen 	& Durchschnitt 	& Standardabweichung \\ \hline %	& Min		& Max	 \\ \hline
+		Bearbeitung	 & \#Anfragen 	& Durchschnitt 	& Standardabweichung \\ \hline %	& Min		& Max	 \\ \hline
 		Peer 		& 4571 				& 201.60	 ms	  	& 190.14	 ms	\\ \hline %			& 27.02 ms	& 2832.27 ms \\ \hline
 		Server 		& 1870		 		& 63.61 ms		& 62.99	ms	\\ %			& 9.41 ms	& 649 ms	\\
 		\hline
@@ -354,7 +350,7 @@ Abbildung \ref{fig:15_clients_network} zeigt, welche Teilnehmer untereinander Da
 \end{table}
 
 Bei der Betrachtung der Ladezeiten wurden alle erfassten Anfragen berücksichtigt. Allerdings wurden die Daten um die Server-Anfragen bereinigt, bei denen zuvor das \pTp-\cdn einen Timeout verursacht hat. Insgesamt wurden 4571 Peer-Anfragen und 1870 Server-Anfragen betrachtet. 
-Anfragen, die vom \pTp-\cdn beantwortet wurden, brauchten im Durchschnitt 201,60ms. Server Anfragen waren im Vergleich mit 63,31ms im Durchschnitt deutlich schneller. Dies ist auf den geringeren Durchsatz der \webrtc Datachannels zurückzuführen. (Siehe \ref{e:filesize}) Damit war das \pTp-\cdn zwar deutlich langsamer, jedoch schnell genug, eine flüssige Wiedergabe zu gewährleisten. Da eine Anfrage, die länger als 3000ms brauchte, bei dem \pTp-\cdn zu einem timeout führte, betrug die höchste erfasste Ladezeit 2832,27 ms.    
+Anfragen, die vom \pTp-\cdn beantwortet wurden, brauchten im Durchschnitt 201,60 ms. Server Anfragen waren im Vergleich mit 63,31 ms im Durchschnitt deutlich schneller. Dies ist auf den geringeren Durchsatz der \webrtc Datachannels zurückzuführen. (Siehe \ref{e:filesize}) Damit war das \pTp-\cdn zwar deutlich langsamer, jedoch schnell genug, eine flüssige Wiedergabe zu gewährleisten. Da eine Anfrage, die länger als 3000 ms brauchte, bei dem \pTp-\cdn zu einem timeout führte, betrug die höchste erfasste Ladezeit 2832,27 ms.    
 %\todo{einige clients haben keine daten an den server gesendet. Rausrechnen!}
 %\begin{itemize}
 %	\item ladezeiten
@@ -373,11 +369,11 @@ Anfragen, die vom \pTp-\cdn beantwortet wurden, brauchten im Durchschnitt 201,60
 %%passt hier nicht wirklich hin
 
 
-\section{Offline-Support}
+\section{Offline-Support} \label{e:offline}
 
 Service Workers werden häufig im Rahmen von Offline-Support für Websites genannt. Mithilfe der Caching-API lassen sich Internetseiten speichern und später, wenn kein Internet vorhanden ist, wieder abrufen. Insbesondere für Schulen ist dies interessant, da die Internetanbindung in Schulen in vielen Fällen nach wie vor unzureichend ist. Die Sonderstudie Digital der Initiative befragte 2016 1426 Lehrer, von denen 4\% angaben, dass es an Ihrer Schule keine Internetverbindung gibt. Rund 50\% der befragten Lehrer gaben an, dass es Internetzugriff nur in bestimmten Räumen gebe.\cite{sonderstudie_digital} In Kombination mit einem \pTp-\cdn lässt sich dies nutzen, um Internetseiten und Ressourcen auch dann zu laden, wenn die Internetverbindung ausfällt. Insbesondere das Szenario, dass der Lehrer die Seite bzw. Inhalte zu Hause vorlädt und im Anschluss den Schülern bereitstellt, erscheint interessant. Tobias Wollowski beschreibt in seiner Arbeit "Optimierung von Web-Anwendungen für den Einsatz im Klassenzimmer"\cite{tobi} Möglichkeiten zur Nutzung von Offline-Caches im Unterricht. Im Folgenden wird konzeptionell beschrieben, wie das vorgestellte \pTp-\cdn angepasst werden kann, um auch im Falle einer nicht vorhandenen Internetanbindung zu funktionieren.
 
-Durch die Verwendung von Service Workers als Proxy und Cache bietet das \cdn eine gute Grundlage für Offline-Support. Es stellt die Möglichkeit bereit, Inhalte aus dem Cache an andere Nutzer zu verteilen. Die größte Herausforderung bei der Offline-Nutzung stellt das Signaling, also das Verbinden von Nutzern, dar. Um dies zu bewerkstelligen, ist bei der gewählten Implementierung ein Websocket-Server erforderlich. Ist die Verbindung bereits hergestellt, z.B. vor einem Internetausfall, so können bereits bei der momentanen Implementierung Inhalte in dem Peer Mesh verteilt werden. Ist dies nicht der Fall, so muss im lokalen Netzwerk ein Signaling Server bereitgestellt werden, der auch ohne Internetverbindung erreichbar ist. Auch muss der Schüler bestimmte Ressourcen wie das \pTp-\cdn schon im Vorfeld geladen und mit Hilfe eines Service Workers gespeichert haben. Sind die IPs einiger Nutzer bereits bekannt, so ist es ebenfalls denkbar, das weitere Signaling über Webrtc auszuhandeln. Dazu ließen sich Algorithmen wie Kademlia\cte{kademlia} zum Auffinden von Peers verwenden. Der größte Nachteil ist jedoch, das anfänglich die IP-Adressen von Nutzern bekannt sein müssen. Hassan Ijaz\cite{signaling_no_i_patent} beschreibt verschiedene Möglichkeiten, \webrtc-Verbindungen auch ohne Internet aufzubauen. Unter anderem ist es möglich \webrtc-Verbindungen mit Hilfe von QR-Codes zu initialisieren. Der Lehrer könnte den Schülern einen QR-Code oder, in einer anderen Codierung, ein SDP Packet bereitstellen, mit dessen Hilfe die Schüler eine \webrtc-Verbindung zum Lehrer herstellen können. Anschließend fungiert der Lehrer als Signaling Server für die Schüler über \webrtc, sodass Verbindungen zwischen den Schülern hergestellt werden können.
+Durch die Verwendung von Service Workers als Proxy und Cache bietet das \cdn eine gute Grundlage für Offline-Support. Es stellt die Möglichkeit bereit, Inhalte aus dem Cache an andere Nutzer zu verteilen. Die größte Herausforderung bei der Offline-Nutzung stellt das Signaling, also das Verbinden von Nutzern, dar. Um dies zu bewerkstelligen, ist bei der gewählten Implementierung ein Websocket-Server erforderlich. Ist die Verbindung bereits hergestellt, z.B. vor einem Internetausfall, so können bereits bei der momentanen Implementierung Inhalte in dem Peer Mesh verteilt werden. Ist dies nicht der Fall, so muss im lokalen Netzwerk ein Signaling Server bereitgestellt werden, der auch ohne Internetverbindung erreichbar ist. Auch muss der Schüler bestimmte Ressourcen wie das \pTp-\cdn schon im Vorfeld geladen und mit Hilfe eines Service Workers gespeichert haben. Sind die IPs einiger Nutzer bereits bekannt, so ist es ebenfalls denkbar, das weitere Signaling über Webrtc auszuhandeln. Dazu ließen sich Algorithmen wie Kademlia\cite{kademlia} zum Auffinden von Peers verwenden. Der größte Nachteil ist jedoch, das anfänglich die IP-Adressen von Nutzern bekannt sein müssen. Hassan Ijaz\cite{signaling_no_i_patent} beschreibt verschiedene Möglichkeiten, \webrtc-Verbindungen auch ohne Internet aufzubauen. Unter anderem ist es möglich \webrtc-Verbindungen mit Hilfe von QR-Codes zu initialisieren. Der Lehrer könnte den Schülern einen QR-Code oder, in einer anderen Codierung, ein SDP Packet bereitstellen, mit dessen Hilfe die Schüler eine \webrtc-Verbindung zum Lehrer herstellen können. Anschließend fungiert der Lehrer als Signaling Server für die Schüler über \webrtc, sodass Verbindungen zwischen den Schülern hergestellt werden können.
 
 Offline-Support ist für Livestreams vor allem interessant, um die Ausfallsicherheit zu erhöhen. SlideSync lädt 18 Sekunden Video vor, bevor es abgespielt wird. Durch Verwendung des \pTp-\cdn können kürzere Ausfälle überbrückt werden, sodass zumindest ein Teil der Nutzer das Video weiterhin über andere Nutzer laden und verteilen können. Ein Signaling ist nicht notwendig, da die Verbindungen bereits hergestellt wurden. Da Unternehmen in aller Regel über ausreichende Internetverbindungen verfügen und es sich um Live-Inhalte handelt, ist ein reiner Offline-Support eher von geringem Interesse. 
 
@@ -404,7 +400,7 @@ Offline-Support ist für Livestreams vor allem interessant, um die Ausfallsicher
 %	\item 	Schüler laden Ressourcen von Lehrer
 %\end{itemize}
 
-\section{Sicherheit}
+\section{Sicherheit}\label{e:security}
 Die Verwendung von \pTp-\cdns bringt einige Herausforderungen im Bereich Sicherheit mit sich. Da dies nicht Schwerpunkt der Untersuchungen im Rahmen dieser Arbeit ist, wird eine vertrauenswürdige Umgebung angenommen. Dennoch werden im Folgenden Herausforderungen im Bereich der Sicherheit bei der Verwendung eines \pTp-\cdns beleuchtet und mögliche Lösungen vorgestellt.
 
 Eines der Grundprinzipien des Internet Security Models ist, das Nutzer bedenkenlos Internetseiten aufrufen und dort Skripts laden können.\cite{huang_chen} Dieses Versprechen an den Nutzer muss der Browser garantieren, um eine sichere Benutzung des Internet zu gewährleisten. Dazu werden Skripts in Sandboxes ausgeführt.\cite{chrome_sandbox} Ein Skript kann nur im Kontext der aktuellen Seite ausgeführt werden und Anfragen, die über die aktuelle Seite hinausgehen, müssen vom Quellen-Server explizit dafür freigegeben werden.\cite{cors_std} 
@@ -422,7 +418,7 @@ Die Websocket-Verbindung, die für das Signaling verwendet wird, sollte ebenfall
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=0.8\textwidth]{figures/user_auth}
-	\caption[A Figure Short-Title]{IdP basierter Verbindungsaufbau\cite{rtcweb-security}}
+	\caption[IdP basierter Verbindungsaufbau\cite{rtcweb-security}]{IdP basierter Verbindungsaufbau\cite{rtcweb-security}}
 	\label{fig:user_auth}
 \end{figure}
 

@@ -16,9 +16,9 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {1.3}{SlideSync}}{3}{section.1.3}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.4}{Ziele}}{3}{section.1.4}% 
+\contentsline {section}{\numberline {1.4}{Ziele}}{4}{section.1.4}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.4.1}{Forschungsfrage}}{3}{subsection.1.4.1}% 
+\contentsline {subsection}{\numberline {1.4.1}{Forschungsfrage}}{4}{subsection.1.4.1}% 
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {2}{Abgrenzung}}{5}{chapter.2}% 
 \defcounter {refsection}{0}\relax 
@@ -40,7 +40,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.4.1}{Verbindungsaufbau - Signalling}}{10}{subsection.3.4.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.4.2}{STUN-Server}}{10}{subsection.3.4.2}% 
+\contentsline {subsection}{\numberline {3.4.2}{STUN-Server}}{11}{subsection.3.4.2}% 
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.4.3}{TURN-Server}}{11}{subsection.3.4.3}% 
 \defcounter {refsection}{0}\relax 
@@ -58,7 +58,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.7.1}{Lebenszyklus}}{14}{subsection.3.7.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.8}{Websockets}}{14}{section.3.8}% 
+\contentsline {section}{\numberline {3.8}{Websockets}}{15}{section.3.8}% 
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {3.9}{IP-Adressen}}{15}{section.3.9}% 
 \defcounter {refsection}{0}\relax 
@@ -80,7 +80,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {4.1}{Netzwerkstrukturen}}{18}{section.4.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.1.1}{Schul-Cloud\xspace }}{18}{subsection.4.1.1}% 
+\contentsline {subsection}{\numberline {4.1.1}{HPI Schul-Cloud\xspace }}{18}{subsection.4.1.1}% 
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {4.1.2}{SlideSync}}{19}{subsection.4.1.2}% 
 \defcounter {refsection}{0}\relax 
@@ -96,9 +96,9 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {4.6}{Zuordnung zum Mesh-Netz}}{25}{section.4.6}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.6.1}{Slidesync}}{26}{subsection.4.6.1}% 
+\contentsline {subsection}{\numberline {4.6.1}{SlideSync}}{26}{subsection.4.6.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.6.2}{Schul-Cloud\xspace }}{27}{subsection.4.6.2}% 
+\contentsline {subsection}{\numberline {4.6.2}{HPI Schul-Cloud\xspace }}{27}{subsection.4.6.2}% 
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {4.6.3}{Subnetzerkennung}}{27}{subsection.4.6.3}% 
 \defcounter {refsection}{0}\relax 
@@ -118,9 +118,9 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {5.3.1}{SlideSync}}{33}{subsection.5.3.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.3.2}{Schul-Cloud\xspace }}{34}{subsection.5.3.2}% 
+\contentsline {subsection}{\numberline {5.3.2}{HPI Schul-Cloud\xspace }}{34}{subsection.5.3.2}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.4}{Client UI Event}}{35}{section.5.4}% 
+\contentsline {section}{\numberline {5.4}{Client UI Event}}{34}{section.5.4}% 
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {5.5}{Nachrichtenprotokoll}}{35}{section.5.5}% 
 \defcounter {refsection}{0}\relax 
@@ -130,56 +130,56 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {5.5.3}{Verbindungsaufbau}}{37}{subsection.5.5.3}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.5.4}{Cache-Initialisierung}}{38}{subsection.5.5.4}% 
+\contentsline {subsection}{\numberline {5.5.4}{Cache-Initialisierung}}{37}{subsection.5.5.4}% 
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {5.5.5}{Updates}}{38}{subsection.5.5.5}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.6}{Chunking}}{39}{section.5.6}% 
+\contentsline {section}{\numberline {5.6}{Chunking}}{38}{section.5.6}% 
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {5.7}{Systemtest}}{40}{section.5.7}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.8}{Erfassen von Statistiken}}{41}{section.5.8}% 
+\contentsline {section}{\numberline {5.8}{Erfassen von Statistiken}}{40}{section.5.8}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.9}{Quota limits - L\IeC {\"o}schen von Requests aus dem Cache}}{43}{section.5.9}% 
+\contentsline {section}{\numberline {5.9}{Quota limits - L\IeC {\"o}schen von Requests aus dem Cache}}{42}{section.5.9}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.10}{Konfiguration}}{44}{section.5.10}% 
+\contentsline {section}{\numberline {5.10}{Konfiguration}}{43}{section.5.10}% 
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {5.10.1}{Netzwerkkonfiguration}}{46}{subsection.5.10.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {6}{Evaluation}}{48}{chapter.6}% 
+\contentsline {chapter}{\numberline {6}{Evaluation}}{47}{chapter.6}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.1}{Browserkompatibilit\IeC {\"a}t}}{48}{section.6.1}% 
+\contentsline {section}{\numberline {6.1}{Browserkompatibilit\IeC {\"a}t}}{47}{section.6.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.1.1}{Browsernutzung von SlideSync-Kunden}}{49}{subsection.6.1.1}% 
+\contentsline {subsection}{\numberline {6.1.1}{Browsernutzung von SlideSync-Kunden}}{48}{subsection.6.1.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.1.2}{Browser usage in educational networks}}{49}{subsection.6.1.2}% 
+\contentsline {subsection}{\numberline {6.1.2}{Browser usage in educational networks}}{48}{subsection.6.1.2}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.2}{Simulierter Workload}}{50}{section.6.2}% 
+\contentsline {section}{\numberline {6.2}{Simulierter Workload}}{49}{section.6.2}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.2.1}{Ladezeiten von verschiedenen Dateigr\IeC {\"o}\IeC {\ss }en}}{50}{subsection.6.2.1}% 
+\contentsline {subsection}{\numberline {6.2.1}{Ladezeiten von verschiedenen Dateigr\IeC {\"o}\IeC {\ss }en}}{49}{subsection.6.2.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.2.2}{Live-Streaming}}{51}{subsection.6.2.2}% 
+\contentsline {subsection}{\numberline {6.2.2}{Live-Streaming}}{50}{subsection.6.2.2}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.2.3}{Schul-Cloud}}{55}{subsection.6.2.3}% 
+\contentsline {subsection}{\numberline {6.2.3}{Schul-Cloud}}{54}{subsection.6.2.3}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.3}{Live-Streaming in Unternehmensnetzwerken}}{57}{section.6.3}% 
+\contentsline {section}{\numberline {6.3}{Live-Streaming in Unternehmensnetzwerken}}{56}{section.6.3}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.4}{Offline-Support}}{60}{section.6.4}% 
+\contentsline {section}{\numberline {6.4}{Offline-Support}}{59}{section.6.4}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.5}{Sicherheit}}{62}{section.6.5}% 
+\contentsline {section}{\numberline {6.5}{Sicherheit}}{61}{section.6.5}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {7}{Ausblick}}{66}{chapter.7}% 
+\contentsline {chapter}{\numberline {7}{Zusammenfassung und Ausblick}}{64}{chapter.7}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {8}{Fazit}}{67}{chapter.8}% 
+\contentsline {section}{\numberline {7.1}{Zusammenfassung}}{64}{section.7.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {A}{An Appendix}}{68}{appendix.A}% 
+\contentsline {section}{\numberline {7.2}{Ausblick}}{65}{section.7.2}% 
 \defcounter {refsection}{0}\relax 
 \vspace {\beforebibskip }
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {}{Bibliography}}{ix}{dummy.3}% 
+\contentsline {chapter}{\numberline {}{Bibliography}}{ix}{dummy.2}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {}{List of Figures}}{xiv}{dummy.4}% 
+\contentsline {chapter}{\numberline {}{Abbildungsverzeichnis}}{xiii}{dummy.3}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {}{List of Tables}}{xv}{dummy.5}% 
+\contentsline {chapter}{\numberline {}{Tabellenverzeichnis}}{xiv}{dummy.4}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {}{List of Listings}}{xvi}{dummy.6}% 
+\contentsline {chapter}{\numberline {}{Auflistungsverzeichnis}}{xv}{dummy.5}% 

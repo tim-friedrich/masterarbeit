@@ -1,0 +1,1228 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.0 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\datalist[entry]{nyt/global//global/global}
+  \entry{webrtc-security}{misc}{}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{A}
+    \field{sortinithash}{A}
+    \field{note}{Abgerufen: 09.09.2019}
+    \field{title}{A Study of WebRTC Security}
+    \verb{url}
+    \verb https://webrtc-security.github.io/
+    \endverb
+  \endentry
+
+  \entry{w3IndexedDB}{inproceedings}{}
+    \name{author}{2}{}{%
+      {{hash=AA}{%
+         family={Alabbas},
+         familyi={A\bibinitperiod},
+         given={Ali},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=BJ}{%
+         family={Bell},
+         familyi={B\bibinitperiod},
+         given={Joshua},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {W3C}%
+    }
+    \strng{namehash}{AABJ1}
+    \strng{fullhash}{AABJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{A}
+    \field{sortinithash}{A}
+    \field{booktitle}{W3C Recommendation}
+    \field{title}{Indexed Database API 2.0}
+    \verb{url}
+    \verb https://www.w3.org/TR/2018/REC-IndexedDB-2-20180130/
+    \endverb
+    \field{month}{01}
+    \field{year}{2018}
+  \endentry
+
+  \entry{signaling_no_i_patent}{misc}{}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{A}
+    \field{sortinithash}{A}
+    \field{note}{Pub. No.: US 2016/0021148A1}
+    \field{title}{Architecture to establish serverless webrtc connections}
+    \verb{url}
+    \verb https://patentimages.storage.googleapis.com/99/66/5a/c6e189e849027c
+    \verb /US20160021148A1.pdf
+    \endverb
+    \field{month}{01}
+    \field{year}{2016}
+  \endentry
+
+  \entry{w3Webrtc}{inproceedings}{}
+    \name{author}{7}{}{%
+      {{hash=BA}{%
+         family={Bergkvist},
+         familyi={B\bibinitperiod},
+         given={Adam},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=BDC}{%
+         family={Burnett},
+         familyi={B\bibinitperiod},
+         given={Daniel\bibnamedelima C.},
+         giveni={D\bibinitperiod\bibinitdelim C\bibinitperiod},
+      }}%
+      {{hash=JC}{%
+         family={Jennings},
+         familyi={J\bibinitperiod},
+         given={Cullen},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=NA}{%
+         family={Narayanan},
+         familyi={N\bibinitperiod},
+         given={Anant},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=AB}{%
+         family={Aboba},
+         familyi={A\bibinitperiod},
+         given={Bernard},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=BT}{%
+         family={Brandstetter},
+         familyi={B\bibinitperiod},
+         given={Taylor},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=BJI}{%
+         family={Bruaroey},
+         familyi={B\bibinitperiod},
+         given={Jan-Ivar},
+         giveni={J\bibinithyphendelim I\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {W3C}%
+    }
+    \strng{namehash}{BA+1}
+    \strng{fullhash}{BABDCJCNAABBTBJI1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \field{booktitle}{W3C Candidate Recommendation 27 September 2018}
+    \field{title}{WebRTC 1.0: Real-time Communication Between Browsers}
+    \verb{url}
+    \verb https://www.w3.org/TR/webrtc/
+    \endverb
+    \field{month}{09}
+    \field{year}{2018}
+  \endentry
+
+  \entry{w3MediaStream}{inproceedings}{}
+    \name{author}{5}{}{%
+      {{hash=BDC}{%
+         family={Burnett},
+         familyi={B\bibinitperiod},
+         given={Daniel\bibnamedelima C.},
+         giveni={D\bibinitperiod\bibinitdelim C\bibinitperiod},
+      }}%
+      {{hash=BA}{%
+         family={Bergkvist},
+         familyi={B\bibinitperiod},
+         given={Adam},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=JC}{%
+         family={Jennings},
+         familyi={J\bibinitperiod},
+         given={Cullen},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=NA}{%
+         family={Narayanan},
+         familyi={N\bibinitperiod},
+         given={Anant},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=AB}{%
+         family={Aboba},
+         familyi={A\bibinitperiod},
+         given={Bernard},
+         giveni={B\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {W3C}%
+    }
+    \strng{namehash}{BDC+1}
+    \strng{fullhash}{BDCBAJCNAAB1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \field{booktitle}{W3C Candidate Recommendation}
+    \field{title}{Media Capture and Streams}
+    \verb{url}
+    \verb https://www.w3.org/TR/2017/CR-mediacapture-streams-20171003/
+    \endverb
+    \field{month}{10}
+    \field{year}{2017}
+  \endentry
+
+  \entry{sdp-standard}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=uCJSN}{%
+         prefix={und},
+         prefixi={u\bibinitperiod},
+         family={C.\bibnamedelima Jennings},
+         familyi={C\bibinitperiod\bibinitdelim J\bibinitperiod},
+         given={S.\bibnamedelima Nandakumar},
+         giveni={S\bibinitperiod\bibinitdelim N\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Network Working Group}%
+    }
+    \strng{namehash}{CJSNu1}
+    \strng{fullhash}{CJSNu1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{C}
+    \field{sortinithash}{C}
+    \field{title}{SDP for the WebRTC}
+    \verb{url}
+    \verb https://tools.ietf.org/id/draft-nandakumar-rtcweb-sdp-01.html
+    \endverb
+    \field{month}{02}
+    \field{year}{2013}
+  \endentry
+
+  \entry{caniuse-webrtc}{misc}{}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{C}
+    \field{sortinithash}{C}
+    \field{note}{Abgerufen: 10.09.2019}
+    \field{title}{Can I use Webrtc}
+    \verb{url}
+    \verb https://caniuse.com/\#feat=rtcpeerconnection
+    \endverb
+  \endentry
+
+  \entry{freenet}{article}{}
+    \name{author}{4}{}{%
+      {{hash=CI}{%
+         family={Clarke},
+         familyi={C\bibinitperiod},
+         given={Ian},
+         giveni={I\bibinitperiod},
+      }}%
+      {{hash=SO}{%
+         family={Sandberg},
+         familyi={S\bibinitperiod},
+         given={Oskar},
+         giveni={O\bibinitperiod},
+      }}%
+      {{hash=WB}{%
+         family={Wiley},
+         familyi={W\bibinitperiod},
+         given={Brandon},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=HT}{%
+         family={Hong},
+         familyi={H\bibinitperiod},
+         given={Theodore},
+         giveni={T\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{CI+1}
+    \strng{fullhash}{CISOWBHT1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{C}
+    \field{sortinithash}{C}
+    \verb{doi}
+    \verb 10.1007/3-540-44702-4_4
+    \endverb
+    \field{title}{Freenet: A Distributed Anonymous Information Storage and
+  Retrieval System}
+    \field{volume}{2009}
+    \field{journaltitle}{Lecture Notes in Computer Science}
+    \field{month}{03}
+    \field{year}{2001}
+  \endentry
+
+  \entry{cors_std}{misc}{}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{C}
+    \field{sortinithash}{C}
+    \field{note}{Abgerufen: 09.09.2019}
+    \field{title}{Cross-Origin Resource Sharing}
+    \verb{url}
+    \verb https://www.w3.org/TR/cors/
+    \endverb
+  \endentry
+
+  \entry{sonderstudie_digital}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=DI}{%
+         family={D21},
+         familyi={D\bibinitperiod},
+         given={Initiative},
+         giveni={I\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{DI1}
+    \strng{fullhash}{DI1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{D}
+    \field{sortinithash}{D}
+    \field{note}{Pub. No.: US 2016/0021148A1}
+    \field{title}{“Sonderstudie »Schule Digital«”. In: Sonderstudie
+  »Schule Digital« Eine Studie der Initiative D21, durchgeführt von Kantar
+  TNS.}
+    \verb{url}
+    \verb https://initiatived21.de/app/uploads/2017/01/d21_schule_digital2016
+    \verb .pdf
+    \endverb
+    \field{year}{2016}
+  \endentry
+
+  \entry{rfcWebsockets}{inproceedings}{}
+    \name{author}{2}{}{%
+      {{hash=FI}{%
+         family={Fette},
+         familyi={F\bibinitperiod},
+         given={I.},
+         giveni={I\bibinitperiod},
+      }}%
+      {{hash=MA}{%
+         family={Melnikov},
+         familyi={M\bibinitperiod},
+         given={A.},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Internet Engineering Task Force (IETF)}%
+    }
+    \strng{namehash}{FIMA1}
+    \strng{fullhash}{FIMA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{F}
+    \field{sortinithash}{F}
+    \field{booktitle}{Request for Comments: 6455}
+    \field{title}{The WebSocket Protocol}
+    \verb{url}
+    \verb https://tools.ietf.org/html/rfc6455
+    \endverb
+    \field{month}{12}
+    \field{year}{2011}
+  \endentry
+
+  \entry{hls-sdt}{misc}{}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{H}
+    \field{sortinithash}{H}
+    \field{note}{Abgerufen: 14.09.2019}
+    \field{title}{HTTP Live Streaming}
+    \verb{url}
+    \verb https://tools.ietf.org/html/draft-pantos-http-live-streaming-23
+    \endverb
+  \endentry
+
+  \entry{huang_chen}{inproceedings}{}
+    \name{author}{1}{}{%
+      {{hash=HEYuBAuREuJCLSuC}{%
+         family={Huang},
+         familyi={H\bibinitperiod},
+         suffix={Lin-Shung und\bibnamedelima Chen},
+         suffixi={L\bibinithyphendelim S\bibinitperiod\bibinitdelim
+  u\bibinitperiod\bibinitdelim C\bibinitperiod},
+         given={Eric Y. und Barth Adam und Rescorla Eric und
+  Jackson\bibnamedelima Collin},
+         giveni={E\bibinitperiod\bibinitdelim Y\bibinitperiod\bibinitdelim
+  u\bibinitperiod\bibinitdelim B\bibinitperiod\bibinitdelim
+  A\bibinitperiod\bibinitdelim u\bibinitperiod\bibinitdelim
+  R\bibinitperiod\bibinitdelim E\bibinitperiod\bibinitdelim
+  u\bibinitperiod\bibinitdelim J\bibinitperiod\bibinitdelim C\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Carnegie Mellon University}%
+    }
+    \strng{namehash}{HLSuCEYuBAuREuJC1}
+    \strng{fullhash}{HLSuCEYuBAuREuJC1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{H}
+    \field{sortinithash}{H}
+    \field{title}{Talking to Yourself for Fun and Profit}
+    \field{month}{01}
+    \field{year}{2011}
+  \endentry
+
+  \entry{webrtc-book}{book}{}
+    \name{author}{1}{}{%
+      {{hash=JDCABuB}{%
+         family={Johnston},
+         familyi={J\bibinitperiod},
+         suffix={Alan B. und\bibnamedelima Burnett},
+         suffixi={A\bibinitperiod\bibinitdelim B\bibinitperiod\bibinitdelim
+  u\bibinitperiod\bibinitdelim B\bibinitperiod},
+         given={Daniel\bibnamedelima C.},
+         giveni={D\bibinitperiod\bibinitdelim C\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{JABuBDC1}
+    \strng{fullhash}{JABuBDC1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{J}
+    \field{sortinithash}{J}
+    \field{isbn}{978-0-9859788-5-3}
+    \field{title}{WebRTC: APIs and RTCWEB Protocols of the HTML5 Real-Time Web
+  - Second Edition}
+    \field{month}{06}
+    \field{year}{2013}
+  \endentry
+
+  \entry{bmvi-bandbreite}{inproceedings}{}
+    \name{author}{1}{}{%
+      {{hash=aKGPGW}{%
+         prefix={atene},
+         prefixi={a\bibinitperiod},
+         family={KOM\bibnamedelima GmbH},
+         familyi={K\bibinitperiod\bibinitdelim G\bibinitperiod},
+         given={PricewaterhouseCoopers GmbH\bibnamedelima WPG},
+         giveni={P\bibinitperiod\bibinitdelim G\bibinitperiod\bibinitdelim
+  W\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Bundesministerium für Verkehr und digitale Infrastruktur (BMVI)}%
+    }
+    \strng{namehash}{KGPGWa1}
+    \strng{fullhash}{KGPGWa1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{K}
+    \field{sortinithash}{K}
+    \field{title}{Aktuelle Breitbandverfügbarkeit in Deutschland(Stand Ende
+  2018)}
+    \field{year}{2018}
+  \endentry
+
+  \entry{intelligentSearch}{inproceedings}{}
+    \name{author}{3}{}{%
+      {{hash=KV}{%
+         family={Kalogeraki},
+         familyi={K\bibinitperiod},
+         given={Vana},
+         giveni={V\bibinitperiod},
+      }}%
+      {{hash=GD}{%
+         family={Gunopulos},
+         familyi={G\bibinitperiod},
+         given={Dimitrios},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=ZYD}{%
+         family={Zeinalipour-Yazti},
+         familyi={Z\bibinithyphendelim Y\bibinitperiod},
+         given={D.},
+         giveni={D\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {ACM}%
+    }
+    \keyw{distributed information retrieval, peer-to-peer netwroks}
+    \strng{namehash}{KVGDZYD1}
+    \strng{fullhash}{KVGDZYD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{K}
+    \field{sortinithash}{K}
+    \field{booktitle}{Proceedings of the Eleventh International Conference on
+  Information and Knowledge Management}
+    \verb{doi}
+    \verb 10.1145/584792.584842
+    \endverb
+    \field{isbn}{1-58113-492-4}
+    \field{pages}{300\bibrangedash 307}
+    \field{series}{CIKM '02}
+    \field{title}{A Local Search Mechanism for Peer-to-peer Networks}
+    \verb{url}
+    \verb http://doi.acm.org/10.1145/584792.584842
+    \endverb
+    \list{location}{1}{%
+      {McLean, Virginia, USA}%
+    }
+    \field{year}{2002}
+    \warn{\item Can't use 'location' + 'address'}
+  \endentry
+
+  \entry{searchingsurvey}{article}{}
+    \name{author}{2}{}{%
+      {{hash=LX}{%
+         family={Li},
+         familyi={L\bibinitperiod},
+         given={Xiuqi},
+         giveni={X\bibinitperiod},
+      }}%
+      {{hash=WJ}{%
+         family={Wu},
+         familyi={W\bibinitperiod},
+         given={Jie},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{LXWJ1}
+    \strng{fullhash}{LXWJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{L}
+    \field{sortinithash}{L}
+    \verb{doi}
+    \verb 10.1201/9780203323687.ch37
+    \endverb
+    \field{title}{Searching Techniques in Peer-to-Peer Networks}
+    \field{journaltitle}{Handbook on Theoretical and Algorithmic Aspects of
+  Sensor, Ad Hoc Wireless, and Peer-to-Peer Networks}
+    \field{month}{08}
+    \field{year}{2005}
+  \endentry
+
+  \entry{symphonie}{article}{}
+    \name{author}{4}{}{%
+      {{hash=MG}{%
+         family={Manku},
+         familyi={M\bibinitperiod},
+         given={Gurmeet},
+         giveni={G\bibinitperiod},
+      }}%
+      {{hash=BM}{%
+         family={Bawa},
+         familyi={B\bibinitperiod},
+         given={Mayank},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=RP}{%
+         family={Raghavan},
+         familyi={R\bibinitperiod},
+         given={Prabhakar},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=IV}{%
+         family={Inc},
+         familyi={I\bibinitperiod},
+         given={Verity},
+         giveni={V\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{MG+1}
+    \strng{fullhash}{MGBMRPIV1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{M}
+    \field{sortinithash}{M}
+    \field{title}{Symphony: Distributed Hashing in a Small World}
+    \field{month}{02}
+    \field{year}{2003}
+  \endentry
+
+  \entry{kademlia}{inproceedings}{}
+    \name{author}{2}{}{%
+      {{hash=MP}{%
+         family={Maymounkov},
+         familyi={M\bibinitperiod},
+         given={Petar},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=ED}{%
+         family={Eres},
+         familyi={E\bibinitperiod},
+         given={David},
+         giveni={D\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{MPED1}
+    \strng{fullhash}{MPED1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{M}
+    \field{sortinithash}{M}
+    \verb{doi}
+    \verb 10.1007/3-540-45748-8_5
+    \endverb
+    \field{title}{Kademlia: A Peer-to-peer Information System Based on the XOR
+  Metric}
+    \field{volume}{2429}
+    \field{journaltitle}{Kademlia: A Peer-to-peer Information System Based on
+  the XOR Metric}
+    \field{month}{04}
+    \field{year}{2002}
+  \endentry
+
+  \entry{www}{book}{}
+    \name{author}{2}{}{%
+      {{hash=MC}{%
+         family={Meinel},
+         familyi={M\bibinitperiod},
+         given={Christoph},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=SH}{%
+         family={Sack},
+         familyi={S\bibinitperiod},
+         given={Harald},
+         giveni={H\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{MCSH1}
+    \strng{fullhash}{MCSH1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{M}
+    \field{sortinithash}{M}
+    \field{booktitle}{WWW}
+    \field{isbn}{978-3-642-18963-0}
+    \field{title}{Kommunikation, Internetworking, Web-Technologien}
+    \field{month}{01}
+    \field{year}{2004}
+  \endentry
+
+  \entry{edge-chrome}{misc}{}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{M}
+    \field{sortinithash}{M}
+    \field{note}{Abgerufen: 16.09.2019}
+    \field{title}{Microsoft is building a Chromium-powered web browser that
+  will replace Edge on Windows 10}
+    \verb{url}
+    \verb https://www.windowscentral.com/microsoft-building-chromium-powered-
+    \verb web-browser-windows-10
+    \endverb
+  \endentry
+
+  \entry{zero-internet-schaden}{misc}{}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{M}
+    \field{sortinithash}{M}
+    \field{note}{Abgerufen: 10.09.2019}
+    \field{title}{Millionenschaden durch IT-Ausfälle in Unternehmen}
+    \verb{url}
+    \verb https://www.springerprofessional.de/informationstechnik/risikomanag
+    \verb ement/millionenschaden-durch-it-ausfaelle-in-unternehmen/15429886
+    \endverb
+  \endentry
+
+  \entry{userWaitingTime}{article}{}
+    \name{author}{1}{}{%
+      {{hash=NFFH}{%
+         family={Nah},
+         familyi={N\bibinitperiod},
+         given={Fiona Fui-Hoon},
+         giveni={F\bibinitperiod\bibinitdelim F\bibinithyphendelim
+  H\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Taylor & Francis}%
+    }
+    \strng{namehash}{NFFH1}
+    \strng{fullhash}{NFFH1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{N}
+    \field{sortinithash}{N}
+    \verb{doi}
+    \verb 10.1080/01449290410001669914
+    \endverb
+    \verb{eprint}
+    \verb https://doi.org/10.1080/01449290410001669914
+    \endverb
+    \field{number}{3}
+    \field{pages}{153\bibrangedash 163}
+    \field{title}{A study on tolerable waiting time: how long are Web users
+  willing to wait?}
+    \verb{url}
+    \verb https://doi.org/10.1080/01449290410001669914
+    \endverb
+    \field{volume}{23}
+    \field{journaltitle}{Behaviour \& Information Technology}
+    \field{year}{2004}
+  \endentry
+
+  \entry{offline-pwa}{misc}{}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{O}
+    \field{sortinithash}{O}
+    \field{note}{Abgerufen: 10.09.2019}
+    \field{title}{Offline Storage for Progressive Web Apps}
+    \verb{url}
+    \verb https://developers.google.com/web/fundamentals/instant-and-offline/
+    \verb web-storage/offline-for-pwa
+    \endverb
+  \endentry
+
+  \entry{chrome-port-range}{misc}{}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{P}
+    \field{sortinithash}{P}
+    \field{note}{Abgerufen: 11.09.2019}
+    \field{title}{Policy Settings in Chrome}
+    \verb{url}
+    \verb http://dev.chromium.org/developers/how-tos/enterprise/adding-new-po
+    \verb licies
+    \endverb
+  \endentry
+
+  \entry{statistica-datenvolumen}{misc}{}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{P}
+    \field{sortinithash}{P}
+    \field{note}{Abgerufen: 10.09.2019}
+    \field{title}{Prognose zum Volumen der jährlich generierten digitalen
+  Datenmenge weltweit in den Jahren 2018 und 2025 (in Zettabyte)}
+    \verb{url}
+    \verb https://de.statista.com/statistik/daten/studie/267974/umfrage/progn
+    \verb ose-zum-weltweit-generierten-datenvolumen/
+    \endverb
+  \endentry
+
+  \entry{quota-api-ff}{misc}{}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{Q}
+    \field{sortinithash}{Q}
+    \field{note}{Abgerufen: 10.09.2019}
+    \field{title}{Quota Management API : Fast Facts}
+    \verb{url}
+    \verb https://developers.google.com/web/updates/2011/11/Quota-Management-
+    \verb API-Fast-Facts
+    \endverb
+  \endentry
+
+  \entry{gnutella}{inproceedings}{}
+    \name{author}{1}{}{%
+      {{hash=RM}{%
+         family={{Ripeanu}},
+         familyi={R\bibinitperiod},
+         given={M.},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \keyw{telecommunication network routing;open
+  systems;Internet;protocols;computer network reliability;peer-to-peer
+  architecture;Gnutella network;open architecture;virtual network;routing
+  mechanisms;overlay network
+  topology;performance;reliability;scalability;crawler;topology graph;network
+  traffic;Peer to peer computing;Computer aided software engineering;Network
+  topology;Routing;Protocols;Telecommunication traffic;Application
+  software;Computer architecture;Mechanical factors;Scalability}
+    \strng{namehash}{RM1}
+    \strng{fullhash}{RM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{R}
+    \field{sortinithash}{R}
+    \field{booktitle}{Proceedings First International Conference on
+  Peer-to-Peer Computing}
+    \verb{doi}
+    \verb 10.1109/P2P.2001.990433
+    \endverb
+    \field{pages}{99\bibrangedash 100}
+    \field{title}{Peer-to-peer architecture case study: Gnutella network}
+    \field{year}{2001}
+    \warn{\item Invalid format of field 'month'}
+  \endentry
+
+  \entry{rfc-ice}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=RJ}{%
+         family={Rosenberg},
+         familyi={R\bibinitperiod},
+         given={J.},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Internet Engineering Task Force (IETF)}%
+    }
+    \strng{namehash}{RJ1}
+    \strng{fullhash}{RJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{R}
+    \field{sortinithash}{R}
+    \field{title}{Interactive Connectivity Establishment (ICE): A Protocol for
+  Network Address Translator (NAT) Traversal for Offer/Answer Protocols}
+    \verb{url}
+    \verb https://tools.ietf.org/html/rfc5245
+    \endverb
+    \field{month}{04}
+    \field{year}{2010}
+  \endentry
+
+  \entry{rfcStun}{inproceedings}{}
+    \name{author}{4}{}{%
+      {{hash=RJ}{%
+         family={Rosenberg},
+         familyi={R\bibinitperiod},
+         given={J.},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=WJ}{%
+         family={Weinberger},
+         familyi={W\bibinitperiod},
+         given={J.},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=HC}{%
+         family={Huitema},
+         familyi={H\bibinitperiod},
+         given={C.},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=MR}{%
+         family={Mahy},
+         familyi={M\bibinitperiod},
+         given={R.},
+         giveni={R\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {The Internet Society}%
+    }
+    \strng{namehash}{RJ+1}
+    \strng{fullhash}{RJWJHCMR1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{R}
+    \field{sortinithash}{R}
+    \field{booktitle}{Network Working Group}
+    \field{title}{STUN - Simple Traversal of User Datagram Protocol (UDP)
+  Through Network Address Translators (NATs)}
+    \verb{url}
+    \verb http://www.ietf.org/rfc/rfc3489.txt
+    \endverb
+    \field{month}{03}
+    \field{year}{2003}
+  \endentry
+
+  \entry{ror-guide}{misc}{}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{R}
+    \field{sortinithash}{R}
+    \field{note}{Abgerufen: 01.09.2019}
+    \field{title}{Ruby on Rails Guides (v6.0.0)}
+    \verb{url}
+    \verb https://guides.rubyonrails.org/
+    \endverb
+  \endentry
+
+  \entry{w3ServiceWorker}{inproceedings}{}
+    \name{author}{4}{}{%
+      {{hash=RA}{%
+         family={Russell},
+         familyi={R\bibinitperiod},
+         given={Alex},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=SJ}{%
+         family={Song},
+         familyi={S\bibinitperiod},
+         given={Jungkee},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=AJ}{%
+         family={Archibald},
+         familyi={A\bibinitperiod},
+         given={Jake},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=KM}{%
+         family={Kruisselbrink},
+         familyi={K\bibinitperiod},
+         given={Marijn},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {W3C}%
+    }
+    \strng{namehash}{RA+1}
+    \strng{fullhash}{RASJAJKM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{R}
+    \field{sortinithash}{R}
+    \field{booktitle}{W3C Working Draft, 2 November 2017}
+    \field{title}{Service Workers 1}
+    \verb{url}
+    \verb https://www.w3.org/TR/service-workers-1/
+    \endverb
+    \field{month}{11}
+    \field{year}{2017}
+  \endentry
+
+  \entry{chrome_sandbox}{misc}{}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{note}{Abgerufen: 09.09.2019}
+    \field{title}{Sandbox}
+    \verb{url}
+    \verb https://chromium.googlesource.com/chromium/src/+/master/docs/design
+    \verb /sandbox.md
+    \endverb
+  \endentry
+
+  \entry{rtcweb-security}{misc}{}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{note}{Abgerufen: 09.09.2019}
+    \field{title}{Security Considerations for WebRTC}
+    \verb{url}
+    \verb https://tools.ietf.org/html/draft-ietf-rtcweb-security-05
+    \endverb
+  \endentry
+
+  \entry{moz_sw}{misc}{}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{note}{Abgerufen: 09.09.2019}
+    \field{title}{Service Worker API}
+    \verb{url}
+    \verb https://developer.mozilla.org/de/docs/Web/API/Service_Worker_API
+    \endverb
+  \endentry
+
+  \entry{spa-def}{misc}{}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{note}{Abgerufen: 01.09.2019}
+    \field{title}{Single Page Application}
+    \verb{url}
+    \verb https://wirtschaftslexikon.gabler.de/definition/single-page-applica
+    \verb tion-54485
+    \endverb
+  \endentry
+
+  \entry{rfc791}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=oSCISIU}{%
+         prefix={of},
+         prefixi={o\bibinitperiod},
+         family={Southern\bibnamedelima California},
+         familyi={S\bibinitperiod\bibinitdelim C\bibinitperiod},
+         given={Information Sciences Institute\bibnamedelima University},
+         giveni={I\bibinitperiod\bibinitdelim S\bibinitperiod\bibinitdelim
+  I\bibinitperiod\bibinitdelim U\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Defense Advanced Research Projects Agency}%
+    }
+    \strng{namehash}{SCISIUo1}
+    \strng{fullhash}{SCISIUo1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{title}{INTERNET PROTOCOL}
+    \verb{url}
+    \verb https://tools.ietf.org/html/rfc791
+    \endverb
+    \field{month}{08}
+    \field{year}{1981}
+  \endentry
+
+  \entry{chord}{inproceedings}{}
+    \name{author}{5}{}{%
+      {{hash=SI}{%
+         family={Stoica},
+         familyi={S\bibinitperiod},
+         given={Ion},
+         giveni={I\bibinitperiod},
+      }}%
+      {{hash=MR}{%
+         family={Morris},
+         familyi={M\bibinitperiod},
+         given={Robert},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=KD}{%
+         family={Karger},
+         familyi={K\bibinitperiod},
+         given={David},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=KM}{%
+         family={Kaashoek},
+         familyi={K\bibinitperiod},
+         given={M.},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=BH}{%
+         family={Balakrishnan},
+         familyi={B\bibinitperiod},
+         given={Hari},
+         giveni={H\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{SI+1}
+    \strng{fullhash}{SIMRKDKMBH1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \verb{doi}
+    \verb 10.1145/383059.383071
+    \endverb
+    \field{pages}{149\bibrangedash 160}
+    \field{title}{Chord: A scalable peer-to-peer lookup service for internet
+  applications}
+    \field{volume}{149-160}
+    \field{month}{01}
+    \field{year}{2001}
+  \endentry
+
+  \entry{sub_res_integrity}{misc}{}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{note}{Abgerufen: 09.09.2019}
+    \field{title}{Subresource Integrity}
+    \verb{url}
+    \verb https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_I
+    \verb ntegrity
+    \endverb
+  \endentry
+
+  \entry{p2pBook2005}{inproceedings}{}
+    \name{author}{2}{}{%
+      {{hash=TK}{%
+         family={Tutschku},
+         familyi={T\bibinitperiod},
+         given={Kurt},
+         giveni={K\bibinitperiod},
+      }}%
+      {{hash=TGP}{%
+         family={Tran-Gia},
+         familyi={T\bibinithyphendelim G\bibinitperiod},
+         given={Phuoc},
+         giveni={P\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{TKTGP1}
+    \strng{fullhash}{TKTGP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{T}
+    \field{sortinithash}{T}
+    \field{title}{Peer-to-Peer-Systems and Applications}
+    \field{month}{01}
+    \field{year}{2005}
+  \endentry
+
+  \entry{google-cache-api}{misc}{}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{U}
+    \field{sortinithash}{U}
+    \field{note}{Abgerufen: 01.09.2019}
+    \field{title}{Using the Cache API}
+    \verb{url}
+    \verb https://developers.google.com/web/fundamentals/instant-and-offline/
+    \verb web-storage/cache-api
+    \endverb
+  \endentry
+
+  \entry{rfc-datachannel}{misc}{}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{W}
+    \field{sortinithash}{W}
+    \field{note}{Abgerufen: 09.09.2019}
+    \field{title}{WebRTC Data Channels}
+    \verb{url}
+    \verb https://tools.ietf.org/html/draft-ietf-rtcweb-data-channel-13
+    \endverb
+  \endentry
+
+  \entry{rfc-sctp}{misc}{}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{W}
+    \field{sortinithash}{W}
+    \field{note}{Abgerufen: 09.09.2019}
+    \field{title}{WebRTC Data Channels}
+    \verb{url}
+    \verb https://tools.ietf.org/html/rfc4960
+    \endverb
+  \endentry
+
+  \entry{html5-rocks-signaling}{misc}{}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{W}
+    \field{sortinithash}{W}
+    \field{note}{Abgerufen: 01.09.2019}
+    \field{title}{WebRTC in the real world: STUN, TURN and signaling}
+    \verb{url}
+    \verb https://www.html5rocks.com/en/tutorials/webrtc/infrastructure/#what
+    \verb -is-signaling
+    \endverb
+  \endentry
+
+  \entry{tobi}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=WT}{%
+         family={Wollowski},
+         familyi={W\bibinitperiod},
+         given={Tobias},
+         giveni={T\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{WT1}
+    \strng{fullhash}{WT1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{W}
+    \field{sortinithash}{W}
+    \field{title}{Optimierung von Web-Anwendungen für den Einsatz im
+  Klassenzimmers}
+    \field{month}{08}
+    \field{year}{2019}
+  \endentry
+
+  \entry{deepening}{inproceedings}{}
+    \name{author}{2}{}{%
+      {{hash=YB}{%
+         family={Yang},
+         familyi={Y\bibinitperiod},
+         given={Beverly},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=GmH}{%
+         family={Garcia-molina},
+         familyi={G\bibinithyphendelim m\bibinitperiod},
+         given={Hector},
+         giveni={H\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{YBGmH1}
+    \strng{fullhash}{YBGmH1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{Y}
+    \field{sortinithash}{Y}
+    \verb{doi}
+    \verb 10.1109/ICDCS.2002.1022237
+    \endverb
+    \field{isbn}{0-7695-1585-1}
+    \field{pages}{5\bibrangedash  14}
+    \field{title}{Improving search in peer-to-peer networks}
+    \field{journaltitle}{Proceedings - International Conference on Distributed
+  Computing Systems}
+    \field{month}{02}
+    \field{year}{2002}
+  \endentry
+
+  \entry{akamaiPeer}{inproceedings}{}
+    \name{author}{9}{}{%
+      {{hash=ZM}{%
+         family={Zhao},
+         familyi={Z\bibinitperiod},
+         given={Mingchen},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=AP}{%
+         family={Aditya},
+         familyi={A\bibinitperiod},
+         given={Paarijaat},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=CA}{%
+         family={Chen},
+         familyi={C\bibinitperiod},
+         given={Ang},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=LY}{%
+         family={Lin},
+         familyi={L\bibinitperiod},
+         given={Yin},
+         giveni={Y\bibinitperiod},
+      }}%
+      {{hash=HA}{%
+         family={Haeberlen},
+         familyi={H\bibinitperiod},
+         given={Andreas},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=DP}{%
+         family={Druschel},
+         familyi={D\bibinitperiod},
+         given={Peter},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=MB}{%
+         family={Maggs},
+         familyi={M\bibinitperiod},
+         given={Bruce},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=WB}{%
+         family={Wishon},
+         familyi={W\bibinitperiod},
+         given={Bill},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=PM}{%
+         family={Ponec},
+         familyi={P\bibinitperiod},
+         given={Miroslav},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {ACM New York, NY, USA}%
+    }
+    \strng{namehash}{ZM+1}
+    \strng{fullhash}{ZMAPCALYHADPMBWBPM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{Z}
+    \field{sortinithash}{Z}
+    \field{booktitle}{Proceedings of the 2013 conference on Internet
+  measurement conference Pages 31-42}
+    \field{title}{Peer-Assisted Content Distribution in Akamai NetSession}
+    \field{month}{10}
+    \field{year}{2013}
+  \endentry
+\enddatalist
+\endinput

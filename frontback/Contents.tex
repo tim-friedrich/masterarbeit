@@ -3,11 +3,13 @@
 %*******************************************************
 %\phantomsection
 \refstepcounter{dummy}
+\renewcommand\contentsname{Inhaltsverzeichnis}
 \pdfbookmark[1]{\contentsname}{tableofcontents}
 \setcounter{tocdepth}{2} % <-- 2 includes up to subsections in the ToC
 \setcounter{secnumdepth}{3} % <-- 3 numbers up to subsubsections
 \manualmark
 \markboth{\spacedlowsmallcaps{\contentsname}}{\spacedlowsmallcaps{\contentsname}}
+%\markboth{\spacedlowsmallcaps{Inhaltsverzeichnis}}{\spacedlowsmallcaps{Inhaltsverzeichnis}}
 
 % hack some spacing between headline and table of contents
 \addtocontents{toc}{\protect\vspace{1.2\baselineskip}}

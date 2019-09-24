@@ -21,7 +21,7 @@ Das folgende Kapitel stellt Details zur Implementierung und zum Anwendungsdesign
 %In dem Signaling server selbst wird die Logik abgebildet, wie die Klassen und Schüler miteinander in Verbindung stehen. Implementiert wurde dieser mit socket.io, da die native Klassenorganisation und Websocket-Technologie sich nahezu perfekt für unser Szenario anbot.
 
 \section{Technologiewahl}\label{i:Technologiewahl}
-Das \pTp-\cdn ist eine Javascript-Bibliothek, die nach erfolgreicher Einbindung und Konfiguration im Hintergrund eigenständig läuft. Es werden zwei Javascript-Dateien zur Verfügung gestellt. Das Service Worker -Skript, und das \pTp \cdn Client Script. Beide Skripte müssen von der Anwendung eingebunden werden. Der Server muss einen Faye Websocket -Server bereitstellen. Da das Peer Meshing über die Konfiguration des Faye Channels geschieht, muss der Server gegebenenfalls eine Peer Meshing-Strategie implementieren. Zur einfacheren Einbindung in bestehende Projekte werden ein Node.js-Modul sowie ein Ruby Gem bereitgestellt. Das Ruby Gem bindet das Service Worker -Skript im Public Ordner der Ruby on Rails -Anwendung ein und das \pTp CDN-Skript im vendor/assets Ordner.
+Das \pTp-\cdn wurde als eine Javascript-Bibliothek implementiert, die nach erfolgreicher Einbindung und Konfiguration im Hintergrund eigenständig läuft. Es werden zwei Javascript-Dateien zur Verfügung gestellt. Das Service Worker -Skript, und das \pTp \cdn Client Skript. Beide Skripte müssen von der Anwendung eingebunden werden. Der Server muss einen Faye Websocket -Server bereitstellen. Da das Peer Meshing über die Konfiguration des Faye Channels geschieht, muss der Server gegebenenfalls eine Peer Meshing-Strategie implementieren. Zur einfacheren Einbindung in bestehende Projekte werden ein Node.js-Modul sowie ein Ruby Gem bereitgestellt. Das Ruby Gem bindet das Service Worker -Skript im Public Ordner der Ruby on Rails -Anwendung ein und das \pTp CDN-Skript im vendor/assets Ordner.
 
 Der Javascript Code ist in ES6 geschrieben und wird mittels Babel\footnote{https://babeljs.io/} in browserkompatiblen Javascript-Code übersetzt und anschließend mit Node-minify komprimiert. \footnote{https://www.npmjs.com/package/node-minify}
 
@@ -31,14 +31,13 @@ Im Folgenden wird die Software-Architektur des \pTp-\cdns beschrieben. Dazu wird
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=0.8\textwidth]{figures/Klassendiagramm}
-	\caption[A Figure Short-Title]{Klassendiagramm}
+	\caption[Klassendiagramm]{Klassendiagramm}
 	\label{fig:Klassendiagramm}
 \end{figure}
-
 \subsection{Client-Skript}
 
-Das Javascript-Plugin besteht aus sieben Komponenten. Die Klasse P2pCDN bildet die Schnittstelle nach außen und stellt Funktionalitäten zum Initialisieren und Konfigurieren des \cdn bereit. Außerdem macht es den SystemTest nach außen verfügbar. P2pCDN nimmt die Konfiguration entgegen und initialisiert ein Peer-Objekt. Das Peer-Objekt repräsentiert den eigenen \client in dem \pTp-Netzwerk. Es hält den eigenen Zustand und verwaltet die Verbindungen zu anderen \clients und verwaltet deren Ressourcen-Hashes. Das Peer Objekt nutzt Funktionalitäten des Signaling-Moduls um Verbindungen zu anderen \clients aufzunehmen. Das Signaling-Modul implementiert das Webrtc Signaling Protokoll. FayeConnection abstrahiert die beim Signaling verwendete Websocket-Bibliothek, in diesem Fall Faye, um es zu ermöglichen, auch andere Websocket-Bibliotheken zu verwenden.
-Die Service Worker-Middleware fungiert als Vermittler zwischen Service Worker und Client-Script und ist für die Initialisierung des Service Workers zuständig. Die Komponente arbeitet eventbasiert und registriert sich auf folgende Events:
+Das Javascript-Plugin besteht aus sieben Komponenten. Die Klasse P2pCDN bildet die Schnittstelle nach außen und stellt Funktionalitäten zum Initialisieren und Konfigurieren des \cdn bereit. Außerdem macht es den SystemTest nach außen verfügbar. P2pCDN nimmt die Konfiguration entgegen und initialisiert ein Peer-Objekt. Das Peer-Objekt repräsentiert den eigenen \client in dem \pTp-Netzwerk. Es hält den eigenen Zustand und verwaltet die Verbindungen zu anderen \clients und verwaltet deren Ressourcen-Hashes. Das Peer Objekt nutzt Funktionalitäten des Signaling-Moduls um Verbindungen zu anderen \clients aufzunehmen. Das Signaling-Modul implementiert das Webrtc Signaling Protokoll. FayeConnection abstrahiert die beim Signaling verwendete Websocket-Bibliothek, in diesem Fall Faye. Dadurch ist es möglich neue Connectoren zu schreiben um auch andere Websocket-Bibliotheken zu verwenden zu können.
+Die Service Worker-Middleware fungiert als Vermittler zwischen Service Worker und Client-Skript und ist für die Initialisierung des Service Workers zuständig. Die Komponente arbeitet eventbasiert und registriert sich auf folgende Events:
 \begin{description}
 	\item[peer:onRequestResource]\hfill \\
 	Wird von der ServiceWorker-Middleware ausgelöst, wenn der Service Worker eine Ressource über das \pTp-CDN anfragt. Der Peer registriert auf dem Event und bearbeitet die Anfrage.
@@ -48,7 +47,7 @@ Die Service Worker-Middleware fungiert als Vermittler zwischen Service Worker un
 	Stellt der Peer eine neue Verbindung zu einem anderen \client her, so sendet er eine Liste seiner gespeicherten Ressourcen an den Client. Diese Liste wird vom Service Worker verwaltet. Um an den Inhalt seines Caches zu kommen, sendet der Peer das Event sw:onRequestCache mit einem Callback, der bei Erfolg ausgeführt wird. Die ServiceWorker-Middleware leitet die Anfrage über den Message Channel an den Service Worker weiter.
 %	\item[Message events vom Service Worker]\hfill \\
 %	
-%\end{description}
+\end{description}
 %
 %\begin{itemize}
 %	\item heartbeats
@@ -59,14 +58,17 @@ Die Service Worker-Middleware fungiert als Vermittler zwischen Service Worker un
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=0.8\textwidth]{figures/ServiceWorker}
-	\caption[A Figure Short-Title]{Service Worker}
+	\caption[Service Worker]{Service Worker}
 	\label{fig:serviceWorker}
 \end{figure}
-\todo{diagram fixen}
 
 Als Proxy zwischen Client-Anwendung und Browser wird ein Service Worker verwendet. Der Service Worker fängt von der Anwendung gesendete Anfragen im Fetch Event ab und versucht sie zunächst durch den eigenen Cache zu beantworten. Ist die Anfrage nicht bereits im Cache vorhanden, wird versucht, sie über das \pTp-Netzwerk zu laden. Ist das nicht möglich, lädt er sie vom Server. 
-Um eine Anfrage über das \pTp-Netzwerk zu beantworten, muss zuvor das Client-Skript geladen sein, da Service Workers die Webrtc-API nicht unterstützen. Die Kommunikation zwischen Service Worker und Anwendungs-Skript geschieht mit Hilfe der postMessage-API\footnote{https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage}. Um sicherzustellen, dass das Client-Skript geladen und zur Kommunikation bereit ist, sendet der Service Worker eine nicht blockende Heartbeat-Anfrage an das Skript. Antwortet das Skript nicht innerhalb eines bestimmten Zeitfensters, so muss der Service Worker davon ausgehen, dass es noch nicht geladen ist. Die Anfrage wird an den Server weitergeleitet. Da nicht davon ausgegangen werden kann, dass das Skript verfügbar bleibt nachdem es geladen wurde, die Seite könnte z.B. geschlossen worden sein, muss der Service Worker sich vor jeder blockenden Anfrage vergewissern dass das Script zu antworten in der Lage ist. Nachrichten, die zwischen Anwendungs-Skript und Service Worker ausgetauscht werden, haben das Format: \{ type: "Art der Nachricht", msg: "Inhalt der Nachricht" \}. Das Attribut "type" kann folgende Werte enthalten: "resource", "cache", "heartbeat". Nachrichten vom Typ "resource" ordnen den Service Worker an, eine Nachricht aus seinem Cache an das Anwendungs-Skript zu übergeben. Empfängt der Service Worker eine solche Nachricht, lädt er die angefragte Ressource aus dem Cache und fügt sie der Antwort bei. Nachrichten vom Typ "cache" dienen dazu, beim Server den momentanen Inhalt des Caches zu erfragen. Dies wird genutzt, um einem neu verbundenen Peer die Liste der aktuell gecacheten Ressourcen mitzuteilen. Mit dem Typ "heartbeat" erfragt der Service Worker beim Anwendungs-Skript, ob es momentan verfügbar ist.  \todo{format formatieren} 
-Ist das Skript noch nicht verfügbar, hat der Service Worker zwei Möglichkeiten damit umzugehen. Er kann darauf warten, dass das Skript verfügbar ist und alle Anfragen bis dahin aufhalten, oder er leitet die Anfragen direkt an den Server weiter. Leitet er die Anfragen direkt an den Server, wird die Ladezeit der Ressource nicht verzögert, jedoch ist es erst möglich Ressourcen über das \pTp-\cdn zu laden, wenn das Skript geladen wurde. Das \cdn arbeitet weniger effektiv, dafür wird das Nutzererlebnis jedoch nicht negativ beeinflusst. Wartet der Service Worker, bis das Script aktiv ist, so können mehr Anfragen über das \cdn beantwortet werden, jedoch ist nicht garantiert, wann es antwortet oder ob es überhaupt fehlerfrei geladen wird. Deshalb wurde sich bei der Implementierung des \cdn dafür entschieden, dass in diesem Fall Anfragen direkt an den Server weitergeleitet werden sollen. Das hat zur Folge, dass sich die gewählte Implementierung besonders für Single Page Applications sowie für Anwendungen, die Navigationen z.B. mithilfe von Turbolinks vermeiden, eignet. Bleibt beim Laden von neuen Inhalten das Anwendung-Skript in Ausführung und muss nicht geladen werden, so kann der Service Worker Anfragen über das \pTp-Netzwerk beantworten.
+Um eine Anfrage über das \pTp-Netzwerk zu beantworten, muss zuvor das Client-Skript geladen sein, da Service Workers die Webrtc-API nicht unterstützen. Die Kommunikation zwischen Service Worker und Anwendungs-Skript geschieht mit Hilfe der postMessage-API\footnote{https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage}. Um sicherzustellen, dass das Client-Skript geladen und zur Kommunikation bereit ist, sendet der Service Worker eine nicht blockende Heartbeat-Anfrage an das Skript. Antwortet das Skript nicht innerhalb eines bestimmten Zeitfensters, so muss der Service Worker davon ausgehen, dass es noch nicht geladen ist. Die Anfrage wird an den Server weitergeleitet. Da nicht davon ausgegangen werden kann, dass das Skript verfügbar bleibt nachdem es geladen wurde, die Seite könnte z.B. geschlossen worden sein, muss der Service Worker sich vor jeder blockenden Anfrage vergewissern dass das Skript zu antworten in der Lage ist. Nachrichten, die zwischen Anwendungs-Skript und Service Worker ausgetauscht werden, haben das Format: 
+
+\{ type: "Art der Nachricht", msg: "Inhalt der Nachricht" \}. 
+
+Das Attribut "type" kann folgende Werte enthalten: "resource", "cache", "heartbeat". Nachrichten vom Typ "resource" ordnen den Service Worker an, eine Nachricht aus seinem Cache an das Anwendungs-Skript zu übergeben. Empfängt der Service Worker eine solche Nachricht, lädt er die angefragte Ressource aus dem Cache und fügt sie der Antwort bei. Nachrichten vom Typ "cache" dienen dazu, beim Server den momentanen Inhalt des Caches zu erfragen. Dies wird genutzt, um einem neu verbundenen Peer die Liste der aktuell gecacheten Ressourcen mitzuteilen. Mit dem Typ "heartbeat" erfragt der Service Worker beim Anwendungs-Skript, ob es momentan verfügbar ist.
+Ist das Skript noch nicht verfügbar, hat der Service Worker zwei Möglichkeiten damit umzugehen. Er kann darauf warten, dass das Skript verfügbar ist und alle Anfragen bis dahin aufhalten, oder er leitet die Anfragen direkt an den Server weiter. Leitet er die Anfragen direkt an den Server, wird die Ladezeit der Ressource nicht verzögert, jedoch ist es erst möglich Ressourcen über das \pTp-\cdn zu laden, wenn das Skript geladen wurde. Das \cdn arbeitet weniger effektiv, dafür wird das Nutzererlebnis jedoch nicht negativ beeinflusst. Wartet der Service Worker, bis das Skript aktiv ist, so können mehr Anfragen über das \cdn beantwortet werden, jedoch ist nicht garantiert, wann es antwortet oder ob es überhaupt fehlerfrei geladen wird. Deshalb wurde sich bei der Implementierung des \cdn dafür entschieden, dass in diesem Fall Anfragen direkt an den Server weitergeleitet werden sollen. Das hat zur Folge, dass sich die gewählte Implementierung besonders für Single Page Applications sowie für Anwendungen, die Navigationen z.B. mithilfe von Turbolinks vermeiden, eignet. Bleibt beim Laden von neuen Inhalten das Anwendung-Skript in Ausführung und muss nicht geladen werden, so kann der Service Worker Anfragen über das \pTp-Netzwerk beantworten.
  Vor der Registrierung des Service Workers speichert das Anwendungs-Skript die Konfiguration in die IndexDB des Browsers. Der Service Worker liest die Konfiguration von dort aus. Auf diesem Weg ist es möglich, den Service Worker dynamisch zu konfigurieren und ihm unter anderem die zu verarbeitenden URLs zu übergeben. Die URLs werden als Regex übergeben. Fällt eine Anfrage nicht in die übergebenen URLs, unterbricht er die Verarbeitung und die Anfrage wird vom Server beantwortet.
  Sobald der Service Worker aktiv ist, ruft er self.clients.claim() auf, um sicherzustellen, dass er schon beim ersten Seitenaufruf aktiv ist und Anfragen der Clients verarbeiten kann.
  
@@ -90,7 +92,6 @@ Um das Signaling zu realisieren, implementiert SlideSync eine eigene Klasse, die
 Die Zuordnung muss performant geschehen und in einem skalierten Multi Server Setup funktionieren. Um dies zu erreichen, wird Redis als Datenspeicher verwendet. Redis bietet geeignete Datenstrukturen mit geringen Zugriffszeiten und ist gut für ein Multi Server Setup geeignet. 
 Die Klasse speichert die liste der verfügbaren Submeshes in einer Liste. Jedes Mesh wird über eine aufsteigende ID in Kombination mit dem Scope identifiziert. Mit Hilfe eines Redis Counters wird die ID des letzten Submeshes gespeichert. Dadurch lassen sich alle angelegten Meshes ermitteln ohne sie explizit speichern zu müssen. Erreicht ein Mesh die maximale Teilnehmerzahl, so wird es aus der Liste der verfügbaren Submeshes entfernt. Ist kein freies Mesh verfügbar, so wird ein neues Mesh eröffnet. Dazu wird der Counter der letzten Mesh-ID erhöht und ein neues Mesh mit dieser ID wird der Liste der verfügbaren Meshes hinzugefügt. Im Anschluss wird ein Hintergrundjob gestartet, der überprüft, ob bereits angelegte Meshes wieder frei geworden sind. Dazu wird für jedes Mesh überprüft, ob sich alle Teilnehmer in der letzten Minute zurückgemeldet haben. Haben sich Teilnehmer nicht zurück gemeldet, so wird das Mesh wieder zu den verfügbaren Meshes hinzugefügt. Da über sämtliche Submeshes und alle Peers iteriert werden muss, ergibt es Sinn, die Operation im Hintergrund durchzuführen.
 Die Zuordnung von Teilnehmern zu Meshes wird für jedes Mesh ein Redis Set angelegt, in dem die ID jedes Peers der dem Mesh beigetreten ist gespeichert wird. Zusätzlich wird für jeden Peer ein temporärer Key angelegt der nach 40 Sekunden automatisch gelöscht wird. Um Statistiken über Events zu erheben meldet sich jeder Teilnehmer eines Events alle 30 Sekunden bei dem Server und übermittelt Daten von seinem Client. Im Rahmen dieser Statistischen Erhebung wird ebenfalls der temporäre key erneuert, falls er sich am \pTp-Netzwerk beteiligen kann. Ist der temporäre Key für einen Peer nicht verfügbar so wird angenommen das er nicht mehr am \pTp-Netzwerk teilnimmt und sich demnach auch nicht mehr in dem Peer mesh befindet.
-\todo{Schreibweise: ID}     
 
 \subsection{\schulCloud}
 
@@ -108,25 +109,23 @@ Für die Funktion des \cdns sind einige Nachrichten zwischen den Komponenten und
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=0.8\textwidth]{figures/message_flow_cdn}
-	\caption[A Figure Short-Title]{Kommunikationsfluss zwischen zwei Clients um eine Ressource auszutauschen}
+	\caption[Kommunikationsfluss zwischen zwei Clients]{Kommunikationsfluss zwischen zwei Clients um eine Ressource auszutauschen}
 	\label{fig:message_flow_cdn}
 \end{figure}
 
-Abbildung \ref{fig:message_flow_cdn} zeigt eine vereinfachte Darstellung des Kommunikationsflusses zweier Clients, welche die Ressource img.png laden. Client 1 lädt als erster die Webseite, initialisiert das \cdn und meldet dem Signaling Server zurück, dass er dem Peer Mesh beigetreten ist. Die Website versucht anschießend, die Ressource img.png zu laden. Diese Anfrage wird vom Service Worker abgefangen, welcher als erstes versucht, die Anfrage über seinen eigenen Cache zu beantworten. Da dies nicht möglich ist, versucht er nun, die Anfrage über das \pTp-Netzwerk zu bearbeiten. Dazu muss er das Client Script auffordern, bei geeigneten Peers nach der Ressource zu fragen. Da diese Anfrage an die Client blockend ist muss er sich zuerst über einen Heartbeat versichern das das Client Script auch verfügbar ist. Zur Übersichtlichkeit des Diagrams wurde der Heartbeat nicht bei jeder Kommunikation hinzu gefügt. Hat der Service Worker sich vergewissert, dass das Client Script in der Lage ist zu antworten, so sendet er die Anfrage der Ressource image.png an das Client Script. Dieses sucht in der lokalen List von Peers und deren Ressourcen nach einem geeigneten Peer. Dieser ist in diesem Fall nicht vorhanden, weshalb es an den Service Worker undefined sendet. Daraufhin lädt der Service Worker die Ressource über den Server herunter. Anschließend speichert er die Ressource in seinem Cache.
-\todo{Schreibweise:Skript}
+Abbildung \ref{fig:message_flow_cdn} zeigt eine vereinfachte Darstellung des Kommunikationsflusses zweier Clients, welche die Ressource image.png laden. Client 1 lädt als erster die Webseite, initialisiert das \cdn und meldet dem Signaling Server zurück, dass er dem Peer Mesh beigetreten ist. Die Website versucht anschießend, die Ressource image.png zu laden. Diese Anfrage wird vom Service Worker abgefangen, welcher als erstes versucht, die Anfrage über seinen eigenen Cache zu beantworten. Da dies nicht möglich ist, versucht er nun, die Anfrage über das \pTp-Netzwerk zu bearbeiten. Dazu muss er das Client Skript auffordern, bei geeigneten Peers nach der Ressource zu fragen. Da diese Anfrage an die Client blockend ist muss er sich zuerst über einen Heartbeat versichern das das Client Skript auch verfügbar ist. Zur Übersichtlichkeit des Diagrams wurde der Heartbeat nicht bei jeder Kommunikation hinzu gefügt. Hat der Service Worker sich vergewissert, dass das Client Skript in der Lage ist zu antworten, so sendet er die Anfrage der Ressource image.png an das Client Skript. Dieses sucht in der lokalen List von Peers und deren Ressourcen nach einem geeigneten Peer. Dieser ist in diesem Fall nicht vorhanden, weshalb es an den Service Worker undefined sendet. Daraufhin lädt der Service Worker die Ressource über den Server herunter. Anschließend speichert er die Ressource in seinem Cache.
 
-Als nächstes lädt Client 2 die Webseite und teilt dem Signaling Server mit, dass er dem Peer Mesh beitreten will. Dieser sendet eine Nachricht an Client 1, dass ein neuer Peer dem Mesh beigetreten ist. Client 1 initialisiert daraufhin die Webrtc-Verbindung zu Client 2. Ist die Verbindung hergestellt, tauschen die beiden Clients den Inhalt ihres Caches aus und speichern, welche Ressourcen der andere Client gespeichert hat. Nun versucht die Webseite von Client 2, die Ressource img.png zu laden. Der Service Worker von Client 2 fängt die Anfrage ab. Da er die Anfrage nicht mit Hilfe seines Caches beantworten kann, beauftragt er Client Script 2 mit der Beantwortung der Anfrage über das \pTp-Netzwerk. Client 2 ermittelt Client 1 als geeigneten Peer und sendet die Anfrage der Ressource img.png an Client 1 weiter. Client 1 sendet nun die Anfrage an seinen Service Worker weiter. Dieser lädt die Ressource aus seinem Cachen und leitet sie an Client 1 weiter. Client 1 serialisiert und unterteilt, falls nötig, die Ressource in Chunks und sendet sie an Client 2. Client 2 setzt die Antwort nun wieder zusammen, deserialisiert sie und sendet die Antwort an seinen Service Worker. Der Service Worker sendet das Response Object an die Webseite und das Bild kann geladen werden.
-\todo{img.png falsch}
+Als nächstes lädt Client 2 die Webseite und teilt dem Signaling Server mit, dass er dem Peer Mesh beitreten will. Dieser sendet eine Nachricht an Client 1, dass ein neuer Peer dem Mesh beigetreten ist. Client 1 initialisiert daraufhin die Webrtc-Verbindung zu Client 2. Ist die Verbindung hergestellt, tauschen die beiden Clients den Inhalt ihres Caches aus und speichern, welche Ressourcen der andere Client gespeichert hat. Nun versucht die Webseite von Client 2, die Ressource image.png zu laden. Der Service Worker von Client 2 fängt die Anfrage ab. Da er die Anfrage nicht mit Hilfe seines Caches beantworten kann, beauftragt er Client Skript 2 mit der Beantwortung der Anfrage über das \pTp-Netzwerk. Client 2 ermittelt Client 1 als geeigneten Peer und sendet die Anfrage der Ressource image.png an Client 1 weiter. Client 1 sendet nun die Anfrage an seinen Service Worker weiter. Dieser lädt die Ressource aus seinem Cachen und leitet sie an Client 1 weiter. Client 1 serialisiert und unterteilt, falls nötig, die Ressource in Chunks und sendet sie an Client 2. Client 2 setzt die Antwort nun wieder zusammen, deserialisiert sie und sendet die Antwort an seinen Service Worker. Der Service Worker sendet das Response Object an die Webseite und das Bild kann geladen werden.
 
 \subsection{Heartbeats}
 
-Sendet der Service Worker eine Anfrage an das Client Script, so muss dieser sicher stellen, dass das Script sowohl geladen ist als auch auf den Service Worker Message Channel registriert ist. Zwar ist auch die eigentliche Anfrage an das Client Script mit einem Timeout versehen, jedoch ist dieser deutlich höher als der des Heartbeats. Dieser Heartbeat muss zwischen jeder Kommunikation zwischen Service Worker und Client Script, die blockt, durchgeführt werden, da es möglich ist, dass zwischen der aktuellen und der letzten Anfrage das Client Script beendet wurde oder nicht mehr in der Lage ist, auf Anfragen des Service Workers zu reagieren. Gründe dafür können unter anderem sein, dass ein Fehler geworfen oder dass die Seite geschlossen wurde. Wird der Heartbeat weggelassen, so muss im Falle eines nicht antwortenden Skripts immer die maximale Timeout-Dauer für Anfragen über das \pTp-\cdn abgewartet werden. Als Folge würden sich diese Anfragen deutlich verlangsamen.
+Sendet der Service Worker eine Anfrage an das Client Skript, so muss dieser sicher stellen, dass das Skript sowohl geladen ist als auch auf den Service Worker Message Channel registriert ist. Zwar ist auch die eigentliche Anfrage an das Client Skript mit einem Timeout versehen, jedoch ist dieser deutlich höher als der des Heartbeats. Dieser Heartbeat muss zwischen jeder Kommunikation zwischen Service Worker und Client Skript, die blockt, durchgeführt werden, da es möglich ist, dass zwischen der aktuellen und der letzten Anfrage das Client Skript beendet wurde oder nicht mehr in der Lage ist, auf Anfragen des Service Workers zu reagieren. Gründe dafür können unter anderem sein, dass ein Fehler geworfen oder dass die Seite geschlossen wurde. Wird der Heartbeat weggelassen, so muss im Falle eines nicht antwortenden Skripts immer die maximale Timeout-Dauer für Anfragen über das \pTp-\cdn abgewartet werden. Als Folge würden sich diese Anfragen deutlich verlangsamen.
 
 \subsection{Verbindungsaufbau}
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=0.8\textwidth]{figures/verbindungsaufbau}
-	\caption[A Figure Short-Title]{Flussdiagramm Verbindungsaufbau}
+	\caption[Flussdiagramm Verbindungsaufbau]{Flussdiagramm Verbindungsaufbau}
 	\label{fig:verbindungsaufbau}
 \end{figure}
 
@@ -137,7 +136,7 @@ Tritt ein Client einem Peer Mesh bei, so muss er zuerst eine Verbindung zu allen
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=0.8\textwidth]{figures/cache_initialisierung}
-	\caption[A Figure Short-Title]{Flussdiagramm Cache-Initialisierung}
+	\caption[Flussdiagramm Cache-Initialisierung]{Flussdiagramm Cache-Initialisierung}
 	\label{fig:cache_initialisierung}
 \end{figure}
 
@@ -148,7 +147,7 @@ x
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=0.8\textwidth]{figures/Ressourcen_update}
-	\caption[A Figure Short-Title]{Flussdiagramm Ressourcen-Update}
+	\caption[Flussdiagramm Ressourcen-Update]{Flussdiagramm Ressourcen-Update}
 	\label{fig:update_resource}
 \end{figure}
 
@@ -228,7 +227,7 @@ Gibt ebenfalls ein Promise zurück und überprüft, ob erfolgreich eine Verbindu
 
 \begin{listing}[h]
 	\inputminted{javascript}{listings/_handle_chunk.js}
-	\caption{}
+	\caption{Abarbeitung eines Chunks}
 	\label{lst:handle_chunk}
 \end{listing}
 
@@ -247,7 +246,7 @@ Die PeerId bezeichnet die ID des Peers, der die Statistik sendet.
 \item[method]\hfill \\
 Method gibt an, wie die Anfrage behandelt wurde und kann die Werte 'cacheResponse', 'peerResponse' oder 'serverResponse' beinhalten. Ein cacheResponse konnte aus dem eigenen Cache beantwortet werden. ServerResponse bedeutet, dass die Anfrage über den externen Server geladen werden musste. Der Wert peerResponse gibt an das die Anfrage über das \pTp-CDN bearbeitet werden konnte.
 \item[from]\hfill \\
- 'From' gibt an, woher die Anfrage geladen wurde. Im Falle eines serverResponse beinhaltet sie den Wert 'server' und bei einem cacheResponse den Wert 'cache'. Wurde die Anfrage über das \pTp-Netzwerk beantwortet, beinhaltet sie die PeerID des Peers, der die Anfrage beantwortet hat. Dazu sendet das Script neben der eigentlichen Anfrage auch die eigene PeerId und die PeerId des Peers, der die Anfrage beantwortet hat an die Service Worker. (siehe \ref{lst:handle_chunk}) 
+ 'From' gibt an, woher die Anfrage geladen wurde. Im Falle eines serverResponse beinhaltet sie den Wert 'server' und bei einem cacheResponse den Wert 'cache'. Wurde die Anfrage über das \pTp-Netzwerk beantwortet, beinhaltet sie die PeerID des Peers, der die Anfrage beantwortet hat. Dazu sendet das Skript neben der eigentlichen Anfrage auch die eigene PeerId und die PeerId des Peers, der die Anfrage beantwortet hat an die Service Worker. (siehe \ref{lst:handle_chunk}) 
 \item[URL]\hfill \\
 Die URL enthält die URL der angefragten Ressource. 
 \item[timing]\hfill \\
@@ -309,7 +308,7 @@ Mit Hilfe der Quota Management API\cite{quota-api-ff} ist es möglich, die momen
 	\label{lst:configuration}
 \end{listing}
 
-Um eine gute Anpassung an verschiedene Anwendungsfälle zu ermöglichen, bietet das \pTp-CDN eine Reihe von Konfigurationsmöglichkeiten. Nachdem das Client Script die Konfiguration geladen hat, wird sie in IndexedDB gespeichert und von dort durch den Service Worker geladen.\ref{lst:configuration} zeigt eine beispielhafte Konfiguration des CDNs, im Folgenden werden die verschiedenen Konfigurationsmöglichkeiten aufgelistet und beschrieben.
+Um eine gute Anpassung an verschiedene Anwendungsfälle zu ermöglichen, bietet das \pTp-CDN eine Reihe von Konfigurationsmöglichkeiten. Nachdem das Client Skript die Konfiguration geladen hat, wird sie in IndexedDB gespeichert und von dort durch den Service Worker geladen.\ref{lst:configuration} zeigt eine beispielhafte Konfiguration des CDNs, im Folgenden werden die verschiedenen Konfigurationsmöglichkeiten aufgelistet und beschrieben.
 
 \begin{description}
 \item[channel]\hfill \\
@@ -329,7 +328,7 @@ Liste aller URLs, die mit Hilfe des CDN bearbeitet werden sollen. URL können al
 \item[excludedUrls]\hfill \\
 Liste von URLs, die explizit von dem CDN ausgeschlossen werden sollen. Ebenso wie urlsToShare werden excludedUrls als Regex interpretiert.
 \item[path]\hfill \\
-Pfad, von dem das Service Worker Script geladen werden soll.
+Pfad, von dem das Service Worker Skript geladen werden soll.
 \item[scope]\hfill \\
 Gibt den Scope an, unter dem der Service Worker arbeiten soll. 
 \item[basePath]\hfill \\

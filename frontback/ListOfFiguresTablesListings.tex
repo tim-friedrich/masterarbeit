@@ -2,17 +2,19 @@
 % List of Figures
 %*******************************************************    
 %\phantomsection 
+\renewcommand\listfigurename{Abbildungsverzeichnis}
+
 \refstepcounter{dummy}
 \addcontentsline{toc}{chapter}{\tocEntry{\listfigurename}}
 %\pdfbookmark[0]{\listfigurename}{toc}
 \listoffigures
-
 \newpage
 
 %*******************************************************
 % List of Tables
 %*******************************************************
 %\phantomsection 
+\renewcommand\listtablename{Tabellenverzeichnis}
 \refstepcounter{dummy}
 \addcontentsline{toc}{chapter}{\tocEntry{\listtablename}}
 %\pdfbookmark[0]{\listtablename}{toc}
@@ -27,10 +29,10 @@
 \makeatletter
 \let\l@listing\l@figure
 \makeatother
-\renewcommand{\cftfigpresnum}{Listing }
+\renewcommand{\cftfigpresnum}{Auflistung }
   
 %\phantomsection 
-\renewcommand\lstlistlistingname{List of Listings}
+\renewcommand\lstlistlistingname{Auflistungsverzeichnis}
 \refstepcounter{dummy}
 \addcontentsline{toc}{chapter}{\tocEntry{\lstlistlistingname}}
 %\pdfbookmark[0]{\lstlistlistingname}{toc}

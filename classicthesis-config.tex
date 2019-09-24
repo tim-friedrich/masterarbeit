@@ -47,7 +47,7 @@
 \newcommand{\myTitle}{Webbasierte Verteilung großer Datenmengen in lokalen Netzwerken
 \xspace}
 
-\newcommand{\myGermanTitle}{}\newcommand{\myDegree}{Bachelor of Science\xspace}
+\newcommand{\myGermanTitle}{Web-based distribution of large data in locale networks}\newcommand{\myDegree}{Bachelor of Science\xspace}
 \newcommand{\myName}{Tim Friedrich\xspace}
 \newcommand{\myEmail}{tim.friedrich@student.hpi.de\xspace}
 \newcommand{\myProf}{Prof. Dr. Christoph Meinel\xspace}
@@ -56,18 +56,17 @@
 \newcommand{\myDepartment}{Internet Technologies and Systems\xspace}
 \newcommand{\myUni}{University of Potsdam\xspace}
 \newcommand{\myLocation}{Potsdam\xspace}
-\newcommand{\myTime}{October 5\textsuperscript{th}, 2016\xspace}
+\newcommand{\myTime}{Potsdam, den 26. September 2019}
 \newcommand{\cdn}{CDN\xspace}
 \newcommand{\cdns}{CDNs\xspace}
 \newcommand{\pTp}{Peer-to-Peer\xspace}
 \newcommand{\webrtc}{Webrtc\xspace}
-\newcommand{\schulCloud}{Schul-Cloud\xspace}
+\newcommand{\schulCloud}{HPI Schul-Cloud\xspace}
 \newcommand{\hpi}{Hasso-Plattner-Instituts\xspace}
 \newcommand{\study}{\textsc{\emph{\color{red} Studie }}\xspace}
 \newcommand{\note}[1]{\emph{\color{red} #1 }}
 \newcommand{\client}{Client\xspace}
 \newcommand{\clients}{Clients\xspace}
-
 
 
 
@@ -105,7 +104,7 @@
     %backref=true,%
     natbib=true % natbib compatibility mode (\citep and \citet still work)
 }{biblatex}
-    \usepackage{biblatex}
+	\usepackage{biblatex}
 
 %bugfix
 \makeatletter
@@ -219,6 +218,7 @@
     }{\relax}
 \makeatother
 
+
 % ********************************************************************
 
 \usepackage{classicthesis}
@@ -293,3 +293,9 @@
 \PassOptionsToPackage{capitalise,noabbrev}{cleveref}
 
 \usepackage{arydshln}
+
+\addto\captionsamerican{%
+  \renewcommand{\figurename}{Abbildung}%
+  \renewcommand{\tablename}{Tabelle}%
+}
+

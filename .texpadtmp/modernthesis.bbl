@@ -248,15 +248,17 @@
          given={Brandon},
          giveni={B\bibinitperiod},
       }}%
-      {{hash=HT}{%
-         family={Hong},
-         familyi={H\bibinitperiod},
-         given={Theodore},
-         giveni={T\bibinitperiod},
+      {{hash=uTH}{%
+         prefix={und},
+         prefixi={u\bibinitperiod},
+         family={Theodore},
+         familyi={T\bibinitperiod},
+         given={Hong},
+         giveni={H\bibinitperiod},
       }}%
     }
     \strng{namehash}{CI+1}
-    \strng{fullhash}{CISOWBHT1}
+    \strng{fullhash}{CISOWBTHu1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{sortinit}{C}
@@ -340,6 +342,17 @@
     \endverb
     \field{month}{12}
     \field{year}{2011}
+  \endentry
+
+  \entry{blog-sc}{misc}{}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{G}
+    \field{sortinithash}{G}
+    \field{note}{Abgerufen: 24.09.2019}
+    \field{title}{Gemeinsam stark: 120 MINT-EC-Pilotschulen}
+    \verb{url}
+    \verb https://blog.schul-cloud.org/mint-ec120/
+    \endverb
   \endentry
 
   \entry{hls-sdt}{misc}{}
@@ -514,6 +527,35 @@
   Sensor, Ad Hoc Wireless, and Peer-to-Peer Networks}
     \field{month}{08}
     \field{year}{2005}
+  \endentry
+
+  \entry{rfc-nat}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=uMHPS}{%
+         prefix={und},
+         prefixi={u\bibinitperiod},
+         family={M.\bibnamedelima Holdrege},
+         familyi={M\bibinitperiod\bibinitdelim H\bibinitperiod},
+         given={P.\bibnamedelima Srisuresh},
+         giveni={P\bibinitperiod\bibinitdelim S\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Network Working Group}%
+    }
+    \strng{namehash}{MHPSu1}
+    \strng{fullhash}{MHPSu1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{M}
+    \field{sortinithash}{M}
+    \field{title}{IP Network Address Translator (NAT) Terminology and
+  Considerations}
+    \verb{url}
+    \verb https://tools.ietf.org/html/rfc2663
+    \endverb
+    \field{month}{09}
+    \field{year}{1999}
   \endentry
 
   \entry{symphonie}{article}{}
@@ -887,6 +929,17 @@
     \endverb
     \field{month}{11}
     \field{year}{2017}
+  \endentry
+
+  \entry{redis-set}{misc}{}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{note}{Abgerufen: 24.09.2019}
+    \field{title}{SISMEMBER key member}
+    \verb{url}
+    \verb https://redis.io/commands/sismember
+    \endverb
   \endentry
 
   \entry{chrome_sandbox}{misc}{}

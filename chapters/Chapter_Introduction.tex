@@ -11,19 +11,16 @@
 %	\caption[A Figure Short-Title]{A Figure Title}
 %	\label{fig:websocket}
 %\end{figure}
-
 \section{Motivation}
 In den letzten Jahren hat sich das verwendete Datenvolumen des Internets immer weiter gesteigert. Laut Statista belief sich das weltweite Datenvolumen auf 33 Zettabyte und wird sich bis zum Jahr 2025 auf 175 Zettabyte steigern.\cite{statistica-datenvolumen} Zwar ist die vorhandene Bandbreite bei vielen Nutzern ebenfalls gestiegen, jedoch ist die Bandbreite vor allem in ländlicheren Regionen oft noch nicht ausreichend.\cite{bmvi-bandbreite} Insbesondere dann wenn viele Nutzer sich gemeinsam eine Internetanbindung teilen müssen, ist dies ein Problem.
 
-Immer mehr Unternehmen halten Ihre Hauptversammlungen, Kundgebungen, und Pressemitteilungen über Live-Streams im Internet ab. Dies stellt sie vor das Problem, dass trotz oftmals guter Internetanbindung zu viele Mitarbeiter das Video über die Internetanbindung laden müssen, was zu einer vollständigen Auslastung des WANs führen kann. Dies wiederum kann zur Folge haben, dass ein Arbeiten für die restliche Belegschaft schwierig bis unmöglich wird. Der dadurch entstandene Schaden ist oft nur schwer zu beziffern, beläuft sich aber schon bei mittelständischen Unternehmen auf bis zu 25000 Euro pro Stunde.\cite{zero-internet-schaden}
+Immer mehr Unternehmen halten Ihre Hauptversammlungen, Kundgebungen, und Pressemitteilungen über Live-Streams im Internet ab. Dies stellt sie vor das Problem, dass trotz oftmals guter Internetanbindung zu viele Mitarbeiter das Video über die Internetanbindung parallel laden müssen, was zu einer vollständigen Auslastung des WAN Anschlusses führen kann. Dies wiederum kann zur Folge haben, dass ein Arbeiten für die restliche Belegschaft schwierig bis unmöglich wird. Der dadurch entstandene Schaden ist oft nur schwer zu beziffern, beläuft sich aber schon bei mittelständischen Unternehmen auf bis zu 25000 Euro pro Stunde.\cite{zero-internet-schaden}
 
-Nicht nur bei Unternehmen, sondern auch in Schulen ist die Digitalisierung auf dem Vormarsch. Zunehmend werden Online-Lernplattformen im Unterricht eingesetzt. Diese Entwicklung wird jedoch stark ausgebremst durch zu geringe Bandbreiten. Viele Schulen haben eine schlechtere Internetanbindung als viele Privathaushalte.\cite{sonderstudie_digital} Um Inhalte anzeigen zu können, muss jeder Schüler einer Klasse sich diese über das WAN aus dem Internet herunterladen. Da jedoch Schüler in derselben Klasse oft die gleichen Inhalte benötigen, kann Bandbreite gespart werden, indem diese Inhalte nur einmal über das Internet geladen und anschließend im lokalen Netzwerk verteilt werden. Eine gängige Methode, dies zu erreichen, ist die Installation von lokalen Schulservern oder Caching Appliances. Diese Lösungen bringen jedoch einige Nachteile mit sich. So muss eine Schule die fachlichen und räumlichen Kapazitäten zur Installation und Wartung der Server bereitstellen. 
+Nicht nur bei Unternehmen, sondern auch in Schulen ist die Digitalisierung auf dem Vormarsch. Zunehmend werden in der Cloud bereitgestellte Lernplattformen im Unterricht eingesetzt. Diese Entwicklung wird jedoch stark ausgebremst durch zu geringe Bandbreiten. Viele Schulen haben eine schlechtere Internetanbindung als viele Privathaushalte.\cite{sonderstudie_digital} Um Inhalte anzeigen zu können, muss jeder Schüler einer Klasse sich diese über das WAN aus dem Internet herunterladen. Da jedoch Schüler in derselben Klasse oft die gleichen Inhalte benötigen, kann Bandbreite gespart werden, indem diese Inhalte nur einmal über das Internet geladen und anschließend im lokalen Netzwerk verteilt werden. Eine gängige Methode, dies zu erreichen, ist die Installation von lokalen Schulservern oder Caching Appliances. Diese Lösungen bringen jedoch einige Nachteile mit sich. So muss eine Schule die fachlichen und räumlichen Kapazitäten zur Installation und Wartung der Server bereitstellen. Auch muss die Sicherheit der Server gewährleistet werden, viele Schulen haben jedoch nicht die Kompetenz im Haus um diesen Anforderungen gerecht zu werden. 
 
-Beide Anwendungsfälle haben gemeinsam, dass viele Nutzer die selben Inhalte zur annähernd gleichen Zeit benötigen und zum aktuellen Zeitpunkt häufig über das Internet laden müssen. Diese zeitliche und inhaltliche Lokalität kann genutzt werden, um die benötigte Bandbreite zu reduzieren, indem die Inhalte nur einmal über das WAN geladen und anschließend im lokalen Netzwerk verteilt werden.
+Beide Anwendungsfälle haben gemeinsam, dass viele Nutzer die selben Inhalte zur annähernd gleichen Zeit benötigen. Diese zeitliche und inhaltliche Lokalität kann genutzt werden, um die benötigte Bandbreite zu reduzieren, indem die Inhalte nur einmal über das WAN geladen und anschließend im lokalen Netzwerk verteilt werden.
 
-Die folgende Arbeit betrachtet den Anwendungsfall des Live-Streaming und den Einsatz von unterstützender Software in Schulen. Es wird betrachtet ob ein Peer to Peer Ansatz zu einer Verbesserung von Ladezeiten und Netzwerklast betragen kann.
- 
-
+Die folgende Arbeit betrachtet den Anwendungsfall des Live-Streaming im Unternehmenskontexts und den Einsatz von unterstützender Software in Schulen. Es wird betrachtet in wie weit ein browserbasierter \pTp Ansatz zu einer Verbesserung von Ladezeiten und Netzwerklast beitragen kann.
 
 % https://de.statista.com/statistik/daten/studie/266869/umfrage/prognose-zum-datenvolumen-des-globalen-ip-traffics/
 
@@ -43,22 +40,21 @@ Die folgende Arbeit betrachtet den Anwendungsfall des Live-Streaming und den Ein
 %\label{tab:first-table}
 %\end{table}
 
-\section{HPI \schulCloud}
+\section{\schulCloud}
 %Das Projekt \schulCloud\footnote{https://schul-cloud.org/} ist eine webbasierte Lehr- und Lernplattform dessen Ziel es ist die Digitalisierung an Schulen zu fördern. Zusammen mit dem nationalen Excellence-Schulnetzwerk(MINTEC) wurde das Projekt vom \hpi 2016 ins leben gerufen. Im Mai 2017 startet die Pilotphase des Projektes mit insgesamt 27 Schulen. 
 %Die Plattform soll Lehrer dabei unterstützen Unterrichtsstunden vorzubereiten, durchzuführen und Aufgaben an die Schüler zu verteilen. Auch die Verteilung von externen Materialien wie Bücher für die Schüler ist möglich.
 
-Das Projekt \schulCloud\footnote{https://schul-cloud.org/} ist ein Gemeinschaftsprojekt des \hpi und des nationalen Excellence-Schulnetzwerkes (MINT-EC). Im Mai 2017 startete die Pilotphase des Projektes mit insgesamt 27 Schulen. Ziel des Projektes ist die Förderung der Digitalisierung in Schulen. 
+Das Projekt \schulCloud\footnote{https://schul-cloud.org/} ist ein Gemeinschaftsprojekt des \hpi und des nationalen Excellence-Schulnetzwerkes (MINT-EC). Im Mai 2017 startete die Pilotphase des Projektes mit insgesamt 27 Schulen. Im August 2019 nahmen bereits 120 Schulen an dem Pilotprojekt teil.\cite{blog-sc} Ziel des Projektes ist die Förderung der Digitalisierung in Schulen. 
 Zu diesem Zweck wurde eine webbasierte Plattform entwickelt, die Lehrer und Schüler bei der Unterrichtsvorbereitung, Durchführung und Nachbereitung unterstützen soll. 
-
 Lehrer können Kurse anlegen und diese nutzen, um Materialien sowie Aufgaben zu verteilen. Schülern ist es über die Plattform möglich, Lösungen für Aufgaben einzureichen und ihr Ergebnis einzusehen. Über einen Kalender können sie Ihren Stundenplan abrufen.
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=0.8\textwidth]{figures/screenshot_schul-cloud}
-	\caption[A Figure Short-Title]{Schul-Cloud Webseite}
+	\caption[HPI Schul-Cloud Webseite]{HPI Schul-Cloud Webseite}
 	\label{fig:screenshot_schul-clould}
 \end{figure}
 
-Das Projekt wird als Open Source zur Verfügung gestellt und basiert auf einer Microservices-Architektur. Bei diesem Architekturmuster setzt sich die Software aus unabhängigen Softwarekomponenten (Services) zusammen. Die Komponenten kommunizieren über Schnittstellen, sind aber darüber hinaus eigenständige Entitäten und können von beliebig vielen anderen Komponenten verwendet werden. Durch die Verwendung von Microservices wird eine einfachere Anbindung an bestehende Infrastrukturen ermöglicht. Desweiteren können einzelne Services ersetzt werden, um die Plattform an die Anforderungen der Schulen anzupassen. Bereitgestellt wird die Plattform mit Hilfe von Cloud Hosting, bei dem die Infrastruktur zentral und nicht von jeder Schule bereitgestellt wird. Dies ermöglicht eine einfache Skalierung. Neben der Webanwendung existieren native Apps für Android und iOS.
+Das Projekt wird als Open Source zur Verfügung gestellt und basiert auf einer Microservices-Architektur. Bei diesem Architekturmuster setzt sich die Software aus unabhängigen Softwarekomponenten (Services) zusammen. Die Komponenten kommunizieren über Schnittstellen, sind aber darüber hinaus eigenständige Entitäten und können von beliebig vielen anderen Komponenten verwendet werden. Durch die Verwendung von Microservices wird eine einfachere Anbindung an bestehende Infrastrukturen ermöglicht. Desweiteren können einzelne Services ersetzt werden, um die Plattform an die Anforderungen der Schulen anzupassen. Bereitgestellt wird die Plattform mit Hilfe von Cloud Hosting, bei dem die Infrastruktur zentral und nicht von jeder Schule bereitgestellt wird. Dies ermöglicht eine einfache Skalierung und Verwaltung, jedoch benötigen die Schulen gute Internet Anbindungen. Neben der Webanwendung existieren native Apps für Android und iOS.
 
 %\note{unsicher wie detailliert ich hier werden soll}
 
@@ -102,16 +98,16 @@ Das Projekt wird als Open Source zur Verfügung gestellt und basiert auf einer M
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=0.8\textwidth]{figures/Slidesync_screenshot}
-	\caption[A Figure Short-Title]{Slidesync Event Seite}
+	\caption[SlideSync Event Seite]{SlideSync Event Seite}
 	\label{fig:slidesync_screenshot}
 \end{figure}
-Slidesync\footnote{www.slidesync.com} ist eine Live-Streaming Plattform des Unternehmens MediaEvent Services GmbH & Co. KG. Sie ermöglicht es Live-Streams eigenständig anzulegen und an eine Vielzahl von Nutzern zu verteilen. Die Zielgruppe der Plattform sind mittelständische bis große Unternehmen. Neben dem Self-Service, bei dem die Kunden selbst das Streaming übernehmen, wird auch ein Managed Service angeboten bei dem MediaEvent Services das Streaming und die Produktion vor Ort übernimmt. Die Plattform ist für eine große Anzahl von Nutzern ausgelegt und ist hochverfügbar, um den Ansprüchen von Unternehmen gerecht zu werden. Sie stellt unter anderem Funktionen bereit, um Veranstaltung mit Registrierung und individualisierbaren Präsentationen zu realisieren. Die Plattform wird in Ruby on Rails entwickelt und stellt neben den Anwendungsservern auch eigene Streaming-Server bereit.
-
+SlideSync\footnote{www.slidesync.com} ist eine Live-Streaming Plattform des Unternehmens MediaEvent Services GmbH \& Co. KG. Sie ermöglicht es Live-Streams eigenständig anzulegen und an eine Vielzahl von Nutzern zu verteilen. Die Zielgruppe der Plattform sind mittelständische bis große Unternehmen. Neben dem Self-Service, bei dem die Kunden selbst das Streaming übernehmen, wird auch ein Managed Service angeboten bei dem MediaEvent Services das Streaming und die Produktion vor Ort übernimmt. Die Plattform ist für eine große Anzahl von Nutzern ausgelegt und ist hochverfügbar, um den Ansprüchen von Unternehmen gerecht zu werden. Sie stellt unter anderem Funktionen bereit, um Veranstaltung mit Registrierung und individualisierbaren Präsentationen zu realisieren. Die Plattform wird in Ruby on Rails entwickelt und stellt neben den Anwendungsservern auch eigene Streaming-Server bereit.
 \section{Ziele}
 \subsection{Forschungsfrage}
 \begin{itemize}
 	\item Wie können in einem Netzwerk mit begrenzter Internetanbindung datenintensive Ressourcen ausgeliefert werden?
-	\item Eignet sich ein Peer-to-Peer-Ansatz, um die benötigte Internetbandbreite von Schulen im Unterricht und Unternehmen im Rahmen von Livestreams zu verbessern?
+	\item Eignet sich ein Peer-to-Peer-Ansatz, um die benötigte Internetbandbreite im Rahmen von Unternehmensinternen Livestreams zu verbessern?
+	\item Eignet sich ein Peer-to-Peer-Ansatz, um die benötigte Internetbandbreite von Schulen im Unterricht zu verbessern?
 \end{itemize}
 Diese Arbeit wird versuchen die Frage zu beantworten, wie in einem Netzwerk mit geringerer Internetanbindung datenintensive Ressourcen ausgeliefert werden können.
 

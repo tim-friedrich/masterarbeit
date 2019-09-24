@@ -4,7 +4,7 @@ In dem folgenden Kapitel werden Technologien und Konzepte vorgestellt die für d
 
 \section{Ressourcen}
 %\subsection{Statische Ressourcen}
-Unter statischen Ressourcen werden im Rahmen dieser Arbeit Inhalte einer Website verstanden, die für alle Nutzer gleich sind. Sie sind im Gegensatz zu dynamischen Inhalten nicht nutzerspezifisch und können daher gut über ein CDN (siehe \ref{cdn}}) verteilt werden. Insbesondere die so genannten Assets einer Internetseite sind meist statisch. Dies sind meist Javascript- und CSS-, aber auch Bild-Dateien. Auch Videos fallen häufig in diese Kategorie.
+Unter statischen Ressourcen werden im Rahmen dieser Arbeit Inhalte einer Website verstanden, die für alle Nutzer gleich sind. Sie sind im Gegensatz zu dynamischen Inhalten nicht nutzerspezifisch und können daher gut über ein CDN (siehe \ref{cdn}) verteilt werden. Insbesondere die so genannten Assets einer Internetseite sind meist statisch. Dies sind meist Javascript- und CSS-, aber auch Bild-Dateien. Auch Videos fallen häufig in diese Kategorie.
 
 %\subsection{Dynamisch generierte Ressourcen}
 
@@ -33,7 +33,7 @@ Infrastrukturbasierte \cdns bestehen aus einem Ursprungsserver, der von dem Bere
 %https://de.wikipedia.org/wiki/Content_Delivery_Network
 \subsection{\pTp-basierte \cdns }
 
-Bei einem \pTp-basierten \cdn laden \clients Inhalte nicht von einem Ursprungsserver, sondern von einem anderen \client. Dazu bilden sie Overlay-Netzwerke und setzen Techniken von \pTp-Netzwerken zum Auffinden von Ressourcen ein.(siehe \ref{pTp}) Dabei gilt es zwischen Filesharing-Netzwerken und \cdn-Netzwerken zu unterscheiden. Zwar lassen sich prinzipiell für beide dieselben Techniken verwenden, jedoch zielen Filesharing-Netzwerke auf die Verteilung von Dateien zur späteren Verwendung ab. \cdns wiederum werden unter anderem von Websites zur Auslieferung von statischen Inhalten verwendet. Während es bei Filesharing-Netzwerken akzeptabel sein kann, dass das Auffinden von Ressourcen eine gewisse Zeit in Anspruch nimmt, ist dies bei \cdns nicht der Fall.
+Bei einem \pTp-basierten \cdn laden \clients Inhalte nicht von einem Ursprungsserver, sondern von einem anderen \client. Dazu bilden sie Overlay-Netzwerke und setzen Techniken von \pTp-Netzwerken zum Auffinden von Ressourcen ein.(siehe \ref{pTp}) Im Rahmen dieser Arbeit wird zwischen Filesharing-Netzwerken und \cdn-Netzwerken zu unterschieden. Filesharing-Netzwerke, wie z.B. Bittorent\footnote{https://www.bittorrent.com/lang/de/}, zielen auf die Verteilung von Dateien zur späteren Verwendung ab. \cdns wiederum werden unter anderem von Websites zur Auslieferung von statischen Inhalten verwendet. Während es bei Filesharing-Netzwerken akzeptabel sein kann, dass das Auffinden von Ressourcen eine gewisse Zeit in Anspruch nimmt, ist dies bei \cdns nicht der Fall.
 
 %test \cite{p2pBook2005}
 % https://de.wikipedia.org/wiki/Peer-to-Peer#Typen_von_Peer-to-Peer-Systemen
@@ -97,7 +97,7 @@ Aktuell wird \webrtc von Chrome, Firefox, Safari, Android und iOS unterstützt.\
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=0.8\textwidth]{figures/Webrtc_overview}
-	\caption[A Figure Short-Title]{Überblick Server/Client Struktur Webrtc}
+	\caption[Überblick Server/Client Struktur Webrtc]{Überblick Server/Client Struktur Webrtc}
 	\label{fig:webrtc_overview}
 \end{figure}
 
@@ -217,7 +217,7 @@ Service Workers sind Skripte, die im Browser als separate Prozesse im Hintergrun
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=0.8\textwidth]{figures/sw-lifecycle}
-	\caption[A Figure Short-Title]{Lebenszyklus eines Service Workers\footnote{https://developers.google.com/web/fundamentals/primers/service-workers/}}
+	\caption[Lebenszyklus eines Service Workers]{Lebenszyklus eines Service Workers\footnote{https://developers.google.com/web/fundamentals/primers/service-workers/}}
 	\label{fig:swLifecycle}
 \end{figure}
 Nachdem ein Service Worker registriert wurde, befindet er sich im Zustand der Installation. Während der Installation werden häufig Inhalte in den Cache geladen. Wurde der Service Worker erfolgreich installiert, wird er aktiviert. Ab diesem Punkt kann er Requests über das Fetch Event abfangen. Um Arbeitsspeicher zu sparen, wird der Service Worker terminiert, falls er keine Fetch oder Message Events empfängt. Dies hat zur Folge, dass ein Service Worker sich nicht auf den globalen Zustand verlassen kann, sondern stattdessen seinen Zustand auf die IndexedDb ausgelagert werden muss.
@@ -235,9 +235,9 @@ Nachdem ein Service Worker registriert wurde, befindet er sich im Zustand der In
 \section{Websockets}
 
 
-Websockets ist ein auf TCP basierendes Protokoll, das bidirektionale Verbindungen zwischen Server und Webanwendung ermöglicht. Zum Initiieren einer Verbindung wird ein Handshake durchgeführt, der vom Client angestoßen werden muss. Dazu wird wie bei HTTP der Port 80 verwendet. Der Server antwortet bei erfolgreichem Handshake mit dem HTTP Status code 101. Nachdem der Client eine Websocket-Verbindung zum Server aufgebaut hat, ist es dem Server anders als bei HTTP möglich, ohne vorherige Anfrage des Clients Daten an ihn zu senden. Um eine Abwärtskompatibilität zu gewährleisten, werden ähnliche Header wie bei HTTP verwendet.
+Websockets ist ein auf TCP basierendes Protokoll, das bidirektionale Verbindungen zwischen Server und Webanwendung ermöglicht.\cite{rfcWebsockets} Zum Initiieren einer Verbindung wird ein Handshake durchgeführt, der vom Client angestoßen werden muss. Dazu wird wie bei HTTP der Port 80 verwendet. Der Server antwortet bei erfolgreichem Handshake mit dem HTTP Status code 101. Nachdem der Client eine Websocket-Verbindung zum Server aufgebaut hat, ist es dem Server anders als bei HTTP möglich, ohne vorherige Anfrage des Clients Daten an ihn zu senden. Um eine Abwärtskompatibilität zu gewährleisten, werden ähnliche Header wie bei HTTP verwendet.
 
-Neben dem unverschlüsseltem URI-Schema definiert das RFC6455\cite{rfcWebsockets} auch das verschlüsselte Schema wss. Da sehr wenig Daten-Overhead bei der Kommunikation besteht, eignen sich Websockets insbesondere für Anwendungen, die eine geringe Latenz benötigen. Websockets werden von allen modernen Browsern unterstützt.%todo quelle
+Neben dem unverschlüsseltem URI-Schema definiert das RFC6455\cite{rfcWebsockets} auch das verschlüsselte Schema wss. Da sehr wenig Daten-Overhead bei der Kommunikation besteht, eignen sich Websockets insbesondere für Anwendungen, die eine geringe Latenz benötigen. Websockets werden von allen modernen Browsern unterstützt.
 
 %bidirektionale verbindung zwischen server und Webanwendung
 %auf tcp basierendes protokoll
@@ -263,7 +263,6 @@ IPv4 wurde im Jahr 1981 durch das RFC 791\cite{rfc791} definiert und besteht aus
 
 \begin{table}
 \begin{center}
-\caption{Beispiel einer IP-Adresse mit Subnetzmaske}
 \begin{tabular}{|r|l|l|}
 	\hline
 	IP-Adresse & 145.574.322. & 5 \\ \hline
@@ -271,14 +270,15 @@ IPv4 wurde im Jahr 1981 durch das RFC 791\cite{rfc791} definiert und besteht aus
 	& Netzanteil & Hostanteil \\
 	\hline
 \end{tabular}
+\caption{Beispiel einer IP-Adresse mit Subnetzmaske}
 \end{center}
 \end{table}
 
 
-Aufgrund der stark ansteigenden Zahl an Geräten, die mit dem Internet verbunden sind, ist der Adressbereich der IPv4 Adressen nicht mehr ausreichend. 1998 entwickelte der ITFE deshalb einen neuen Standard. IPv6 verwendet 128 anstatt der 32 Bits zur Darstellung von IP-Adressen. Dadurch ist es möglich, 2$^3^2$ Geräte abzubilden. IPv6 wird meist als vier Oktette hexadezimal dargestellt. Zur Unterscheidung von Host- und Netzanteil werden Präfixlängen angegeben.  
+Aufgrund der stark ansteigenden Zahl an Geräten, die mit dem Internet verbunden sind, ist der Adressbereich der IPv4 Adressen nicht mehr ausreichend. 1998 entwickelte der ITFE deshalb einen neuen Standard. IPv6 verwendet 128 anstatt der 32 Bits zur Darstellung von IP-Adressen. Dadurch ist es möglich, 2$^{32}$ Geräte abzubilden. IPv6 wird meist als vier Oktette hexadezimal dargestellt. Zur Unterscheidung von Host- und Netzanteil werden Präfixlängen angegeben.  
 
 \subsection{Network Address Translation (NAT)}
-Mithilfe von NAT können mehrere Geräte über dieselbe öffentliche IP-Adresse über das Internet verbunden werden. Dadurch ist es möglich, trotz des begrenzten Adressraums von IPv4 mehr Geräte mit dem Internet zu verbinden. Dazu werden die IP Adress Header -Felder der Datenpakete verändert. 
+Mithilfe von NAT können mehrere Geräte über dieselbe öffentliche IP-Adresse über das Internet verbunden werden. Dadurch ist es möglich, trotz des begrenzten Adressraums von IPv4 mehr Geräte mit dem Internet zu verbinden. Dazu werden die IP Adress Header -Felder der Datenpakete verändert.\cite{rfc-nat}
 
 \section{Ruby on Rails}
 Ruby on Rails ist ein in Ruby geschriebenes Opensource-Webframework. Zentraler Ansatz der Entwicklung des Frameworks ist es, Software-Entwicklern zu erleichtern, Webanwendungen zu schreiben. Die Philosophie des Frameworks beinhaltet zwei Prinzipien\cite{ror-guide}:
@@ -290,7 +290,7 @@ Jede Information und Funktionalität soll genau eine Repräsentation im System h
 Um die Entwicklung für den Programmierer zu erleichtern, werden Annahmen getroffen und Standard-Einstellungen festgelegt. Diese lassen sich zwar durch die Entwickler ändern, unterscheiden sich zu Beginn eines Projektes aber noch nicht. So werden z.B. auch Vereinbarungen über die Benennung von Methoden und Klassen getroffen (Naming Conventions).
 
 \section{Turbolinks}
-Turbolinks\footnote{https://github.com/turbolinks/turbolinks} ist eine Javascript-Bibliothek zur Beschleunigung der Navigation auf Internetseiten. Klickt ein Nutzer auf einen Link, wird der Seitenabruf unterbrochen und stattdessen mit AJAX geladen. Anschließend überprüft Turbolinks, welche Teile der Seite sich verändert haben und rendert nur diese Elemente. Dadurch entsteht ein flüssigeres Nutzererlebnis, da Teile der Seite bestehen bleiben und nicht ersetzt werden. Da nachgeladene Ressourcen, die sich bei der Navigation nicht ändern, nicht erneut geladen werden müssen, beschleunigt sich die Ladezeit. Javascript-Scripts müssen nicht neu geladen werden, sondern bleiben in ihrem vorherigen Zustand bestehen, da kein kompletter Pageload vorgenommen werden muss.
+Turbolinks\footnote{https://github.com/turbolinks/turbolinks} ist eine Javascript-Bibliothek zur Beschleunigung der Navigation auf Internetseiten. Klickt ein Nutzer auf einen Link, wird der Seitenabruf unterbrochen und stattdessen mit AJAX geladen. Anschließend überprüft Turbolinks, welche Teile der Seite sich verändert haben und rendert nur diese Elemente. Dadurch entsteht ein flüssigeres Nutzererlebnis, da Teile der Seite bestehen bleiben und nicht ersetzt werden. Da nachgeladene Ressourcen, die sich bei der Navigation nicht ändern, nicht erneut geladen werden müssen, beschleunigt sich die Ladezeit. Javascript-Skripts müssen nicht neu geladen werden, sondern bleiben in ihrem vorherigen Zustand bestehen, da kein kompletter Pageload vorgenommen werden muss.
 
 \section{Single Page Applications}
 
@@ -301,7 +301,7 @@ Bei Redis handelt es sich um einen In-Memory-Datenstrukturspeicher der als LRU-C
 
 Unter anderem unterstützt Redis folgende Datentypen:
 Set:
-Bei Sets handelt es sich um Mengen, die Strings beinhalten könne, wobei jeder String nur einmal pro Set vorkommt. Hinzufügen von Elementen, Löschen von Elementen und das Prüfen, ob ein Element in einem Set vorhanden ist, passieren in konstanter Zeit. (O(1))
+Bei Sets handelt es sich um Mengen, die Strings beinhalten könne, wobei jeder String nur einmal pro Set vorkommt. Hinzufügen von Elementen, Löschen von Elementen und das Prüfen, ob ein Element in einem Set vorhanden ist, passieren in konstanter Zeit. (O(1))\cite{redis-set}
 
 Strings:
 Redis Strings sind binary safe, d.h., sie können jegliche Daten, z.B. auch Bilddaten, enthalten. Strings können auch als atomare Zähler verwendet werden. Dazu stellt Redis Kommandos zum Inkrementieren oder Subtrahieren von Strings bereit.
